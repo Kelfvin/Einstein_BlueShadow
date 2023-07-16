@@ -23,7 +23,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(947, 759)
+        MainWindow.resize(939, 736)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayoutWidget = QWidget(self.centralwidget)
@@ -140,21 +140,36 @@ class Ui_MainWindow(object):
 
         self.verticalLayoutWidget_5 = QWidget(self.centralwidget)
         self.verticalLayoutWidget_5.setObjectName(u"verticalLayoutWidget_5")
-        self.verticalLayoutWidget_5.setGeometry(QRect(60, 470, 193, 121))
+        self.verticalLayoutWidget_5.setGeometry(QRect(40, 470, 193, 159))
         self.verticalLayout_5 = QVBoxLayout(self.verticalLayoutWidget_5)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_7 = QHBoxLayout()
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.enemyStrategySelectLable = QLabel(self.verticalLayoutWidget_5)
+        self.enemyStrategySelectLable.setObjectName(u"enemyStrategySelectLable")
+
+        self.horizontalLayout_7.addWidget(self.enemyStrategySelectLable)
+
+        self.enemyStrategySelectCombBox = QComboBox(self.verticalLayoutWidget_5)
+        self.enemyStrategySelectCombBox.setObjectName(u"enemyStrategySelectCombBox")
+
+        self.horizontalLayout_7.addWidget(self.enemyStrategySelectCombBox)
+
+
+        self.verticalLayout_5.addLayout(self.horizontalLayout_7)
+
         self.horizontalLayout_6 = QHBoxLayout()
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.strategySelectLable = QLabel(self.verticalLayoutWidget_5)
-        self.strategySelectLable.setObjectName(u"strategySelectLable")
+        self.ourStrategySelectLable = QLabel(self.verticalLayoutWidget_5)
+        self.ourStrategySelectLable.setObjectName(u"ourStrategySelectLable")
 
-        self.horizontalLayout_6.addWidget(self.strategySelectLable)
+        self.horizontalLayout_6.addWidget(self.ourStrategySelectLable)
 
-        self.strategySelectCombBox = QComboBox(self.verticalLayoutWidget_5)
-        self.strategySelectCombBox.setObjectName(u"strategySelectCombBox")
+        self.ourStrategySelectCombBox = QComboBox(self.verticalLayoutWidget_5)
+        self.ourStrategySelectCombBox.setObjectName(u"ourStrategySelectCombBox")
 
-        self.horizontalLayout_6.addWidget(self.strategySelectCombBox)
+        self.horizontalLayout_6.addWidget(self.ourStrategySelectCombBox)
 
 
         self.verticalLayout_5.addLayout(self.horizontalLayout_6)
@@ -182,7 +197,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 947, 24))
+        self.menubar.setGeometry(QRect(0, 0, 939, 24))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -203,7 +218,8 @@ class Ui_MainWindow(object):
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u5148\u624b", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u6211\u65b9\u989c\u8272", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"\u641c\u7d22\u6df1\u5ea6", None))
-        self.strategySelectLable.setText(QCoreApplication.translate("MainWindow", u"\u7b56\u7565", None))
+        self.enemyStrategySelectLable.setText(QCoreApplication.translate("MainWindow", u"\u654c\u65b9\u7b56\u7565", None))
+        self.ourStrategySelectLable.setText(QCoreApplication.translate("MainWindow", u"\u6211\u65b9\u7b56\u7565", None))
         self.setDiceLable.setText(QCoreApplication.translate("MainWindow", u"\u6307\u5b9a\u9ab0\u5b50\u6570\u76ee", None))
         self.letAIDoButton.setText(QCoreApplication.translate("MainWindow", u"AI DO", None))
     # retranslateUi

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>947</width>
-    <height>759</height>
+    <width>939</width>
+    <height>736</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -166,24 +166,38 @@
    <widget class="QWidget" name="verticalLayoutWidget_5">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>40</x>
       <y>470</y>
       <width>193</width>
-      <height>121</height>
+      <height>159</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_5">
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <layout class="QHBoxLayout" name="horizontalLayout_7">
        <item>
-        <widget class="QLabel" name="strategySelectLable">
+        <widget class="QLabel" name="enemyStrategySelectLable">
          <property name="text">
-          <string>策略</string>
+          <string>敌方策略</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QComboBox" name="strategySelectCombBox"/>
+        <widget class="QComboBox" name="enemyStrategySelectCombBox"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <item>
+        <widget class="QLabel" name="ourStrategySelectLable">
+         <property name="text">
+          <string>我方策略</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="ourStrategySelectCombBox"/>
        </item>
       </layout>
      </item>
@@ -216,7 +230,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>947</width>
+     <width>939</width>
      <height>24</height>
     </rect>
    </property>
