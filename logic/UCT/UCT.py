@@ -1,5 +1,5 @@
 
-from Board import *
+from logic.UCT.Board import *
 import time
 import random
 
