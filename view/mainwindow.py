@@ -231,6 +231,7 @@ class MainWindow(QMainWindow):
             else:
                 fromPoint,toPoint = self.modules[self.ourStrategy](self.board.getDice(),self.board.board,self.board.ourColor)
 
+
         self.moveChess(fromPoint,toPoint)
 
 
@@ -373,7 +374,7 @@ class MainWindow(QMainWindow):
                 self.selectedPosition.setX(x)
                 self.selectedPosition.setY(y) 
             else:
-                self.moveChess(QPoint(self.selectedPosition.x(), self.selectedPosition.y()), QPoint(x, y))
+                self.moveChess(self.selectedPosition.toTuple(), (x,y))
 
     def chessNumberIncrease(self,chessNumber:int)->int:
         '''返回棋子value+1，且让棋子在其范围内滚动
@@ -390,9 +391,9 @@ class MainWindow(QMainWindow):
     
 
 
-    def moveChess(self, fromPosition:QPoint, toPosition:QPoint):
+    def moveChess(self, fromPosition, toPosition):
 
-        success = self.board.moveChess((fromPosition.x(),fromPosition.y()), (toPosition.x(), toPosition.y()))
+        success = self.board.moveChess(fromPosition, toPosition)
 
         self.selectedPosition.setX(-1)
         self.selectedPosition.setY(-1)
