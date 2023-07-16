@@ -6,7 +6,3 @@ class ChessColor(Enum):
     BLUE = 1
     
 
-if __name__ == '__main__':
-    print(type(ChessColor.BLUE.value))
-    a = ChessColor.BLUE
-    print(a.value*2>1)
