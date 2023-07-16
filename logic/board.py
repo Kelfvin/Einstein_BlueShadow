@@ -9,8 +9,111 @@ class Board:
         self.dice = 1  # 骰子的数
         self.boardBackup = []  # 用于备份棋盘
         self.ourColor = ChessColor.BLUE  # 我方队伍的颜色
-        self.nowPlayer = ChessColor.BLUE  # 目前轮到
+        self.turn = ChessColor.BLUE  # 目前轮到
         self.sente = ChessColor.BLUE   # 先手
+
+
+        self.red_pieces = [-1, -2, -3, -4, -5, -6]
+        self.blue_pieces = [1, 2, 3, 4, 5, 6]
+
+        # 红蓝双方的可以走的合法位置
+        self.red_legal_moves = [11, 10, 1, 112, 111, 102, 213, 212, 203, 314, 313, 304, 414,
+                                1021, 1020, 1011, 1122, 1121, 1112, 1223, 1222, 1213, 1324, 1323,
+                                1314, 1424, 2031, 2030, 2021, 2132, 2131, 2122, 2233, 2232, 2223,
+                                2334, 2333, 2324, 2434, 3041, 3040, 3031, 3142, 3141, 3132, 3243,
+                                3242, 3233, 3344, 3343, 3334, 3444, 4041, 4142, 4243, 4344]
+        self.blue_legal_moves = [100, 201, 302, 403, 1000, 1100, 1101, 1110, 1201, 1202, 1211, 
+                                 1302, 1303, 1312, 1403, 1404, 1413, 2010, 2110, 2111, 2120, 2211,
+                                 2212, 2221, 2312, 2313, 2322, 2413, 2414, 2423, 3020, 3120, 3121,
+                                 3130, 3221, 3222, 3231, 3322, 3323, 3332, 3423, 3424, 3433, 4030,
+                                 4130, 4131, 4140, 4231, 4232, 4241, 4332, 4333, 4342, 4433, 4434, 4443]
+
+    
+
+    def get_avaiable_pieces(self):
+        '''根据骰子的值，返回目前可以移动的棋子'''
+        if self.turn == ChessColor.RED:
+            # 有这个棋子就直接加入
+            if self.dice in self.red_pieces: 
+                return [self.dice]
+            else:   
+                collections = []
+                # 没有这个棋子就加入离骰子数最近的两个棋子
+                for chess in range(self.dice - 1, 0, -1):
+                    if chess in self.red_pieces:
+                        collections.append(chess)
+                        break
+                for chess in range(self.dice + 1, 7):
+                    if chess in self.red_pieces:
+                        collections.append(chess)
+                        break
+                return collections
+            
+        elif self.turn == ChessColor.BLUE:
+            if -self.dice in self.blue_pieces: 
+                return [-self.dice]
+            else:
+                collections = []
+                for chess in range(-self.dice + 1, 0):
+                    if chess in self.blue_pieces:
+                        collections.append(chess)
+                        break
+                for chess in range(-self.dice -1, -7,-1):
+                    if chess in self.blue_pieces:
+                        collections.append(chess)
+                        break
+                return collections
+
+    def get_avaiable_moves(self):
+        '''根据投的骰子，得出可以进行的操作'''
+        pieces = self.get_avaiable_pieces()
+        moves = []
+        true_moves = []
+        if self.turn == ChessColor.RED:
+            # red dice moves
+            for piece in pieces:
+                # get the position of the piece
+                x, y = -1, -1
+                getted = False
+                for i in range(5):
+                    for j in range(5):
+                        if self.map[i][j] == piece:
+                            x, y = i, j
+                            getted = True
+                            break
+                    if getted: break
+                for dx, dy in [(1, 1), (1, 0), (0, 1)]:
+                    move = self.location_to_move((x, y, x + dx, y + dy))
+                    if move in self.red_legal_moves: 
+                        moves.append(self.red_legal_moves.index(move))
+                        true_moves.append(move)
+                    else: continue
+        else:
+            # blue dice moves
+            for piece in pieces:
+                # get the position of the piece
+                x, y = -1, -1
+                getted = False
+                for i in range(5):
+                    for j in range(5):
+                        if self.map[i][j] == -piece:
+                            x, y = i, j
+                            getted = True
+                            break
+                    if getted: break
+                for dx, dy in [(-1, -1), (-1, 0), (0, -1)]:
+                    move = self.location_to_move((x, y, x + dx, y + dy))
+                    if move in self.blue_legal_moves: 
+                        moves.append(self.blue_legal_moves.index(move))
+                        true_moves.append(move)
+                    else: continue
+            return moves, true_moves
+
+    def location_to_move(self, location):
+        '''将操作映射为成数字'''
+        bx, by, dx, dy = location
+        return bx * 1000 + by * 100 + dx * 10 + dy
+
 
     def initBoard(self,):
         '''初始化默认棋盘，每次棋子的布局都是随机的，后期再来进行布局'''
@@ -76,11 +179,11 @@ class Board:
             return False
 
         # 不能移动别人的棋子
-        if self.nowPlayer.value * chess < 0:
+        if self.turn.value * chess < 0:
             return False
 
         # 棋子的移动终点是否合法
-        if self.nowPlayer.value > 0:  # 蓝方
+        if self.turn.value > 0:  # 蓝方
             # 不能向着右下方行走
             if end_x > from_x or end_y > from_y:
                 return False
@@ -101,13 +204,13 @@ class Board:
         self.board[end_x][end_y] = self.board[from_x][from_y]
         self.board[from_x][from_y] = 0
 
-        self.swapNowPlayer()
+        self.swapturn()
 
         return True
     
-    def swapNowPlayer(self):
+    def swapturn(self):
         '''交换行棋方'''
-        self.nowPlayer = ChessColor.RED if self.nowPlayer == ChessColor.BLUE else ChessColor.BLUE
+        self.turn = ChessColor.RED if self.turn == ChessColor.BLUE else ChessColor.BLUE
 
     def checkBoardSet(self):
         '''开局的时候，检查10个棋子是否正确安放
@@ -134,7 +237,7 @@ class Board:
             return False
 
         self.board = self.boardBackup.pop()
-        self.swapNowPlayer()
+        self.swapturn()
         return True
 
     def getChess(self, x:int, y:int)->int:
@@ -173,11 +276,11 @@ class Board:
             colorCode:1表示蓝方，1表示红方'''
         self.ourColor = color
 
-    def getNowPlayer(self):
-        return self.nowPlayer
+    def getturn(self):
+        return self.turn
 
-    def getNowPlayerStr(self):
-        return '蓝方' if self.nowPlayer == ChessColor.BLUE else '红方'
+    def getturnStr(self):
+        return '蓝方' if self.turn == ChessColor.BLUE else '红方'
     
 
     def setDice(self,diceNum):
@@ -186,11 +289,19 @@ class Board:
     def getDice(self):
         return self.dice
 
-    def setNowPlayer(self,color:ChessColor):
-        self.nowPlayer = color
+    def setturn(self,color:ChessColor):
+        self.turn = color
 
     def setSente(self,color:ChessColor):
         self.sente = color
 
     def getSente(self)->ChessColor:
         return self.sente
+    
+
+
+if __name__ == '__main__':
+    board = Board()
+    board.red_pieces = [1,2,4]
+    board.dice = 3
+    print(board.get_avaiable_pieces())
