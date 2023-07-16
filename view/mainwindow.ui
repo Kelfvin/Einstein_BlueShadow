@@ -87,9 +87,9 @@
    <widget class="QWidget" name="verticalLayoutWidget_4">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>533</x>
       <y>470</y>
-      <width>164</width>
+      <width>201</width>
       <height>171</height>
      </rect>
     </property>
@@ -271,9 +271,43 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>enemyStrategySelectCombBox</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>enemyStrategyChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>192</x>
+     <y>503</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>238</x>
+     <y>451</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ourStrategySelectCombBox</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>ourStrategyChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>167</x>
+     <y>553</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>259</x>
+     <y>553</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>letAIDo()</slot>
   <slot>handleGameModeChanged(int)</slot>
+  <slot>enemyStrategyChanged(int)</slot>
+  <slot>ourStrategyChanged(int)</slot>
  </slots>
 </ui>

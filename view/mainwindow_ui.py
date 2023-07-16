@@ -72,7 +72,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayoutWidget_4 = QWidget(self.centralwidget)
         self.verticalLayoutWidget_4.setObjectName(u"verticalLayoutWidget_4")
-        self.verticalLayoutWidget_4.setGeometry(QRect(570, 470, 164, 171))
+        self.verticalLayoutWidget_4.setGeometry(QRect(533, 470, 201, 171))
         self.verticalLayout_4 = QVBoxLayout(self.verticalLayoutWidget_4)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -206,6 +206,8 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         self.letAIDoButton.clicked.connect(MainWindow.letAIDo)
         self.gameModeSelectCombBox.currentIndexChanged.connect(MainWindow.handleGameModeChanged)
+        self.enemyStrategySelectCombBox.currentIndexChanged.connect(MainWindow.enemyStrategyChanged)
+        self.ourStrategySelectCombBox.currentIndexChanged.connect(MainWindow.ourStrategyChanged)
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi

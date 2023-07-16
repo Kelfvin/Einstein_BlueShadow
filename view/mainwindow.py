@@ -162,6 +162,24 @@ class MainWindow(QMainWindow):
             if mode.name ==  self.ui.gameModeSelectCombBox.currentText():
                 self.mode = mode
 
+        print(f'改变游戏模式为:{mode}')
+
+
+    @Slot(int)
+    def enemyStrategyChanged(self,int):
+        for strategy in Strategy:
+            if strategy == self.ui.enemyStrategySelectCombBox.currentText():
+                self.enemyStrategy = strategy
+
+        print(f'切换敌方策略:{strategy}')
+
+    @Slot(int)
+    def ourStrategyChanged(self,int):
+        for strategy in Strategy:
+            if strategy == self.ui.ourStrategySelectCombBox.currentText():
+                self.ourStrategy = strategy
+
+        print(f'切换我方策略:{strategy}')
 
     @Slot(int)
     def on_setOurColorComboBox_currentIndexChanged(self,index):
