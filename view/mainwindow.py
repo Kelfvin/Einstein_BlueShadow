@@ -147,7 +147,7 @@ class MainWindow(QMainWindow):
 
             if self.mode == Mode.AI_AI:
                 while self.board.checkWin() == None:
-                    print('AI_AI')
+                    self.on_diceButton_clicked()
                     self.letAIDo()
 
 
