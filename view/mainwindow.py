@@ -10,7 +10,7 @@ from random import randint
 from enums.chess import ChessColor
 from enums.mode import Mode
 from enums.strategy import Strategy
-from logic.UCT.UCT
+from logic.UCT.UCT import UCT
 
 
 
@@ -24,6 +24,7 @@ class MainWindow(QMainWindow):
 
         self.board = Board()
         '''保存棋局'''
+
 
         self.mode = Mode.HUMAN_HUMAN
         '''当前的对战模式'''
@@ -48,6 +49,14 @@ class MainWindow(QMainWindow):
         self.boardHeight = self.boardWidth
         self.gridX = self.boardWidth/5
         self.gridY = self.boardWidth/5
+
+
+        # 策略模型的初始化
+
+        self.modules = {
+            Strategy.UCT:UCT,
+            # Strategy.ALPHA_ZERO:
+        }
 
 
         # 初始化图形界面和信号槽的绑定
@@ -109,15 +118,6 @@ class MainWindow(QMainWindow):
 
         str = f"{self.board.getNowPlayerStr()}投掷出了{dice}"
         self.ui.boardStatusBar.append(str)
-
-
-        if self.board.getNowPlayer() == self.board.getOurColor():
-            self.ourTurn()
-
-        self.enemyTurn()
-
-
-
         
 
     @Slot()
@@ -130,18 +130,20 @@ class MainWindow(QMainWindow):
             msgBox = QMessageBox()
             msgBox.setText("比赛开始！")
             msgBox.exec()
+
             self.board.setNowPlayer(self.board.getSente())
 
             self.ui.boardStatusBar.append("现在是" + self.board.getNowPlayerStr() + "出手")
 
             # ui 上一些按钮的禁用和启用
             self.ui.setDiceComboBox.setEnabled(True)
-            self.ui.useGivenDiceButton.setEnabled(True)
+            self.ui.letAIDoButton.setEnabled(True)
             self.ui.startMatchButton.setEnabled(False)
             self.ui.diceButton.setEnabled(True)
             self.ui.backButton.setEnabled(False)
             self.ui.setSenteComboBox.setEnabled(False)
             self.ui.setOurColorComboBox.setEnabled(False)
+            self.ui.gameModeSelectCombBox.setEnabled(False)
 
             if self.mode == Mode.AI_AI:
                 while self.board.checkWin()==0:
@@ -159,6 +161,81 @@ class MainWindow(QMainWindow):
         color = 1 if index == 0  else -1
         self.board.setOurColor(color)
         print(f'设置我方队伍颜色为{color}')
+
+    @Slot()
+    def letAIDo(self):
+        '''交给AI做(听天由命>_<)
+            后期改成可以在多个模型中进行切换，以防万一'''
+        
+#                       _oo0oo_
+#                      o8888888o
+#                      88" . "88
+#                      (| -_- |)
+#                      0\  =  /0
+#                    ___/`---'\___
+#                  .' \\|     |// '.
+#                 / \\|||  :  |||// \
+#                / _||||| -:- |||||- \
+#               |   | \\\  -  /// |   |
+#               | \_|  ''\---/''  |_/ |
+#               \  .-\__  '-'  ___/-. /
+#             ___'. .'  /--.--\  `. .'___
+#          ."" '<  `.___\_<|>_/___.' >' "".
+#         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+#         \  \ `_.   \_ __\ /__ _/   .-` /  /
+#     =====`-.____`.___ \_____/___.-`___.-'=====
+#                       `=---='
+#
+#
+#     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+#               佛祖保佑         
+
+        
+        # To do 这里放 传给AI的东西
+
+        # if self.board.getNowPlayer() == self.board.getOurColor():
+        #     if self.mode == Mode.HUMAN_AI or self.mode == Mode.HUMAN_HUMAN:
+        #         self.showMsg('不允许使用AI作弊')
+        #     else:
+        #         self.modules[self.ourStrategy](self.board.getDice(),self.board.board,self.board.ourColor)
+
+        # else:
+        #     if self.mode == Mode.AI_HUMAN or self.mode == Mode.HUMAN_HUMAN:
+        #         self.showMsg('不允许使用AI作弊')
+        #     else:
+        #         self.modules[self.ourStrategy](self.board.getDice(),self.board.board,self.board.ourColor)
+
+        # self.moveChess()
+
+        print('AIGo')
+
+    @Slot()
+    def on_replayMatchButton_clicked(self):
+        '''重开'''
+        pass
+
+    @Slot(int)
+    def on_setOurColorComboBox_currentIndexChanged(self,index):
+        color = ChessColor.BLUE if index == 0 else ChessColor.RED
+        self.board.setOurColor(color)
+        self.ui.boardStatusBar.append(f'设置我方队伍颜色为{color.name}')
+
+    @Slot(int)
+    def on_setSenteComboBox_currentIndexChanged(self,index):
+        color = ChessColor.BLUE if index == 0 else ChessColor.RED
+        self.board.setSente(color)
+        self.ui.boardStatusBar.append(f"设置先手颜色为{color.name}");
+
+    @Slot()
+    def on_backButton_clicked(self):
+        result = Board.undo()
+
+        if not result:
+            self.showMsg('不能撤销了！')
+
+        self.update()
+
 
     def ourTurn(self):
         '''这里写轮到我方的时候，是什么策略'''
@@ -272,7 +349,7 @@ class MainWindow(QMainWindow):
                 self.selectedPosition.setX(x)
                 self.selectedPosition.setY(y) 
             else:
-                self.moveChess(self.selectedPosition.x(), self.selectedPosition.y(), x, y)
+                self.moveChess(QPoint(self.selectedPosition.x(), self.selectedPosition.y()), QPoint(x, y))
 
     def chessNumberIncrease(self,chessNumber:int)->int:
         '''返回棋子value+1，且让棋子在其范围内滚动
@@ -287,44 +364,11 @@ class MainWindow(QMainWindow):
         
         return chessNumber*sign
     
-    @Slot()
-    def letAIDo():
-        '''交给AI做(听天由命>_<)
-            后期改成可以在多个模型中进行切换，以防万一'''
-        
-#                       _oo0oo_
-#                      o8888888o
-#                      88" . "88
-#                      (| -_- |)
-#                      0\  =  /0
-#                    ___/`---'\___
-#                  .' \\|     |// '.
-#                 / \\|||  :  |||// \
-#                / _||||| -:- |||||- \
-#               |   | \\\  -  /// |   |
-#               | \_|  ''\---/''  |_/ |
-#               \  .-\__  '-'  ___/-. /
-#             ___'. .'  /--.--\  `. .'___
-#          ."" '<  `.___\_<|>_/___.' >' "".
-#         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
-#         \  \ `_.   \_ __\ /__ _/   .-` /  /
-#     =====`-.____`.___ \_____/___.-`___.-'=====
-#                       `=---='
-#
-#
-#     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#
-#               佛祖保佑         
-
-        
-        # To do 这里放 传给AI的东西
-        
 
 
+    def moveChess(self, fromPosition:QPoint, toPosition:QPoint):
 
-    def moveChess(self, x1, y1, x2, y2):
-
-        success = self.board.moveChess((x1, y1), (x2, y2))
+        success = self.board.moveChess((fromPosition.x(),fromPosition.y()), (toPosition.x(), toPosition.y()))
 
         self.selectedPosition.setX(-1)
         self.selectedPosition.setY(-1)
@@ -335,9 +379,9 @@ class MainWindow(QMainWindow):
             self.ui.backButton.setEnabled(True)
 
             win = self.board.checkWin()
-            if win == 0:
+            if win == None:
                 self.ui.boardStatusBar.append("现在该" + self.board.getNowPlayerStr() + "出手")
-            elif win == 1:
+            elif win == ChessColor.BLUE:
                 self.showMsg("蓝方赢了！")
             else:
                 self.showMsg("红方赢了")

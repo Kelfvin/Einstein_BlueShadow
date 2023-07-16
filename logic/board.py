@@ -1,16 +1,16 @@
 import random
 import numpy as np
-
+from enums.chess import ChessColor
 
 
 class Board:
     def __init__(self) -> None:
         self.board = self.initBoard()
-        self.dice = 1  # 骰子的数量
+        self.dice = 1  # 骰子的数
         self.boardBackup = []  # 用于备份棋盘
-        self.ourColor = 1  # 我方队伍的颜色
-        self.nowPlayer = 1  # 目前轮到
-        self.sente = 1   # 先手
+        self.ourColor = ChessColor.BLUE  # 我方队伍的颜色
+        self.nowPlayer = ChessColor.BLUE  # 目前轮到
+        self.sente = ChessColor.BLUE   # 先手
 
     def initBoard(self,):
         '''初始化默认棋盘，每次棋子的布局都是随机的，后期再来进行布局'''
@@ -76,11 +76,11 @@ class Board:
             return False
 
         # 不能移动别人的棋子
-        if self.nowPlayer * chess < 0:
+        if self.nowPlayer.value * chess < 0:
             return False
 
         # 棋子的移动终点是否合法
-        if self.nowPlayer > 0:  # 蓝方
+        if self.nowPlayer.value > 0:  # 蓝方
             # 不能向着右下方行走
             if end_x > from_x or end_y > from_y:
                 return False
@@ -98,14 +98,16 @@ class Board:
         # 行棋前先备份
         self.backupBoard()
 
-        # 获取重点位置的value
-        endGrid = self.board[end_x][end_y]
-
         self.board[end_x][end_y] = self.board[from_x][from_y]
         self.board[from_x][from_y] = 0
 
-        self.nowPlayer = -self.nowPlayer
+        self.swapNowPlayer()
+
         return True
+    
+    def swapNowPlayer(self):
+        '''交换行棋方'''
+        self.nowPlayer = ChessColor.RED if self.nowPlayer == ChessColor.BLUE else ChessColor.BLUE
 
     def checkBoardSet(self):
         '''开局的时候，检查10个棋子是否正确安放
@@ -132,7 +134,7 @@ class Board:
             return False
 
         self.board = self.boardBackup.pop()
-        self.now_player = -self.now_player
+        self.swapNowPlayer()
         return True
 
     def getChess(self, x:int, y:int)->int:
@@ -141,15 +143,15 @@ class Board:
 
     def checkWin(self):
         '''查看是否已经有一方获胜
-            Return: 1表示蓝方获胜, -1 表示红方获胜，0表示还没有人获胜'''
+            Return: BLUE表示蓝方获胜, RED 表示红方获胜，None表示还没有人获胜'''
 
         if self.board[0][0] > 0 or np.all(self.board >= 0):
-            return 1
+            return ChessColor.BLUE
 
         if self.board[4][4] < 0 or np.all(self.board <= 0):
-            return -1
+            return ChessColor.RED
         
-        return 0
+        return None
 
     def getChessSign(self,x,y):
         '''返回棋子的符号，蓝方返回1，红方返回1,空白返回1'''
@@ -163,14 +165,26 @@ class Board:
         else:
             return -1
         
-    def setOurColor(self,colorCode):
+    def setOurColor(self,color:ChessColor):
         '''设置我方的棋子颜色
             colorCode:1表示蓝方，1表示红方'''
-        self.ourColor = colorCode
+        self.ourColor = color
 
     def getNowPlayerStr(self):
-        return '蓝方' if self.nowPlayer>0 else '红方'
+        return '蓝方' if self.nowPlayer == ChessColor.BLUE else '红方'
     
 
     def setDice(self,diceNum):
         self.dice = diceNum
+
+    def getDice(self):
+        return self.dice
+
+    def setNowPlayer(self,color:ChessColor):
+        self.nowPlayer = color
+
+    def setSente(self,color:ChessColor):
+        self.sente = color
+
+    def getSente(self)->ChessColor:
+        return self.sente
