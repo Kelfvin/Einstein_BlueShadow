@@ -7,6 +7,10 @@ from view.mainwindow_ui import Ui_MainWindow
 import sys
 from logic.board import Board
 from random import randint
+from enums.chess import ChessColor
+from enums.mode import Mode
+from enums.strategy import Strategy
+
 
 
 class MainWindow(QMainWindow):
@@ -15,9 +19,20 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self.board = Board()
+        # 界面控制参数
 
-        self.mode = 'human'
+        self.board = Board()
+        '''保存棋局'''
+
+        self.mode = Mode.HUMAN_HUMAN
+        '''当前的对战模式'''
+
+        self.ourStrategy = Strategy.UCT
+        self.enemyStrategy = Strategy.UCT
+
+
+        # 是否完成了棋盘的摆放
+        self.chessSeted = False
 
         # 光标选中的棋盘上的位置
         self.selectedPosition = QPoint(-1,-1)
@@ -33,11 +48,9 @@ class MainWindow(QMainWindow):
         self.gridX = self.boardWidth/5
         self.gridY = self.boardWidth/5
 
-        self.chessSeted = False
 
+        # 初始化图形界面和信号槽的绑定
         self.initUI()
-        self.initSlot()
-
 
     def initUI(self):
         '''UI元素的值进行初始化'''
@@ -46,12 +59,20 @@ class MainWindow(QMainWindow):
         self.initSetDiceCombBox()
         self.initSetSenteCombBox()
         self.initStrategySelectCombBox()
+        self.initGameModeSlectCombBox()
 
 
     def initStrategySelectCombBox(self):
         '''初始化策略选择的下拉框'''
-        self.ui.strategySelectCombBox.addItem('UCT')
+        for strategy in Strategy:
+            self.ui.ourStrategySelectCombBox.addItem(strategy.name)
+            self.ui.enemyStrategySelectCombBox.addItem(strategy.name)
 
+    
+    def initGameModeSlectCombBox(self):
+        '''初始化游戏模式选择的下拉框'''
+        for mode in Mode:
+            self.ui.gameModeSelectCombBox.addItem(mode.name)
 
     def initSetSenteCombBox(self):
         '''初始化先手选择的下拉框'''
@@ -75,9 +96,10 @@ class MainWindow(QMainWindow):
             self.ui.setDiceComboBox.addItem(str(i))
 
 
-
     def initSlot(self):
         pass
+
+    
 
     @Slot()
     def on_diceButton_clicked(self):
@@ -87,11 +109,15 @@ class MainWindow(QMainWindow):
         str = f"{self.board.getNowPlayerStr()}投掷出了{dice}"
         self.ui.boardStatusBar.append(str)
 
-        # 如果是我们的轮，就让 AI 算法来走
+
         if self.board.getNowPlayer() == self.board.getOurColor():
             self.ourTurn()
 
         self.enemyTurn()
+
+
+
+        
 
     @Slot()
     def on_startMatchButton_clicked(self):
@@ -107,6 +133,7 @@ class MainWindow(QMainWindow):
 
             self.ui.boardStatusBar.append("现在是" + self.board.getNowPlayerStr() + "出手")
 
+            # ui 上一些按钮的禁用和启用
             self.ui.setDiceComboBox.setEnabled(True)
             self.ui.useGivenDiceButton.setEnabled(True)
             self.ui.startMatchButton.setEnabled(False)
@@ -114,6 +141,10 @@ class MainWindow(QMainWindow):
             self.ui.backButton.setEnabled(False)
             self.ui.setSenteComboBox.setEnabled(False)
             self.ui.setOurColorComboBox.setEnabled(False)
+
+            if self.mode == Mode.AI_AI:
+                while self.board.checkWin()==0:
+                    self.letAIDo()
 
 
         else:
@@ -128,14 +159,23 @@ class MainWindow(QMainWindow):
         self.board.setOurColor(color)
         print(f'设置我方队伍颜色为{color}')
 
-    def ourTurn():
+    def ourTurn(self):
         '''这里写轮到我方的时候，是什么策略'''
-        pass
+        if self.mode == Mode.AI_AI or self.mode == Mode.AI_HUMAN:
+            self.letAIDo()
 
-    def enemyTurn():
+        else:
+            pass
+            # 这里就是说人来走
+
+    def enemyTurn(self):
         '''这里写对方走的时候是什么策略。之所以这么弄是为了方便调试
         '''
-        pass
+        if self.mode == Mode.HUMAN_AI:
+            self.letAIDo()
+
+        else:
+            pass
 
 
     def paintEvent(self, event):
@@ -246,6 +286,7 @@ class MainWindow(QMainWindow):
         
         return chessNumber*sign
     
+    @Slot()
     def letAIDo():
         '''交给AI做(听天由命>_<)
             后期改成可以在多个模型中进行切换，以防万一'''
@@ -276,6 +317,7 @@ class MainWindow(QMainWindow):
 
         
         # To do 这里放 传给AI的东西
+    
 
 
     def moveChess(self, x1, y1, x2, y2):
