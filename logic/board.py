@@ -12,6 +12,8 @@ class Board:
         self.turn = ChessColor.BLUE  # 目前轮到
         self.sente = ChessColor.BLUE   # 先手
 
+        self.movements = [] # 保存行棋的历史
+
 
         self.red_pieces = [-1, -2, -3, -4, -5, -6]
         self.blue_pieces = [1, 2, 3, 4, 5, 6]
@@ -32,34 +34,34 @@ class Board:
 
     def get_avaiable_pieces(self):
         '''根据骰子的值，返回目前可以移动的棋子'''
-        if self.turn == ChessColor.RED:
+        if self.turn == ChessColor.BLUE:
             # 有这个棋子就直接加入
-            if self.dice in self.red_pieces: 
+            if self.dice in self.blue_pieces: 
                 return [self.dice]
             else:   
                 collections = []
                 # 没有这个棋子就加入离骰子数最近的两个棋子
                 for chess in range(self.dice - 1, 0, -1):
-                    if chess in self.red_pieces:
+                    if chess in self.blue_pieces:
                         collections.append(chess)
                         break
                 for chess in range(self.dice + 1, 7):
-                    if chess in self.red_pieces:
+                    if chess in self.blue_pieces:
                         collections.append(chess)
                         break
                 return collections
             
-        elif self.turn == ChessColor.BLUE:
-            if -self.dice in self.blue_pieces: 
+        elif self.turn == ChessColor.RED:
+            if -self.dice in self.red_pieces: 
                 return [-self.dice]
             else:
                 collections = []
                 for chess in range(-self.dice + 1, 0):
-                    if chess in self.blue_pieces:
+                    if chess in self.red_pieces:
                         collections.append(chess)
                         break
                 for chess in range(-self.dice -1, -7,-1):
-                    if chess in self.blue_pieces:
+                    if chess in self.red_pieces:
                         collections.append(chess)
                         break
                 return collections
@@ -77,7 +79,7 @@ class Board:
                 getted = False
                 for i in range(5):
                     for j in range(5):
-                        if self.map[i][j] == piece:
+                        if self.board[i][j] == piece:
                             x, y = i, j
                             getted = True
                             break
@@ -96,7 +98,7 @@ class Board:
                 getted = False
                 for i in range(5):
                     for j in range(5):
-                        if self.map[i][j] == -piece:
+                        if self.board[i][j] == piece:
                             x, y = i, j
                             getted = True
                             break
@@ -107,12 +109,64 @@ class Board:
                         moves.append(self.blue_legal_moves.index(move))
                         true_moves.append(move)
                     else: continue
-            return moves, true_moves
+        return moves, true_moves
+
+    def move_to_location(self, move):
+        '''操作映射到位置'''
+        beginx = move // 1000
+        beginy = (move - beginx * 1000) // 100
+        destx  = (move - beginx * 1000 - beginy * 100) // 10
+        desty =  (move - beginx * 1000 - beginy * 100 - destx * 10) 
+        return beginx, beginy, destx, desty
 
     def location_to_move(self, location):
         '''将操作映射为成数字'''
         bx, by, dx, dy = location
         return bx * 1000 + by * 100 + dx * 10 + dy
+    
+
+    def do_move(self, move):
+        '''给定move(int)，认为传入的动作是正确的，不进行验证'''
+        self.movements.append(move)
+        self.swapturn()
+        bx, by, dx, dy = self.move_to_location(move)
+        if self.board[dx][dy] < 0: self.red_pieces.remove(self.board[dx][dy])
+        elif self.board[dx][dy] > 0: self.blue_pieces.remove(self.board[dx][dy])
+        self.board[dx][dy] = self.board[bx][by]
+        self.board[bx][by] = 0
+
+
+    def get_current_state(self):
+        '''返回 4*5*5 的矩阵，每一层的信息：
+        0:棋局
+        1:对手上一次的移动
+        2:目前可以移动的棋子信息
+        3:current turn,1 blue, -1 red
+        注意：调用前先获取骰子数目'''
+        state = np.zeros((4, self.width, self.height))
+        state[0] = self.board
+
+        # last move
+        if len(self.movements) != 0: 
+            # if movements is empty, do not exec
+            lx, ly, ldx, ldy = self.move_to_location(self.movements[-1])
+            state[1][ldx, ldy], state[1][lx, ly] = 1, 1
+
+
+        # move pieces
+        pieces = self.get_avaiable_pieces()
+        for piece in pieces:
+            for i in range(5):
+                for j in range(5):
+                    if piece == self.board[i][j]:
+                        state[2][i, j] = 1
+                        
+        if self.turn == ChessColor.RED: 
+            state[3][:, :] = -1
+        elif self.turn == ChessColor.BLUE: 
+            state[3][:, :] = 1
+        
+        return state    
 
 
     def initBoard(self,):
@@ -162,49 +216,22 @@ class Board:
         return True
 
     def moveChess(self, from_position, end_position):
-        '''移动棋子从起始位置到指定的位置
+        '''移动棋子从起始位置到指定的位置,通过坐标移动，主要是给前端使用的
             如果成功移动，返回True，错误返回False'''
         from_x, from_y = from_position
         end_x, end_y = end_position
 
-        # 不能原地踏步
-        if from_x == end_x and from_y == end_y:
+        move = self.location_to_move((from_x,from_y,end_x,end_y))
+
+        print(self.get_avaiable_pieces())
+        print(move)
+        print(self.get_avaiable_moves())
+
+        if move not in self.get_avaiable_moves()[1]:
             return False
-
-        # 移动的棋子
-        chess = self.board[from_x][from_y]
-
-        # 不能移动空白
-        if chess == 0:
-            return False
-
-        # 不能移动别人的棋子
-        if self.turn.value * chess < 0:
-            return False
-
-        # 棋子的移动终点是否合法
-        if self.turn.value > 0:  # 蓝方
-            # 不能向着右下方行走
-            if end_x > from_x or end_y > from_y:
-                return False
-            # 不能越界
-            if end_x < from_x - 1 or end_y < from_y - 1:
-                return False
-        else:  # 红方
-            # 不能向左上方走
-            if end_x < from_x or end_y < from_y:
-                return False
-            # 不能越界
-            if end_x > from_x + 1 or end_y > from_y + 1:
-                return False
-
-        # 行棋前先备份
-        self.backupBoard()
-
-        self.board[end_x][end_y] = self.board[from_x][from_y]
-        self.board[from_x][from_y] = 0
-
-        self.swapturn()
+        
+        
+        self.do_move(move)
 
         return True
     
