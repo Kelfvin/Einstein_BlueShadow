@@ -45,8 +45,16 @@ class MainWindow(QMainWindow):
         self.initSetOurColorCombBox()
         self.initSetDiceCombBox()
         self.initSetSenteCombBox()
+        self.initStrategySelectCombBox()
+
+
+    def initStrategySelectCombBox(self):
+        '''初始化策略选择的下拉框'''
+        self.ui.strategySelectCombBox.addItem('UCT')
+
 
     def initSetSenteCombBox(self):
+        '''初始化先手选择的下拉框'''
         self.ui.setSenteComboBox.addItem("蓝色")
         self.ui.setSenteComboBox.addItem("红色")
 
@@ -239,8 +247,33 @@ class MainWindow(QMainWindow):
         return chessNumber*sign
     
     def letAIDo():
-        '''交给AI(听天由命>_<)
+        '''交给AI做(听天由命>_<)
             后期改成可以在多个模型中进行切换，以防万一'''
+        
+#                       _oo0oo_
+#                      o8888888o
+#                      88" . "88
+#                      (| -_- |)
+#                      0\  =  /0
+#                    ___/`---'\___
+#                  .' \\|     |// '.
+#                 / \\|||  :  |||// \
+#                / _||||| -:- |||||- \
+#               |   | \\\  -  /// |   |
+#               | \_|  ''\---/''  |_/ |
+#               \  .-\__  '-'  ___/-. /
+#             ___'. .'  /--.--\  `. .'___
+#          ."" '<  `.___\_<|>_/___.' >' "".
+#         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+#         \  \ `_.   \_ __\ /__ _/   .-` /  /
+#     =====`-.____`.___ \_____/___.-`___.-'=====
+#                       `=---='
+#
+#
+#     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+#               佛祖保佑         
+
         
         # To do 这里放 传给AI的东西
 

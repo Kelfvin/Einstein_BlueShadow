@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1006</width>
-    <height>721</height>
+    <width>947</width>
+    <height>759</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,10 +28,10 @@
    <widget class="QWidget" name="verticalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>10</y>
-      <width>361</width>
-      <height>661</height>
+      <x>570</x>
+      <y>0</y>
+      <width>321</width>
+      <height>451</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -44,162 +44,171 @@
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="backButton">
+   <widget class="QWidget" name="verticalLayoutWidget_3">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>510</y>
-      <width>112</width>
-      <height>34</height>
+      <x>763</x>
+      <y>470</y>
+      <width>131</width>
+      <height>171</height>
      </rect>
     </property>
-    <property name="text">
-     <string>悔棋</string>
-    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QPushButton" name="startMatchButton">
+       <property name="text">
+        <string>开始比赛</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="diceButton">
+       <property name="text">
+        <string>PC掷骰子</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="backButton">
+       <property name="text">
+        <string>悔棋</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="replayMatchButton">
+       <property name="text">
+        <string>重新开始</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QWidget" name="verticalLayoutWidget_4">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>440</y>
-      <width>111</width>
-      <height>41</height>
+      <x>570</x>
+      <y>470</y>
+      <width>164</width>
+      <height>171</height>
      </rect>
     </property>
-    <property name="text">
-     <string>搜索深度</string>
-    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLabel" name="modeSelectLable">
+         <property name="text">
+          <string>游戏模式</string>
+         </property>
+         <property name="margin">
+          <number>0</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="gameModeSelectCombBox"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>先手</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="setSenteComboBox"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>我方颜色</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="setOurColorComboBox"/>
+       </item>
+      </layout>
+     </item>
+    </layout>
    </widget>
-   <widget class="QComboBox" name="searchDeepCombBox">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>450</y>
-      <width>91</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="diceButton">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>510</y>
-      <width>112</width>
-      <height>34</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PC掷骰子</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="startMatchButton">
+   <widget class="QWidget" name="horizontalLayoutWidget_5">
     <property name="geometry">
      <rect>
       <x>290</x>
-      <y>590</y>
-      <width>112</width>
-      <height>34</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>开始比赛</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
       <y>470</y>
-      <width>81</width>
-      <height>18</height>
+      <width>191</width>
+      <height>61</height>
      </rect>
     </property>
-    <property name="text">
-     <string>我方颜色</string>
-    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>搜索深度</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="searchDeepCombBox"/>
+     </item>
+    </layout>
    </widget>
-   <widget class="QComboBox" name="setOurColorComboBox">
+   <widget class="QWidget" name="verticalLayoutWidget_5">
     <property name="geometry">
      <rect>
-      <x>380</x>
+      <x>60</x>
       <y>470</y>
-      <width>99</width>
-      <height>24</height>
+      <width>193</width>
+      <height>121</height>
      </rect>
     </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>520</y>
-      <width>81</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>先手</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="setSenteComboBox">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>520</y>
-      <width>99</width>
-      <height>24</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="replayMatchButton">
-    <property name="geometry">
-     <rect>
-      <x>420</x>
-      <y>590</y>
-      <width>112</width>
-      <height>34</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>重新开始</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="useGivenDiceButton">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>590</y>
-      <width>121</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>指定数行走</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="setDiceComboBox">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>590</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>560</y>
-      <width>111</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>指定骰子数目</string>
-    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_5">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <item>
+        <widget class="QLabel" name="strategySelectLable">
+         <property name="text">
+          <string>策略</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="strategySelectCombBox"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QLabel" name="setDiceLable">
+         <property name="text">
+          <string>指定骰子数目</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="setDiceComboBox"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QPushButton" name="letAIDoButton">
+       <property name="text">
+        <string>AI DO</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -207,8 +216,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1006</width>
-     <height>29</height>
+     <width>947</width>
+     <height>24</height>
     </rect>
    </property>
   </widget>
