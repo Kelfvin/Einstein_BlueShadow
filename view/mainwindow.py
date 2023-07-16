@@ -146,7 +146,8 @@ class MainWindow(QMainWindow):
             self.ui.gameModeSelectCombBox.setEnabled(False)
 
             if self.mode == Mode.AI_AI:
-                while self.board.checkWin()==0:
+                while self.board.checkWin() == None:
+                    print('AI_AI')
                     self.letAIDo()
 
 
@@ -154,6 +155,12 @@ class MainWindow(QMainWindow):
             msgBox = QMessageBox()
             msgBox.setText("布局非法，请检查！")
             msgBox.exec()
+
+    @Slot(int)
+    def handleGameModeChanged(self,int):
+        for mode in Mode:
+            if mode.name ==  self.ui.gameModeSelectCombBox.currentText():
+                self.mode = mode
 
 
     @Slot(int)
@@ -194,21 +201,20 @@ class MainWindow(QMainWindow):
         
         # To do 这里放 传给AI的东西
 
-        # if self.board.getNowPlayer() == self.board.getOurColor():
-        #     if self.mode == Mode.HUMAN_AI or self.mode == Mode.HUMAN_HUMAN:
-        #         self.showMsg('不允许使用AI作弊')
-        #     else:
-        #         self.modules[self.ourStrategy](self.board.getDice(),self.board.board,self.board.ourColor)
+        if self.board.getNowPlayer() == self.board.getOurColor():
+            if self.mode == Mode.HUMAN_AI or self.mode == Mode.HUMAN_HUMAN:
+                self.showMsg('不允许使用AI作弊')
+            else:
+                fromPoint,toPoint = self.modules[self.ourStrategy](self.board.getDice(),self.board.board,self.board.ourColor)
 
-        # else:
-        #     if self.mode == Mode.AI_HUMAN or self.mode == Mode.HUMAN_HUMAN:
-        #         self.showMsg('不允许使用AI作弊')
-        #     else:
-        #         self.modules[self.ourStrategy](self.board.getDice(),self.board.board,self.board.ourColor)
+        else:
+            if self.mode == Mode.AI_HUMAN or self.mode == Mode.HUMAN_HUMAN:
+                self.showMsg('不允许使用AI作弊')
+            else:
+                fromPoint,toPoint = self.modules[self.ourStrategy](self.board.getDice(),self.board.board,self.board.ourColor)
 
-        # self.moveChess()
+        self.moveChess(fromPoint,toPoint)
 
-        print('AIGo')
 
     @Slot()
     def on_replayMatchButton_clicked(self):

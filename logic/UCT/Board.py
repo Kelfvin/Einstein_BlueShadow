@@ -20,6 +20,7 @@ class Board:
         self.quality = 0.0
         self.child = []
 
+      
         if type(dice)!=int:
             if col == 0:
                 for i in range(5):

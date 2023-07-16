@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>939</width>
-    <height>736</height>
+    <width>921</width>
+    <height>708</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -230,7 +230,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>939</width>
+     <width>921</width>
      <height>24</height>
     </rect>
    </property>
@@ -238,5 +238,42 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>letAIDoButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>letAIDo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>181</x>
+     <y>637</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>308</x>
+     <y>631</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>gameModeSelectCombBox</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>handleGameModeChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>677</x>
+     <y>516</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>647</x>
+     <y>486</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>letAIDo()</slot>
+  <slot>handleGameModeChanged(int)</slot>
+ </slots>
 </ui>

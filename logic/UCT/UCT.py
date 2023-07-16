@@ -1,11 +1,31 @@
-
 from logic.UCT.Board import *
 import time
 import random
+import threading
+import math
 
-def UCT(dice, board):
+MAXTHREADS = 3
+
+def getLocation(board, num):
+    for i in range(5):
+        for j in range(5):
+            if board[i,j] == num:
+                return (i,j)
+
+
+def UCT(dice, board, who):
     root = None
     none = None
+    if who == 1:
+        dice += 6
+    if board is not None:
+            for i in range(0,5):
+                for j in range(0,5):
+                    if board[i,j] < 0:
+                        board[i,j] = -board[i,j]
+                    elif board[i,j] >= 0:
+                        board[i,j] += 6
+
     if dice <= 6:
         root = Board(none, 0, board, dice)
     else:
@@ -20,7 +40,25 @@ def UCT(dice, board):
         end = time.time()
     
     best = MostWin(root)
-    return best
+
+    pointNeedToMove = getLocation(best.board, best.chess[0])
+
+    if dice <= 6:
+        if best.chess[1] == 0:
+            pointTarget = (pointNeedToMove[0]+1, pointNeedToMove[1])
+        elif best.chess[1] == 1:
+            pointTarget = (pointNeedToMove[0], pointNeedToMove[1]+1)
+        elif best.chess[1] == 2:
+            pointTarget = (pointNeedToMove[0]+1, pointNeedToMove[1]+1)
+    elif dice > 6:
+        if best.chess[1] == 0:
+            pointTarget = (pointNeedToMove[0]-1, pointNeedToMove[1])
+        elif best.chess[1] == 1:
+            pointTarget = (pointNeedToMove[0], pointNeedToMove[1]-1)
+        elif best.chess[1] == 2:
+            pointTarget = (pointNeedToMove[0]-1, pointNeedToMove[1]-1)        
+
+    return pointNeedToMove,pointTarget
 
 def simulate(v):
     origin = [[v.board[i][j] for j in range(5)] for i in range(5)]
