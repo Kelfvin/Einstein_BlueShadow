@@ -116,7 +116,7 @@ class MainWindow(QMainWindow):
         dice = randint(1, 6)
         self.board.setDice(dice)
 
-        str = f"{self.board.getNowPlayerStr()}投掷出了{dice}"
+        str = f"{self.board.getturnStr()}投掷出了{dice}"
         self.ui.boardStatusBar.append(str)
         
 
@@ -131,9 +131,9 @@ class MainWindow(QMainWindow):
             msgBox.setText("比赛开始！")
             msgBox.exec()
 
-            self.board.setNowPlayer(self.board.getSente())
+            self.board.setturn(self.board.getSente())
 
-            self.ui.boardStatusBar.append("现在是" + self.board.getNowPlayerStr() + "出手")
+            self.ui.boardStatusBar.append("现在是" + self.board.getturnStr() + "出手")
 
             # ui 上一些按钮的禁用和启用
             self.ui.setDiceComboBox.setEnabled(True)
@@ -219,7 +219,7 @@ class MainWindow(QMainWindow):
         
         # To do 这里放 传给AI的东西
 
-        if self.board.getNowPlayer() == self.board.getOurColor():
+        if self.board.getturn() == self.board.getOurColor():
             if self.mode == Mode.HUMAN_AI or self.mode == Mode.HUMAN_HUMAN:
                 self.showMsg('不允许使用AI作弊')
             else:
@@ -265,6 +265,7 @@ class MainWindow(QMainWindow):
     def ourTurn(self):
         '''这里写轮到我方的时候，是什么策略'''
         if self.mode == Mode.AI_AI or self.mode == Mode.AI_HUMAN:
+            self.on_diceButton_clicked()
             self.letAIDo()
 
         else:
@@ -405,7 +406,7 @@ class MainWindow(QMainWindow):
 
             win = self.board.checkWin()
             if win == None:
-                self.ui.boardStatusBar.append("现在该" + self.board.getNowPlayerStr() + "出手")
+                self.ui.boardStatusBar.append("现在该" + self.board.getturnStr() + "出手")
             elif win == ChessColor.BLUE:
                 self.showMsg("蓝方赢了！")
             else:
