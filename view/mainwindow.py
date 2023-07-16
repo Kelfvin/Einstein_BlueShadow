@@ -10,6 +10,7 @@ from random import randint
 from enums.chess import ChessColor
 from enums.mode import Mode
 from enums.strategy import Strategy
+from logic.UCT.UCT
 
 
 
@@ -317,7 +318,8 @@ class MainWindow(QMainWindow):
 
         
         # To do 这里放 传给AI的东西
-    
+        
+
 
 
     def moveChess(self, x1, y1, x2, y2):
