@@ -1,10 +1,13 @@
-from logic.UCT.Board import *
 import time
 import random
-import threading
 import math
+import copy
+from logic.UCT.Board import *
+from enums.chess import ChessColor
 
-MAXTHREADS = 3
+
+MAXTHREADS = 3 
+coe = 1.38
 
 def getLocation(board, num):
     for i in range(5):
@@ -14,22 +17,25 @@ def getLocation(board, num):
 
 
 def UCT(dice, board, who):
+    print(str(dice)+" "+str(who))
     root = None
     none = None
-    if who == 1:
+    if who == ChessColor.BLUE:
         dice += 6
-    if board is not None:
+    
+    virtualBoard = copy.deepcopy(board)  ## 拷贝
+    if virtualBoard is not None:
             for i in range(0,5):
                 for j in range(0,5):
-                    if board[i,j] < 0:
-                        board[i,j] = -board[i,j]
-                    elif board[i,j] >= 0:
-                        board[i,j] += 6
+                    if virtualBoard[i,j] < 0:
+                        virtualBoard[i,j] = -virtualBoard[i,j]
+                    elif virtualBoard[i,j] > 0:
+                       virtualBoard[i,j] += 6
 
     if dice <= 6:
-        root = Board(none, 0, board, dice)
+        root = Board(none, 0, virtualBoard, dice)
     else:
-        root = Board(none, 1, board, dice)
+        root = Board(none, 1, virtualBoard, dice)
     
     begin = time.time()
     end = time.time()
@@ -41,7 +47,11 @@ def UCT(dice, board, who):
     
     best = MostWin(root)
 
-    pointNeedToMove = getLocation(best.board, best.chess[0])
+    if who == ChessColor.BLUE: 
+        pointNeedToMove = getLocation(virtualBoard, best.chess[0]+6)
+
+    else:
+        pointNeedToMove = getLocation(virtualBoard, best.chess[0])
 
     if dice <= 6:
         if best.chess[1] == 0:
@@ -56,7 +66,13 @@ def UCT(dice, board, who):
         elif best.chess[1] == 1:
             pointTarget = (pointNeedToMove[0], pointNeedToMove[1]-1)
         elif best.chess[1] == 2:
-            pointTarget = (pointNeedToMove[0]-1, pointNeedToMove[1]-1)        
+            pointTarget = (pointNeedToMove[0]-1, pointNeedToMove[1]-1)     
+
+    print(best.chess[0])
+    print(pointNeedToMove)
+    print(pointTarget)
+    print(" ")       
+   
 
     return pointNeedToMove,pointTarget
 
@@ -94,6 +110,7 @@ def MostWin(v):
         if child.quality - max_quality > 0.0:
             max_quality = child.quality
             p = child
+           
     return p
 
 def Treepolicy(v):
@@ -120,8 +137,11 @@ def is_Expanded(v):
 
 def Expand(v):
     posChess = [[], []]
+    # print("调用了一次")
+    # print(v.posStep[0])
     for i in range(len(v.posStep[0])):
         flag = False
+        # print(str(i)+":")
         for child in v.child:
             if child.chess[0] == v.posStep[0][i] and child.chess[1] == v.posStep[1][i]:
                 flag = True
@@ -129,9 +149,27 @@ def Expand(v):
         if not flag:
             posChess[0].append(v.posStep[0][i])
             posChess[1].append(v.posStep[1][i])
+ 
+ ###### 走法重复了   
+    # if len(posChess[0])==0:
+    #     # print(v.posStep)
+    #     for i in range(len(v.posStep[0])):
+    #         for child in v.child:
+    #           if child.chess[0] == v.posStep[0][i] and child.chess[1] == v.posStep[1][i]:
+    #             #  print(str(child.chess[0])+" "+str(v.posStep[0][i])+" "+str(child.chess[1])+" "+str(v.posStep[1][i]))
+    #              count+=1
+    #              break        
     
-    index = random.randint(0, len(posChess[0])-1)
+
+    if len(posChess[0]) > 1:
+        index = random.randint(0, len(posChess[0])-1)
+    else:
+        index = 0
+    
+    
     newBoard = [[v.board[i][j] for j in range(5)] for i in range(5)]
+    oneMove(v,newBoard,posChess[0][index],posChess[1][index])
+  
     pos = [posChess[0][index], posChess[1][index]]
     newChild = Board(v, not v.color, newBoard, pos)
     v.child.append(newChild)
