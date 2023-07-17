@@ -30,7 +30,7 @@ class ResBlock(nn.Module):
         return self.conv2_act(y)
 
 
-# 搭建骨干网络，输入：N, 9, 10, 9 --> N, C, H, W
+# 搭建骨干网络，输入：N, 4, 5, 5 --> N, C, H, W
 class Net(nn.Module):
 
     def __init__(self, num_channels=256, num_res_blocks=7):
