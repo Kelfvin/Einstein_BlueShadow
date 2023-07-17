@@ -11,6 +11,7 @@ from enums.chess import ChessColor
 from enums.mode import Mode
 from enums.strategy import Strategy
 from logic.UCT.UCT import UCT
+import asyncio
 
 
 
@@ -149,6 +150,9 @@ class MainWindow(QMainWindow):
                 while self.board.checkWin() == None:
                     self.on_diceButton_clicked()
                     self.letAIDo()
+                    QApplication.processEvents()  # 等待界面更新完成
+
+                    
 
 
         else:
@@ -223,13 +227,13 @@ class MainWindow(QMainWindow):
             if self.mode == Mode.HUMAN_AI or self.mode == Mode.HUMAN_HUMAN:
                 self.showMsg('不允许使用AI作弊')
             else:
-                fromPoint,toPoint = self.modules[self.ourStrategy](self.board.getDice(),self.board.board,self.board.ourColor)
+                fromPoint,toPoint = self.modules[self.ourStrategy](self.board.getDice(),self.board.board,self.board.turn)
 
         else:
             if self.mode == Mode.AI_HUMAN or self.mode == Mode.HUMAN_HUMAN:
                 self.showMsg('不允许使用AI作弊')
             else:
-                fromPoint,toPoint = self.modules[self.ourStrategy](self.board.getDice(),self.board.board,self.board.ourColor)
+                fromPoint,toPoint = self.modules[self.ourStrategy](self.board.getDice(),self.board.board,self.board.turn)
 
 
         self.moveChess(fromPoint,toPoint)
