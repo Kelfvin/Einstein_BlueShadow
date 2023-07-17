@@ -9,16 +9,16 @@ coe = 1.38
 class Board:
     def __init__(self, par=None, col=None, a=None, dice=None):
         self.parent = par
-        self.validchess = []
-        self.chess = [0, -1]
+        self.validchess = []  
+        self.chess = [0, -1]    
         self.posStep = [[], []] #可能的走法的个数，要分种类，0水平走位、1垂直走位、2对角走位
-        self.color = col
+        self.color = col        #红色为0，蓝色为1
         self.board = np.zeros((5, 5), dtype=int)
         self.visit_times = 0
         self.win_time = 0
         self.quality = 0.0
         self.child = []
-
+        
       
         if type(dice)!=int:
             self.parent = par
@@ -26,7 +26,7 @@ class Board:
             self.chess[0] = dice[0]
             self.chess[1] = dice[1]
             if col == 0:
-                for i in range(5):
+                 for i in range(5):
                     for j in range(5):
                         temp = a[i][j]
                         self.board[i][j] = temp

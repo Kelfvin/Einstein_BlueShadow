@@ -4,25 +4,40 @@ import math
 import copy
 from logic.UCT.Board import *
 from enums.chess import ChessColor
+import sys
 
 
 MAXTHREADS = 3 
 coe = 1.38
+
+
 
 def getLocation(board, num):
     for i in range(5):
         for j in range(5):
             if board[i,j] == num:
                 return (i,j)
+def printBoard(board):
+    for i in range(0,5):
+        for j in range(0,5):
+            print(board[i])
 
 
 def UCT(dice, board, who):
+    # def wait_for_enter():
+    #     try:
+    #         input("按下 Enter 键继续...")
+    #     except KeyboardInterrupt:
+    #         # 捕获 Ctrl+C 中断
+    #         sys.exit()
     print(str(dice)+" "+str(who))
     root = None
     none = None
     if who == ChessColor.BLUE:
         dice += 6
-    
+    print(board)
+    # wait_for_enter()
+
     virtualBoard = copy.deepcopy(board)  ## 拷贝
     if virtualBoard is not None:
             for i in range(0,5):
@@ -55,25 +70,39 @@ def UCT(dice, board, who):
 
     if dice <= 6:
         if best.chess[1] == 0:
-            pointTarget = (pointNeedToMove[0]+1, pointNeedToMove[1])
-        elif best.chess[1] == 1:
             pointTarget = (pointNeedToMove[0], pointNeedToMove[1]+1)
+        elif best.chess[1] == 1:
+            pointTarget = (pointNeedToMove[0]+1, pointNeedToMove[1])
         elif best.chess[1] == 2:
             pointTarget = (pointNeedToMove[0]+1, pointNeedToMove[1]+1)
     elif dice > 6:
         if best.chess[1] == 0:
-            pointTarget = (pointNeedToMove[0]-1, pointNeedToMove[1])
-        elif best.chess[1] == 1:
             pointTarget = (pointNeedToMove[0], pointNeedToMove[1]-1)
+        elif best.chess[1] == 1:
+            pointTarget = (pointNeedToMove[0]-1, pointNeedToMove[1])
         elif best.chess[1] == 2:
-            pointTarget = (pointNeedToMove[0]-1, pointNeedToMove[1]-1)     
+            pointTarget = (pointNeedToMove[0]-1, pointNeedToMove[1]-1)   
 
-    print(best.chess[0])
+    thisColor = ""  
+    if best.color == 0:
+        thisColor = "red"
+    else:
+        thisColor = "blue"
+   
+    print(virtualBoard)
+    print(root.board)
+    print(root.posStep)
+    print(best.chess)
+    print(thisColor+"行棋  "+str(best.chess[0]))
     print(pointNeedToMove)
     print(pointTarget)
-    print(" ")       
-   
+    print(" ") 
 
+
+
+    # wait_for_enter()
+      
+   
     return pointNeedToMove,pointTarget
 
 def simulate(v):
@@ -165,6 +194,7 @@ def Expand(v):
         index = random.randint(0, len(posChess[0])-1)
     else:
         index = 0
+    
     
     
     newBoard = [[v.board[i][j] for j in range(5)] for i in range(5)]
