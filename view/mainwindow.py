@@ -10,7 +10,7 @@ from random import randint
 from enums.chess import ChessColor
 from enums.mode import Mode
 from enums.strategy import Strategy
-from logic.UCT.UCT import UCT
+from logic.UCT.UCT import UCTPlayer
 from logic.Net.pure_mcts import MCTSPlayer
 import asyncio
 
@@ -31,8 +31,8 @@ class MainWindow(QMainWindow):
         self.mode = Mode.HUMAN_HUMAN
         '''当前的对战模式'''
 
-        self.blueStrategy = Strategy.PURE_MCTS
-        self.redStrategy = Strategy.PURE_MCTS
+        self.blueStrategy = Strategy.UCT
+        self.redStrategy = Strategy.UCT
 
         self.players = {
             ChessColor.BLUE:None,
@@ -63,6 +63,7 @@ class MainWindow(QMainWindow):
         # 策略模型的初始化
 
         self.modules = {
+            Strategy.UCT:UCTPlayer,
             Strategy.PURE_MCTS: MCTSPlayer
             # Strategy.ALPHA_ZERO:
         }
@@ -162,17 +163,31 @@ class MainWindow(QMainWindow):
             self.ui.setSenteComboBox.setEnabled(False)
             self.ui.gameModeSelectCombBox.setEnabled(False)
 
-            print(self.players)
 
             if self.mode == Mode.AI_AI:
-                
-                while self.board.checkWin() == None:
-                    self.on_diceButton_clicked()
-                    turn = self.board.getturn()
-                    move = self.players[turn].get_action(self.board)
-                    self.do_move(move)
-                    QApplication.processEvents()  # 等待界面更新完成
 
+                blueWin = redWin = 0
+                
+                for i in range(20):
+                    while self.board.checkWin() == None:
+                        self.on_diceButton_clicked()
+                        turn = self.board.getturn()
+                        move = self.players[turn].get_action(self.board)
+                        self.do_move(move,show_msg=False)
+                        QApplication.processEvents()  # 等待界面更新完成
+
+                        if self.board.checkWin() == ChessColor.RED:
+                            redWin+=1
+
+                        if self.board.checkWin() == ChessColor.BLUE:
+                            blueWin+=1
+
+
+                    print(f'blue({self.blueStrategy})  vs red({self.redStrategy}) --- {redWin}:{blueWin}')
+
+                    self.board = Board()
+                    self.setBlueAgent()
+                    self.setRedAgent()
 
                     
 
@@ -181,6 +196,11 @@ class MainWindow(QMainWindow):
             msgBox = QMessageBox()
             msgBox.setText("布局非法，请检查！")
             msgBox.exec()
+
+
+        
+        
+
 
     @Slot(int)
     def handleGameModeChanged(self,int):
@@ -194,18 +214,21 @@ class MainWindow(QMainWindow):
     @Slot(int)
     def redStrategyChanged(self,int):
         for strategy in Strategy:
-            if strategy == self.ui.redStrategySelectCombBox.currentText():
+            if strategy.name == self.ui.redStrategySelectCombBox.currentText():
                 self.redStrategy = strategy
+                break
 
-        print(f'切换红方策略:{strategy}')
+
+        print(f'切换红方策略:{strategy.name}')
 
     @Slot(int)
     def blueStrategyChanged(self,int):
         for strategy in Strategy:
-            if strategy == self.ui.blueStrategySelectCombBox.currentText():
+            if strategy.name == self.ui.blueStrategySelectCombBox.currentText():
                 self.blueStrategy = strategy
+                break
 
-        print(f'切换蓝方策略:{strategy}')
+        print(f'切换蓝方策略:{strategy.name}')
 
 
     @Slot()
@@ -257,17 +280,18 @@ class MainWindow(QMainWindow):
         self.do_move(move)
 
 
-    def do_move(self,move):
+    def do_move(self,move,show_msg = True):
         self.board.do_move(move)
         self.update()
 
-        win = self.board.checkWin()
-        if win == None:
-            self.ui.boardStatusBar.append("现在该" + self.board.getturnStr() + "出手")
-        elif win == ChessColor.BLUE:
-            self.showMsg("蓝方赢了！")
-        else:
-            self.showMsg("红方赢了")
+        if show_msg:
+            win = self.board.checkWin()
+            if win == None:
+                self.ui.boardStatusBar.append("现在该" + self.board.getturnStr() + "出手")
+            elif win == ChessColor.BLUE:
+                self.showMsg("蓝方赢了！")
+            else:
+                self.showMsg("红方赢了")
 
 
     @Slot()

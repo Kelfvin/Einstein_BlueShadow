@@ -16,19 +16,16 @@ coe = 1.388
 
 class UCTPlayer(object):
     """AI player based on MCTS"""
-    def __init__(self, c_puct=5, n_playout=30000):
-        self.mcts = UCTPlayer(policy_value_fn, c_puct, n_playout)
+    def __init__(self):
         self.name = "UCT"
 
     def set_color(self, color):
         self.color = color
 
-    def reset_player(self):
-        self.mcts.update_with_move(-1, -1)
 
     def get_action(self, board):
-        move = UCT(board)
-        
+        move = UCT(board,self.color)
+        move = board.location_to_move(move)
         return move
     
 
@@ -40,12 +37,13 @@ def getLocation(board, num):
 
 
 
-def UCT(board):
+def UCT(board,who):
   
     #print(str(board.dice)+" "+str(board.who))
     root = None
     none = None
-    if board.who == ChessColor.BLUE:
+    dice = board.dice
+    if who == ChessColor.BLUE:
         dice += 6
    
     # wait_for_enter()
@@ -89,7 +87,7 @@ def UCT(board):
     
     best = MostWin(root)
 
-    if board.who == ChessColor.BLUE: 
+    if who == ChessColor.BLUE: 
         pointNeedToMove = getLocation(virtualBoard, best.chess[0]+6)
 
     else:
