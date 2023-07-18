@@ -115,10 +115,9 @@ class MCTS:
 
     def _playout(self, state):
         """
-        Run a single playout from the root to the leaf, getting a value at
-        the leaf and propagating it back through its parents.
-        State is modified in-place, so a copy must be provided.
-        state is a board instance from the game.py file.
+        从根节点到叶节点运行单个模拟，获取叶节点的值并通过其父节点传播回去。
+        状态(state)会被原地修改，因此必须提供一个副本。
+        state是来自game.py文件的棋盘实例。
         """
         node = self._root
         # ipdb.set_trace()
@@ -136,8 +135,8 @@ class MCTS:
         action_probs, leaf_value = self._policy(state)
         # Check for end of game.
         winner = state.checkWin()
-        if not winner:
-            node.expand(action_probs, state.point)
+        if winner == None:
+            node.expand(action_probs, state.dice)
         else:
             leaf_value = 1.0 if winner == state.turn else -1.0
 
@@ -146,12 +145,11 @@ class MCTS:
 
     def get_move_probs(self, state, temp=1e-3):
         """
-        Run all playouts sequentially and return the available actions and
-        their corresponding probabilities.
-        state: the current game state
-        temp: temperature parameter in (0, 1] controls the level of exploration
+        依次运行所有模拟并返回可用动作及其对应的概率。
+        参数：
 
-        2018.7.10: try to use multiprocessing to parallel this function
+        state：当前游戏状态
+        temp：温度参数，取值范围为 (0, 1]，控制探索的程度
         """
         for _ in range(self._n_playout):
             state_copy = copy.deepcopy(state)
@@ -159,7 +157,7 @@ class MCTS:
 
         # calc the move probabilities based on visit counts at the root node
         act_visits = [(act, node._n_visits)
-                      for act, node in self._root._children[state.point].items()]
+                      for act, node in self._root._children[state.dice].items()]
         acts, visits = zip(*act_visits)
         # different from the paper
         act_probs = softmax(1.0 / temp * np.log(np.array(visits) + 1e-10))
@@ -168,25 +166,24 @@ class MCTS:
 
     def cheating_move(self, qq, state, temp=1e-3):
         '''
-        This is the cheating function try to add the simulation in oppo's time
-        Only add the number of the simulation, do not need to return other paramenters
+        qq:
+        state:状态
+        这是一个作弊函数，尝试在对手的回合中添加模拟。
+        只需增加模拟次数，无需返回其他参数。
         '''
         flag = qq.get()
-        # print('Begin to auto simulation ...', self._root._n_visits)
         while flag:
             state_copy = copy.deepcopy(state)
             self._playout(state_copy)
             qq.put(True)
             flag = qq.get()
-        # print('End to auto simlulation ...', self._root._n_visits)
 
     def update_with_move(self, point, last_move):
         """
-        Step forward in the tree, keeping everything we already know
-        about the subtree.
+        在树中向前迈进，保留我们已知的有关子树的所有信息。
         """
         if point == -1:
-            # reset the tree
+            # 重置整棵树
             self._root = TreeNode(None, 1.0)
         else:
             if last_move in self._root._children[point]:
@@ -197,7 +194,7 @@ class MCTS:
 
 
 class MCTSPlayer:
-    """AI player based on MCTS"""
+    """基于蒙特卡诺树的 AI 代理"""
 
     def __init__(self, policy_value_function,
                  c_puct=5, n_playout=5000, is_selfplay=0):
@@ -212,11 +209,10 @@ class MCTSPlayer:
         self.mcts.update_with_move(-1, -1)
 
     def oppo_go_down_tree(self, point, move):
-        if not self.mcts._root._children:
+        if self.mcts._root._children == None:
             # begin chess and the mcts is empty, do not exec
             return
-        # this function collect the alphazero's oppo move, and renew the mcts
-        # print("collect the oppo point and move", point, move)
+        # 收集 alpha-zero 对手的动作，并更新蒙特卡诺树
         self.mcts.update_with_move(point, move)
 
     def haveto(self, board):
@@ -254,69 +250,14 @@ class MCTSPlayer:
                         return move
                     elif dx == 4 and dy == 3:
                         return move
-        '''            
-        if board.turn == 1:
-            # 一步之后对手可以无法被歼灭并且十分靠近我方终点并且走子概率很高
-            for move in moves:
-                bx, by, dx, dy = board.move_to_location(move)
-                if board.map[dx][dy] < 0:
-                    for deltax, deltay in [(-1, -1), (-1, 0), (0, -1)]:
-                        ddx = dx + deltax if dx + deltax >= 0 else 0
-                        ddy = dy + deltay if dy + deltay >= 0 else 0
-                        # 查询 ddx, ddy 该点是否为蓝棋的不可歼灭点
-                        flag = True
-                        for i in range(ddx + 1):
-                            for j in range(ddy + 1):
-                                if i == bx and j == by: continue
-                                if board.map[i][j] > 0:
-                                    flag = False
-                                    break
-                            if not flag: break
-                        if flag:
-                            # ddx, ddy 不可歼灭
-                            print("Hidden have to move has been activated !")
-                            return move
-        elif board.turn == 2:
-            # 一步之后我方可以无法被歼灭并且十分的靠近敌方终点并且走子概率很高
-            for move in moves:
-                bx, by, dx, dy = board.move_to_location(move)
-                if board.map[dx][dy] > 0:
-                    for deltax, deltay in [(1, 1), (1, 0), (0, 1)]:
-                        ddx = dx + deltax if dx + deltax <= 4 else 4
-                        ddy = dy + deltay if dy + deltay <= 4 else 4
-                        flag = True
-                        for i in range(ddx, 5):
-                            for j in range(ddy, 5):
-                                if i == bx and j == by: continue
-                                if board.map[i][j] < 0:
-                                    flag = False
-                                    break
-                            if not flag: break
-                        if flag:
-                            print("Hidden have to move has been activated !")
-                            return move
-        '''
 
         return None
 
-    def get_action(self, board, temp=1e-3, return_prob=0):
-        # get the point for the turns
-        while True:
-            try:
-                point = int(input("Input point (1~6): "))
-                if point <= 0 or point > 6:
-                    raise Exception()
-                break
-            except KeyboardInterrupt:
-                exit(1)
-            except:
-                print('Please input the right point to move !')
-
-        board.get_point(point)
-        print(board.point)
+    def get_action(self, board: Board, temp=1e-3, return_prob=0):
+        point = board.get_point()
         # ipdb.set_trace()
 
-        # have to
+        # 看看是不是最后一步
         move = self.haveto(board)
         if move:
             print('Have to function has been activated !')
