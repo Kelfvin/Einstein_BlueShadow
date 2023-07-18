@@ -1,12 +1,18 @@
 import numpy as np
-import copy, pprint, pickle, sys
-from policy_value_net import PolicyValueNet
-from game import Board
+import copy
+import pprint
+import pickle
+import sys
+from enums.chess import ChessColor
+from logic.Net.pytorch_net import PolicyValueNet
+from logic.board import Board
+
 
 def softmax(x):
     probs = np.exp(x - np.max(x))
     probs /= np.sum(probs)
     return probs
+
 
 class TreeNode:
     """
@@ -23,7 +29,7 @@ class TreeNode:
         self._n_visits = 0
         self._Q = 0
         self._u = 0
-        self._P = prior_p 
+        self._P = prior_p
 
     def expand(self, action_priors, point):
         """
@@ -43,10 +49,12 @@ class TreeNode:
         """
         # the game rule has a random cases in the select procedure
         board.get_point()
-        batch = self._children.get(board.point, None)    # get this point's edge
-        if not batch: return True, None    # this node is the leaf
+        # get this point's edge
+        batch = self._children.get(board.point, None)
+        if not batch:
+            return True, None    # this node is the leaf
         return False, max(batch.items(),
-                   key=lambda act_node: act_node[1].get_value(c_puct))
+                          key=lambda act_node: act_node[1].get_value(c_puct))
 
     def update(self, leaf_value):
         """
@@ -65,7 +73,8 @@ class TreeNode:
         """
         # If it is not root, this node's parent should be updated first.
         if self._parent:
-            self._parent.update_recursive(-leaf_value)    # - leaf_value because the MCTS tree is a max-min tree
+            # - leaf_value because the MCTS tree is a max-min tree
+            self._parent.update_recursive(-leaf_value)
         self.update(leaf_value)
 
     def get_value(self, c_puct):
@@ -115,7 +124,8 @@ class MCTS:
         # ipdb.set_trace()
         while True:
             is_leaf, action_node = node.select(state, self._c_puct)
-            if is_leaf: break
+            if is_leaf:
+                break
             state.do_move(action_node[0])
             node = action_node[1]
 
@@ -125,8 +135,8 @@ class MCTS:
 
         action_probs, leaf_value = self._policy(state)
         # Check for end of game.
-        end, winner = state.if_win()
-        if not end:
+        winner = state.checkWin()
+        if not winner:
             node.expand(action_probs, state.point)
         else:
             leaf_value = 1.0 if winner == state.turn else -1.0
@@ -185,6 +195,7 @@ class MCTS:
             else:
                 self._root = TreeNode(None, 1.0)
 
+
 class MCTSPlayer:
     """AI player based on MCTS"""
 
@@ -213,26 +224,36 @@ class MCTSPlayer:
         # one step to win
         for move in moves:
             bx, by, dx, dy = board.move_to_location(move)
-            if board.turn == 1:
-                if dx == 4 and dy == 4: return move
-                if len(board.blue_pieces) == 1 and board.map[dx][dy] < 0: return move
-            elif board.turn == 2:
-                if dx == 0 and dy == 0: return move
-                if len(board.red_pieces) == 1 and board.map[dx][dy] > 0: return move
+            if board.turn == ChessColor.RED:
+                if dx == 4 and dy == 4:
+                    return move
+                if len(board.blue_pieces) == 1 and board.board[dx][dy] > 0:
+                    return move
+            elif board.turn == ChessColor.BLUE:
+                if dx == 0 and dy == 0:
+                    return move
+                if len(board.red_pieces) == 1 and board.board[dx][dy] < 0:
+                    return move
 
         # one step to lose
         for move in moves:
             bx, by, dx, dy = board.move_to_location(move)
-            if board.turn == 1:
-                if board.map[dx][dy] < 0:
-                    if dx == 1 and dy == 1: return move
-                    elif dx == 1 and dy == 0: return move
-                    elif dx == 0 and dy == 1: return move
-            elif board.turn == 2:
-                if board.map[dx][dy] > 0:
-                    if dx == 3 and dy == 3: return move
-                    elif dx == 3 and dy == 4: return move
-                    elif dx == 4 and dy == 3: return move
+            if board.turn == ChessColor.RED:
+                if board.board[dx][dy] > 0:
+                    if dx == 1 and dy == 1:
+                        return move
+                    elif dx == 1 and dy == 0:
+                        return move
+                    elif dx == 0 and dy == 1:
+                        return move
+            elif board.turn == ChessColor.BLUE:
+                if board.board[dx][dy] < 0:
+                    if dx == 3 and dy == 3:
+                        return move
+                    elif dx == 3 and dy == 4:
+                        return move
+                    elif dx == 4 and dy == 3:
+                        return move
         '''            
         if board.turn == 1:
             # 一步之后对手可以无法被歼灭并且十分靠近我方终点并且走子概率很高
@@ -278,60 +299,69 @@ class MCTSPlayer:
 
         return None
 
-    def get_action(self, board, temp=1e-3, return_prob = 0):
+    def get_action(self, board, temp=1e-3, return_prob=0):
         # get the point for the turns
         while True:
             try:
                 point = int(input("Input point (1~6): "))
-                if point <= 0 or point > 6: raise Exception()
+                if point <= 0 or point > 6:
+                    raise Exception()
                 break
             except KeyboardInterrupt:
                 exit(1)
             except:
                 print('Please input the right point to move !')
-        
-        board.get_point()
+
+        board.get_point(point)
         print(board.point)
         # ipdb.set_trace()
 
-        # have to 
+        # have to
         move = self.haveto(board)
         if move:
             print('Have to function has been activated !')
-            if return_prob: return move, 1
-            else: return move
+            if return_prob:
+                return move, 1
+            else:
+                return move
 
-        acts, probs = self.mcts.get_move_probs(board, temp)    # 获得确定的点数下的走法及其对应的概率
+        acts, probs = self.mcts.get_move_probs(
+            board, temp)    # 获得确定的点数下的走法及其对应的概率
 
         # create the size 56 mcts_probs
         move_probs = np.zeros(56)
         for id, act in enumerate(acts):
-            if board.turn == 1: move_probs[board.red_legal_moves.index(act)] = probs[id]
-            else: move_probs[board.blue_legal_moves.index(act)] = probs[id]
+            if board.turn == ChessColor.RED:
+                move_probs[board.red_legal_moves.index(act)] = probs[id]
+            else:
+                move_probs[board.blue_legal_moves.index(act)] = probs[id]
 
         if self._is_selfplay:
             # add Dirichlet Noise for exploration (needed for
             # self-play training)
             move = np.random.choice(
                 acts,
-                p = 0.75 * probs + 0.25 * np.random.dirichlet(0.3 * np.ones(len(probs)))
+                p=0.75 * probs + 0.25 *
+                np.random.dirichlet(0.3 * np.ones(len(probs)))
             )
             # update the root node and reuse the search tree
-            self.mcts.update_with_move(board.point, move)
+            self.mcts.update_with_move(board.dice, move)
         else:
             # with the default temp=1e-3, it is almost equivalent
             # to choosing the move with the highest prob
 
             # 选择最大概率的走子方案
-            move = np.random.choice(acts, p = probs)
+            move = np.random.choice(acts, p=probs)
             # move = acts[np.argmax(probs)]
 
             # reset the root node
             # self.mcts.update_with_move(-1, -1)
-            
+
             # do not reset the tree, otherwise try to save the tree for the mctsplayer
             # this is not enough, also need to move from the human side
-            self.mcts.update_with_move(board.point, move)
+            self.mcts.update_with_move(board.dice, move)
 
-        if return_prob: return move, move_probs
-        else: return move
+        if return_prob:
+            return move, move_probs
+        else:
+            return move

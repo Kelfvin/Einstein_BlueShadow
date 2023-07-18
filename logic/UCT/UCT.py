@@ -34,7 +34,7 @@ def UCT(board):
    
     # wait_for_enter()
 
-    virtualBoard = copy.deepcopy(board)  ## 拷贝
+    virtualBoard = copy.deepcopy(board.board)  ## 拷贝
     if virtualBoard is not None:
             for i in range(0,5):
                 for j in range(0,5):

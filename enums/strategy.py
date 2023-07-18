@@ -6,4 +6,7 @@ class Strategy(Enum):
 
     ALPHA_ZERO = 2
     '''使用 alpha-zer算法进行搜索'''
+
+    PURE_MCTS = 3
+    '''正宗的蒙特卡洛'''
     

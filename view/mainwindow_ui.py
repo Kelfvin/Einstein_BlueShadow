@@ -72,7 +72,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayoutWidget_4 = QWidget(self.centralwidget)
         self.verticalLayoutWidget_4.setObjectName(u"verticalLayoutWidget_4")
-        self.verticalLayoutWidget_4.setGeometry(QRect(533, 470, 201, 171))
+        self.verticalLayoutWidget_4.setGeometry(QRect(573, 470, 161, 171))
         self.verticalLayout_4 = QVBoxLayout(self.verticalLayoutWidget_4)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -107,21 +107,6 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4.addLayout(self.horizontalLayout_2)
 
-        self.horizontalLayout = QHBoxLayout()
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.label_2 = QLabel(self.verticalLayoutWidget_4)
-        self.label_2.setObjectName(u"label_2")
-
-        self.horizontalLayout.addWidget(self.label_2)
-
-        self.setOurColorComboBox = QComboBox(self.verticalLayoutWidget_4)
-        self.setOurColorComboBox.setObjectName(u"setOurColorComboBox")
-
-        self.horizontalLayout.addWidget(self.setOurColorComboBox)
-
-
-        self.verticalLayout_4.addLayout(self.horizontalLayout)
-
         self.horizontalLayoutWidget_5 = QWidget(self.centralwidget)
         self.horizontalLayoutWidget_5.setObjectName(u"horizontalLayoutWidget_5")
         self.horizontalLayoutWidget_5.setGeometry(QRect(290, 470, 191, 61))
@@ -140,36 +125,36 @@ class Ui_MainWindow(object):
 
         self.verticalLayoutWidget_5 = QWidget(self.centralwidget)
         self.verticalLayoutWidget_5.setObjectName(u"verticalLayoutWidget_5")
-        self.verticalLayoutWidget_5.setGeometry(QRect(40, 470, 193, 159))
+        self.verticalLayoutWidget_5.setGeometry(QRect(32, 458, 201, 171))
         self.verticalLayout_5 = QVBoxLayout(self.verticalLayoutWidget_5)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_7 = QHBoxLayout()
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.enemyStrategySelectLable = QLabel(self.verticalLayoutWidget_5)
-        self.enemyStrategySelectLable.setObjectName(u"enemyStrategySelectLable")
+        self.redStrategySelectLable = QLabel(self.verticalLayoutWidget_5)
+        self.redStrategySelectLable.setObjectName(u"redStrategySelectLable")
 
-        self.horizontalLayout_7.addWidget(self.enemyStrategySelectLable)
+        self.horizontalLayout_7.addWidget(self.redStrategySelectLable)
 
-        self.enemyStrategySelectCombBox = QComboBox(self.verticalLayoutWidget_5)
-        self.enemyStrategySelectCombBox.setObjectName(u"enemyStrategySelectCombBox")
+        self.redStrategySelectCombBox = QComboBox(self.verticalLayoutWidget_5)
+        self.redStrategySelectCombBox.setObjectName(u"redStrategySelectCombBox")
 
-        self.horizontalLayout_7.addWidget(self.enemyStrategySelectCombBox)
+        self.horizontalLayout_7.addWidget(self.redStrategySelectCombBox)
 
 
         self.verticalLayout_5.addLayout(self.horizontalLayout_7)
 
         self.horizontalLayout_6 = QHBoxLayout()
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.ourStrategySelectLable = QLabel(self.verticalLayoutWidget_5)
-        self.ourStrategySelectLable.setObjectName(u"ourStrategySelectLable")
+        self.blueStrategySelectLable = QLabel(self.verticalLayoutWidget_5)
+        self.blueStrategySelectLable.setObjectName(u"blueStrategySelectLable")
 
-        self.horizontalLayout_6.addWidget(self.ourStrategySelectLable)
+        self.horizontalLayout_6.addWidget(self.blueStrategySelectLable)
 
-        self.ourStrategySelectCombBox = QComboBox(self.verticalLayoutWidget_5)
-        self.ourStrategySelectCombBox.setObjectName(u"ourStrategySelectCombBox")
+        self.blueStrategySelectCombBox = QComboBox(self.verticalLayoutWidget_5)
+        self.blueStrategySelectCombBox.setObjectName(u"blueStrategySelectCombBox")
 
-        self.horizontalLayout_6.addWidget(self.ourStrategySelectCombBox)
+        self.horizontalLayout_6.addWidget(self.blueStrategySelectCombBox)
 
 
         self.verticalLayout_5.addLayout(self.horizontalLayout_6)
@@ -206,8 +191,9 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         self.letAIDoButton.clicked.connect(MainWindow.letAIDo)
         self.gameModeSelectCombBox.currentIndexChanged.connect(MainWindow.handleGameModeChanged)
-        self.enemyStrategySelectCombBox.currentIndexChanged.connect(MainWindow.enemyStrategyChanged)
-        self.ourStrategySelectCombBox.currentIndexChanged.connect(MainWindow.ourStrategyChanged)
+        self.redStrategySelectCombBox.currentIndexChanged.connect(MainWindow.redStrategyChanged)
+        self.blueStrategySelectCombBox.currentIndexChanged.connect(MainWindow.blueStrategyChanged)
+        self.setDiceComboBox.currentIndexChanged.connect(MainWindow.onSetDiceComboBoxIndexChanged)
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
@@ -220,10 +206,9 @@ class Ui_MainWindow(object):
         self.replayMatchButton.setText(QCoreApplication.translate("MainWindow", u"\u91cd\u65b0\u5f00\u59cb", None))
         self.modeSelectLable.setText(QCoreApplication.translate("MainWindow", u"\u6e38\u620f\u6a21\u5f0f", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u5148\u624b", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u6211\u65b9\u989c\u8272", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"\u641c\u7d22\u6df1\u5ea6", None))
-        self.enemyStrategySelectLable.setText(QCoreApplication.translate("MainWindow", u"\u654c\u65b9\u7b56\u7565", None))
-        self.ourStrategySelectLable.setText(QCoreApplication.translate("MainWindow", u"\u6211\u65b9\u7b56\u7565", None))
+        self.redStrategySelectLable.setText(QCoreApplication.translate("MainWindow", u"\u7ea2\u65b9\u7b56\u7565", None))
+        self.blueStrategySelectLable.setText(QCoreApplication.translate("MainWindow", u"\u84dd\u65b9\u7b56\u7565", None))
         self.setDiceLable.setText(QCoreApplication.translate("MainWindow", u"\u6307\u5b9a\u9ab0\u5b50\u6570\u76ee", None))
         self.letAIDoButton.setText(QCoreApplication.translate("MainWindow", u"AI DO", None))
     # retranslateUi
