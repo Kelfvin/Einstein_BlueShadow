@@ -14,7 +14,23 @@ MAXTHREADS = 3
 coe = 1.388
 
 
+class UCTPlayer(object):
+    """AI player based on MCTS"""
+    def __init__(self, c_puct=5, n_playout=30000):
+        self.mcts = UCTPlayer(policy_value_fn, c_puct, n_playout)
+        self.name = "UCT"
 
+    def set_color(self, color):
+        self.color = color
+
+    def reset_player(self):
+        self.mcts.update_with_move(-1, -1)
+
+    def get_action(self, board):
+        move = UCT(board)
+        
+        return move
+    
 
 def getLocation(board, num):
     for i in range(5):
@@ -26,10 +42,10 @@ def getLocation(board, num):
 
 def UCT(board):
   
-    print(str(dice)+" "+str(who))
+    #print(str(board.dice)+" "+str(board.who))
     root = None
     none = None
-    if who == ChessColor.BLUE:
+    if board.who == ChessColor.BLUE:
         dice += 6
    
     # wait_for_enter()
@@ -43,16 +59,16 @@ def UCT(board):
                     elif virtualBoard[i,j] > 0:
                        virtualBoard[i,j] += 6
 
-    if dice <= 6:
-        root = Board(none, 0, virtualBoard, dice)
+    if board.dice <= 6:
+        root = Board(none, 0, virtualBoard, board.dice)
     else:
-        root = Board(none, 1, virtualBoard, dice)
+        root = Board(none, 1, virtualBoard, board.dice)
     
     begin = time.time()
     end = time.time()
     
     def action():
-        print(threading.current_thread().name)
+        #print(threading.current_thread().name)
         p = Treepolicy(root)
         lock  = threading.Lock()
         result = simulate(p)
@@ -73,7 +89,7 @@ def UCT(board):
     
     best = MostWin(root)
 
-    if who == ChessColor.BLUE: 
+    if board.who == ChessColor.BLUE: 
         pointNeedToMove = getLocation(virtualBoard, best.chess[0]+6)
 
     else:
@@ -102,7 +118,7 @@ def UCT(board):
     # wait_for_enter()
       
    
-    return pointNeedToMove, pointTarget
+    return pointNeedToMove[0],pointNeedToMove[1],pointTarget[0],pointTarget[1]
 
 def simulate(v):
     origin = [[v.board[i][j] for j in range(5)] for i in range(5)]
