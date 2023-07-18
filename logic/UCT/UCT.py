@@ -41,7 +41,7 @@ def getLocation(board, num):
 
 
 def UCT(board):
-  
+    print("执行UCT")
     #print(str(board.dice)+" "+str(board.who))
     root = None
     none = None
@@ -78,13 +78,14 @@ def UCT(board):
 
     ### 多线程并行运算
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        while end - begin < 20:
+        while end - begin < 2000:
             futures = [executor.submit(action) for _ in range(MAXTHREADS)]
            #action()
             for future in concurrent.futures.as_completed(futures):
                 pass
             
-            end = time.time()    
+            end = time.time() 
+               
         
     
     best = MostWin(root)
