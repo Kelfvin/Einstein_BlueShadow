@@ -11,6 +11,7 @@ from enums.chess import ChessColor
 from enums.mode import Mode
 from enums.strategy import Strategy
 from logic.UCT.UCT import UCT
+from logic.Net.pure_mcts import MCTSPlayer
 import asyncio
 
 
@@ -30,8 +31,15 @@ class MainWindow(QMainWindow):
         self.mode = Mode.HUMAN_HUMAN
         '''当前的对战模式'''
 
-        self.ourStrategy = Strategy.UCT
-        self.enemyStrategy = Strategy.UCT
+        self.blueStrategy = Strategy.PURE_MCTS
+        self.redStrategy = Strategy.PURE_MCTS
+
+        self.players = {
+            ChessColor.BLUE:None,
+            ChessColor.RED:None
+        }
+
+
 
 
         # 是否完成了棋盘的摆放
@@ -55,7 +63,7 @@ class MainWindow(QMainWindow):
         # 策略模型的初始化
 
         self.modules = {
-            Strategy.UCT:UCT,
+            Strategy.PURE_MCTS: MCTSPlayer
             # Strategy.ALPHA_ZERO:
         }
 
@@ -63,10 +71,22 @@ class MainWindow(QMainWindow):
         # 初始化图形界面和信号槽的绑定
         self.initUI()
 
+
+    def setRedAgent(self):
+        Agent = self.modules[self.redStrategy]()
+        Agent.set_color(ChessColor.RED)
+        self.players[ChessColor.RED] = Agent
+
+
+    def setBlueAgent(self):
+        Agent = self.modules[self.blueStrategy]()
+        Agent.set_color(ChessColor.BLUE)
+        self.players[ChessColor.BLUE] = Agent
+
+
     def initUI(self):
         '''UI元素的值进行初始化'''
         self.initSearchDeepCombBox()
-        self.initSetOurColorCombBox()
         self.initSetDiceCombBox()
         self.initSetSenteCombBox()
         self.initStrategySelectCombBox()
@@ -76,8 +96,8 @@ class MainWindow(QMainWindow):
     def initStrategySelectCombBox(self):
         '''初始化策略选择的下拉框'''
         for strategy in Strategy:
-            self.ui.ourStrategySelectCombBox.addItem(strategy.name)
-            self.ui.enemyStrategySelectCombBox.addItem(strategy.name)
+            self.ui.redStrategySelectCombBox.addItem(strategy.name)
+            self.ui.blueStrategySelectCombBox.addItem(strategy.name)
 
     
     def initGameModeSlectCombBox(self):
@@ -96,10 +116,6 @@ class MainWindow(QMainWindow):
         for i in range(1, 7):
             self.ui.searchDeepCombBox.addItem(str(i))
     
-    def initSetOurColorCombBox(self):
-        '''初始化我方队伍颜色选择的下拉框'''
-        self.ui.setOurColorComboBox.addItem("蓝色")
-        self.ui.setOurColorComboBox.addItem("红色")
 
     def initSetDiceCombBox(self):  
         '''初始化指定骰子的下拉框''' 
@@ -128,11 +144,12 @@ class MainWindow(QMainWindow):
         if checkResult:
 
             self.chessSeted = True
-            msgBox = QMessageBox()
-            msgBox.setText("比赛开始！")
-            msgBox.exec()
 
-            self.board.setturn(self.board.getSente())
+            self.setBlueAgent()
+            self.setRedAgent()
+
+            
+            self.showMsg('比赛开始！')
 
             self.ui.boardStatusBar.append("现在是" + self.board.getturnStr() + "出手")
 
@@ -143,14 +160,19 @@ class MainWindow(QMainWindow):
             self.ui.diceButton.setEnabled(True)
             self.ui.backButton.setEnabled(False)
             self.ui.setSenteComboBox.setEnabled(False)
-            self.ui.setOurColorComboBox.setEnabled(False)
             self.ui.gameModeSelectCombBox.setEnabled(False)
 
+            print(self.players)
+
             if self.mode == Mode.AI_AI:
+                
                 while self.board.checkWin() == None:
                     self.on_diceButton_clicked()
-                    self.letAIDo()
+                    turn = self.board.getturn()
+                    move = self.players[turn].get_action(self.board)
+                    self.do_move(move)
                     QApplication.processEvents()  # 等待界面更新完成
+
 
                     
 
@@ -170,26 +192,21 @@ class MainWindow(QMainWindow):
 
 
     @Slot(int)
-    def enemyStrategyChanged(self,int):
+    def redStrategyChanged(self,int):
         for strategy in Strategy:
-            if strategy == self.ui.enemyStrategySelectCombBox.currentText():
-                self.enemyStrategy = strategy
+            if strategy == self.ui.redStrategySelectCombBox.currentText():
+                self.redStrategy = strategy
 
-        print(f'切换敌方策略:{strategy}')
+        print(f'切换红方策略:{strategy}')
 
     @Slot(int)
-    def ourStrategyChanged(self,int):
+    def blueStrategyChanged(self,int):
         for strategy in Strategy:
-            if strategy == self.ui.ourStrategySelectCombBox.currentText():
-                self.ourStrategy = strategy
+            if strategy == self.ui.blueStrategySelectCombBox.currentText():
+                self.blueStrategy = strategy
 
-        print(f'切换我方策略:{strategy}')
+        print(f'切换蓝方策略:{strategy}')
 
-    @Slot(int)
-    def on_setOurColorComboBox_currentIndexChanged(self,index):
-        color = 1 if index == 0  else -1
-        self.board.setOurColor(color)
-        print(f'设置我方队伍颜色为{color}')
 
     @Slot()
     def letAIDo(self):
@@ -227,16 +244,30 @@ class MainWindow(QMainWindow):
             if self.mode == Mode.HUMAN_AI or self.mode == Mode.HUMAN_HUMAN:
                 self.showMsg('不允许使用AI作弊')
             else:
-                fromPoint,toPoint = self.modules[self.ourStrategy](self.board.getDice(),self.board.board,self.board.turn)
+                print(self.board.board)
+                move = self.modules[self.ourStrategy](self.board)
 
         else:
             if self.mode == Mode.AI_HUMAN or self.mode == Mode.HUMAN_HUMAN:
                 self.showMsg('不允许使用AI作弊')
             else:
-                fromPoint,toPoint = self.modules[self.ourStrategy](self.board.getDice(),self.board.board,self.board.turn)
+                print(self.board.board)
+                move = self.modules[self.ourStrategy](self.board)
+
+        self.do_move(move)
 
 
-        self.moveChess(fromPoint,toPoint)
+    def do_move(self,move):
+        self.board.do_move(move)
+        self.update()
+
+        win = self.board.checkWin()
+        if win == None:
+            self.ui.boardStatusBar.append("现在该" + self.board.getturnStr() + "出手")
+        elif win == ChessColor.BLUE:
+            self.showMsg("蓝方赢了！")
+        else:
+            self.showMsg("红方赢了")
 
 
     @Slot()
@@ -249,6 +280,11 @@ class MainWindow(QMainWindow):
         color = ChessColor.BLUE if index == 0 else ChessColor.RED
         self.board.setOurColor(color)
         self.ui.boardStatusBar.append(f'设置我方队伍颜色为{color.name}')
+
+    @Slot(int)
+    def onSetDiceComboBoxIndexChanged(self,index):
+        self.board.setDice(index+1)
+        self.ui.boardStatusBar.append(f'指定骰子数目为{index+1}')
 
     @Slot(int)
     def on_setSenteComboBox_currentIndexChanged(self,index):
@@ -266,8 +302,7 @@ class MainWindow(QMainWindow):
         self.update()
 
 
-    def ourTurn(self):
-        '''这里写轮到我方的时候，是什么策略'''
+    def blueTurn(self):
         if self.mode == Mode.AI_AI or self.mode == Mode.AI_HUMAN:
             self.on_diceButton_clicked()
             self.letAIDo()
@@ -276,9 +311,7 @@ class MainWindow(QMainWindow):
             pass
             # 这里就是说人来走
 
-    def enemyTurn(self):
-        '''这里写对方走的时候是什么策略。之所以这么弄是为了方便调试
-        '''
+    def redTurn(self):
         if self.mode == Mode.HUMAN_AI:
             self.letAIDo()
 

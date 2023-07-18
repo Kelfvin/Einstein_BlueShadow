@@ -4,13 +4,13 @@ from enums.chess import ChessColor
 
 
 class Board:
-    def __init__(self) -> None:
+    def __init__(self,start_player = ChessColor.BLUE,dice = 1) -> None:
         self.board = self.initBoard()
-        self.dice = 1  # 骰子的数
+        self.dice = dice  # 骰子的数
         self.boardBackup = []  # 用于备份棋盘
         self.ourColor = ChessColor.BLUE  # 我方队伍的颜色
         self.turn = ChessColor.BLUE  # 目前轮到
-        self.sente = ChessColor.BLUE   # 先手
+        self.sente = start_player   # 先手
 
         self.movements = [] # 保存行棋的历史
 
@@ -31,6 +31,14 @@ class Board:
                                  4130, 4131, 4140, 4231, 4232, 4241, 4332, 4333, 4342, 4433, 4434, 4443]
 
     
+    def showBoard(self):
+        '''打印棋盘'''
+        for x in range(5):
+            for y in range(5):
+                print (self.board[x][y],end=' ')
+
+            print()
+
 
     def get_avaiable_pieces(self):
         '''根据骰子的值，返回目前可以移动的棋子'''
@@ -67,7 +75,9 @@ class Board:
                 return collections
 
     def get_avaiable_moves(self):
-        '''根据投的骰子，得出可以进行的操作'''
+        '''根据投的骰子，得出可以进行的操作
+        moves:可进行的操作的id，也就是在list中的下标
+        true_moves:实际上的action'''
         pieces = self.get_avaiable_pieces()
         moves = []
         true_moves = []
@@ -143,7 +153,7 @@ class Board:
         2:目前可以移动的棋子信息
         3:current turn,1 blue, -1 red
         注意：调用前先获取骰子数目'''
-        state = np.zeros((4, self.width, self.height))
+        state = np.zeros((4, 5,5))
         state[0] = self.board
 
         # last move
@@ -169,8 +179,10 @@ class Board:
         return state    
 
 
-    def initBoard(self,):
+    def initBoard(self,start_player = ChessColor.BLUE):
         '''初始化默认棋盘，每次棋子的布局都是随机的，后期再来进行布局'''
+
+        self.start_player = start_player
 
         board = np.array([[-1, -1, -1, 0, 0],
                          [-1, -1,  0, 0, 0],
@@ -222,10 +234,6 @@ class Board:
         end_x, end_y = end_position
 
         move = self.location_to_move((from_x,from_y,end_x,end_y))
-
-        print(self.get_avaiable_pieces())
-        print(move)
-        print(self.get_avaiable_moves())
 
         if move not in self.get_avaiable_moves()[1]:
             return False
@@ -325,6 +333,15 @@ class Board:
     def getSente(self)->ChessColor:
         return self.sente
     
+    def get_point(self, point = None):
+        # get the point function get called in get_action or MCTS search function
+        if point: 
+            self.point = point
+        else: 
+            self.point = random.randint(1, 6)
+            # print("Point is", self.point)
+
+    
 
 
 if __name__ == '__main__':
@@ -332,3 +349,4 @@ if __name__ == '__main__':
     board.red_pieces = [1,2,4]
     board.dice = 3
     print(board.get_avaiable_pieces())
+
