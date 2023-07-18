@@ -8,7 +8,7 @@ import sys
 
 
 MAXTHREADS = 3 
-coe = 1.38
+coe = 1.388
 
 
 
@@ -17,10 +17,7 @@ def getLocation(board, num):
         for j in range(5):
             if board[i,j] == num:
                 return (i,j)
-def printBoard(board):
-    for i in range(0,5):
-        for j in range(0,5):
-            print(board[i])
+
 
 
 def UCT(dice, board, who):
@@ -35,7 +32,7 @@ def UCT(dice, board, who):
     none = None
     if who == ChessColor.BLUE:
         dice += 6
-    print(board)
+   
     # wait_for_enter()
 
     virtualBoard = copy.deepcopy(board)  ## 拷贝
@@ -54,7 +51,7 @@ def UCT(dice, board, who):
     
     begin = time.time()
     end = time.time()
-    while end - begin < 5:
+    while end - begin < 8:
         p = Treepolicy(root)
         result = simulate(p)
         Backup(p, result)
@@ -83,23 +80,11 @@ def UCT(dice, board, who):
         elif best.chess[1] == 2:
             pointTarget = (pointNeedToMove[0]-1, pointNeedToMove[1]-1)   
 
-    thisColor = ""  
-    if best.color == 0:
-        thisColor = "red"
-    else:
-        thisColor = "blue"
-   
-    print(virtualBoard)
-    print(root.board)
-    print(root.posStep)
-    print(best.chess)
-    print(thisColor+"行棋  "+str(best.chess[0]))
-    print(pointNeedToMove)
-    print(pointTarget)
-    print(" ") 
-
-
-
+    # thisColor = ""  
+    # if best.color == 0:
+    #     thisColor = "red"
+    # else:
+    #     thisColor = "blue"
     # wait_for_enter()
       
    
@@ -139,7 +124,7 @@ def MostWin(v):
         if child.quality - max_quality > 0.0:
             max_quality = child.quality
             p = child
-           
+     
     return p
 
 def Treepolicy(v):

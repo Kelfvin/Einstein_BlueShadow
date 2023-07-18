@@ -223,9 +223,7 @@ class Board:
 
         move = self.location_to_move((from_x,from_y,end_x,end_y))
 
-        print(self.get_avaiable_pieces())
-        print(move)
-        print(self.get_avaiable_moves())
+       
 
         if move not in self.get_avaiable_moves()[1]:
             return False

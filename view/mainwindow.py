@@ -44,7 +44,7 @@ class MainWindow(QMainWindow):
         self.installEventFilter(self)
 
         # 棋盘 Ui 参数
-        self.startX = 0;
+        self.startX = 0
         self.startY = 0
         self.boardWidth = 400
         self.boardHeight = self.boardWidth
@@ -254,7 +254,7 @@ class MainWindow(QMainWindow):
     def on_setSenteComboBox_currentIndexChanged(self,index):
         color = ChessColor.BLUE if index == 0 else ChessColor.RED
         self.board.setSente(color)
-        self.ui.boardStatusBar.append(f"设置先手颜色为{color.name}");
+        self.ui.boardStatusBar.append(f"设置先手颜色为{color.name}")
 
     @Slot()
     def on_backButton_clicked(self):
