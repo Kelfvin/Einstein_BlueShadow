@@ -1,3 +1,4 @@
+import concurrent.futures
 import time
 import random
 import math
@@ -5,10 +6,13 @@ import copy
 from logic.UCT.Board import *
 from enums.chess import ChessColor
 import sys
+import threading
+import time
 
 
 MAXTHREADS = 3 
 coe = 1.388
+
 
 
 
@@ -20,13 +24,8 @@ def getLocation(board, num):
 
 
 
-def UCT(dice, board, who):
-    # def wait_for_enter():
-    #     try:
-    #         input("按下 Enter 键继续...")
-    #     except KeyboardInterrupt:
-    #         # 捕获 Ctrl+C 中断
-    #         sys.exit()
+def UCT(board):
+  
     print(str(dice)+" "+str(who))
     root = None
     none = None
@@ -51,11 +50,26 @@ def UCT(dice, board, who):
     
     begin = time.time()
     end = time.time()
-    while end - begin < 8:
+    
+    def action():
+        print(threading.current_thread().name)
         p = Treepolicy(root)
+        lock  = threading.Lock()
         result = simulate(p)
-        Backup(p, result)
-        end = time.time()
+        lock.acquire()
+        Backup(p,result,lock)
+        lock.release()
+
+    ### 多线程并行运算
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        while end - begin < 20:
+            futures = [executor.submit(action) for _ in range(MAXTHREADS)]
+           #action()
+            for future in concurrent.futures.as_completed(futures):
+                pass
+            
+            end = time.time()    
+        
     
     best = MostWin(root)
 
@@ -88,7 +102,7 @@ def UCT(dice, board, who):
     # wait_for_enter()
       
    
-    return pointNeedToMove,pointTarget
+    return pointNeedToMove, pointTarget
 
 def simulate(v):
     origin = [[v.board[i][j] for j in range(5)] for i in range(5)]
@@ -109,13 +123,17 @@ def simulate(v):
     
     return result
 
-def Backup(v, result):
+def Backup(v, result, lock):
+   
     while v:
         v.visit_times += 1
         if v.color ^ result:
             v.win_time += 1
         v.quality = v.win_time / v.visit_times
         v = v.parent
+    
+
+       
 
 def MostWin(v):
     p = None
@@ -128,26 +146,13 @@ def MostWin(v):
     return p
 
 def Treepolicy(v):
+    #print("当前线程名："+threading.current_thread().name)
     while not is_Terminal(v):
         if not is_Expanded(v):
             return Expand(v)
         else:
             v = BestChild(v, coe)
     return v
-
-def is_Terminal(v):
-    red = sum(1 for i in range(5) for j in range(5) if 1 <= v.board[i][j] <= 6)
-    blue = sum(1 for i in range(5) for j in range(5) if v.board[i][j] >= 7)
-    if red == 0 or blue == 0 or v.board[0][0] >= 7 or (1 <= v.board[4][4] <= 6):
-        return True
-    else:
-        return False
-
-def is_Expanded(v):
-    if len(v.posStep[0]) > len(v.child):
-        return False
-    else:
-        return True
 
 def Expand(v):
     posChess = [[], []]
@@ -179,8 +184,7 @@ def Expand(v):
         index = random.randint(0, len(posChess[0])-1)
     else:
         index = 0
-    
-    
+       
     
     newBoard = [[v.board[i][j] for j in range(5)] for i in range(5)]
     oneMove(v,newBoard,posChess[0][index],posChess[1][index])
@@ -190,6 +194,20 @@ def Expand(v):
     v.child.append(newChild)
     return newChild
 
+
+def is_Terminal(v):
+    red = sum(1 for i in range(5) for j in range(5) if 1 <= v.board[i][j] <= 6)
+    blue = sum(1 for i in range(5) for j in range(5) if v.board[i][j] >= 7)
+    if red == 0 or blue == 0 or v.board[0][0] >= 7 or (1 <= v.board[4][4] <= 6):
+        return True
+    else:
+        return False
+
+def is_Expanded(v):
+    if len(v.posStep[0]) > len(v.child):
+        return False
+    else:
+        return True
 
 def BestChild(v, c):
     q = None
@@ -388,3 +406,10 @@ def RandomMove(v, col):
                     v.board[x][y] = 0
     return not col
 
+def wait_for_enter():
+    try:
+        # Python 3
+        input("按下 Enter 键继续...")
+    except KeyboardInterrupt:
+        # 捕获 Ctrl+C 中断
+        sys.exit()

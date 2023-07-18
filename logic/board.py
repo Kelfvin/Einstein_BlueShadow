@@ -3,6 +3,7 @@ import numpy as np
 from enums.chess import ChessColor
 
 
+
 class Board:
     def __init__(self) -> None:
         self.board = self.initBoard()
