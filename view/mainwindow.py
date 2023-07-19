@@ -11,7 +11,7 @@ from random import randint
 from enums.chess import ChessColor
 from enums.mode import Mode
 from enums.strategy import Strategy
-from logic.UCT.UCT import UCTPlayer
+from logic.UCT.UCT import UCT
 from logic.Net.pure_mcts import MCTSPlayer
 import asyncio
 import time
@@ -33,8 +33,8 @@ class MainWindow(QMainWindow):
         self.mode = Mode.HUMAN_HUMAN
         '''当前的对战模式'''
 
-        self.blueStrategy = Strategy.UCT
-        self.redStrategy = Strategy.UCT
+        self.blueStrategy = Strategy.PURE_MCTS
+        self.redStrategy = Strategy.PURE_MCTS
 
         self.players = {
             ChessColor.BLUE:None,
@@ -208,11 +208,6 @@ class MainWindow(QMainWindow):
             msgBox.setText("布局非法，请检查！")
             msgBox.exec()
 
-
-        
-        
-
-
     @Slot(int)
     def handleGameModeChanged(self,int):
         for mode in Mode:
@@ -225,21 +220,18 @@ class MainWindow(QMainWindow):
     @Slot(int)
     def redStrategyChanged(self,int):
         for strategy in Strategy:
-            if strategy.name == self.ui.redStrategySelectCombBox.currentText():
+            if strategy == self.ui.redStrategySelectCombBox.currentText():
                 self.redStrategy = strategy
-                break
 
-
-        print(f'切换红方策略:{strategy.name}')
+        print(f'切换红方策略:{strategy}')
 
     @Slot(int)
     def blueStrategyChanged(self,int):
         for strategy in Strategy:
-            if strategy.name == self.ui.blueStrategySelectCombBox.currentText():
+            if strategy == self.ui.blueStrategySelectCombBox.currentText():
                 self.blueStrategy = strategy
-                break
 
-        print(f'切换蓝方策略:{strategy.name}')
+        print(f'切换蓝方策略:{strategy}')
 
 
     @Slot()
@@ -280,18 +272,17 @@ class MainWindow(QMainWindow):
             self.do_move(move)
 
 
-    def do_move(self,move,show_msg = True):
+    def do_move(self,move):
         self.board.do_move(move)
         self.update()
 
-        if show_msg:
-            win = self.board.checkWin()
-            if win == None:
-                self.ui.boardStatusBar.append("现在该" + self.board.getturnStr() + "出手")
-            elif win == ChessColor.BLUE:
-                self.showMsg("蓝方赢了！")
-            else:
-                self.showMsg("红方赢了")
+        win = self.board.checkWin()
+        if win == None:
+            self.ui.boardStatusBar.append("现在该" + self.board.getturnStr() + "出手")
+        elif win == ChessColor.BLUE:
+            self.showMsg("蓝方赢了！")
+        else:
+            self.showMsg("红方赢了")
 
 
     @Slot()
