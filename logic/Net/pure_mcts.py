@@ -13,26 +13,20 @@ def rollout_policy_fn(board):
     return zip(true_moves, action_probs)
 
 
-def policy_value_fn(board):
-    """a function that takes in a state and outputs a list of (action, probability)
-    tuples and a score for the state"""
-    # return uniform probabilities and 0 score for pure MCTS
-    moves, true_moves = board.get_avaiable_moves()
-    action_probs = np.ones(len(moves)) / len(moves)
-    return zip(true_moves, action_probs), 0
-
-
 class TreeNode:
     """
-    A node in the MCTS tree.
-
     蒙特卡诺树中的一个节点。
-    每个节点都跟踪其自身的值Q，先前的概率P以及其访问计数调整的先前分数u。
+    children: a dictionary from action to TreeNode.
+        key: action 骰子点数
+        value: TreeNode
+    n_visits: 该节点被访问的次数。
+    Q: 该节点的平均动作价值。
+    u: 该节点的置信上限。
+    P: 该节点的先验概率。
     """
 
     def __init__(self, parent, prior_p):
-        self._parent = parent    # root's parent is None
-        # {1: {}, 2：{}, 3:{}, 4:{}, 5:{}, 6:{treenode, treenode, treenode, ...}}
+        self._parent = parent    # 父节点 root节点的父节点为None
         self._children = {}
         self._n_visits = 0
         self._Q = 0
@@ -41,9 +35,9 @@ class TreeNode:
 
     def expand(self, action_priors, point):
         """
-        Expand tree by creating new children.
-        action_priors: a list of tuples of actions and their prior probability
-        according to the policy function.
+        扩展树，创建新的子节点。
+        action_priors: 一个动作和它们的先验概率的元组列表
+        根据策略函数。
         """
         self._children[point] = {}
         for action, prob in action_priors:
@@ -51,36 +45,37 @@ class TreeNode:
 
     def select(self, board, c_puct):
         """
-        Select action among children that gives maximum action value Q
-        plus bonus u(P).
-        Return: A tuple of (action, next_node)
+        选择动作。
+        通过 Max Q + U 选择动作。 UCT公式
+        返回: A tuple of (action, next_node)
         """
-        # the game rule has a random cases in the select procedure
+
+        # 获取当前棋盘的点数
         board.get_point()
         batch = self._children.get(board.dice, None)    # get this point's edge
         if not batch:
             return True, None    # this node is the leaf
         return False, max(batch.items(),
-                          key=lambda act_node: act_node[1].get_value(c_puct))
+                          key=lambda act_node: act_node[1].get_value(c_puct))  # 返回最大值的键值对
 
     def update(self, leaf_value):
         """
-        Update node values from leaf evaluation.
-        leaf_value: the value of subtree evaluation from the current player's
-        perspective.
+        更新节点值从叶子评估。
+        leaf_value: 从当前玩家的角度来看，子树评估的值。
         """
+
         # Count visit.
         self._n_visits += 1
-        # Update Q, a running average of values for all visits.   wtf ??? this line is rigth but kind of wired !
+        # 更新Q，所有访问的值的运行平均值。 wtf？？？这行是对的，但有点奇怪！
         self._Q += 1.0 * (leaf_value - self._Q) / self._n_visits
 
     def update_recursive(self, leaf_value):
         """
-        Like a call to update(), but applied recursively for all ancestors.
+        像调用update()一样，但递归地应用于所有祖先。
         """
-        # If it is not root, this node's parent should be updated first.
+        # 如果不是根节点，应该先更新此节点的父节点。
         if self._parent:
-            # - leaf_value because the MCTS tree is a max-min tree
+            # 叶子值是从当前玩家的角度来看的，所以要取反
             self._parent.update_recursive(-leaf_value)
         self.update(leaf_value)
 
@@ -91,8 +86,7 @@ class TreeNode:
         c_puct：控制相对影响的数字
         值Q和先前概率P，对此节点的分数。
         """
-        self._u = (c_puct * self._P *
-                   np.sqrt(self._parent._n_visits) / (1 + self._n_visits))
+        self._u = c_puct * np.sqrt(np.log(self._parent._n_visits) / (1 + self._n_visits))
         return self._Q + self._u
 
     def is_root(self):
@@ -104,10 +98,8 @@ class MCTS:
     An implementation of Monte Carlo Tree Search.
     """
 
-    def __init__(self, policy_value_fn, c_puct=5, n_playout=10000):
+    def __init__(self,c_puct=1.414, n_playout=50000):
         """
-        policy_value_fn: 一个函数，接受一个棋盘状态作为输入，并输出一个由动作和概率组成的列表，还有一个在[-1, 1]范围内的分数（即从当前玩家的角度看，游戏结束时的预期价值）。
-
         c_puct: 一个在(0, 无穷大)范围内的数值，用于控制探索如何快速收敛到最大价值策略。较高的值意味着更依赖先前的策略。
         """
         self._root = TreeNode(None, 1.0)
@@ -195,8 +187,8 @@ class MCTS:
 class MCTSPlayer(object):
     """AI player based on MCTS"""
 
-    def __init__(self, c_puct=1.38, n_playout=50000):
-        self.mcts = MCTS(policy_value_fn, c_puct, n_playout)
+    def __init__(self, c_puct=1.414, n_playout=50000):
+        self.mcts = MCTS(c_puct, n_playout)
         self.name = "puremcts"
 
     def set_color(self, color):
