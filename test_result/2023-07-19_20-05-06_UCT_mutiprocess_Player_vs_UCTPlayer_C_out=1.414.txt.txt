@@ -1,0 +1,4447 @@
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>)
+filename:2023-07-19_20-05-06_UCT_mutiprocess_Player_vs_UCTPlayer_C_out=1.414.txt
+
+第1局
+first_player: ChessColor.BLUE
+[[-5 -6 -1  0  0]
+ [-3 -2  0  0  0]
+ [-4  0  0  0  3]
+ [ 0  0  0  2  4]
+ [ 0  0  5  1  6]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.009121179580688
+move:3423
+[[-5 -6 -1  0  0]
+ [-3 -2  0  0  0]
+ [-4  0  0  0  3]
+ [ 0  0  1  2  4]
+ [ 0  0  5  0  6]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00055193901062
+move:2031
+[[-5 -6  0  0  0]
+ [-3 -2  0 -1  0]
+ [-4  0  0  0  3]
+ [ 0  0  1  2  4]
+ [ 0  0  5  0  6]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000173091888428
+move:4433
+[[-5 -6  0  0  0]
+ [-3 -2  0 -1  0]
+ [-4  0  0  0  3]
+ [ 0  0  1  6  4]
+ [ 0  0  5  0  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000751972198486
+move:1122
+[[-5 -6  0  0  0]
+ [-3  0  0 -1  0]
+ [-4  0 -2  0  3]
+ [ 0  0  1  6  4]
+ [ 0  0  5  0  0]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000149965286255
+move:4332
+[[-5 -6  0  0  0]
+ [-3  0  0 -1  0]
+ [-4  0 -2  4  3]
+ [ 0  0  1  6  0]
+ [ 0  0  5  0  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000619649887085
+move:1011
+[[-5  0  0  0  0]
+ [-3 -6  0 -1  0]
+ [-4  0 -2  4  3]
+ [ 0  0  1  6  0]
+ [ 0  0  5  0  0]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00010895729065
+move:2322
+[[-5  0  0  0  0]
+ [-3 -6  0 -1  0]
+ [-4  0  1  4  3]
+ [ 0  0  0  6  0]
+ [ 0  0  5  0  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000493049621582
+move:1112
+[[-5  0  0  0  0]
+ [-3  0  0 -1  0]
+ [-4 -6  1  4  3]
+ [ 0  0  0  6  0]
+ [ 0  0  5  0  0]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00006914138794
+move:2211
+[[-5  0  0  0  0]
+ [-3  1  0 -1  0]
+ [-4 -6  0  4  3]
+ [ 0  0  0  6  0]
+ [ 0  0  5  0  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000262975692749
+move:111
+[[-5  0  0  0  0]
+ [ 0 -3  0 -1  0]
+ [-4 -6  0  4  3]
+ [ 0  0  0  6  0]
+ [ 0  0  5  0  0]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000122308731079
+move:2413
+[[-5  0  0  0  0]
+ [ 0 -3  0 -1  0]
+ [-4 -6  0  4  3]
+ [ 0  5  0  6  0]
+ [ 0  0  0  0  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000200986862183
+move:1122
+[[-5  0  0  0  0]
+ [ 0  0  0 -1  0]
+ [-4 -6 -3  4  3]
+ [ 0  5  0  6  0]
+ [ 0  0  0  0  0]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000115156173706
+move:3222
+[[-5  0  0  0  0]
+ [ 0  0  0 -1  0]
+ [-4 -6  4  0  3]
+ [ 0  5  0  6  0]
+ [ 0  0  0  0  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000288963317871
+move:1
+[[ 0  0  0  0  0]
+ [-5  0  0 -1  0]
+ [-4 -6  4  0  3]
+ [ 0  5  0  6  0]
+ [ 0  0  0  0  0]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000112056732178
+move:4231
+[[ 0  0  0  0  0]
+ [-5  0  0  3  0]
+ [-4 -6  4  0  0]
+ [ 0  5  0  6  0]
+ [ 0  0  0  0  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000258207321167
+move:102
+[[ 0  0  0  0  0]
+ [ 0  0  0  3  0]
+ [-5 -6  4  0  0]
+ [ 0  5  0  6  0]
+ [ 0  0  0  0  0]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000144243240356
+move:3120
+[[ 0  0  3  0  0]
+ [ 0  0  0  0  0]
+ [-5 -6  4  0  0]
+ [ 0  5  0  6  0]
+ [ 0  0  0  0  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000108003616333
+move:212
+[[ 0  0  3  0  0]
+ [ 0  0  0  0  0]
+ [ 0 -5  4  0  0]
+ [ 0  5  0  6  0]
+ [ 0  0  0  0  0]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000057220458984
+move:2212
+********************
+
+第1局结束，用时152.0172519683838秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 1:0
+
+第2局
+first_player: ChessColor.RED
+[[-5 -1 -4  0  0]
+ [-6 -2  0  0  0]
+ [-3  0  0  0  4]
+ [ 0  0  0  6  1]
+ [ 0  0  2  5  3]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000111818313599
+move:2413
+[[-5 -1 -4  0  0]
+ [-6 -2  0  0  0]
+ [-3  0  0  0  4]
+ [ 0  2  0  6  1]
+ [ 0  0  0  5  3]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000769138336182
+move:111
+[[-5 -1 -4  0  0]
+ [ 0 -6  0  0  0]
+ [-3  0  0  0  4]
+ [ 0  2  0  6  1]
+ [ 0  0  0  5  3]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000186681747437
+move:1302
+[[-5 -1 -4  0  0]
+ [ 0 -6  0  0  0]
+ [ 2  0  0  0  4]
+ [ 0  0  0  6  1]
+ [ 0  0  0  5  3]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00047492980957
+move:1122
+[[-5 -1 -4  0  0]
+ [ 0  0  0  0  0]
+ [ 2  0 -6  0  4]
+ [ 0  0  0  6  1]
+ [ 0  0  0  5  3]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000247955322266
+move:3433
+[[-5 -1 -4  0  0]
+ [ 0  0  0  0  0]
+ [ 2  0 -6  0  4]
+ [ 0  0  0  5  1]
+ [ 0  0  0  0  3]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000387907028198
+move:2031
+[[-5 -1  0  0  0]
+ [ 0  0  0 -4  0]
+ [ 2  0 -6  0  4]
+ [ 0  0  0  5  1]
+ [ 0  0  0  0  3]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000081062316895
+move:4231
+[[-5 -1  0  0  0]
+ [ 0  0  0  4  0]
+ [ 2  0 -6  0  0]
+ [ 0  0  0  5  1]
+ [ 0  0  0  0  3]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000302791595459
+move:1021
+[[-5  0  0  0  0]
+ [ 0  0 -1  4  0]
+ [ 2  0 -6  0  0]
+ [ 0  0  0  5  1]
+ [ 0  0  0  0  3]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000044107437134
+move:4333
+[[-5  0  0  0  0]
+ [ 0  0 -1  4  0]
+ [ 2  0 -6  0  0]
+ [ 0  0  0  1  0]
+ [ 0  0  0  0  3]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000138998031616
+move:2233
+[[-5  0  0  0  0]
+ [ 0  0 -1  4  0]
+ [ 2  0  0  0  0]
+ [ 0  0  0 -6  0]
+ [ 0  0  0  0  3]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00007700920105
+move:3120
+[[-5  0  4  0  0]
+ [ 0  0 -1  0  0]
+ [ 2  0  0  0  0]
+ [ 0  0  0 -6  0]
+ [ 0  0  0  0  3]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000590085983276
+move:2132
+[[-5  0  4  0  0]
+ [ 0  0  0  0  0]
+ [ 2  0  0 -1  0]
+ [ 0  0  0 -6  0]
+ [ 0  0  0  0  3]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000117778778076
+move:2010
+[[-5  4  0  0  0]
+ [ 0  0  0  0  0]
+ [ 2  0  0 -1  0]
+ [ 0  0  0 -6  0]
+ [ 0  0  0  0  3]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000172138214111
+move:10
+[[ 0 -5  0  0  0]
+ [ 0  0  0  0  0]
+ [ 2  0  0 -1  0]
+ [ 0  0  0 -6  0]
+ [ 0  0  0  0  3]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000062942504883
+move:4433
+[[ 0 -5  0  0  0]
+ [ 0  0  0  0  0]
+ [ 2  0  0 -1  0]
+ [ 0  0  0  3  0]
+ [ 0  0  0  0  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000290155410767
+move:1021
+[[ 0  0  0  0  0]
+ [ 0  0 -5  0  0]
+ [ 2  0  0 -1  0]
+ [ 0  0  0  3  0]
+ [ 0  0  0  0  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000069856643677
+move:3332
+[[ 0  0  0  0  0]
+ [ 0  0 -5  0  0]
+ [ 2  0  0  3  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000077962875366
+move:2122
+[[ 0  0  0  0  0]
+ [ 0  0  0  0  0]
+ [ 2  0 -5  3  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000059127807617
+move:3222
+********************
+
+第2局结束，用时152.0079050064087秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 2:0
+
+第3局
+first_player: ChessColor.BLUE
+[[-3 -1 -6  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  6  1]
+ [ 0  0  4  3  2]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000230073928833
+move:4231
+[[-3 -1 -6  0  0]
+ [-2 -4  0  5  0]
+ [-5  0  0  0  0]
+ [ 0  0  0  6  1]
+ [ 0  0  4  3  2]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00053095817566
+move:1122
+[[-3 -1 -6  0  0]
+ [-2  0  0  5  0]
+ [-5  0 -4  0  0]
+ [ 0  0  0  6  1]
+ [ 0  0  4  3  2]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000221967697144
+move:4433
+[[-3 -1 -6  0  0]
+ [-2  0  0  5  0]
+ [-5  0 -4  0  0]
+ [ 0  0  0  2  1]
+ [ 0  0  4  3  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000190019607544
+move:1
+[[ 0 -1 -6  0  0]
+ [-3  0  0  5  0]
+ [-5  0 -4  0  0]
+ [ 0  0  0  2  1]
+ [ 0  0  4  3  0]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000034093856812
+move:2413
+[[ 0 -1 -6  0  0]
+ [-3  0  0  5  0]
+ [-5  0 -4  0  0]
+ [ 0  4  0  2  1]
+ [ 0  0  0  3  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000644207000732
+move:1020
+[[ 0  0 -1  0  0]
+ [-3  0  0  5  0]
+ [-5  0 -4  0  0]
+ [ 0  4  0  2  1]
+ [ 0  0  0  3  0]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.0001699924469
+move:3423
+[[ 0  0 -1  0  0]
+ [-3  0  0  5  0]
+ [-5  0 -4  0  0]
+ [ 0  4  3  2  1]
+ [ 0  0  0  0  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000514030456543
+move:212
+[[ 0  0 -1  0  0]
+ [-3  0  0  5  0]
+ [ 0 -5 -4  0  0]
+ [ 0  4  3  2  1]
+ [ 0  0  0  0  0]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000111818313599
+move:2322
+[[ 0  0 -1  0  0]
+ [-3  0  0  5  0]
+ [ 0 -5  3  0  0]
+ [ 0  4  0  2  1]
+ [ 0  0  0  0  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000148057937622
+move:1223
+[[ 0  0 -1  0  0]
+ [-3  0  0  5  0]
+ [ 0  0  3  0  0]
+ [ 0  4 -5  2  1]
+ [ 0  0  0  0  0]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000246047973633
+move:3121
+[[ 0  0 -1  0  0]
+ [-3  0  5  0  0]
+ [ 0  0  3  0  0]
+ [ 0  4 -5  2  1]
+ [ 0  0  0  0  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000143051147461
+move:112
+[[ 0  0 -1  0  0]
+ [ 0  0  5  0  0]
+ [ 0 -3  3  0  0]
+ [ 0  4 -5  2  1]
+ [ 0  0  0  0  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000237941741943
+move:2110
+[[ 0  5 -1  0  0]
+ [ 0  0  0  0  0]
+ [ 0 -3  3  0  0]
+ [ 0  4 -5  2  1]
+ [ 0  0  0  0  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000110149383545
+move:2334
+[[ 0  5 -1  0  0]
+ [ 0  0  0  0  0]
+ [ 0 -3  3  0  0]
+ [ 0  4  0  2  1]
+ [ 0  0  0 -5  0]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000061750411987
+move:1302
+[[ 0  5 -1  0  0]
+ [ 0  0  0  0  0]
+ [ 4 -3  3  0  0]
+ [ 0  0  0  2  1]
+ [ 0  0  0 -5  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000098943710327
+move:1223
+[[ 0  5 -1  0  0]
+ [ 0  0  0  0  0]
+ [ 4  0  3  0  0]
+ [ 0  0 -3  2  1]
+ [ 0  0  0 -5  0]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000056743621826
+move:1000
+********************
+
+第3局结束，用时136.00761890411377秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 3:0
+
+第4局
+first_player: ChessColor.RED
+[[-1 -2 -3  0  0]
+ [-4 -5  0  0  0]
+ [-6  0  0  0  2]
+ [ 0  0  0  5  6]
+ [ 0  0  1  4  3]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000046968460083
+move:2413
+[[-1 -2 -3  0  0]
+ [-4 -5  0  0  0]
+ [-6  0  0  0  2]
+ [ 0  1  0  5  6]
+ [ 0  0  0  4  3]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000566005706787
+move:102
+[[-1 -2 -3  0  0]
+ [ 0 -5  0  0  0]
+ [-4  0  0  0  2]
+ [ 0  1  0  5  6]
+ [ 0  0  0  4  3]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000054121017456
+move:4332
+[[-1 -2 -3  0  0]
+ [ 0 -5  0  0  0]
+ [-4  0  0  6  2]
+ [ 0  1  0  5  0]
+ [ 0  0  0  4  3]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000421285629272
+move:1122
+[[-1 -2 -3  0  0]
+ [ 0  0  0  0  0]
+ [-4  0 -5  6  2]
+ [ 0  1  0  5  0]
+ [ 0  0  0  4  3]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000180959701538
+move:3322
+[[-1 -2 -3  0  0]
+ [ 0  0  0  0  0]
+ [-4  0  5  6  2]
+ [ 0  1  0  0  0]
+ [ 0  0  0  4  3]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000633955001831
+move:213
+[[-1 -2 -3  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  5  6  2]
+ [ 0 -4  0  0  0]
+ [ 0  0  0  4  3]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000174283981323
+move:2211
+[[-1 -2 -3  0  0]
+ [ 0  5  0  0  0]
+ [ 0  0  0  6  2]
+ [ 0 -4  0  0  0]
+ [ 0  0  0  4  3]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00052809715271
+move:1324
+[[-1 -2 -3  0  0]
+ [ 0  5  0  0  0]
+ [ 0  0  0  6  2]
+ [ 0  0  0  0  0]
+ [ 0  0 -4  4  3]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000047206878662
+move:4232
+[[-1 -2 -3  0  0]
+ [ 0  5  0  0  0]
+ [ 0  0  0  2  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -4  4  3]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00022006034851
+move:1011
+[[-1  0 -3  0  0]
+ [ 0 -2  0  0  0]
+ [ 0  0  0  2  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -4  4  3]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000083923339844
+move:3424
+[[-1  0 -3  0  0]
+ [ 0 -2  0  0  0]
+ [ 0  0  0  2  0]
+ [ 0  0  0  0  0]
+ [ 0  0  4  0  3]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000372886657715
+move:2031
+[[-1  0  0  0  0]
+ [ 0 -2  0 -3  0]
+ [ 0  0  0  2  0]
+ [ 0  0  0  0  0]
+ [ 0  0  4  0  3]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000149965286255
+move:3231
+[[-1  0  0  0  0]
+ [ 0 -2  0  2  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  4  0  3]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00013017654419
+move:11
+[[ 0  0  0  0  0]
+ [ 0 -1  0  2  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  4  0  3]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000249862670898
+move:2423
+[[ 0  0  0  0  0]
+ [ 0 -1  0  2  0]
+ [ 0  0  0  0  0]
+ [ 0  0  4  0  0]
+ [ 0  0  0  0  3]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000202894210815
+move:1122
+[[ 0  0  0  0  0]
+ [ 0  0  0  2  0]
+ [ 0  0 -1  0  0]
+ [ 0  0  4  0  0]
+ [ 0  0  0  0  3]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000021934509277
+move:3120
+[[ 0  0  2  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -1  0  0]
+ [ 0  0  4  0  0]
+ [ 0  0  0  0  3]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000133991241455
+move:2232
+[[ 0  0  2  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0 -1  0]
+ [ 0  0  4  0  0]
+ [ 0  0  0  0  3]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000123023986816
+move:2010
+[[ 0  2  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0 -1  0]
+ [ 0  0  4  0  0]
+ [ 0  0  0  0  3]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000088691711426
+move:3243
+[[ 0  2  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  4  0 -1]
+ [ 0  0  0  0  3]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00006103515625
+move:2312
+[[ 0  2  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  4  0  0  0]
+ [ 0  0  0  0 -1]
+ [ 0  0  0  0  3]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000102043151855
+move:4344
+********************
+
+第4局结束，用时176.0098750591278秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 3:1
+
+第5局
+first_player: ChessColor.BLUE
+[[-3 -2 -6  0  0]
+ [-1 -5  0  0  0]
+ [-4  0  0  0  6]
+ [ 0  0  0  1  4]
+ [ 0  0  3  5  2]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00012493133545
+move:4433
+[[-3 -2 -6  0  0]
+ [-1 -5  0  0  0]
+ [-4  0  0  0  6]
+ [ 0  0  0  2  4]
+ [ 0  0  3  5  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00021481513977
+move:2031
+[[-3 -2  0  0  0]
+ [-1 -5  0 -6  0]
+ [-4  0  0  0  6]
+ [ 0  0  0  2  4]
+ [ 0  0  3  5  0]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000040054321289
+move:4332
+[[-3 -2  0  0  0]
+ [-1 -5  0 -6  0]
+ [-4  0  0  4  6]
+ [ 0  0  0  2  0]
+ [ 0  0  3  5  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00045108795166
+move:11
+[[ 0 -2  0  0  0]
+ [-1 -3  0 -6  0]
+ [-4  0  0  4  6]
+ [ 0  0  0  2  0]
+ [ 0  0  3  5  0]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00012993812561
+move:3433
+[[ 0 -2  0  0  0]
+ [-1 -3  0 -6  0]
+ [-4  0  0  4  6]
+ [ 0  0  0  5  0]
+ [ 0  0  3  0  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000489950180054
+move:1011
+[[ 0  0  0  0  0]
+ [-1 -2  0 -6  0]
+ [-4  0  0  4  6]
+ [ 0  0  0  5  0]
+ [ 0  0  3  0  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000149011611938
+move:4231
+[[ 0  0  0  0  0]
+ [-1 -2  0  6  0]
+ [-4  0  0  4  0]
+ [ 0  0  0  5  0]
+ [ 0  0  3  0  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000558137893677
+move:213
+[[ 0  0  0  0  0]
+ [-1 -2  0  6  0]
+ [ 0  0  0  4  0]
+ [ 0 -4  0  5  0]
+ [ 0  0  3  0  0]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.0003502368927
+move:3322
+[[ 0  0  0  0  0]
+ [-1 -2  0  6  0]
+ [ 0  0  5  4  0]
+ [ 0 -4  0  0  0]
+ [ 0  0  3  0  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000170946121216
+move:1112
+[[ 0  0  0  0  0]
+ [-1  0  0  6  0]
+ [ 0 -2  5  4  0]
+ [ 0 -4  0  0  0]
+ [ 0  0  3  0  0]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000136852264404
+move:2414
+[[ 0  0  0  0  0]
+ [-1  0  0  6  0]
+ [ 0 -2  5  4  0]
+ [ 0 -4  0  0  0]
+ [ 0  3  0  0  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000263214111328
+move:1324
+[[ 0  0  0  0  0]
+ [-1  0  0  6  0]
+ [ 0 -2  5  4  0]
+ [ 0  0  0  0  0]
+ [ 0  3 -4  0  0]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00002408027649
+move:1403
+[[ 0  0  0  0  0]
+ [-1  0  0  6  0]
+ [ 0 -2  5  4  0]
+ [ 3  0  0  0  0]
+ [ 0  0 -4  0  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000201940536499
+move:112
+[[ 0  0  0  0  0]
+ [ 0  0  0  6  0]
+ [ 0 -1  5  4  0]
+ [ 3  0  0  0  0]
+ [ 0  0 -4  0  0]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000064849853516
+move:302
+[[ 0  0  0  0  0]
+ [ 0  0  0  6  0]
+ [ 3 -1  5  4  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -4  0  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00018310546875
+move:1223
+[[ 0  0  0  0  0]
+ [ 0  0  0  6  0]
+ [ 3  0  5  4  0]
+ [ 0  0 -1  0  0]
+ [ 0  0 -4  0  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000049114227295
+move:3120
+[[ 0  0  6  0  0]
+ [ 0  0  0  0  0]
+ [ 3  0  5  4  0]
+ [ 0  0 -1  0  0]
+ [ 0  0 -4  0  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000138282775879
+move:2434
+[[ 0  0  6  0  0]
+ [ 0  0  0  0  0]
+ [ 3  0  5  4  0]
+ [ 0  0 -1  0  0]
+ [ 0  0  0 -4  0]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00002408027649
+move:2211
+[[ 0  0  6  0  0]
+ [ 0  5  0  0  0]
+ [ 3  0  0  4  0]
+ [ 0  0 -1  0  0]
+ [ 0  0  0 -4  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000293731689453
+move:3444
+********************
+
+第5局结束，用时160.00871181488037秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 3:2
+
+第6局
+first_player: ChessColor.RED
+[[-5 -2 -6  0  0]
+ [-1 -3  0  0  0]
+ [-4  0  0  0  6]
+ [ 0  0  0  2  3]
+ [ 0  0  5  1  4]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000020980834961
+move:4434
+[[-5 -2 -6  0  0]
+ [-1 -3  0  0  0]
+ [-4  0  0  0  6]
+ [ 0  0  0  2  3]
+ [ 0  0  5  4  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000485897064209
+move:1011
+[[-5  0 -6  0  0]
+ [-1 -2  0  0  0]
+ [-4  0  0  0  6]
+ [ 0  0  0  2  3]
+ [ 0  0  5  4  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000180006027222
+move:4231
+[[-5  0 -6  0  0]
+ [-1 -2  0  6  0]
+ [-4  0  0  0  0]
+ [ 0  0  0  2  3]
+ [ 0  0  5  4  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000305891036987
+move:213
+[[-5  0 -6  0  0]
+ [-1 -2  0  6  0]
+ [ 0  0  0  0  0]
+ [ 0 -4  0  2  3]
+ [ 0  0  5  4  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000231981277466
+move:3121
+[[-5  0 -6  0  0]
+ [-1 -2  6  0  0]
+ [ 0  0  0  0  0]
+ [ 0 -4  0  2  3]
+ [ 0  0  5  4  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000469207763672
+move:1324
+[[-5  0 -6  0  0]
+ [-1 -2  6  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  2  3]
+ [ 0  0 -4  4  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.0001699924469
+move:2110
+[[-5  6 -6  0  0]
+ [-1 -2  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  2  3]
+ [ 0  0 -4  4  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000154972076416
+move:111
+[[-5  6 -6  0  0]
+ [ 0 -1  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  2  3]
+ [ 0  0 -4  4  0]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.0002121925354
+move:3424
+[[-5  6 -6  0  0]
+ [ 0 -1  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  2  3]
+ [ 0  0  4  0  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000359058380127
+move:10
+[[ 0 -5 -6  0  0]
+ [ 0 -1  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  2  3]
+ [ 0  0  4  0  0]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000174045562744
+move:3322
+[[ 0 -5 -6  0  0]
+ [ 0 -1  0  0  0]
+ [ 0  0  2  0  0]
+ [ 0  0  0  0  3]
+ [ 0  0  4  0  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000305891036987
+move:1011
+[[ 0  0 -6  0  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  2  0  0]
+ [ 0  0  0  0  3]
+ [ 0  0  4  0  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.0001540184021
+move:2413
+[[ 0  0 -6  0  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  2  0  0]
+ [ 0  4  0  0  3]
+ [ 0  0  0  0  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000193119049072
+move:1122
+[[ 0  0 -6  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -5  0  0]
+ [ 0  4  0  0  3]
+ [ 0  0  0  0  0]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000117063522339
+move:1302
+[[ 0  0 -6  0  0]
+ [ 0  0  0  0  0]
+ [ 4  0 -5  0  0]
+ [ 0  0  0  0  3]
+ [ 0  0  0  0  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000125885009766
+move:2233
+[[ 0  0 -6  0  0]
+ [ 0  0  0  0  0]
+ [ 4  0  0  0  0]
+ [ 0  0  0 -5  3]
+ [ 0  0  0  0  0]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00002384185791
+move:4333
+[[ 0  0 -6  0  0]
+ [ 0  0  0  0  0]
+ [ 4  0  0  0  0]
+ [ 0  0  0  3  0]
+ [ 0  0  0  0  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.0000638961792
+move:2031
+[[ 0  0  0  0  0]
+ [ 0  0  0 -6  0]
+ [ 4  0  0  0  0]
+ [ 0  0  0  3  0]
+ [ 0  0  0  0  0]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.0000581741333
+move:3322
+[[ 0  0  0  0  0]
+ [ 0  0  0 -6  0]
+ [ 4  0  3  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000073909759521
+move:3142
+[[ 0  0  0  0  0]
+ [ 0  0  0  0  0]
+ [ 4  0  3  0 -6]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000066041946411
+move:201
+[[ 0  0  0  0  0]
+ [ 4  0  0  0  0]
+ [ 0  0  3  0 -6]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000187158584595
+move:4243
+[[ 0  0  0  0  0]
+ [ 4  0  0  0  0]
+ [ 0  0  3  0  0]
+ [ 0  0  0  0 -6]
+ [ 0  0  0  0  0]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00006103515625
+move:2211
+[[ 0  0  0  0  0]
+ [ 4  3  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0 -6]
+ [ 0  0  0  0  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000138998031616
+move:4344
+********************
+
+第6局结束，用时192.00933289527893秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 3:3
+
+第7局
+first_player: ChessColor.BLUE
+[[-5 -6 -4  0  0]
+ [-2 -3  0  0  0]
+ [-1  0  0  0  6]
+ [ 0  0  0  5  3]
+ [ 0  0  4  1  2]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.0000901222229
+move:4342
+[[-5 -6 -4  0  0]
+ [-2 -3  0  0  0]
+ [-1  0  0  0  3]
+ [ 0  0  0  5  0]
+ [ 0  0  4  1  2]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000246047973633
+move:1122
+[[-5 -6 -4  0  0]
+ [-2  0  0  0  0]
+ [-1  0 -3  0  3]
+ [ 0  0  0  5  0]
+ [ 0  0  4  1  2]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000102043151855
+move:2413
+[[-5 -6 -4  0  0]
+ [-2  0  0  0  0]
+ [-1  0 -3  0  3]
+ [ 0  4  0  5  0]
+ [ 0  0  0  1  2]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00046706199646
+move:1
+[[ 0 -6 -4  0  0]
+ [-5  0  0  0  0]
+ [-1  0 -3  0  3]
+ [ 0  4  0  5  0]
+ [ 0  0  0  1  2]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00021505355835
+move:3322
+[[ 0 -6 -4  0  0]
+ [-5  0  0  0  0]
+ [-1  0  5  0  3]
+ [ 0  4  0  0  0]
+ [ 0  0  0  1  2]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00302529335022
+move:2031
+[[ 0 -6  0  0  0]
+ [-5  0  0 -4  0]
+ [-1  0  5  0  3]
+ [ 0  4  0  0  0]
+ [ 0  0  0  1  2]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000263929367065
+move:4231
+[[ 0 -6  0  0  0]
+ [-5  0  0  3  0]
+ [-1  0  5  0  0]
+ [ 0  4  0  0  0]
+ [ 0  0  0  1  2]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000266075134277
+move:1021
+[[ 0  0  0  0  0]
+ [-5  0 -6  3  0]
+ [-1  0  5  0  0]
+ [ 0  4  0  0  0]
+ [ 0  0  0  1  2]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000088930130005
+move:2211
+[[ 0  0  0  0  0]
+ [-5  5 -6  3  0]
+ [-1  0  0  0  0]
+ [ 0  4  0  0  0]
+ [ 0  0  0  1  2]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000347137451172
+move:111
+[[ 0  0  0  0  0]
+ [ 0 -5 -6  3  0]
+ [-1  0  0  0  0]
+ [ 0  4  0  0  0]
+ [ 0  0  0  1  2]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000171899795532
+move:3423
+[[ 0  0  0  0  0]
+ [ 0 -5 -6  3  0]
+ [-1  0  0  0  0]
+ [ 0  4  1  0  0]
+ [ 0  0  0  0  2]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000086069107056
+move:2132
+[[ 0  0  0  0  0]
+ [ 0 -5  0  3  0]
+ [-1  0  0 -6  0]
+ [ 0  4  1  0  0]
+ [ 0  0  0  0  2]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00021505355835
+move:1312
+[[ 0  0  0  0  0]
+ [ 0 -5  0  3  0]
+ [-1  4  0 -6  0]
+ [ 0  0  1  0  0]
+ [ 0  0  0  0  2]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000338315963745
+move:212
+[[ 0  0  0  0  0]
+ [ 0 -5  0  3  0]
+ [ 0 -1  0 -6  0]
+ [ 0  0  1  0  0]
+ [ 0  0  0  0  2]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000327825546265
+move:4433
+[[ 0  0  0  0  0]
+ [ 0 -5  0  3  0]
+ [ 0 -1  0 -6  0]
+ [ 0  0  1  2  0]
+ [ 0  0  0  0  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00019121170044
+move:1222
+[[ 0  0  0  0  0]
+ [ 0 -5  0  3  0]
+ [ 0  0 -1 -6  0]
+ [ 0  0  1  2  0]
+ [ 0  0  0  0  0]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000233888626099
+move:3120
+[[ 0  0  3  0  0]
+ [ 0 -5  0  0  0]
+ [ 0  0 -1 -6  0]
+ [ 0  0  1  2  0]
+ [ 0  0  0  0  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000164031982422
+move:2233
+[[ 0  0  3  0  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  0 -6  0]
+ [ 0  0  1 -1  0]
+ [ 0  0  0  0  0]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000084161758423
+move:2010
+[[ 0  3  0  0  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  0 -6  0]
+ [ 0  0  1 -1  0]
+ [ 0  0  0  0  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000168085098267
+move:3344
+********************
+
+第7局结束，用时160.01232886314392秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 3:4
+
+第8局
+first_player: ChessColor.RED
+[[-6 -1 -2  0  0]
+ [-5 -3  0  0  0]
+ [-4  0  0  0  4]
+ [ 0  0  0  2  3]
+ [ 0  0  1  6  5]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000301122665405
+move:2413
+[[-6 -1 -2  0  0]
+ [-5 -3  0  0  0]
+ [-4  0  0  0  4]
+ [ 0  1  0  2  3]
+ [ 0  0  0  6  5]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000545024871826
+move:2031
+[[-6 -1  0  0  0]
+ [-5 -3  0 -2  0]
+ [-4  0  0  0  4]
+ [ 0  1  0  2  3]
+ [ 0  0  0  6  5]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00002408027649
+move:4231
+[[-6 -1  0  0  0]
+ [-5 -3  0  4  0]
+ [-4  0  0  0  0]
+ [ 0  1  0  2  3]
+ [ 0  0  0  6  5]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000571012496948
+move:111
+[[-6 -1  0  0  0]
+ [ 0 -5  0  4  0]
+ [-4  0  0  0  0]
+ [ 0  1  0  2  3]
+ [ 0  0  0  6  5]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000251770019531
+move:3423
+[[-6 -1  0  0  0]
+ [ 0 -5  0  4  0]
+ [-4  0  0  0  0]
+ [ 0  1  6  2  3]
+ [ 0  0  0  0  5]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000396013259888
+move:213
+[[-6 -1  0  0  0]
+ [ 0 -5  0  4  0]
+ [ 0  0  0  0  0]
+ [ 0 -4  6  2  3]
+ [ 0  0  0  0  5]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000125885009766
+move:3120
+[[-6 -1  4  0  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0 -4  6  2  3]
+ [ 0  0  0  0  5]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00065302848816
+move:10
+[[ 0 -6  4  0  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0 -4  6  2  3]
+ [ 0  0  0  0  5]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000128746032715
+move:4333
+[[ 0 -6  4  0  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0 -4  6  3  0]
+ [ 0  0  0  0  5]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000221014022827
+move:1324
+[[ 0 -6  4  0  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  6  3  0]
+ [ 0  0 -4  0  5]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000142812728882
+move:3322
+[[ 0 -6  4  0  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  3  0  0]
+ [ 0  0  6  0  0]
+ [ 0  0 -4  0  5]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000159978866577
+move:2434
+[[ 0 -6  4  0  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  3  0  0]
+ [ 0  0  6  0  0]
+ [ 0  0  0 -4  5]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000067949295044
+move:4434
+[[ 0 -6  4  0  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  3  0  0]
+ [ 0  0  6  0  0]
+ [ 0  0  0  5  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000127077102661
+move:1122
+[[ 0 -6  4  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -5  0  0]
+ [ 0  0  6  0  0]
+ [ 0  0  0  5  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000081777572632
+move:2322
+[[ 0 -6  4  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  6  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  5  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000195980072021
+move:1020
+[[ 0  0 -6  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  6  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  5  0]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000011920928955
+move:3423
+[[ 0  0 -6  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  6  0  0]
+ [ 0  0  5  0  0]
+ [ 0  0  0  0  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000316858291626
+move:2031
+[[ 0  0  0  0  0]
+ [ 0  0  0 -6  0]
+ [ 0  0  6  0  0]
+ [ 0  0  5  0  0]
+ [ 0  0  0  0  0]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00028109550476
+move:2312
+[[ 0  0  0  0  0]
+ [ 0  0  0 -6  0]
+ [ 0  5  6  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000169038772583
+move:3142
+[[ 0  0  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  5  6  0 -6]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000058889389038
+move:1201
+[[ 0  0  0  0  0]
+ [ 5  0  0  0  0]
+ [ 0  0  6  0 -6]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.0001699924469
+move:4243
+[[ 0  0  0  0  0]
+ [ 5  0  0  0  0]
+ [ 0  0  6  0  0]
+ [ 0  0  0  0 -6]
+ [ 0  0  0  0  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000035762786865
+move:2211
+[[ 0  0  0  0  0]
+ [ 5  6  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0 -6]
+ [ 0  0  0  0  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00016474723816
+move:4344
+********************
+
+第8局结束，用时192.0107741355896秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 3:5
+
+第9局
+first_player: ChessColor.BLUE
+[[-5 -6 -3  0  0]
+ [-2 -1  0  0  0]
+ [-4  0  0  0  3]
+ [ 0  0  0  6  1]
+ [ 0  0  2  5  4]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.0000319480896
+move:4231
+[[-5 -6 -3  0  0]
+ [-2 -1  0  3  0]
+ [-4  0  0  0  0]
+ [ 0  0  0  6  1]
+ [ 0  0  2  5  4]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000157833099365
+move:1011
+[[-5  0 -3  0  0]
+ [-2 -6  0  3  0]
+ [-4  0  0  0  0]
+ [ 0  0  0  6  1]
+ [ 0  0  2  5  4]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000614881515503
+move:2413
+[[-5  0 -3  0  0]
+ [-2 -6  0  3  0]
+ [-4  0  0  0  0]
+ [ 0  2  0  6  1]
+ [ 0  0  0  5  4]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000961065292358
+move:1122
+[[-5  0 -3  0  0]
+ [-2  0  0  3  0]
+ [-4  0 -6  0  0]
+ [ 0  2  0  6  1]
+ [ 0  0  0  5  4]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000211238861084
+move:3120
+[[-5  0  3  0  0]
+ [-2  0  0  0  0]
+ [-4  0 -6  0  0]
+ [ 0  2  0  6  1]
+ [ 0  0  0  5  4]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00040078163147
+move:102
+[[-5  0  3  0  0]
+ [ 0  0  0  0  0]
+ [-2  0 -6  0  0]
+ [ 0  2  0  6  1]
+ [ 0  0  0  5  4]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000323057174683
+move:2010
+[[-5  3  0  0  0]
+ [ 0  0  0  0  0]
+ [-2  0 -6  0  0]
+ [ 0  2  0  6  1]
+ [ 0  0  0  5  4]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000391960144043
+move:10
+[[ 0 -5  0  0  0]
+ [ 0  0  0  0  0]
+ [-2  0 -6  0  0]
+ [ 0  2  0  6  1]
+ [ 0  0  0  5  4]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000178337097168
+move:4332
+[[ 0 -5  0  0  0]
+ [ 0  0  0  0  0]
+ [-2  0 -6  1  0]
+ [ 0  2  0  6  0]
+ [ 0  0  0  5  4]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.028517961502075
+move:1021
+[[ 0  0  0  0  0]
+ [ 0  0 -5  0  0]
+ [-2  0 -6  1  0]
+ [ 0  2  0  6  0]
+ [ 0  0  0  5  4]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000271797180176
+move:1303
+[[ 0  0  0  0  0]
+ [ 0  0 -5  0  0]
+ [-2  0 -6  1  0]
+ [ 2  0  0  6  0]
+ [ 0  0  0  5  4]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00010895729065
+move:213
+[[ 0  0  0  0  0]
+ [ 0  0 -5  0  0]
+ [ 0  0 -6  1  0]
+ [ 2 -2  0  6  0]
+ [ 0  0  0  5  4]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000047206878662
+move:3433
+[[ 0  0  0  0  0]
+ [ 0  0 -5  0  0]
+ [ 0  0 -6  1  0]
+ [ 2 -2  0  5  0]
+ [ 0  0  0  0  4]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.011887788772583
+move:1324
+[[ 0  0  0  0  0]
+ [ 0  0 -5  0  0]
+ [ 0  0 -6  1  0]
+ [ 2  0  0  5  0]
+ [ 0  0 -2  0  4]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000200033187866
+move:302
+[[ 0  0  0  0  0]
+ [ 0  0 -5  0  0]
+ [ 2  0 -6  1  0]
+ [ 0  0  0  5  0]
+ [ 0  0 -2  0  4]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000185012817383
+move:2434
+[[ 0  0  0  0  0]
+ [ 0  0 -5  0  0]
+ [ 2  0 -6  1  0]
+ [ 0  0  0  5  0]
+ [ 0  0  0 -2  4]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000072002410889
+move:3332
+[[ 0  0  0  0  0]
+ [ 0  0 -5  0  0]
+ [ 2  0 -6  5  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0 -2  4]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00018572807312
+move:3444
+********************
+
+第9局结束，用时144.05702090263367秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 3:6
+
+第10局
+first_player: ChessColor.RED
+[[-6 -1 -3  0  0]
+ [-2 -5  0  0  0]
+ [-4  0  0  0  6]
+ [ 0  0  0  2  1]
+ [ 0  0  4  3  5]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000115871429443
+move:4241
+[[-6 -1 -3  0  0]
+ [-2 -5  0  0  6]
+ [-4  0  0  0  0]
+ [ 0  0  0  2  1]
+ [ 0  0  4  3  5]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.001368045806885
+move:1122
+[[-6 -1 -3  0  0]
+ [-2  0  0  0  6]
+ [-4  0 -5  0  0]
+ [ 0  0  0  2  1]
+ [ 0  0  4  3  5]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000367879867554
+move:4130
+[[-6 -1 -3  6  0]
+ [-2  0  0  0  0]
+ [-4  0 -5  0  0]
+ [ 0  0  0  2  1]
+ [ 0  0  4  3  5]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000648260116577
+move:102
+[[-6 -1 -3  6  0]
+ [ 0  0  0  0  0]
+ [-2  0 -5  0  0]
+ [ 0  0  0  2  1]
+ [ 0  0  4  3  5]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000388860702515
+move:2413
+[[-6 -1 -3  6  0]
+ [ 0  0  0  0  0]
+ [-2  0 -5  0  0]
+ [ 0  4  0  2  1]
+ [ 0  0  0  3  5]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00055480003357
+move:2031
+[[-6 -1  0  6  0]
+ [ 0  0  0 -3  0]
+ [-2  0 -5  0  0]
+ [ 0  4  0  2  1]
+ [ 0  0  0  3  5]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000149011611938
+move:4332
+[[-6 -1  0  6  0]
+ [ 0  0  0 -3  0]
+ [-2  0 -5  1  0]
+ [ 0  4  0  2  0]
+ [ 0  0  0  3  5]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000078201293945
+move:3142
+[[-6 -1  0  6  0]
+ [ 0  0  0  0  0]
+ [-2  0 -5  1 -3]
+ [ 0  4  0  2  0]
+ [ 0  0  0  3  5]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00017786026001
+move:3020
+[[-6 -1  6  0  0]
+ [ 0  0  0  0  0]
+ [-2  0 -5  1 -3]
+ [ 0  4  0  2  0]
+ [ 0  0  0  3  5]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000602960586548
+move:10
+[[ 0 -6  6  0  0]
+ [ 0  0  0  0  0]
+ [-2  0 -5  1 -3]
+ [ 0  4  0  2  0]
+ [ 0  0  0  3  5]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000071048736572
+move:3322
+[[ 0 -6  6  0  0]
+ [ 0  0  0  0  0]
+ [-2  0  2  1 -3]
+ [ 0  4  0  0  0]
+ [ 0  0  0  3  5]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000371932983398
+move:4243
+[[ 0 -6  6  0  0]
+ [ 0  0  0  0  0]
+ [-2  0  2  1  0]
+ [ 0  4  0  0 -3]
+ [ 0  0  0  3  5]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00463581085205
+move:4443
+[[ 0 -6  6  0  0]
+ [ 0  0  0  0  0]
+ [-2  0  2  1  0]
+ [ 0  4  0  0  5]
+ [ 0  0  0  3  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000329971313477
+move:213
+[[ 0 -6  6  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  2  1  0]
+ [ 0 -2  0  0  5]
+ [ 0  0  0  3  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000352621078491
+move:2010
+[[ 0  6  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  2  1  0]
+ [ 0 -2  0  0  5]
+ [ 0  0  0  3  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000301837921143
+move:1324
+[[ 0  6  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  2  1  0]
+ [ 0  0  0  0  5]
+ [ 0  0 -2  3  0]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000027179718018
+move:2211
+[[ 0  6  0  0  0]
+ [ 0  2  0  0  0]
+ [ 0  0  0  1  0]
+ [ 0  0  0  0  5]
+ [ 0  0 -2  3  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000140905380249
+move:2434
+[[ 0  6  0  0  0]
+ [ 0  2  0  0  0]
+ [ 0  0  0  1  0]
+ [ 0  0  0  0  5]
+ [ 0  0  0 -2  0]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000049114227295
+move:3221
+[[ 0  6  0  0  0]
+ [ 0  2  1  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  5]
+ [ 0  0  0 -2  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000113010406494
+move:3444
+********************
+
+第10局结束，用时160.01724076271057秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 3:7
+
+第11局
+first_player: ChessColor.BLUE
+[[-6 -1 -2  0  0]
+ [-5 -3  0  0  0]
+ [-4  0  0  0  2]
+ [ 0  0  0  4  5]
+ [ 0  0  3  1  6]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000133991241455
+move:4231
+[[-6 -1 -2  0  0]
+ [-5 -3  0  2  0]
+ [-4  0  0  0  0]
+ [ 0  0  0  4  5]
+ [ 0  0  3  1  6]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000431776046753
+move:212
+[[-6 -1 -2  0  0]
+ [-5 -3  0  2  0]
+ [ 0 -4  0  0  0]
+ [ 0  0  0  4  5]
+ [ 0  0  3  1  6]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000384092330933
+move:3423
+[[-6 -1 -2  0  0]
+ [-5 -3  0  2  0]
+ [ 0 -4  0  0  0]
+ [ 0  0  1  4  5]
+ [ 0  0  3  0  6]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000603199005127
+move:1122
+[[-6 -1 -2  0  0]
+ [-5  0  0  2  0]
+ [ 0 -4 -3  0  0]
+ [ 0  0  1  4  5]
+ [ 0  0  3  0  6]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000323057174683
+move:3322
+[[-6 -1 -2  0  0]
+ [-5  0  0  2  0]
+ [ 0 -4  4  0  0]
+ [ 0  0  1  0  5]
+ [ 0  0  3  0  6]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000302076339722
+move:1223
+[[-6 -1 -2  0  0]
+ [-5  0  0  2  0]
+ [ 0  0  4  0  0]
+ [ 0  0 -4  0  5]
+ [ 0  0  3  0  6]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000048160552979
+move:2423
+[[-6 -1 -2  0  0]
+ [-5  0  0  2  0]
+ [ 0  0  4  0  0]
+ [ 0  0  3  0  5]
+ [ 0  0  0  0  6]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000503063201904
+move:2021
+[[-6 -1  0  0  0]
+ [-5  0 -2  2  0]
+ [ 0  0  4  0  0]
+ [ 0  0  3  0  5]
+ [ 0  0  0  0  6]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000194072723389
+move:3120
+[[-6 -1  2  0  0]
+ [-5  0 -2  0  0]
+ [ 0  0  4  0  0]
+ [ 0  0  3  0  5]
+ [ 0  0  0  0  6]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00047492980957
+move:112
+[[-6 -1  2  0  0]
+ [ 0  0 -2  0  0]
+ [ 0 -5  4  0  0]
+ [ 0  0  3  0  5]
+ [ 0  0  0  0  6]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000151872634888
+move:2010
+[[-6  2  0  0  0]
+ [ 0  0 -2  0  0]
+ [ 0 -5  4  0  0]
+ [ 0  0  3  0  5]
+ [ 0  0  0  0  6]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000309944152832
+move:2132
+[[-6  2  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0 -5  4 -2  0]
+ [ 0  0  3  0  5]
+ [ 0  0  0  0  6]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00004506111145
+move:2312
+[[-6  2  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  3  4 -2  0]
+ [ 0  0  0  0  5]
+ [ 0  0  0  0  6]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000898122787476
+move:3243
+[[-6  2  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  3  4  0  0]
+ [ 0  0  0  0 -2]
+ [ 0  0  0  0  6]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000051021575928
+move:1201
+[[-6  2  0  0  0]
+ [ 3  0  0  0  0]
+ [ 0  0  4  0  0]
+ [ 0  0  0  0 -2]
+ [ 0  0  0  0  6]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000119924545288
+move:4344
+********************
+
+第11局结束，用时128.00949478149414秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 3:8
+
+第12局
+first_player: ChessColor.RED
+[[-2 -3 -6  0  0]
+ [-5 -4  0  0  0]
+ [-1  0  0  0  5]
+ [ 0  0  0  3  4]
+ [ 0  0  6  1  2]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000216960906982
+move:3423
+[[-2 -3 -6  0  0]
+ [-5 -4  0  0  0]
+ [-1  0  0  0  5]
+ [ 0  0  1  3  4]
+ [ 0  0  6  0  2]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.001495838165283
+move:1
+[[ 0 -3 -6  0  0]
+ [-2 -4  0  0  0]
+ [-1  0  0  0  5]
+ [ 0  0  1  3  4]
+ [ 0  0  6  0  2]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00010085105896
+move:4332
+[[ 0 -3 -6  0  0]
+ [-2 -4  0  0  0]
+ [-1  0  0  4  5]
+ [ 0  0  1  3  0]
+ [ 0  0  6  0  2]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000131130218506
+move:1020
+[[ 0  0 -3  0  0]
+ [-2 -4  0  0  0]
+ [-1  0  0  4  5]
+ [ 0  0  1  3  0]
+ [ 0  0  6  0  2]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000235080718994
+move:4231
+[[ 0  0 -3  0  0]
+ [-2 -4  0  5  0]
+ [-1  0  0  4  0]
+ [ 0  0  1  3  0]
+ [ 0  0  6  0  2]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000862836837769
+move:1122
+[[ 0  0 -3  0  0]
+ [-2  0  0  5  0]
+ [-1  0 -4  4  0]
+ [ 0  0  1  3  0]
+ [ 0  0  6  0  2]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000104904174805
+move:2413
+[[ 0  0 -3  0  0]
+ [-2  0  0  5  0]
+ [-1  0 -4  4  0]
+ [ 0  6  1  3  0]
+ [ 0  0  0  0  2]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000197887420654
+move:2021
+[[ 0  0  0  0  0]
+ [-2  0 -3  5  0]
+ [-1  0 -4  4  0]
+ [ 0  6  1  3  0]
+ [ 0  0  0  0  2]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000673055648804
+move:3221
+[[ 0  0  0  0  0]
+ [-2  0  4  5  0]
+ [-1  0 -4  0  0]
+ [ 0  6  1  3  0]
+ [ 0  0  0  0  2]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000464916229248
+move:102
+[[ 0  0  0  0  0]
+ [ 0  0  4  5  0]
+ [-2  0 -4  0  0]
+ [ 0  6  1  3  0]
+ [ 0  0  0  0  2]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000462055206299
+move:2312
+[[ 0  0  0  0  0]
+ [ 0  0  4  5  0]
+ [-2  1 -4  0  0]
+ [ 0  6  0  3  0]
+ [ 0  0  0  0  2]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00067400932312
+move:2233
+[[ 0  0  0  0  0]
+ [ 0  0  4  5  0]
+ [-2  1  0  0  0]
+ [ 0  6  0 -4  0]
+ [ 0  0  0  0  2]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000029802322388
+move:1201
+[[ 0  0  0  0  0]
+ [ 1  0  4  5  0]
+ [-2  0  0  0  0]
+ [ 0  6  0 -4  0]
+ [ 0  0  0  0  2]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000112056732178
+move:203
+[[ 0  0  0  0  0]
+ [ 1  0  4  5  0]
+ [ 0  0  0  0  0]
+ [-2  6  0 -4  0]
+ [ 0  0  0  0  2]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000025033950806
+move:1302
+[[ 0  0  0  0  0]
+ [ 1  0  4  5  0]
+ [ 6  0  0  0  0]
+ [-2  0  0 -4  0]
+ [ 0  0  0  0  2]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000416040420532
+move:314
+[[ 0  0  0  0  0]
+ [ 1  0  4  5  0]
+ [ 6  0  0  0  0]
+ [ 0  0  0 -4  0]
+ [ 0 -2  0  0  2]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00013279914856
+move:100
+********************
+
+第12局结束，用时136.0154070854187秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 4:8
+
+第13局
+first_player: ChessColor.BLUE
+[[-6 -3 -2  0  0]
+ [-4 -1  0  0  0]
+ [-5  0  0  0  1]
+ [ 0  0  0  2  4]
+ [ 0  0  3  5  6]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000287055969238
+move:4231
+[[-6 -3 -2  0  0]
+ [-4 -1  0  1  0]
+ [-5  0  0  0  0]
+ [ 0  0  0  2  4]
+ [ 0  0  3  5  6]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000651836395264
+move:1122
+[[-6 -3 -2  0  0]
+ [-4  0  0  1  0]
+ [-5  0 -1  0  0]
+ [ 0  0  0  2  4]
+ [ 0  0  3  5  6]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00026798248291
+move:2413
+[[-6 -3 -2  0  0]
+ [-4  0  0  1  0]
+ [-5  0 -1  0  0]
+ [ 0  3  0  2  4]
+ [ 0  0  0  5  6]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00153398513794
+move:2233
+[[-6 -3 -2  0  0]
+ [-4  0  0  1  0]
+ [-5  0  0  0  0]
+ [ 0  3  0 -1  4]
+ [ 0  0  0  5  6]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000395059585571
+move:3433
+[[-6 -3 -2  0  0]
+ [-4  0  0  1  0]
+ [-5  0  0  0  0]
+ [ 0  3  0  5  4]
+ [ 0  0  0  0  6]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000761032104492
+move:1020
+[[-6  0 -3  0  0]
+ [-4  0  0  1  0]
+ [-5  0  0  0  0]
+ [ 0  3  0  5  4]
+ [ 0  0  0  0  6]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00004267692566
+move:3322
+[[-6  0 -3  0  0]
+ [-4  0  0  1  0]
+ [-5  0  5  0  0]
+ [ 0  3  0  0  4]
+ [ 0  0  0  0  6]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00009298324585
+move:1
+[[ 0  0 -3  0  0]
+ [-6  0  0  1  0]
+ [-5  0  5  0  0]
+ [ 0  3  0  0  4]
+ [ 0  0  0  0  6]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00009822845459
+move:1302
+[[ 0  0 -3  0  0]
+ [-6  0  0  1  0]
+ [ 3  0  5  0  0]
+ [ 0  0  0  0  4]
+ [ 0  0  0  0  6]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000144004821777
+move:102
+[[ 0  0 -3  0  0]
+ [ 0  0  0  1  0]
+ [-6  0  5  0  0]
+ [ 0  0  0  0  4]
+ [ 0  0  0  0  6]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000075101852417
+move:4332
+[[ 0  0 -3  0  0]
+ [ 0  0  0  1  0]
+ [-6  0  5  4  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  6]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000427007675171
+move:213
+[[ 0  0 -3  0  0]
+ [ 0  0  0  1  0]
+ [ 0  0  5  4  0]
+ [ 0 -6  0  0  0]
+ [ 0  0  0  0  6]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000185012817383
+move:3231
+[[ 0  0 -3  0  0]
+ [ 0  0  0  4  0]
+ [ 0  0  5  0  0]
+ [ 0 -6  0  0  0]
+ [ 0  0  0  0  6]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000180959701538
+move:2021
+[[ 0  0  0  0  0]
+ [ 0  0 -3  4  0]
+ [ 0  0  5  0  0]
+ [ 0 -6  0  0  0]
+ [ 0  0  0  0  6]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000326871871948
+move:3120
+[[ 0  0  4  0  0]
+ [ 0  0 -3  0  0]
+ [ 0  0  5  0  0]
+ [ 0 -6  0  0  0]
+ [ 0  0  0  0  6]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000202178955078
+move:2132
+[[ 0  0  4  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  5 -3  0]
+ [ 0 -6  0  0  0]
+ [ 0  0  0  0  6]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000117063522339
+move:2010
+[[ 0  4  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  5 -3  0]
+ [ 0 -6  0  0  0]
+ [ 0  0  0  0  6]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000325918197632
+move:1324
+[[ 0  4  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  5 -3  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -6  0  6]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000068187713623
+move:1000
+********************
+
+第13局结束，用时152.01090478897095秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 5:8
+
+第14局
+first_player: ChessColor.RED
+[[-5 -3 -2  0  0]
+ [-4 -1  0  0  0]
+ [-6  0  0  0  6]
+ [ 0  0  0  3  5]
+ [ 0  0  2  4  1]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00036096572876
+move:3322
+[[-5 -3 -2  0  0]
+ [-4 -1  0  0  0]
+ [-6  0  3  0  6]
+ [ 0  0  0  0  5]
+ [ 0  0  2  4  1]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000816106796265
+move:212
+[[-5 -3 -2  0  0]
+ [-4 -1  0  0  0]
+ [ 0 -6  3  0  6]
+ [ 0  0  0  0  5]
+ [ 0  0  2  4  1]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000018119812012
+move:3423
+[[-5 -3 -2  0  0]
+ [-4 -1  0  0  0]
+ [ 0 -6  3  0  6]
+ [ 0  0  4  0  5]
+ [ 0  0  2  0  1]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000793218612671
+move:1020
+[[-5  0 -3  0  0]
+ [-4 -1  0  0  0]
+ [ 0 -6  3  0  6]
+ [ 0  0  4  0  5]
+ [ 0  0  2  0  1]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000244855880737
+move:4332
+[[-5  0 -3  0  0]
+ [-4 -1  0  0  0]
+ [ 0 -6  3  5  6]
+ [ 0  0  4  0  0]
+ [ 0  0  2  0  1]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000416994094849
+move:111
+[[-5  0 -3  0  0]
+ [ 0 -4  0  0  0]
+ [ 0 -6  3  5  6]
+ [ 0  0  4  0  0]
+ [ 0  0  2  0  1]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000326156616211
+move:2212
+[[-5  0 -3  0  0]
+ [ 0 -4  0  0  0]
+ [ 0  3  0  5  6]
+ [ 0  0  4  0  0]
+ [ 0  0  2  0  1]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000658988952637
+move:11
+[[ 0  0 -3  0  0]
+ [ 0 -5  0  0  0]
+ [ 0  3  0  5  6]
+ [ 0  0  4  0  0]
+ [ 0  0  2  0  1]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000318050384521
+move:1201
+[[ 0  0 -3  0  0]
+ [ 3 -5  0  0  0]
+ [ 0  0  0  5  6]
+ [ 0  0  4  0  0]
+ [ 0  0  2  0  1]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000159978866577
+move:2031
+[[ 0  0  0  0  0]
+ [ 3 -5  0 -3  0]
+ [ 0  0  0  5  6]
+ [ 0  0  4  0  0]
+ [ 0  0  2  0  1]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000201940536499
+move:100
+********************
+
+第14局结束，用时88.00693488121033秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 6:8
+
+第15局
+first_player: ChessColor.BLUE
+[[-5 -1 -3  0  0]
+ [-2 -6  0  0  0]
+ [-4  0  0  0  5]
+ [ 0  0  0  4  3]
+ [ 0  0  6  1  2]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000156164169312
+move:4332
+[[-5 -1 -3  0  0]
+ [-2 -6  0  0  0]
+ [-4  0  0  3  5]
+ [ 0  0  0  4  0]
+ [ 0  0  6  1  2]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.001852989196777
+move:1020
+[[-5  0 -1  0  0]
+ [-2 -6  0  0  0]
+ [-4  0  0  3  5]
+ [ 0  0  0  4  0]
+ [ 0  0  6  1  2]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000264167785645
+move:2413
+[[-5  0 -1  0  0]
+ [-2 -6  0  0  0]
+ [-4  0  0  3  5]
+ [ 0  6  0  4  0]
+ [ 0  0  0  1  2]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000671863555908
+move:1122
+[[-5  0 -1  0  0]
+ [-2  0  0  0  0]
+ [-4  0 -6  3  5]
+ [ 0  6  0  4  0]
+ [ 0  0  0  1  2]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000099897384644
+move:3423
+[[-5  0 -1  0  0]
+ [-2  0  0  0  0]
+ [-4  0 -6  3  5]
+ [ 0  6  1  4  0]
+ [ 0  0  0  0  2]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000350952148438
+move:2031
+[[-5  0  0  0  0]
+ [-2  0  0 -1  0]
+ [-4  0 -6  3  5]
+ [ 0  6  1  4  0]
+ [ 0  0  0  0  2]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000010967254639
+move:3222
+[[-5  0  0  0  0]
+ [-2  0  0 -1  0]
+ [-4  0  3  0  5]
+ [ 0  6  1  4  0]
+ [ 0  0  0  0  2]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000468015670776
+move:3132
+[[-5  0  0  0  0]
+ [-2  0  0  0  0]
+ [-4  0  3 -1  5]
+ [ 0  6  1  4  0]
+ [ 0  0  0  0  2]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000204086303711
+move:3332
+[[-5  0  0  0  0]
+ [-2  0  0  0  0]
+ [-4  0  3  4  5]
+ [ 0  6  1  0  0]
+ [ 0  0  0  0  2]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000343084335327
+move:112
+[[-5  0  0  0  0]
+ [ 0  0  0  0  0]
+ [-4 -2  3  4  5]
+ [ 0  6  1  0  0]
+ [ 0  0  0  0  2]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000117063522339
+move:4433
+[[-5  0  0  0  0]
+ [ 0  0  0  0  0]
+ [-4 -2  3  4  5]
+ [ 0  6  1  2  0]
+ [ 0  0  0  0  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000733852386475
+move:11
+[[ 0  0  0  0  0]
+ [ 0 -5  0  0  0]
+ [-4 -2  3  4  5]
+ [ 0  6  1  2  0]
+ [ 0  0  0  0  0]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000023126602173
+move:2322
+[[ 0  0  0  0  0]
+ [ 0 -5  0  0  0]
+ [-4 -2  1  4  5]
+ [ 0  6  0  2  0]
+ [ 0  0  0  0  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000298976898193
+move:212
+[[ 0  0  0  0  0]
+ [ 0 -5  0  0  0]
+ [ 0 -4  1  4  5]
+ [ 0  6  0  2  0]
+ [ 0  0  0  0  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000036716461182
+move:1312
+[[ 0  0  0  0  0]
+ [ 0 -5  0  0  0]
+ [ 0  6  1  4  5]
+ [ 0  0  0  2  0]
+ [ 0  0  0  0  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000512838363647
+move:1112
+[[ 0  0  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0 -5  1  4  5]
+ [ 0  0  0  2  0]
+ [ 0  0  0  0  0]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000130891799927
+move:2212
+********************
+
+第15局结束，用时136.01146793365479秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 7:8
+
+第16局
+first_player: ChessColor.RED
+[[-4 -5 -1  0  0]
+ [-2 -3  0  0  0]
+ [-6  0  0  0  4]
+ [ 0  0  0  6  5]
+ [ 0  0  2  3  1]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000011682510376
+move:3423
+[[-4 -5 -1  0  0]
+ [-2 -3  0  0  0]
+ [-6  0  0  0  4]
+ [ 0  0  3  6  5]
+ [ 0  0  2  0  1]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00124216079712
+move:212
+[[-4 -5 -1  0  0]
+ [-2 -3  0  0  0]
+ [ 0 -6  0  0  4]
+ [ 0  0  3  6  5]
+ [ 0  0  2  0  1]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000133275985718
+move:2312
+[[-4 -5 -1  0  0]
+ [-2 -3  0  0  0]
+ [ 0  3  0  0  4]
+ [ 0  0  0  6  5]
+ [ 0  0  2  0  1]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000639915466309
+move:1011
+[[-4  0 -1  0  0]
+ [-2 -5  0  0  0]
+ [ 0  3  0  0  4]
+ [ 0  0  0  6  5]
+ [ 0  0  2  0  1]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000079870223999
+move:4433
+[[-4  0 -1  0  0]
+ [-2 -5  0  0  0]
+ [ 0  3  0  0  4]
+ [ 0  0  0  1  5]
+ [ 0  0  2  0  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00068187713623
+move:1122
+[[-4  0 -1  0  0]
+ [-2  0  0  0  0]
+ [ 0  3 -5  0  4]
+ [ 0  0  0  1  5]
+ [ 0  0  2  0  0]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000087022781372
+move:4332
+[[-4  0 -1  0  0]
+ [-2  0  0  0  0]
+ [ 0  3 -5  5  4]
+ [ 0  0  0  1  0]
+ [ 0  0  2  0  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000812768936157
+move:1
+[[ 0  0 -1  0  0]
+ [-4  0  0  0  0]
+ [ 0  3 -5  5  4]
+ [ 0  0  0  1  0]
+ [ 0  0  2  0  0]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000278949737549
+move:2413
+[[ 0  0 -1  0  0]
+ [-4  0  0  0  0]
+ [ 0  3 -5  5  4]
+ [ 0  2  0  1  0]
+ [ 0  0  0  0  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000422954559326
+move:2233
+[[ 0  0 -1  0  0]
+ [-4  0  0  0  0]
+ [ 0  3  0  5  4]
+ [ 0  2  0 -5  0]
+ [ 0  0  0  0  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000107765197754
+move:3221
+[[ 0  0 -1  0  0]
+ [-4  0  5  0  0]
+ [ 0  3  0  0  4]
+ [ 0  2  0 -5  0]
+ [ 0  0  0  0  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000091075897217
+move:2021
+[[ 0  0  0  0  0]
+ [-4  0 -1  0  0]
+ [ 0  3  0  0  4]
+ [ 0  2  0 -5  0]
+ [ 0  0  0  0  0]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000198125839233
+move:4231
+[[ 0  0  0  0  0]
+ [-4  0 -1  4  0]
+ [ 0  3  0  0  0]
+ [ 0  2  0 -5  0]
+ [ 0  0  0  0  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000356197357178
+move:102
+[[ 0  0  0  0  0]
+ [ 0  0 -1  4  0]
+ [-4  3  0  0  0]
+ [ 0  2  0 -5  0]
+ [ 0  0  0  0  0]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00006914138794
+move:1312
+[[ 0  0  0  0  0]
+ [ 0  0 -1  4  0]
+ [-4  2  0  0  0]
+ [ 0  0  0 -5  0]
+ [ 0  0  0  0  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000167846679688
+move:3344
+********************
+
+第16局结束，用时128.0092577934265秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 7:9
+
+第17局
+first_player: ChessColor.BLUE
+[[-1 -2 -3  0  0]
+ [-4 -6  0  0  0]
+ [-5  0  0  0  6]
+ [ 0  0  0  2  4]
+ [ 0  0  5  1  3]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000141143798828
+move:4434
+[[-1 -2 -3  0  0]
+ [-4 -6  0  0  0]
+ [-5  0  0  0  6]
+ [ 0  0  0  2  4]
+ [ 0  0  5  3  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.001179933547974
+move:213
+[[-1 -2 -3  0  0]
+ [-4 -6  0  0  0]
+ [ 0  0  0  0  6]
+ [ 0 -5  0  2  4]
+ [ 0  0  5  3  0]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000241041183472
+move:2413
+[[-1 -2 -3  0  0]
+ [-4 -6  0  0  0]
+ [ 0  0  0  0  6]
+ [ 0  5  0  2  4]
+ [ 0  0  0  3  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.001678228378296
+move:111
+[[-1 -2 -3  0  0]
+ [ 0 -4  0  0  0]
+ [ 0  0  0  0  6]
+ [ 0  5  0  2  4]
+ [ 0  0  0  3  0]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.0000159740448
+move:1302
+[[-1 -2 -3  0  0]
+ [ 0 -4  0  0  0]
+ [ 5  0  0  0  6]
+ [ 0  0  0  2  4]
+ [ 0  0  0  3  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000408172607422
+move:1122
+[[-1 -2 -3  0  0]
+ [ 0  0  0  0  0]
+ [ 5  0 -4  0  6]
+ [ 0  0  0  2  4]
+ [ 0  0  0  3  0]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000355958938599
+move:4342
+[[-1 -2 -3  0  0]
+ [ 0  0  0  0  0]
+ [ 5  0 -4  0  4]
+ [ 0  0  0  2  0]
+ [ 0  0  0  3  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00043797492981
+move:10
+[[ 0 -1 -3  0  0]
+ [ 0  0  0  0  0]
+ [ 5  0 -4  0  4]
+ [ 0  0  0  2  0]
+ [ 0  0  0  3  0]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000226974487305
+move:4231
+[[ 0 -1 -3  0  0]
+ [ 0  0  0  4  0]
+ [ 5  0 -4  0  0]
+ [ 0  0  0  2  0]
+ [ 0  0  0  3  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000227689743042
+move:2233
+[[ 0 -1 -3  0  0]
+ [ 0  0  0  4  0]
+ [ 5  0  0  0  0]
+ [ 0  0  0 -4  0]
+ [ 0  0  0  3  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000019311904907
+move:201
+[[ 0 -1 -3  0  0]
+ [ 5  0  0  4  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0 -4  0]
+ [ 0  0  0  3  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000295877456665
+move:3344
+********************
+
+第17局结束，用时96.00963187217712秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 7:10
+
+第18局
+first_player: ChessColor.RED
+[[-6 -2 -1  0  0]
+ [-5 -4  0  0  0]
+ [-3  0  0  0  5]
+ [ 0  0  0  2  3]
+ [ 0  0  6  1  4]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000382900238037
+move:4231
+[[-6 -2 -1  0  0]
+ [-5 -4  0  5  0]
+ [-3  0  0  0  0]
+ [ 0  0  0  2  3]
+ [ 0  0  6  1  4]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000458002090454
+move:102
+[[-6 -2 -1  0  0]
+ [ 0 -4  0  5  0]
+ [-5  0  0  0  0]
+ [ 0  0  0  2  3]
+ [ 0  0  6  1  4]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00016713142395
+move:4434
+[[-6 -2 -1  0  0]
+ [ 0 -4  0  5  0]
+ [-5  0  0  0  0]
+ [ 0  0  0  2  3]
+ [ 0  0  6  4  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000967979431152
+move:1122
+[[-6 -2 -1  0  0]
+ [ 0  0  0  5  0]
+ [-5  0 -4  0  0]
+ [ 0  0  0  2  3]
+ [ 0  0  6  4  0]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00031304359436
+move:4333
+[[-6 -2 -1  0  0]
+ [ 0  0  0  5  0]
+ [-5  0 -4  0  0]
+ [ 0  0  0  3  0]
+ [ 0  0  6  4  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000779151916504
+move:2021
+[[-6 -2  0  0  0]
+ [ 0  0 -1  5  0]
+ [-5  0 -4  0  0]
+ [ 0  0  0  3  0]
+ [ 0  0  6  4  0]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000088214874268
+move:3120
+[[-6 -2  5  0  0]
+ [ 0  0 -1  0  0]
+ [-5  0 -4  0  0]
+ [ 0  0  0  3  0]
+ [ 0  0  6  4  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000394582748413
+move:2132
+[[-6 -2  5  0  0]
+ [ 0  0  0  0  0]
+ [-5  0 -4 -1  0]
+ [ 0  0  0  3  0]
+ [ 0  0  6  4  0]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00014615058899
+move:3322
+[[-6 -2  5  0  0]
+ [ 0  0  0  0  0]
+ [-5  0  3 -1  0]
+ [ 0  0  0  0  0]
+ [ 0  0  6  4  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000504732131958
+move:213
+[[-6 -2  5  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  3 -1  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  6  4  0]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000602722167969
+move:2211
+[[-6 -2  5  0  0]
+ [ 0  3  0  0  0]
+ [ 0  0  0 -1  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  6  4  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000380039215088
+move:3243
+[[-6 -2  5  0  0]
+ [ 0  3  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0 -5  0  0 -1]
+ [ 0  0  6  4  0]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00031590461731
+move:1100
+********************
+
+第18局结束，用时104.00960898399353秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 8:10
+
+第19局
+first_player: ChessColor.BLUE
+[[-4 -3 -2  0  0]
+ [-5 -1  0  0  0]
+ [-6  0  0  0  5]
+ [ 0  0  0  1  4]
+ [ 0  0  6  2  3]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000180959701538
+move:4231
+[[-4 -3 -2  0  0]
+ [-5 -1  0  5  0]
+ [-6  0  0  0  0]
+ [ 0  0  0  1  4]
+ [ 0  0  6  2  3]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000211954116821
+move:2031
+[[-4 -3  0  0  0]
+ [-5 -1  0 -2  0]
+ [-6  0  0  0  0]
+ [ 0  0  0  1  4]
+ [ 0  0  6  2  3]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.0001540184021
+move:2423
+[[-4 -3  0  0  0]
+ [-5 -1  0 -2  0]
+ [-6  0  0  0  0]
+ [ 0  0  6  1  4]
+ [ 0  0  0  2  3]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000584840774536
+move:10
+[[ 0 -4  0  0  0]
+ [-5 -1  0 -2  0]
+ [-6  0  0  0  0]
+ [ 0  0  6  1  4]
+ [ 0  0  0  2  3]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000285387039185
+move:3433
+[[ 0 -4  0  0  0]
+ [-5 -1  0 -2  0]
+ [-6  0  0  0  0]
+ [ 0  0  6  2  4]
+ [ 0  0  0  0  3]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000184774398804
+move:111
+[[ 0 -4  0  0  0]
+ [ 0 -5  0 -2  0]
+ [-6  0  0  0  0]
+ [ 0  0  6  2  4]
+ [ 0  0  0  0  3]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000150918960571
+move:3322
+[[ 0 -4  0  0  0]
+ [ 0 -5  0 -2  0]
+ [-6  0  2  0  0]
+ [ 0  0  6  0  4]
+ [ 0  0  0  0  3]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000162839889526
+move:3142
+[[ 0 -4  0  0  0]
+ [ 0 -5  0  0  0]
+ [-6  0  2  0 -2]
+ [ 0  0  6  0  4]
+ [ 0  0  0  0  3]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00007677078247
+move:4342
+[[ 0 -4  0  0  0]
+ [ 0 -5  0  0  0]
+ [-6  0  2  0  4]
+ [ 0  0  6  0  0]
+ [ 0  0  0  0  3]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.052455186843872
+move:213
+[[ 0 -4  0  0  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  2  0  4]
+ [ 0 -6  6  0  0]
+ [ 0  0  0  0  3]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.0000638961792
+move:2312
+[[ 0 -4  0  0  0]
+ [ 0 -5  0  0  0]
+ [ 0  6  2  0  4]
+ [ 0 -6  0  0  0]
+ [ 0  0  0  0  3]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000335931777954
+move:1011
+[[ 0  0  0  0  0]
+ [ 0 -4  0  0  0]
+ [ 0  6  2  0  4]
+ [ 0 -6  0  0  0]
+ [ 0  0  0  0  3]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.0001060962677
+move:2211
+[[ 0  0  0  0  0]
+ [ 0  2  0  0  0]
+ [ 0  6  0  0  4]
+ [ 0 -6  0  0  0]
+ [ 0  0  0  0  3]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00021505355835
+move:1324
+[[ 0  0  0  0  0]
+ [ 0  2  0  0  0]
+ [ 0  6  0  0  4]
+ [ 0  0  0  0  0]
+ [ 0  0 -6  0  3]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000030279159546
+move:1100
+********************
+
+第19局结束，用时120.06014800071716秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 9:10
+
+第20局
+first_player: ChessColor.RED
+[[-6 -2 -1  0  0]
+ [-4 -3  0  0  0]
+ [-5  0  0  0  3]
+ [ 0  0  0  2  5]
+ [ 0  0  4  6  1]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000072956085205
+move:4231
+[[-6 -2 -1  0  0]
+ [-4 -3  0  3  0]
+ [-5  0  0  0  0]
+ [ 0  0  0  2  5]
+ [ 0  0  4  6  1]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000785827636719
+move:10
+[[ 0 -6 -1  0  0]
+ [-4 -3  0  3  0]
+ [-5  0  0  0  0]
+ [ 0  0  0  2  5]
+ [ 0  0  4  6  1]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000294923782349
+move:2413
+[[ 0 -6 -1  0  0]
+ [-4 -3  0  3  0]
+ [-5  0  0  0  0]
+ [ 0  4  0  2  5]
+ [ 0  0  0  6  1]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000607013702393
+move:1122
+[[ 0 -6 -1  0  0]
+ [-4  0  0  3  0]
+ [-5  0 -3  0  0]
+ [ 0  4  0  2  5]
+ [ 0  0  0  6  1]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000171899795532
+move:4332
+[[ 0 -6 -1  0  0]
+ [-4  0  0  3  0]
+ [-5  0 -3  5  0]
+ [ 0  4  0  2  0]
+ [ 0  0  0  6  1]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00031590461731
+move:2233
+[[ 0 -6 -1  0  0]
+ [-4  0  0  3  0]
+ [-5  0  0  5  0]
+ [ 0  4  0 -3  0]
+ [ 0  0  0  6  1]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00017786026001
+move:3433
+[[ 0 -6 -1  0  0]
+ [-4  0  0  3  0]
+ [-5  0  0  5  0]
+ [ 0  4  0  6  0]
+ [ 0  0  0  0  1]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000746965408325
+move:112
+[[ 0 -6 -1  0  0]
+ [ 0  0  0  3  0]
+ [-5 -4  0  5  0]
+ [ 0  4  0  6  0]
+ [ 0  0  0  0  1]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000336170196533
+move:4433
+[[ 0 -6 -1  0  0]
+ [ 0  0  0  3  0]
+ [-5 -4  0  5  0]
+ [ 0  4  0  1  0]
+ [ 0  0  0  0  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000639200210571
+move:1020
+[[ 0  0 -6  0  0]
+ [ 0  0  0  3  0]
+ [-5 -4  0  5  0]
+ [ 0  4  0  1  0]
+ [ 0  0  0  0  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000133037567139
+move:3221
+[[ 0  0 -6  0  0]
+ [ 0  0  5  3  0]
+ [-5 -4  0  0  0]
+ [ 0  4  0  1  0]
+ [ 0  0  0  0  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000421047210693
+move:1223
+[[ 0  0 -6  0  0]
+ [ 0  0  5  3  0]
+ [-5  0  0  0  0]
+ [ 0  4 -4  1  0]
+ [ 0  0  0  0  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000282287597656
+move:2110
+[[ 0  5 -6  0  0]
+ [ 0  0  0  3  0]
+ [-5  0  0  0  0]
+ [ 0  4 -4  1  0]
+ [ 0  0  0  0  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000187873840332
+move:2334
+[[ 0  5 -6  0  0]
+ [ 0  0  0  3  0]
+ [-5  0  0  0  0]
+ [ 0  4  0  1  0]
+ [ 0  0  0 -4  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000060081481934
+move:1000
+********************
+
+第20局结束，用时120.0106749534607秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 10:10
+
+第21局
+first_player: ChessColor.BLUE
+[[-2 -5 -3  0  0]
+ [-1 -4  0  0  0]
+ [-6  0  0  0  5]
+ [ 0  0  0  1  3]
+ [ 0  0  2  4  6]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000312805175781
+move:3322
+[[-2 -5 -3  0  0]
+ [-1 -4  0  0  0]
+ [-6  0  1  0  5]
+ [ 0  0  0  0  3]
+ [ 0  0  2  4  6]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000185012817383
+move:102
+[[-2 -5 -3  0  0]
+ [ 0 -4  0  0  0]
+ [-1  0  1  0  5]
+ [ 0  0  0  0  3]
+ [ 0  0  2  4  6]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000432968139648
+move:3433
+[[-2 -5 -3  0  0]
+ [ 0 -4  0  0  0]
+ [-1  0  1  0  5]
+ [ 0  0  0  4  3]
+ [ 0  0  2  0  6]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.003206968307495
+move:2031
+[[-2 -5  0  0  0]
+ [ 0 -4  0 -3  0]
+ [-1  0  1  0  5]
+ [ 0  0  0  4  3]
+ [ 0  0  2  0  6]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000404119491577
+move:4433
+[[-2 -5  0  0  0]
+ [ 0 -4  0 -3  0]
+ [-1  0  1  0  5]
+ [ 0  0  0  6  3]
+ [ 0  0  2  0  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.001192092895508
+move:3142
+[[-2 -5  0  0  0]
+ [ 0 -4  0  0  0]
+ [-1  0  1  0 -3]
+ [ 0  0  0  6  3]
+ [ 0  0  2  0  0]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000514030456543
+move:4342
+[[-2 -5  0  0  0]
+ [ 0 -4  0  0  0]
+ [-1  0  1  0  3]
+ [ 0  0  0  6  0]
+ [ 0  0  2  0  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000895023345947
+move:10
+[[ 0 -2  0  0  0]
+ [ 0 -4  0  0  0]
+ [-1  0  1  0  3]
+ [ 0  0  0  6  0]
+ [ 0  0  2  0  0]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00028395652771
+move:4231
+[[ 0 -2  0  0  0]
+ [ 0 -4  0  3  0]
+ [-1  0  1  0  0]
+ [ 0  0  0  6  0]
+ [ 0  0  2  0  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000246047973633
+move:1011
+[[ 0  0  0  0  0]
+ [ 0 -2  0  3  0]
+ [-1  0  1  0  0]
+ [ 0  0  0  6  0]
+ [ 0  0  2  0  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000027894973755
+move:3322
+[[ 0  0  0  0  0]
+ [ 0 -2  0  3  0]
+ [-1  0  6  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  2  0  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000568151473999
+move:1122
+[[ 0  0  0  0  0]
+ [ 0  0  0  3  0]
+ [-1  0 -2  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  2  0  0]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000044107437134
+move:2423
+[[ 0  0  0  0  0]
+ [ 0  0  0  3  0]
+ [-1  0 -2  0  0]
+ [ 0  0  2  0  0]
+ [ 0  0  0  0  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00043511390686
+move:2233
+[[ 0  0  0  0  0]
+ [ 0  0  0  3  0]
+ [-1  0  0  0  0]
+ [ 0  0  2 -2  0]
+ [ 0  0  0  0  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000041007995605
+move:3120
+[[ 0  0  3  0  0]
+ [ 0  0  0  0  0]
+ [-1  0  0  0  0]
+ [ 0  0  2 -2  0]
+ [ 0  0  0  0  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000251770019531
+move:3344
+********************
+
+第21局结束，用时128.0138909816742秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 10:11
+
+第22局
+first_player: ChessColor.RED
+[[-5 -6 -4  0  0]
+ [-3 -1  0  0  0]
+ [-2  0  0  0  4]
+ [ 0  0  0  2  6]
+ [ 0  0  3  1  5]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000426054000854
+move:4434
+[[-5 -6 -4  0  0]
+ [-3 -1  0  0  0]
+ [-2  0  0  0  4]
+ [ 0  0  0  2  6]
+ [ 0  0  3  5  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.001200914382935
+move:213
+[[-5 -6 -4  0  0]
+ [-3 -1  0  0  0]
+ [ 0  0  0  0  4]
+ [ 0 -2  0  2  6]
+ [ 0  0  3  5  0]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000823974609375
+move:3322
+[[-5 -6 -4  0  0]
+ [-3 -1  0  0  0]
+ [ 0  0  2  0  4]
+ [ 0 -2  0  0  6]
+ [ 0  0  3  5  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000343084335327
+move:1324
+[[-5 -6 -4  0  0]
+ [-3 -1  0  0  0]
+ [ 0  0  2  0  4]
+ [ 0  0  0  0  6]
+ [ 0  0 -2  5  0]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000076055526733
+move:2211
+[[-5 -6 -4  0  0]
+ [-3  2  0  0  0]
+ [ 0  0  0  0  4]
+ [ 0  0  0  0  6]
+ [ 0  0 -2  5  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00035572052002
+move:2434
+[[-5 -6 -4  0  0]
+ [-3  2  0  0  0]
+ [ 0  0  0  0  4]
+ [ 0  0  0  0  6]
+ [ 0  0  0 -2  0]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00005292892456
+move:1100
+********************
+
+第22局结束，用时56.00524687767029秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 11:11
+
+第23局
+first_player: ChessColor.BLUE
+[[-5 -4 -2  0  0]
+ [-1 -6  0  0  0]
+ [-3  0  0  0  3]
+ [ 0  0  0  4  2]
+ [ 0  0  1  6  5]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000239133834839
+move:3423
+[[-5 -4 -2  0  0]
+ [-1 -6  0  0  0]
+ [-3  0  0  0  3]
+ [ 0  0  6  4  2]
+ [ 0  0  1  0  5]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000792026519775
+move:2031
+[[-5 -4  0  0  0]
+ [-1 -6  0 -2  0]
+ [-3  0  0  0  3]
+ [ 0  0  6  4  2]
+ [ 0  0  1  0  5]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000027894973755
+move:4434
+[[-5 -4  0  0  0]
+ [-1 -6  0 -2  0]
+ [-3  0  0  0  3]
+ [ 0  0  6  4  2]
+ [ 0  0  1  5  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000267028808594
+move:102
+[[-5 -4  0  0  0]
+ [ 0 -6  0 -2  0]
+ [-1  0  0  0  3]
+ [ 0  0  6  4  2]
+ [ 0  0  1  5  0]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000460147857666
+move:4231
+[[-5 -4  0  0  0]
+ [ 0 -6  0  3  0]
+ [-1  0  0  0  0]
+ [ 0  0  6  4  2]
+ [ 0  0  1  5  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000193119049072
+move:1122
+[[-5 -4  0  0  0]
+ [ 0  0  0  3  0]
+ [-1  0 -6  0  0]
+ [ 0  0  6  4  2]
+ [ 0  0  1  5  0]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000260829925537
+move:4332
+[[-5 -4  0  0  0]
+ [ 0  0  0  3  0]
+ [-1  0 -6  2  0]
+ [ 0  0  6  4  0]
+ [ 0  0  1  5  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.001374244689941
+move:213
+[[-5 -4  0  0  0]
+ [ 0  0  0  3  0]
+ [ 0  0 -6  2  0]
+ [ 0 -1  6  4  0]
+ [ 0  0  1  5  0]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000216960906982
+move:3322
+[[-5 -4  0  0  0]
+ [ 0  0  0  3  0]
+ [ 0  0  4  2  0]
+ [ 0 -1  6  0  0]
+ [ 0  0  1  5  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00024700164795
+move:1324
+[[-5 -4  0  0  0]
+ [ 0  0  0  3  0]
+ [ 0  0  4  2  0]
+ [ 0  0  6  0  0]
+ [ 0  0 -1  5  0]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000269174575806
+move:3130
+[[-5 -4  0  3  0]
+ [ 0  0  0  0  0]
+ [ 0  0  4  2  0]
+ [ 0  0  6  0  0]
+ [ 0  0 -1  5  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000521898269653
+move:1011
+[[-5  0  0  3  0]
+ [ 0 -4  0  0  0]
+ [ 0  0  4  2  0]
+ [ 0  0  6  0  0]
+ [ 0  0 -1  5  0]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000125169754028
+move:3020
+[[-5  0  3  0  0]
+ [ 0 -4  0  0  0]
+ [ 0  0  4  2  0]
+ [ 0  0  6  0  0]
+ [ 0  0 -1  5  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000554084777832
+move:2434
+[[-5  0  3  0  0]
+ [ 0 -4  0  0  0]
+ [ 0  0  4  2  0]
+ [ 0  0  6  0  0]
+ [ 0  0  0 -1  0]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000365257263184
+move:3222
+[[-5  0  3  0  0]
+ [ 0 -4  0  0  0]
+ [ 0  0  2  0  0]
+ [ 0  0  6  0  0]
+ [ 0  0  0 -1  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000180006027222
+move:3444
+********************
+
+第23局结束，用时128.0126829147339秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 11:12
+
+第24局
+first_player: ChessColor.RED
+[[-1 -5 -3  0  0]
+ [-2 -4  0  0  0]
+ [-6  0  0  0  1]
+ [ 0  0  0  2  3]
+ [ 0  0  5  4  6]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00029993057251
+move:4434
+[[-1 -5 -3  0  0]
+ [-2 -4  0  0  0]
+ [-6  0  0  0  1]
+ [ 0  0  0  2  3]
+ [ 0  0  5  6  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000644207000732
+move:2031
+[[-1 -5  0  0  0]
+ [-2 -4  0 -3  0]
+ [-6  0  0  0  1]
+ [ 0  0  0  2  3]
+ [ 0  0  5  6  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000294208526611
+move:3423
+[[-1 -5  0  0  0]
+ [-2 -4  0 -3  0]
+ [-6  0  0  0  1]
+ [ 0  0  6  2  3]
+ [ 0  0  5  0  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00045895576477
+move:1011
+[[-1  0  0  0  0]
+ [-2 -5  0 -3  0]
+ [-6  0  0  0  1]
+ [ 0  0  6  2  3]
+ [ 0  0  5  0  0]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000026226043701
+move:3322
+[[-1  0  0  0  0]
+ [-2 -5  0 -3  0]
+ [-6  0  2  0  1]
+ [ 0  0  6  0  3]
+ [ 0  0  5  0  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000874996185303
+move:3132
+[[-1  0  0  0  0]
+ [-2 -5  0  0  0]
+ [-6  0  2 -3  1]
+ [ 0  0  6  0  3]
+ [ 0  0  5  0  0]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000596284866333
+move:4332
+[[-1  0  0  0  0]
+ [-2 -5  0  0  0]
+ [-6  0  2  3  1]
+ [ 0  0  6  0  0]
+ [ 0  0  5  0  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000481843948364
+move:102
+[[-1  0  0  0  0]
+ [ 0 -5  0  0  0]
+ [-2  0  2  3  1]
+ [ 0  0  6  0  0]
+ [ 0  0  5  0  0]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000477075576782
+move:2423
+[[-1  0  0  0  0]
+ [ 0 -5  0  0  0]
+ [-2  0  2  3  1]
+ [ 0  0  5  0  0]
+ [ 0  0  0  0  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000656127929688
+move:11
+[[ 0  0  0  0  0]
+ [ 0 -1  0  0  0]
+ [-2  0  2  3  1]
+ [ 0  0  5  0  0]
+ [ 0  0  0  0  0]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000062942504883
+move:3221
+[[ 0  0  0  0  0]
+ [ 0 -1  3  0  0]
+ [-2  0  2  0  1]
+ [ 0  0  5  0  0]
+ [ 0  0  0  0  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000184059143066
+move:213
+[[ 0  0  0  0  0]
+ [ 0 -1  3  0  0]
+ [ 0  0  2  0  1]
+ [ 0 -2  5  0  0]
+ [ 0  0  0  0  0]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000040769577026
+move:4231
+[[ 0  0  0  0  0]
+ [ 0 -1  3  1  0]
+ [ 0  0  2  0  0]
+ [ 0 -2  5  0  0]
+ [ 0  0  0  0  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00011682510376
+move:1324
+[[ 0  0  0  0  0]
+ [ 0 -1  3  1  0]
+ [ 0  0  2  0  0]
+ [ 0  0  5  0  0]
+ [ 0  0 -2  0  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000221014022827
+move:2312
+[[ 0  0  0  0  0]
+ [ 0 -1  3  1  0]
+ [ 0  5  2  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -2  0  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000191926956177
+move:2434
+[[ 0  0  0  0  0]
+ [ 0 -1  3  1  0]
+ [ 0  5  2  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0 -2  0]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000059843063354
+move:2212
+[[ 0  0  0  0  0]
+ [ 0 -1  3  1  0]
+ [ 0  2  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0 -2  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000146865844727
+move:3444
+********************
+
+第24局结束，用时144.0113971233368秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 11:13
+
+第25局
+first_player: ChessColor.BLUE
+[[-5 -3 -6  0  0]
+ [-4 -1  0  0  0]
+ [-2  0  0  0  5]
+ [ 0  0  0  3  4]
+ [ 0  0  1  6  2]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000211000442505
+move:2413
+[[-5 -3 -6  0  0]
+ [-4 -1  0  0  0]
+ [-2  0  0  0  5]
+ [ 0  1  0  3  4]
+ [ 0  0  0  6  2]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000513792037964
+move:213
+[[-5 -3 -6  0  0]
+ [-4 -1  0  0  0]
+ [ 0  0  0  0  5]
+ [ 0 -2  0  3  4]
+ [ 0  0  0  6  2]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000216960906982
+move:4434
+[[-5 -3 -6  0  0]
+ [-4 -1  0  0  0]
+ [ 0  0  0  0  5]
+ [ 0 -2  0  3  4]
+ [ 0  0  0  2  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000802040100098
+move:1324
+[[-5 -3 -6  0  0]
+ [-4 -1  0  0  0]
+ [ 0  0  0  0  5]
+ [ 0  0  0  3  4]
+ [ 0  0 -2  2  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000193119049072
+move:4232
+[[-5 -3 -6  0  0]
+ [-4 -1  0  0  0]
+ [ 0  0  0  5  0]
+ [ 0  0  0  3  4]
+ [ 0  0 -2  2  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000186204910278
+move:1011
+[[-5  0 -6  0  0]
+ [-4 -3  0  0  0]
+ [ 0  0  0  5  0]
+ [ 0  0  0  3  4]
+ [ 0  0 -2  2  0]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000286102294922
+move:3424
+[[-5  0 -6  0  0]
+ [-4 -3  0  0  0]
+ [ 0  0  0  5  0]
+ [ 0  0  0  3  4]
+ [ 0  0  2  0  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000733137130737
+move:2021
+[[-5  0  0  0  0]
+ [-4 -3 -6  0  0]
+ [ 0  0  0  5  0]
+ [ 0  0  0  3  4]
+ [ 0  0  2  0  0]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000139951705933
+move:2413
+[[-5  0  0  0  0]
+ [-4 -3 -6  0  0]
+ [ 0  0  0  5  0]
+ [ 0  2  0  3  4]
+ [ 0  0  0  0  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000149965286255
+move:111
+[[-5  0  0  0  0]
+ [ 0 -4 -6  0  0]
+ [ 0  0  0  5  0]
+ [ 0  2  0  3  4]
+ [ 0  0  0  0  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000114917755127
+move:3221
+[[-5  0  0  0  0]
+ [ 0 -4  5  0  0]
+ [ 0  0  0  0  0]
+ [ 0  2  0  3  4]
+ [ 0  0  0  0  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000295877456665
+move:1121
+[[-5  0  0  0  0]
+ [ 0  0 -4  0  0]
+ [ 0  0  0  0  0]
+ [ 0  2  0  3  4]
+ [ 0  0  0  0  0]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00032377243042
+move:1302
+[[-5  0  0  0  0]
+ [ 0  0 -4  0  0]
+ [ 2  0  0  0  0]
+ [ 0  0  0  3  4]
+ [ 0  0  0  0  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000207901000977
+move:1
+[[ 0  0  0  0  0]
+ [-5  0 -4  0  0]
+ [ 2  0  0  0  0]
+ [ 0  0  0  3  4]
+ [ 0  0  0  0  0]]
+point:6
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000042915344238
+move:4332
+[[ 0  0  0  0  0]
+ [-5  0 -4  0  0]
+ [ 2  0  0  4  0]
+ [ 0  0  0  3  0]
+ [ 0  0  0  0  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00034213066101
+move:2132
+[[ 0  0  0  0  0]
+ [-5  0  0  0  0]
+ [ 2  0  0 -4  0]
+ [ 0  0  0  3  0]
+ [ 0  0  0  0  0]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000025987625122
+move:3332
+[[ 0  0  0  0  0]
+ [-5  0  0  0  0]
+ [ 2  0  0  3  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000208854675293
+move:112
+[[ 0  0  0  0  0]
+ [ 0  0  0  0  0]
+ [ 2 -5  0  3  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00002908706665
+move:201
+[[ 0  0  0  0  0]
+ [ 2  0  0  0  0]
+ [ 0 -5  0  3  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000195026397705
+move:1223
+[[ 0  0  0  0  0]
+ [ 2  0  0  0  0]
+ [ 0  0  0  3  0]
+ [ 0  0 -5  0  0]
+ [ 0  0  0  0  0]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000109910964966
+move:3222
+[[ 0  0  0  0  0]
+ [ 2  0  0  0  0]
+ [ 0  0  3  0  0]
+ [ 0  0 -5  0  0]
+ [ 0  0  0  0  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00020694732666
+move:2334
+[[ 0  0  0  0  0]
+ [ 2  0  0  0  0]
+ [ 0  0  3  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0 -5  0]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000046014785767
+move:2211
+[[ 0  0  0  0  0]
+ [ 2  3  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0 -5  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000135898590088
+move:3444
+********************
+
+第25局结束，用时192.01208305358887秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 11:14
+
+第26局
+first_player: ChessColor.RED
+[[-6 -1 -2  0  0]
+ [-3 -4  0  0  0]
+ [-5  0  0  0  2]
+ [ 0  0  0  1  5]
+ [ 0  0  3  6  4]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000154972076416
+move:3322
+[[-6 -1 -2  0  0]
+ [-3 -4  0  0  0]
+ [-5  0  1  0  2]
+ [ 0  0  0  0  5]
+ [ 0  0  3  6  4]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000179767608643
+move:1020
+[[-6  0 -1  0  0]
+ [-3 -4  0  0  0]
+ [-5  0  1  0  2]
+ [ 0  0  0  0  5]
+ [ 0  0  3  6  4]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000107049942017
+move:2413
+[[-6  0 -1  0  0]
+ [-3 -4  0  0  0]
+ [-5  0  1  0  2]
+ [ 0  3  0  0  5]
+ [ 0  0  0  6  4]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000149011611938
+move:111
+[[-6  0 -1  0  0]
+ [ 0 -3  0  0  0]
+ [-5  0  1  0  2]
+ [ 0  3  0  0  5]
+ [ 0  0  0  6  4]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000149011611938
+move:1302
+[[-6  0 -1  0  0]
+ [ 0 -3  0  0  0]
+ [ 3  0  1  0  2]
+ [ 0  0  0  0  5]
+ [ 0  0  0  6  4]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000091075897217
+move:1122
+[[-6  0 -1  0  0]
+ [ 0  0  0  0  0]
+ [ 3  0 -3  0  2]
+ [ 0  0  0  0  5]
+ [ 0  0  0  6  4]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000154256820679
+move:4342
+[[-6  0 -1  0  0]
+ [ 0  0  0  0  0]
+ [ 3  0 -3  0  5]
+ [ 0  0  0  0  0]
+ [ 0  0  0  6  4]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00009274482727
+move:2233
+[[-6  0 -1  0  0]
+ [ 0  0  0  0  0]
+ [ 3  0  0  0  5]
+ [ 0  0  0 -3  0]
+ [ 0  0  0  6  4]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000035047531128
+move:201
+[[-6  0 -1  0  0]
+ [ 3  0  0  0  0]
+ [ 0  0  0  0  5]
+ [ 0  0  0 -3  0]
+ [ 0  0  0  6  4]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000086784362793
+move:3344
+********************
+
+第26局结束，用时80.00331997871399秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 11:15
+
+第27局
+first_player: ChessColor.BLUE
+[[-6 -1 -4  0  0]
+ [-3 -2  0  0  0]
+ [-5  0  0  0  1]
+ [ 0  0  0  3  4]
+ [ 0  0  2  6  5]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000288009643555
+move:4434
+[[-6 -1 -4  0  0]
+ [-3 -2  0  0  0]
+ [-5  0  0  0  1]
+ [ 0  0  0  3  4]
+ [ 0  0  2  5  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00033712387085
+move:111
+[[-6 -1 -4  0  0]
+ [ 0 -3  0  0  0]
+ [-5  0  0  0  1]
+ [ 0  0  0  3  4]
+ [ 0  0  2  5  0]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000196933746338
+move:2423
+[[-6 -1 -4  0  0]
+ [ 0 -3  0  0  0]
+ [-5  0  0  0  1]
+ [ 0  0  2  3  4]
+ [ 0  0  0  5  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00019383430481
+move:2031
+[[-6 -1  0  0  0]
+ [ 0 -3  0 -4  0]
+ [-5  0  0  0  1]
+ [ 0  0  2  3  4]
+ [ 0  0  0  5  0]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000176906585693
+move:4342
+[[-6 -1  0  0  0]
+ [ 0 -3  0 -4  0]
+ [-5  0  0  0  4]
+ [ 0  0  2  3  0]
+ [ 0  0  0  5  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000709772109985
+move:1122
+[[-6 -1  0  0  0]
+ [ 0  0  0 -4  0]
+ [-5  0 -3  0  4]
+ [ 0  0  2  3  0]
+ [ 0  0  0  5  0]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000160932540894
+move:2322
+[[-6 -1  0  0  0]
+ [ 0  0  0 -4  0]
+ [-5  0  2  0  4]
+ [ 0  0  0  3  0]
+ [ 0  0  0  5  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000232934951782
+move:3142
+[[-6 -1  0  0  0]
+ [ 0  0  0  0  0]
+ [-5  0  2  0 -4]
+ [ 0  0  0  3  0]
+ [ 0  0  0  5  0]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.00028109550476
+move:3423
+[[-6 -1  0  0  0]
+ [ 0  0  0  0  0]
+ [-5  0  2  0 -4]
+ [ 0  0  5  3  0]
+ [ 0  0  0  0  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000149011611938
+move:4243
+[[-6 -1  0  0  0]
+ [ 0  0  0  0  0]
+ [-5  0  2  0  0]
+ [ 0  0  5  3 -4]
+ [ 0  0  0  0  0]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000093936920166
+move:3323
+[[-6 -1  0  0  0]
+ [ 0  0  0  0  0]
+ [-5  0  2  0  0]
+ [ 0  0  3  0 -4]
+ [ 0  0  0  0  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000143766403198
+move:1011
+[[-6  0  0  0  0]
+ [ 0 -1  0  0  0]
+ [-5  0  2  0  0]
+ [ 0  0  3  0 -4]
+ [ 0  0  0  0  0]]
+point:3
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000020027160645
+move:2312
+[[-6  0  0  0  0]
+ [ 0 -1  0  0  0]
+ [-5  3  2  0  0]
+ [ 0  0  0  0 -4]
+ [ 0  0  0  0  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000239849090576
+move:11
+[[ 0  0  0  0  0]
+ [ 0 -6  0  0  0]
+ [-5  3  2  0  0]
+ [ 0  0  0  0 -4]
+ [ 0  0  0  0  0]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000056982040405
+move:2211
+[[ 0  0  0  0  0]
+ [ 0  2  0  0  0]
+ [-5  3  0  0  0]
+ [ 0  0  0  0 -4]
+ [ 0  0  0  0  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000157833099365
+move:4344
+********************
+
+第27局结束，用时128.0078010559082秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 11:16
+
+第28局
+first_player: ChessColor.RED
+[[-6 -4 -5  0  0]
+ [-2 -3  0  0  0]
+ [-1  0  0  0  5]
+ [ 0  0  0  4  3]
+ [ 0  0  6  1  2]]
+point:4
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000204086303711
+move:3323
+[[-6 -4 -5  0  0]
+ [-2 -3  0  0  0]
+ [-1  0  0  0  5]
+ [ 0  0  4  0  3]
+ [ 0  0  6  1  2]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00099515914917
+move:102
+[[-6 -4 -5  0  0]
+ [ 0 -3  0  0  0]
+ [-2  0  0  0  5]
+ [ 0  0  4  0  3]
+ [ 0  0  6  1  2]]
+point:5
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000108242034912
+move:4231
+[[-6 -4 -5  0  0]
+ [ 0 -3  0  5  0]
+ [-2  0  0  0  0]
+ [ 0  0  4  0  3]
+ [ 0  0  6  1  2]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000783205032349
+move:213
+[[-6 -4 -5  0  0]
+ [ 0 -3  0  5  0]
+ [ 0  0  0  0  0]
+ [ 0 -2  4  0  3]
+ [ 0  0  6  1  2]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000131130218506
+move:3424
+[[-6 -4 -5  0  0]
+ [ 0 -3  0  5  0]
+ [ 0  0  0  0  0]
+ [ 0 -2  4  0  3]
+ [ 0  0  1  0  2]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000494956970215
+move:1324
+[[-6 -4 -5  0  0]
+ [ 0 -3  0  5  0]
+ [ 0  0  0  0  0]
+ [ 0  0  4  0  3]
+ [ 0  0 -2  0  2]]
+point:2
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000416994094849
+move:4443
+[[-6 -4 -5  0  0]
+ [ 0 -3  0  5  0]
+ [ 0  0  0  0  0]
+ [ 0  0  4  0  2]
+ [ 0  0 -2  0  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000214099884033
+move:2434
+[[-6 -4 -5  0  0]
+ [ 0 -3  0  5  0]
+ [ 0  0  0  0  0]
+ [ 0  0  4  0  2]
+ [ 0  0  0 -2  0]]
+point:1
+UCT_mutiprocess_Player start to stimulate
+UCT_mutiprocess_Player end to stimulate, time cost:8.000088214874268
+move:4332
+[[-6 -4 -5  0  0]
+ [ 0 -3  0  5  0]
+ [ 0  0  0  2  0]
+ [ 0  0  4  0  0]
+ [ 0  0  0 -2  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000088214874268
+move:3444
+********************
+
+第28局结束，用时80.00656199455261秒
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>) --- 11:17
+
+第29局
+first_player: ChessColor.BLUE
+[[-5 -1 -6  0  0]
+ [-4 -3  0  0  0]
+ [-2  0  0  0  5]
+ [ 0  0  0  3  2]
+ [ 0  0  4  6  1]]
+point:6
+UCT_mutiprocess_Player start to stimulate

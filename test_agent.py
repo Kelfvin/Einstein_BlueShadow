@@ -78,16 +78,17 @@ class Game:
 
             startTime = time.time()
             while self.board.checkWin() == None:
-                # self.board.showBoard()
-                self.board.get_point()
+                self.log.print(self.board.board.T)
+                point = self.board.get_point()
+                self.log.print(f'point:{point}')
                 turn = self.board.getturn()
-                # print(f'{self.players[turn].name} start to stimulate')
+
                 # 修改成文件输出
                 self.log.print(f'{self.players[turn].name} start to stimulate')
                 stimulateTimeStart = time.time()
                 move = self.players[turn].get_action(self.board)
-                # print(f'{self.players[turn].name} end to stimulate, time cost:{time.time()-stimulateTimeStart}')
                 self.log.print(f'{self.players[turn].name} end to stimulate, time cost:{time.time()-stimulateTimeStart}')
+                self.log.print(f'move:{move}\n')
 
                 self.do_move(move,show_msg=False)
 
@@ -131,7 +132,7 @@ if __name__ == "__main__":
     player1Class = UCT_mutiprocess_Player
     player2Class = UCTPlayer
 
-    msg = 'C_out=1.414'
+    msg = f'C_out=1.414'
 
     filename = f'{filename}_{player1Class.__name__}_vs_{player2Class.__name__}_{msg}.txt'
 

@@ -69,11 +69,16 @@ def UCT(board, color):
     
     begin = time.time()
     end = time.time()
+    stimulate_count = 0
     while end - begin < 8:
         p = Treepolicy(root)
         result = simulate(p)
         Backup(p, result)
         end = time.time()
+        stimulate_count += 1
+
+    print("stimulate_count:", stimulate_count)
+
     
     best = MostWin(root)
 

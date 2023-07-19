@@ -339,6 +339,8 @@ class Board:
             self.dice = random.randint(1, 6)
             # print("Point is", self.point)
 
+        return self.dice
+
     
 
 

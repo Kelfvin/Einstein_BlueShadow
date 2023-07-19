@@ -167,9 +167,13 @@ class MCTS:
 
         """
         timeStart = time.time()
+        stimulateCount = 0
         while time.time() - timeStart < self._time_playout:
             state_copy = copy.deepcopy(state)
             self._playout(state_copy)
+            stimulateCount += 1
+
+        print("stimulateCount:", stimulateCount)
         
         return max(self._root._children[state.dice].items(),
                    key=lambda act_node: act_node[1]._n_visits)[0]
