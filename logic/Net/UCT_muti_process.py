@@ -1,3 +1,4 @@
+import time
 import numpy as np
 import copy
 from operator import itemgetter
@@ -12,6 +13,14 @@ def rollout_policy_fn(board):
     action_probs = np.random.rand(len(moves))
     return zip(true_moves, action_probs)
 
+def policy_value_fn(board):
+    """a function that takes in a state and outputs a list of (action, probability)
+    tuples and a score for the state
+    """
+    # return uniform probabilities and 0 score for pure MCTS
+    moves, true_moves = board.get_avaiable_moves()
+    action_probs = np.ones(len(moves)) / len(moves)
+    return zip(true_moves, action_probs), 0
 
 class TreeNode:
     """
@@ -98,14 +107,14 @@ class MCTS:
     An implementation of Monte Carlo Tree Search.
     """
 
-    def __init__(self,c_puct=1.414, n_playout=50000):
+    def __init__(self,c_puct=1.414, time_playout=8):
         """
         c_puct: 一个在(0, 无穷大)范围内的数值，用于控制探索如何快速收敛到最大价值策略。较高的值意味着更依赖先前的策略。
         """
         self._root = TreeNode(None, 1.0)
-        self._policy = policy_value_fn
         self._c_puct = c_puct
-        self._n_playout = n_playout
+        self._time_playout = time_playout
+        self._policy = policy_value_fn
 
     def _playout(self, state):
         """
@@ -157,9 +166,11 @@ class MCTS:
         Return: the selected action
 
         """
-        for n in range(self._n_playout):
+        timeStart = time.time()
+        while time.time() - timeStart < self._time_playout:
             state_copy = copy.deepcopy(state)
             self._playout(state_copy)
+        
         return max(self._root._children[state.dice].items(),
                    key=lambda act_node: act_node[1]._n_visits)[0]
 
@@ -184,12 +195,14 @@ class MCTS:
             self._root._parent = None
 
 
-class MCTSPlayer(object):
+class UCT_mutiprocess_Player(object):
     """AI player based on MCTS"""
+    '''多线程'''
 
-    def __init__(self, c_puct=1.414, n_playout=50000):
-        self.mcts = MCTS(c_puct, n_playout)
-        self.name = "puremcts"
+    def __init__(self, c_puct=1.414, time_playout=8):
+        '''timp_playout:每次模拟的时间'''
+        self.mcts = MCTS(c_puct, time_playout)
+        self.name = "UCT_mutiprocess_Player"
 
     def set_color(self, color):
         self.color = color

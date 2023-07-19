@@ -1,0 +1,4 @@
+blue(<class 'logic.Net.UCT_muti_process.UCT_mutiprocess_Player'>)  vs red(<class 'logic.UCT.UCT.UCTPlayer'>)
+filename:2023-07-19_18-37-49_UCT_mutiprocess_Player_vs_UCTPlayer_C_out=1.414.txt
+
+第1局

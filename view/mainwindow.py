@@ -15,6 +15,7 @@ from logic.UCT.UCT import UCTPlayer
 from logic.Net.pure_mcts import MCTSPlayer
 import asyncio
 import time
+from logic.Net.UCT_muti_process import UCT_mutiprocess_Player
 
 
 
@@ -67,7 +68,8 @@ class MainWindow(QMainWindow):
         self.modules = {
             Strategy.HUMAN:HumanPlayer,
             Strategy.UCT:UCTPlayer,
-            Strategy.PURE_MCTS: MCTSPlayer
+            Strategy.PURE_MCTS: MCTSPlayer,
+            Strategy.UCT_MUTI_PROCESS:UCT_mutiprocess_Player,
             # Strategy.ALPHA_ZERO:
         }
 

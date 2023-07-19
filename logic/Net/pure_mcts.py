@@ -13,6 +13,16 @@ def rollout_policy_fn(board):
     return zip(true_moves, action_probs)
 
 
+def policy_value_fn(board):
+    """a function that takes in a state and outputs a list of (action, probability)
+    tuples and a score for the state
+    """
+    # return uniform probabilities and 0 score for pure MCTS
+    moves, true_moves = board.get_avaiable_moves()
+    action_probs = np.ones(len(moves)) / len(moves)
+    return zip(true_moves, action_probs), 0
+
+
 class TreeNode:
     """
     蒙特卡诺树中的一个节点。
@@ -188,7 +198,7 @@ class MCTSPlayer(object):
     """AI player based on MCTS"""
 
     def __init__(self, c_puct=1.414, n_playout=50000):
-        self.mcts = MCTS(c_puct, n_playout)
+        self.mcts = MCTS(policy_value_fn, c_puct, n_playout)
         self.name = "puremcts"
 
     def set_color(self, color):

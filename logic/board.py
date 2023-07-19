@@ -6,6 +6,7 @@ from enums.chess import ChessColor
 
 class Board:
     def __init__(self,start_player = ChessColor.BLUE,dice = 1) -> None:
+        '''默认起手为蓝方'''
         self.board = self.initBoard()
         self.dice = dice  # 骰子的数
         self.boardBackup = []  # 用于备份棋盘
@@ -34,11 +35,14 @@ class Board:
     
     def showBoard(self):
         '''打印棋盘'''
-        for x in range(5):
-            for y in range(5):
-                print (self.board[x][y],end=' ')
+        # for x in range(5):
+        #     for y in range(5):
+        #         print (self.board[x][y],end='\t')
 
-            print()
+        #     print()
+
+        # 打印棋盘，将numpy数组格式化输出，行变成列
+        print(np.array(self.board).T)
 
 
     def get_avaiable_pieces(self):
@@ -328,11 +332,11 @@ class Board:
         return self.sente
     
     def get_point(self, point = None):
-        # get the point function get called in get_action or MCTS search function
+        '''获取点数，如果没有指定点数，则随机生成点数'''
         if point: 
-            self.point = point
+            self.dice = point
         else: 
-            self.point = random.randint(1, 6)
+            self.dice = random.randint(1, 6)
             # print("Point is", self.point)
 
     

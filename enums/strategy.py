@@ -12,5 +12,9 @@ class Strategy(Enum):
     PURE_MCTS = 3
     '''正宗的蒙特卡洛'''
 
+    UCT_MUTI_PROCESS = 4
+
+
+
 
     
