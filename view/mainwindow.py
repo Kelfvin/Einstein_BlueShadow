@@ -11,7 +11,7 @@ from random import randint
 from enums.chess import ChessColor
 from enums.mode import Mode
 from enums.strategy import Strategy
-from logic.UCT.UCT import UCT
+from logic.UCT.UCT import UCT, UCTPlayer
 from logic.Net.pure_mcts import MCTSPlayer
 import asyncio
 import time
