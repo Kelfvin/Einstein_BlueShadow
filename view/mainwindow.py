@@ -3,6 +3,7 @@
 from PySide6.QtWidgets import QMainWindow,QApplication,QMessageBox
 from PySide6.QtCore import Slot,QPoint,QEvent
 from PySide6.QtGui import QPainter, QPen, QColor, QFont,Qt,QBrush,QMouseEvent
+from logic.huamn import HumanPlayer
 from view.mainwindow_ui import Ui_MainWindow
 import sys
 from logic.board import Board
@@ -13,6 +14,7 @@ from enums.strategy import Strategy
 from logic.UCT.UCT import UCTPlayer
 from logic.Net.pure_mcts import MCTSPlayer
 import asyncio
+import time
 
 
 
@@ -63,6 +65,7 @@ class MainWindow(QMainWindow):
         # 策略模型的初始化
 
         self.modules = {
+            Strategy.HUMAN:HumanPlayer,
             Strategy.UCT:UCTPlayer,
             Strategy.PURE_MCTS: MCTSPlayer
             # Strategy.ALPHA_ZERO:
@@ -163,17 +166,25 @@ class MainWindow(QMainWindow):
             self.ui.setSenteComboBox.setEnabled(False)
             self.ui.gameModeSelectCombBox.setEnabled(False)
 
-
+            
             if self.mode == Mode.AI_AI:
-
+            # 如果是AI对战，那么就让AI开始下棋
                 blueWin = redWin = 0
                 
-                for i in range(20):
+                for i in range(100):
+                    print(f'\n第{i+1}局')
+                    startTime = time.time()
                     while self.board.checkWin() == None:
                         self.on_diceButton_clicked()
                         turn = self.board.getturn()
+                        print(f'{self.players[turn].name} start to stimulate')
+                        stimulateTimeStart = time.time()
                         move = self.players[turn].get_action(self.board)
+                        print(f'{self.players[turn].name} end to stimulate, time cost:{time.time()-stimulateTimeStart}')
+
+
                         self.do_move(move,show_msg=False)
+                        self.update()   
                         QApplication.processEvents()  # 等待界面更新完成
 
                         if self.board.checkWin() == ChessColor.RED:
@@ -183,12 +194,12 @@ class MainWindow(QMainWindow):
                             blueWin+=1
 
 
-                    print(f'blue({self.blueStrategy})  vs red({self.redStrategy}) --- {redWin}:{blueWin}')
+                    print(f'第{i+1}局结束，用时{time.time()-startTime}秒')
+                    print(f'blue({self.blueStrategy})  vs red({self.redStrategy}) --- {blueWin}:{redWin}')
 
                     self.board = Board()
                     self.setBlueAgent()
                     self.setRedAgent()
-
                     
 
 
@@ -261,23 +272,12 @@ class MainWindow(QMainWindow):
 #               佛祖保佑         
 
         
-        # To do 这里放 传给AI的东西
-
-        if self.board.getturn() == self.board.getOurColor():
-            if self.mode == Mode.HUMAN_AI or self.mode == Mode.HUMAN_HUMAN:
-                self.showMsg('不允许使用AI作弊')
-            else:
-                print(self.board.board)
-                move = self.modules[self.ourStrategy](self.board)
-
-        else:
-            if self.mode == Mode.AI_HUMAN or self.mode == Mode.HUMAN_HUMAN:
-                self.showMsg('不允许使用AI作弊')
-            else:
-                print(self.board.board)
-                move = self.modules[self.ourStrategy](self.board)
-
-        self.do_move(move)
+        # 根据当前是谁的回合交给对应的agent进行处理
+        turn = self.board.getturn()
+        move = self.players[turn].get_action(self.board)
+        # 后面写一个人的agent，不返回任何的move
+        if move:
+            self.do_move(move)
 
 
     def do_move(self,move,show_msg = True):

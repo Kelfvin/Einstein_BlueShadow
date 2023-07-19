@@ -16,15 +16,15 @@ def softmax(x):
 
 class TreeNode:
     """
-    A node in the MCTS tree.
+    蒙特卡洛树的节点
 
-    Each node keeps track of its own value Q, prior probability P, and
-    its visit-count-adjusted prior score u.
+    每个节点都有自己的Q值，先验概率P，和访问次数调整的先验分数u
     """
 
     def __init__(self, parent, prior_p):
-        self._parent = parent    # root's parent is None
+        self._parent = parent    # 根结点的父节点是None
         # {1: {}, 2：{}, 3:{}, 4:{}, 5:{}, 6:{treenode, treenode, treenode, ...}}
+        # key 是点数，value 是一个字典，key 是骰子的数目，value 是 TreeNode
         self._children = {}
         self._n_visits = 0
         self._Q = 0

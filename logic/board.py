@@ -304,13 +304,6 @@ class Board:
         else:
             return -1
         
-    def getOurColor(self):
-        return self.ourColor
-
-    def setOurColor(self,color:ChessColor):
-        '''设置我方的棋子颜色
-            colorCode:1表示蓝方，1表示红方'''
-        self.ourColor = color
 
     def getturn(self):
         return self.turn

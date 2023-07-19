@@ -4,11 +4,14 @@ from operator import itemgetter
 
 
 def rollout_policy_fn(board):
-    """a coarse, fast version of policy_fn used in the rollout phase."""
-    # rollout randomly
+    """
+    一个粗糙的，快速的策略函数，用于模拟阶段。
+    """
+    # 从当前棋盘状态中获取可用的动作
     moves, true_moves = board.get_avaiable_moves()
     action_probs = np.random.rand(len(moves))
     return zip(true_moves, action_probs)
+
 
 def policy_value_fn(board):
     """a function that takes in a state and outputs a list of (action, probability)
@@ -18,12 +21,13 @@ def policy_value_fn(board):
     action_probs = np.ones(len(moves)) / len(moves)
     return zip(true_moves, action_probs), 0
 
+
 class TreeNode:
     """
     A node in the MCTS tree.
 
-    Each node keeps track of its own value Q, prior probability P, and
-    its visit-count-adjusted prior score u.
+    蒙特卡诺树中的一个节点。
+    每个节点都跟踪其自身的值Q，先前的概率P以及其访问计数调整的先前分数u。
     """
 
     def __init__(self, parent, prior_p):
@@ -33,7 +37,7 @@ class TreeNode:
         self._n_visits = 0
         self._Q = 0
         self._u = 0
-        self._P = prior_p 
+        self._P = prior_p
 
     def expand(self, action_priors, point):
         """
@@ -54,9 +58,10 @@ class TreeNode:
         # the game rule has a random cases in the select procedure
         board.get_point()
         batch = self._children.get(board.dice, None)    # get this point's edge
-        if not batch: return True, None    # this node is the leaf
+        if not batch:
+            return True, None    # this node is the leaf
         return False, max(batch.items(),
-                   key=lambda act_node: act_node[1].get_value(c_puct))
+                          key=lambda act_node: act_node[1].get_value(c_puct))
 
     def update(self, leaf_value):
         """
@@ -75,16 +80,16 @@ class TreeNode:
         """
         # If it is not root, this node's parent should be updated first.
         if self._parent:
-            self._parent.update_recursive(-leaf_value)    # - leaf_value because the MCTS tree is a max-min tree
+            # - leaf_value because the MCTS tree is a max-min tree
+            self._parent.update_recursive(-leaf_value)
         self.update(leaf_value)
 
     def get_value(self, c_puct):
         """
-        Calculate and return the value for this node.
-        It is a combination of leaf evaluations Q, and this node's prior
-        adjusted for its visit count, u.
-        c_puct: a number in (0, inf) controlling the relative impact of
-            value Q, and prior probability P, on this node's score.
+        计算并返回此节点的价值
+        它是叶子评估Q和此节点的先前访问计数u的组合。
+        c_puct：控制相对影响的数字
+        值Q和先前概率P，对此节点的分数。
         """
         self._u = (c_puct * self._P *
                    np.sqrt(self._parent._n_visits) / (1 + self._n_visits))
@@ -101,13 +106,9 @@ class MCTS:
 
     def __init__(self, policy_value_fn, c_puct=5, n_playout=10000):
         """
-        policy_value_fn: a function that takes in a board state and outputs
-            a list of (action, probability) tuples and also a score in [-1, 1]
-            (i.e. the expected value of the end game score from the current
-            player's perspective) for the current player.
-        c_puct: a number in (0, inf) that controls how quickly exploration
-            converges to the maximum-value policy. A higher value means
-            relying on the prior more.
+        policy_value_fn: 一个函数，接受一个棋盘状态作为输入，并输出一个由动作和概率组成的列表，还有一个在[-1, 1]范围内的分数（即从当前玩家的角度看，游戏结束时的预期价值）。
+
+        c_puct: 一个在(0, 无穷大)范围内的数值，用于控制探索如何快速收敛到最大价值策略。较高的值意味着更依赖先前的策略。
         """
         self._root = TreeNode(None, 1.0)
         self._policy = policy_value_fn
@@ -116,44 +117,43 @@ class MCTS:
 
     def _playout(self, state):
         """
-        Run a single playout from the root to the leaf, getting a value at
-        the leaf and propagating it back through its parents.
-        State is modified in-place, so a copy must be provided.
-        state is a board instance from the game.py file.
+        进行一次从根节点到叶节点的单次模拟，得到叶节点的值，并将其传播回其父节点。
+        状态是就地修改的，因此必须提供副本。
         """
         node = self._root
-        while(1):
+        while (1):
             is_leaf, action_node = node.select(state, self._c_puct)
-            if is_leaf: break
+            if is_leaf:
+                break
             state.do_move(action_node[0])
             node = action_node[1]
 
-        # value is useless here
+        # 价值是无用的
         action_probs, _ = self._policy(state)
-        # Check for end of game
+        # 检查游戏是否结束
         winner = state.checkWin()
         if winner == None:
             node.expand(action_probs, state.dice)
-        # Evaluate the leaf node by random rollout
+        # 评估叶节点用随机模拟
         leaf_value = self._evaluate_rollout(state)
         # Update value and visit count of nodes in this traversal.
         node.update_recursive(-leaf_value)
 
     def _evaluate_rollout(self, state, limit=1000):
         """
-        Use the rollout policy to play until the end of the game,
-        returning +1 if the current player wins, -1 if the opponent wins,
-        and 0 if it is a tie.
+        使用随机策略玩游戏，直到游戏结束，返回+1如果当前玩家赢了，-1如果对手赢了，0如果是平局。
+        当然不可能出现平局
         """
         player = state.turn
         for i in range(limit):
             winner = state.checkWin()
-            if winner: break
+            if winner:
+                break
             action_probs = rollout_policy_fn(state)
             max_action = max(action_probs, key=itemgetter(1))[0]
             state.do_move(max_action)
         else:
-            # If no break from the loop, issue a warning.
+            # 如果没有 break。发出警告。
             print("WARNING: rollout reached move limit")
             return -1
         return 1 if winner == player else -1
@@ -163,6 +163,7 @@ class MCTS:
         state: the current game state
 
         Return: the selected action
+
         """
         for n in range(self._n_playout):
             state_copy = copy.deepcopy(state)
@@ -177,7 +178,7 @@ class MCTS:
             self._playout(state_copy)
             qq.put(True)
             flag = qq.get()
-    
+
     def update_with_move(self, point, last_move):
         """
         Step forward in the tree, keeping everything we already know
@@ -193,7 +194,8 @@ class MCTS:
 
 class MCTSPlayer(object):
     """AI player based on MCTS"""
-    def __init__(self, c_puct=5, n_playout=30000):
+
+    def __init__(self, c_puct=1.38, n_playout=50000):
         self.mcts = MCTS(policy_value_fn, c_puct, n_playout)
         self.name = "puremcts"
 
@@ -207,6 +209,3 @@ class MCTSPlayer(object):
         move = self.mcts.get_move(board)
         self.mcts.update_with_move(-1, -1)
         return move
-    
-
-

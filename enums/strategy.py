@@ -1,6 +1,8 @@
 from enum import Enum
 
 class Strategy(Enum):
+    HUMAN = 0
+
     UCT = 1
     '''使用 UCT 进行搜索'''
 
@@ -9,4 +11,6 @@ class Strategy(Enum):
 
     PURE_MCTS = 3
     '''正宗的蒙特卡洛'''
+
+
     
