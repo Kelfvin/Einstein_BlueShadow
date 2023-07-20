@@ -7,7 +7,16 @@ import copy
 SIZE = 5
 LINE = 5
 class AlphabetPlayer(object):
-    def __init__(self,board):
+    def set_color(self, color):
+        self.direction = color
+
+    ##传入参数：棋局与深度
+    def get_action(self, board, depth=4):
+        move = self.caculate(board,depth)
+        return board.location_to_move(move)
+    
+    def __init__(self):
+        
         self.name-"Alphabet" ##算法名字
         
         self.redValueChart = [
@@ -25,8 +34,6 @@ class AlphabetPlayer(object):
             [2, 2, 2, 2, 1]
         ]
 
-        
-        self.virtueTable = copy.deepcopy(board.board)
 
         self.redValue = [0] * SIZE
         self.blueValue = [0] * SIZE
@@ -48,13 +55,7 @@ class AlphabetPlayer(object):
         self.SIZE = 6
         self.LINE = 5
     
-    def set_color(self, color):
-        self.direction = color
-
-    def get_action(self, board, depth=4):
-        move = self.caculate(board,depth)
-        return board.location_to_move(move)
-    
+   
         
     def isThereBlue(self):
         for i in range(len(self.self.virtueTable)):
