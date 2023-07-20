@@ -127,9 +127,13 @@ class MCTS:
 
         # 根节点单独进行处理，因为已经知道骰子了
         is_leaf, action_node = self._root.select(state, self._c_puct, is_root=True)
-        if not is_leaf:
-            state.do_move(action_node[0])
-            node = action_node[1]
+
+        # 如果不是叶子节点，就要先走一步。
+        
+        # if not is_leaf:
+        #     state.do_move(action_node[0])
+        #     node = action_node[1]
+
 
         while (1):
             if is_leaf:
