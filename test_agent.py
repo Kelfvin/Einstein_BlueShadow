@@ -132,7 +132,7 @@ if __name__ == "__main__":
     player1Class = UCT_mutiprocess_Player
     player2Class = UCTPlayer
 
-    msg = f'C_out=1.414'
+    msg = f'C_out=1.414 time limit=15s 改进root'
 
     filename = f'{filename}_{player1Class.__name__}_vs_{player2Class.__name__}_{msg}.txt'
 
