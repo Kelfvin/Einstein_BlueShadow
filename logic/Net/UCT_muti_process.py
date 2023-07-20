@@ -26,8 +26,7 @@ class TreeNode:
     """
     蒙特卡诺树中的一个节点。
     children: a dictionary from action to TreeNode.
-        key: action 骰子点数
-        value: TreeNode
+        {dice: {action: TreeNode}}
     n_visits: 该节点被访问的次数。
     Q: 该节点的平均动作价值。
     u: 该节点的置信上限。
@@ -52,20 +51,22 @@ class TreeNode:
         for action, prob in action_priors:
             self._children[point][action] = TreeNode(self, prob)
 
-    def select(self, board, c_puct):
+    def select(self, board, c_puct,is_root=False):
         """
         选择动作。
         通过 Max Q + U 选择动作。 UCT公式
-        返回: A tuple of (action, next_node)
+        返回: A tuple of (is_leaf, (action, next_node)))
         """
 
-        # 获取当前棋盘的点数
-        board.get_point()
+        # 如果不是根节点，说明现在是处于模拟之中
+        if not is_root:
+            board.get_point()
         batch = self._children.get(board.dice, None)    # get this point's edge
         if not batch:
             return True, None    # this node is the leaf
         return False, max(batch.items(),
                           key=lambda act_node: act_node[1].get_value(c_puct))  # 返回最大值的键值对
+
 
     def update(self, leaf_value):
         """
@@ -121,13 +122,21 @@ class MCTS:
         进行一次从根节点到叶节点的单次模拟，得到叶节点的值，并将其传播回其父节点。
         状态是就地修改的，因此必须提供副本。
         """
+
         node = self._root
+
+        # 根节点单独进行处理，因为已经知道骰子了
+        is_leaf, action_node = self._root.select(state, self._c_puct, is_root=True)
+        if not is_leaf:
+            state.do_move(action_node[0])
+            node = action_node[1]
+
         while (1):
-            is_leaf, action_node = node.select(state, self._c_puct)
             if is_leaf:
                 break
             state.do_move(action_node[0])
             node = action_node[1]
+            is_leaf, action_node = node.select(state, self._c_puct)
 
         # 价值是无用的
         action_probs, _ = self._policy(state)
@@ -160,15 +169,19 @@ class MCTS:
         return 1 if winner == player else -1
 
     def get_move(self, state):
-        """Runs all playouts sequentially and returns the most visited action.
-        state: the current game state
+        """进行所有模拟并返回最多访问的动作。
+        由于进来的时候，我就已经确定了骰子的数目，
+        所以对于第一次的搜索要单独进行处理"""
 
-        Return: the selected action
 
-        """
+
+
         timeStart = time.time()
         stimulateCount = 0
+        # 这里限定搜索的时间为15秒
         while stimulateCount<50000 or time.time() - timeStart < self._time_playout:
+
+
             state_copy = copy.deepcopy(state)
             self._playout(state_copy)
             stimulateCount += 1
@@ -178,18 +191,11 @@ class MCTS:
         return max(self._root._children[state.dice].items(),
                    key=lambda act_node: act_node[1]._n_visits)[0]
 
-    def cheating_move(self, qq, state, temp=1e-3):
-        flag = qq.get()
-        while flag:
-            state_copy = copy.deepcopy(state)
-            self._playout(state_copy)
-            qq.put(True)
-            flag = qq.get()
 
     def update_with_move(self, point, last_move):
         """
-        Step forward in the tree, keeping everything we already know
-        about the subtree.
+        在子树中前进，保留搜索历史。
+        后期看看加和不加哪个效果更好
         """
         if point == -1:
             # reset the tree

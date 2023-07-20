@@ -105,7 +105,7 @@ class TreeNode:
 
 class MCTS:
     """
-    An implementation of Monte Carlo Tree Search.
+    蒙特卡罗树搜索
     """
 
     def __init__(self,c_puct=1.414, n_playout=50000):
