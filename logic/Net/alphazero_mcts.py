@@ -33,9 +33,9 @@ class TreeNode:
 
     def expand(self, action_priors, point):
         """
-        Expand tree by creating new children.
-        action_priors: a list of tuples of actions and their prior probability
-        according to the policy function.
+        扩展树，创建新的子节点。
+        action_priors: 一个动作和它们的先验概率的元组列表
+        根据策略函数。
         """
         self._children[point] = {}
         for action, prob in action_priors:
@@ -43,13 +43,12 @@ class TreeNode:
 
     def select(self, board, c_puct):
         """
-        Select action among children that gives maximum action value Q
-        plus bonus u(P).
         Return: A tuple of (action, next_node)
+        选择动作，通过 Max Q + U 选择动作。 UCT公式
         """
-        # the game rule has a random cases in the select procedure
+
+        # 这里看后面要不要区分根节点的情况
         board.get_point()
-        # get this point's edge
         batch = self._children.get(board.point, None)
         if not batch:
             return True, None    # this node is the leaf
@@ -128,9 +127,9 @@ class MCTS:
             state.do_move(action_node[0])
             node = action_node[1]
 
-        # Evaluate the leaf using a network which outputs a list of
-        # (action, probability) tuples p and also a score v in [-1, 1]
-        # for the `current player`.
+
+        # 评价叶节点，使用一个网络，该网络输出一个列表，其中包含 (action, probability) 元组 p，
+        # 以及 [-1, 1] 范围内的分数 v，用于“当前玩家”。
 
         action_probs, leaf_value = self._policy(state)
         # Check for end of game.
@@ -155,7 +154,7 @@ class MCTS:
             state_copy = copy.deepcopy(state)
             self._playout(state_copy)
 
-        # calc the move probabilities based on visit counts at the root node
+        # 根据根节点的访问次数计算移动概率
         act_visits = [(act, node._n_visits)
                       for act, node in self._root._children[state.dice].items()]
         acts, visits = zip(*act_visits)

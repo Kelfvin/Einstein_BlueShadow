@@ -2,12 +2,12 @@
 
 import time
 from enums.chess import ChessColor
-from enums.strategy import Strategy
+from enums.Agents import Strategy
 
 from logic.Net.pure_mcts import MCTSPlayer
 from logic.UCT.UCT import UCTPlayer
 from logic.board import Board
-from logic.Net.UCT_muti_process import UCT_mutiprocess_Player
+from logic.Net.UCT_fast_version import UCT_fast_version_player
 
 class Logger(object):
     def __init__(self, log_path="default.log"):
@@ -129,14 +129,14 @@ if __name__ == "__main__":
     filename = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     # 以当前日期加上时间作为文件名
 
-    player1Class = UCT_mutiprocess_Player
+    player1Class = UCT_fast_version_player
     player2Class = UCTPlayer
 
-    msg = f'C_out=1.414 time limit=15s 改进root'
+    msg = f'C_out=2.5 time limit=20s 改进root'
 
     filename = f'{filename}_{player1Class.__name__}_vs_{player2Class.__name__}_{msg}.txt'
 
 
 
-    game = Game(UCT_mutiprocess_Player, UCTPlayer,filename=filename)
+    game = Game(UCT_fast_version_player, UCTPlayer,filename=filename)
     game.run()

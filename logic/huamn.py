@@ -4,6 +4,7 @@
 class HumanPlayer():
     def __init__(self, name):
         super().__init__(name)
+        self.name = 'Human'
 
     def get_action(self,board):
         return None
