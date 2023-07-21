@@ -213,7 +213,7 @@ class UCT_fast_version_player(object):
     """AI player based on MCTS"""
     '''多线程'''
 
-    def __init__(self, c_puct=2.5, time_playout=20):
+    def __init__(self, c_puct=1.414, time_playout=8):
         '''timp_playout:每次模拟的时间'''
         self.mcts = MCTS(c_puct, time_playout)
         self.name = "UCT_mutiprocess_Player"

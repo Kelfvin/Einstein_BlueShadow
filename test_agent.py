@@ -2,31 +2,9 @@
 
 import time
 from enums.chess import ChessColor
-from enums.Agents import Strategy
-
-from logic.Net.pure_mcts import MCTSPlayer
-from logic.UCT.UCT import UCTPlayer
+from enums.Agents import Agents
 from logic.board import Board
-from logic.Net.UCT_fast_version import UCT_fast_version_player
-
-class Logger(object):
-    def __init__(self, log_path="default.log"):
-        import sys
-        self.terminal = sys.stdout
-        self.log = open(log_path, "w", buffering=64, encoding="utf-8")
- 
-    def print(self, *message):
-        message = ",".join([str(it) for it in message])
-        self.terminal.write(str(message) + "\n")
-        self.log.write(str(message) + "\n")
- 
-    def flush(self):
-        self.terminal.flush()
-        self.log.flush()
- 
-    def close(self):
-        self.log.close()
-
+from Logger import Logger
 
 class Game:
 
@@ -129,14 +107,23 @@ if __name__ == "__main__":
     filename = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     # 以当前日期加上时间作为文件名
 
-    player1Class = UCT_fast_version_player
-    player2Class = UCTPlayer
+    # 打印所有的Agent，并显示序号，让用户选择
+    agent_names = list(Agents.keys())
+    for i in range(len(agent_names)):
+        print(f'{i+1}:{agent_names[i]}')
+    # 选择Agent
+    player1_agent_name = int(input('选择player1:'))
+    player2_agent_name = int(input('选择player2:'))    
+
+    player1Class = Agents[player1_agent_name]
+    player2Class = Agents[player2_agent_name]
+
+    msg = input('输入备注信息：')
 
     msg = f'C_out=2.5 time limit=20s 改进root'
 
     filename = f'{filename}_{player1Class.__name__}_vs_{player2Class.__name__}_{msg}.txt'
 
 
-
-    game = Game(UCT_fast_version_player, UCTPlayer,filename=filename)
+    game = Game(player1Class, player2Class,filename=filename)
     game.run()
