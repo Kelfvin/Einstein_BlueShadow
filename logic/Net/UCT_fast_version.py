@@ -129,7 +129,7 @@ class MCTS:
         is_leaf, action_node = self._root.select(state, self._c_puct, is_root=True)
 
         # 如果不是叶子节点，就要先走一步。
-        
+
         # if not is_leaf:
         #     state.do_move(action_node[0])
         #     node = action_node[1]
@@ -209,11 +209,11 @@ class MCTS:
             self._root._parent = None
 
 
-class UCT_mutiprocess_Player(object):
+class UCT_fast_version_player(object):
     """AI player based on MCTS"""
     '''多线程'''
 
-    def __init__(self, c_puct=1.414, time_playout=8):
+    def __init__(self, c_puct=2.5, time_playout=20):
         '''timp_playout:每次模拟的时间'''
         self.mcts = MCTS(c_puct, time_playout)
         self.name = "UCT_mutiprocess_Player"

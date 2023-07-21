@@ -5,17 +5,12 @@ from PySide6.QtCore import Slot,QPoint,QEvent
 from PySide6.QtGui import QPainter, QPen, QColor, QFont,Qt,QBrush,QMouseEvent
 from logic.huamn import HumanPlayer
 from view.mainwindow_ui import Ui_MainWindow
-import sys
 from logic.board import Board
 from random import randint
 from enums.chess import ChessColor
 from enums.mode import Mode
-from enums.strategy import Strategy
-from logic.UCT.UCT import UCTPlayer
-from logic.Net.pure_mcts import MCTSPlayer
-import asyncio
+from enums.Agents import Agents
 import time
-from logic.Net.UCT_muti_process import UCT_mutiprocess_Player
 
 
 
@@ -34,15 +29,14 @@ class MainWindow(QMainWindow):
         self.mode = Mode.HUMAN_HUMAN
         '''当前的对战模式'''
 
-        self.blueStrategy = Strategy.HUMAN
-        self.redStrategy = Strategy.HUMAN
+
+        self.blueAgentName = 'Human'
+        self.redAgentName = 'Human'
 
         self.players = {
             ChessColor.BLUE:None,
             ChessColor.RED:None
         }
-
-
 
 
         # 是否完成了棋盘的摆放
@@ -65,29 +59,20 @@ class MainWindow(QMainWindow):
 
         # 策略模型的初始化
 
-        self.modules = {
-            Strategy.HUMAN:HumanPlayer,
-            Strategy.UCT:UCTPlayer,
-            Strategy.PURE_MCTS: MCTSPlayer,
-            Strategy.UCT_MUTI_PROCESS:UCT_mutiprocess_Player,
-            # Strategy.ALPHA_ZERO:
-        }
-
-
         # 初始化图形界面和信号槽的绑定
         self.initUI()
 
 
     def setRedAgent(self):
-        Agent = self.modules[self.redStrategy]()
-        Agent.set_color(ChessColor.RED)
-        self.players[ChessColor.RED] = Agent
+        agent = Agents[self.redAgentName]()
+        agent.set_color(ChessColor.RED)
+        self.players[ChessColor.RED] = agent
 
 
     def setBlueAgent(self):
-        Agent = self.modules[self.blueStrategy]()
-        Agent.set_color(ChessColor.BLUE)
-        self.players[ChessColor.BLUE] = Agent
+        agent = Agents[self.blueAgentName]()
+        agent.set_color(ChessColor.BLUE)
+        self.players[ChessColor.BLUE] = agent
 
 
     def initUI(self):
@@ -101,9 +86,9 @@ class MainWindow(QMainWindow):
 
     def initStrategySelectCombBox(self):
         '''初始化策略选择的下拉框'''
-        for strategy in Strategy:
-            self.ui.redStrategySelectCombBox.addItem(strategy.name)
-            self.ui.blueStrategySelectCombBox.addItem(strategy.name)
+        for agentName in Agents:
+            self.ui.redStrategySelectCombBox.addItem(agentName)
+            self.ui.blueStrategySelectCombBox.addItem(agentName)
 
     
     def initGameModeSlectCombBox(self):
@@ -199,9 +184,16 @@ class MainWindow(QMainWindow):
                     print(f'第{i+1}局结束，用时{time.time()-startTime}秒')
                     print(f'blue({self.blueStrategy})  vs red({self.redStrategy}) --- {blueWin}:{redWin}')
 
-                    self.board = Board()
+                    # 偶数是蓝方先手，奇数是红方先手
+                    firstPlayer = ChessColor.BLUE if i%2==0 else ChessColor.RED
+                    self.board = Board(firstPlayer)
                     self.setBlueAgent()
                     self.setRedAgent()
+
+            else:
+                pass
+                # 不做操作，根据界面上的按钮事件来进行操作
+
                     
 
 
@@ -209,6 +201,8 @@ class MainWindow(QMainWindow):
             msgBox = QMessageBox()
             msgBox.setText("布局非法，请检查！")
             msgBox.exec()
+
+
 
     @Slot(int)
     def handleGameModeChanged(self,int):
@@ -222,21 +216,17 @@ class MainWindow(QMainWindow):
 
     @Slot(int)
     def redStrategyChanged(self,int):
-        for strategy in Strategy:
-            if strategy.name == self.ui.redStrategySelectCombBox.currentText():
-                self.redStrategy = strategy
-                break
+        self.redAgentName = self.ui.redStrategySelectCombBox.currentText()
+        self.setRedAgent()
 
-        print(f'切换红方策略:{strategy.name}')
+        print(f'切换红方策略:{self.redAgentName}')
 
     @Slot(int)
     def blueStrategyChanged(self,int):
-        for strategy in Strategy:
-            if strategy.name == self.ui.blueStrategySelectCombBox.currentText():
-                self.blueStrategy = strategy
-                break
 
-        print(f'切换蓝方策略:{strategy.name}')
+        self.blueAgentName = self.ui.blueStrategySelectCombBox.currentText()
+        self.setBlueAgent()
+        print(f'切换蓝方策略:{self.blueAgentName}')
 
 
     @Slot()
@@ -268,13 +258,20 @@ class MainWindow(QMainWindow):
 #
 #               佛祖保佑         
 
-        
+
         # 根据当前是谁的回合交给对应的agent进行处理
         turn = self.board.getturn()
-        move = self.players[turn].get_action(self.board)
-        # 后面写一个人的agent，不返回任何的move
-        if move:
+
+        # 判断是否可以让AI下棋
+        turn = self.board.getturn()
+        if self.players[turn].name != 'Human':
+            move = self.players[turn].get_action(self.board)
             self.do_move(move)
+
+        else:
+            self.showMsg('不能使用 AI 作弊，现在是人工操作！')
+
+
 
 
     def do_move(self,move,show_msg=True):

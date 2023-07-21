@@ -9,8 +9,8 @@ class Mode(Enum):
     '''AI对AI'''
 
     HUMAN_AI = 3
-    '''我方人工,对方AI（用我们自己设置的AI）'''
+    '''红方人工,蓝方AI'''
 
     AI_HUMAN = 4
-    '''我方AI，对方人工'''
+    '''红方AI,蓝方人工'''
 

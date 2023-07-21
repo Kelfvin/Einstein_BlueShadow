@@ -17,7 +17,7 @@ class AlphabetPlayer(object):
     
     def __init__(self):
         
-        self.name-"Alphabet" ##算法名字
+        self.name = "Alphabet" ##算法名字
         
         self.redValueChart = [
             [0, 2, 2, 2, 2],
