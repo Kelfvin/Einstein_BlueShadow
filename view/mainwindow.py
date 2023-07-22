@@ -293,7 +293,16 @@ class MainWindow(QMainWindow):
     @Slot()
     def on_replayMatchButton_clicked(self):
         '''重开'''
-        pass
+        self.chessSeted = False
+        self.ui.setDiceComboBox.setEnabled(False)
+        self.ui.letAIDoButton.setEnabled(False)
+        self.ui.startMatchButton.setEnabled(True)
+        self.ui.diceButton.setEnabled(False)
+        self.ui.backButton.setEnabled(False)
+        self.ui.setSenteComboBox.setEnabled(True)
+        self.ui.gameModeSelectCombBox.setEnabled(True)
+        self.board = Board()
+        self.update()
 
     @Slot(int)
     def on_setOurColorComboBox_currentIndexChanged(self,index):
