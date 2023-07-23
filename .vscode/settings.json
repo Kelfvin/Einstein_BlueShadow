@@ -1,4 +1,4 @@
 {
-    "cmake.sourceDirectory": "/Users/kelf/Desktop/博弈/Einstein_BlueShadow/Agents/alpha_beta",
-    "cmake.buildDirectory": "${workspaceFolder}/Agents/alpha_beta/build"
+    "cmake.sourceDirectory": "/Users/kelf/Desktop/博弈/Einstein_BlueShadow/Agents/alpha_beta_boost",
+    "cmake.buildDirectory": "${workspaceFolder}/Agents/alpha_beta_boost/build"
 }

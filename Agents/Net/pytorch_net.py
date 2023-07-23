@@ -5,7 +5,7 @@ import torch.nn as nn
 import numpy as np
 import torch.nn.functional as F
 from torch.cuda.amp import autocast
-from logic.board import Board
+from board import Board
 from torch.autograd import Variable
 PYTORCH_ENABLE_MPS_FALLBACK = 1
 

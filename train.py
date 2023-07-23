@@ -4,7 +4,7 @@ import numpy as np
 from collections import defaultdict
 from collections import deque
 
-from logic.board import Board
+from board import Board
 from game_without_GUI import Game
 from logic.Net.pytorch_net import PolicyValueNet
 from logic.Net.pure_mcts import MCTSPlayer as MCTS_Pure

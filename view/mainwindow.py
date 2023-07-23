@@ -3,9 +3,9 @@
 from PySide6.QtWidgets import QMainWindow,QApplication,QMessageBox
 from PySide6.QtCore import Slot,QPoint,QEvent
 from PySide6.QtGui import QPainter, QPen, QColor, QFont,Qt,QBrush,QMouseEvent
-from logic.huamn import HumanPlayer
+from Agents.human.huamn import HumanPlayer
 from view.mainwindow_ui import Ui_MainWindow
-from logic.board import Board
+from board import Board
 from random import randint
 from enums.chess import ChessColor
 from enums.mode import Mode
@@ -182,7 +182,7 @@ class MainWindow(QMainWindow):
 
 
                     print(f'第{i+1}局结束，用时{time.time()-startTime}秒')
-                    print(f'blue({self.blueStrategy})  vs red({self.redStrategy}) --- {blueWin}:{redWin}')
+                    print(f'blue({self.blueAgentName})  vs red({self.redAgentName}) --- {blueWin}:{redWin}')
 
                     # 偶数是蓝方先手，奇数是红方先手
                     firstPlayer = ChessColor.BLUE if i%2==0 else ChessColor.RED

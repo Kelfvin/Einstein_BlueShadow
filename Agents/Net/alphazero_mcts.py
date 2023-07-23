@@ -5,7 +5,7 @@ import pickle
 import sys
 from enums.chess import ChessColor
 from logic.Net.pytorch_net import PolicyValueNet
-from logic.board import Board
+from board import Board
 
 
 def softmax(x):

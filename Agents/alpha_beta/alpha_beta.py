@@ -11,7 +11,7 @@ class AlphabetPlayer(object):
         self.direction = color
 
     ##传入参数：棋局与深度
-    def get_action(self, board, depth=4):
+    def get_action(self, board, depth=5):
         move = self.caculate(board,depth)
         return board.location_to_move(move)
     

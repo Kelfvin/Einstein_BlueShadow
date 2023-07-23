@@ -3,7 +3,7 @@
 import time
 from enums.chess import ChessColor
 from enums.Agents import Agents
-from logic.board import Board
+from board import Board
 from Logger import Logger
 
 class Game:
@@ -112,15 +112,16 @@ if __name__ == "__main__":
     for i in range(len(agent_names)):
         print(f'{i+1}:{agent_names[i]}')
     # 选择Agent
-    player1_agent_name = int(input('选择player1:'))
-    player2_agent_name = int(input('选择player2:'))    
+    player1_choice = int(input('选择player1:'))
+    player2_choice = int(input('选择player2:')) 
 
-    player1Class = Agents[player1_agent_name]
-    player2Class = Agents[player2_agent_name]
+
+    player1Class = Agents[agent_names[player1_choice-1]]
+    player2Class = Agents[agent_names[player2_choice-1]]
 
     msg = input('输入备注信息：')
 
-    msg = f'C_out=2.5 time limit=20s 改进root'
+    msg = f''
 
     filename = f'{filename}_{player1Class.__name__}_vs_{player2Class.__name__}_{msg}.txt'
 

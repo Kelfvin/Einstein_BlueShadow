@@ -1,21 +1,12 @@
 #include "logic.h"
-#include <qmath.h>
-#include <QDebug>
 #include <iostream>
-#pragma push_macro("slots")
-#undef slots
-
-
 #include <boost/python.hpp>
-
-#pragma pop_macro("slots")
-
 
 
 Logic::Logic()
 {
     whoplay=0;
-    redValueChart={
+    redValueChart= {
         {0,2,2,2,2},
         {2,4,4,4,5},
         {2,4,8,8,10},
@@ -29,6 +20,7 @@ Logic::Logic()
         {5,4,4,4,2},
         {2,2,2,2,1},
     };
+
 
     redValue.resize(SIZE);
     blueValue.resize(SIZE);
@@ -94,7 +86,7 @@ int Logic::judgeResult()
     return 0;
 }
 
-QPoint Logic::blueWhereToGo(int x, int y, int depth, float alpha, float beta)
+pair<int,int> Logic::blueWhereToGo(int x, int y, int depth, float alpha, float beta)
 {
 
     int a1 = 0; //a用于保存三个方向的棋值
@@ -106,7 +98,7 @@ QPoint Logic::blueWhereToGo(int x, int y, int depth, float alpha, float beta)
 
     if (x > 0 && y > 0 ){ //有左上方
         if (specialDeal(x,y)) {
-            return QPoint(x,y);
+            return pair<int,int>(x,y);
         }
         a1 = virtueTable[x - 1][y - 1];
         virtueTable[x - 1][y - 1] = virtueTable[x][y];
@@ -133,7 +125,7 @@ QPoint Logic::blueWhereToGo(int x, int y, int depth, float alpha, float beta)
             bestmoveY = y - 1;
             x = bestmoveX;
             y = bestmoveY;
-            return QPoint(x,y);
+            return pair<int,int>(x,y);
         }
         flag = 0;
         //恢复棋盘
@@ -165,7 +157,7 @@ QPoint Logic::blueWhereToGo(int x, int y, int depth, float alpha, float beta)
             bestmoveY = y;
             x = bestmoveX;
             y = bestmoveY;
-            return QPoint(x,y);
+            return pair<int,int>(x,y);
         }
         flag = 0;
         if (temp < val)
@@ -203,7 +195,7 @@ QPoint Logic::blueWhereToGo(int x, int y, int depth, float alpha, float beta)
             bestmoveY = y - 1;
             x = bestmoveX;
             y = bestmoveY;
-            return QPoint(x,y);
+            return pair<int,int>(x,y);
         }
         flag = 0;
         //最优棋步
@@ -223,20 +215,20 @@ QPoint Logic::blueWhereToGo(int x, int y, int depth, float alpha, float beta)
         /********进行移动*********/
         x = bestmoveX;
         y = bestmoveY;
-        return QPoint(x,y);
+        return pair<int,int>(x,y);
       /********进行移动*********/
     }
     else if (x == 0) //左边为墙，用不着估值，因为只能走啊
     {
         //qDebug()<<"BlueWhereToGo "<<depth<<":1";
         y = y - 1;
-        return QPoint(x,y);
+        return pair<int,int>(x,y);
     }
     else if (y == 0) //上方为墙，用不着估值，因为只能走啊
     {
         //qDebug()<<"BlueWhereToGo "<<depth<<":1";
         x = x - 1;
-        return QPoint(x,y);
+        return pair<int,int>(x,y);
     }
 
 
@@ -634,7 +626,7 @@ float Logic::blueMin(int x, int y, int depth, float alpha, float beta)
             virtueTable[x][y] = virtueTable[x - 1][y - 1];
             virtueTable[x - 1][y - 1] = a2;
             //Alpha剪枝
-            beta = qMin(beta, val);
+            beta = min(beta, val);
             if (beta <= alpha)
                 return beta;
 
@@ -650,7 +642,7 @@ float Logic::blueMin(int x, int y, int depth, float alpha, float beta)
             }
             virtueTable[x - 1][y] = a2;
              //Alpha剪枝
-            beta = qMin(beta, val);
+            beta = min(beta, val);
             if (beta <= alpha)
                 return beta;
 
@@ -666,13 +658,13 @@ float Logic::blueMin(int x, int y, int depth, float alpha, float beta)
             }
             virtueTable[x][y - 1] = a2;
             //Alpha剪枝
-            beta = qMin(beta, val);
+            beta = min(beta, val);
             if (beta <= alpha)
                 return beta;
         }
         else if (x == 0)
         {
-            //qDebug()<<"BlueqMin "<<depth<<":1";
+            //qDebug()<<"Bluemin "<<depth<<":1";
             a2 = virtueTable[x][y - 1];
             virtueTable[x][y - 1] = virtueTable[x][y];
             virtueTable[x][y] = 0;
@@ -682,7 +674,7 @@ float Logic::blueMin(int x, int y, int depth, float alpha, float beta)
         }
         else if (y == 0)
         {
-            //qDebug()<<"BlueqMin "<<depth<<":1";
+            //qDebug()<<"Bluemin "<<depth<<":1";
             a2 = virtueTable[x - 1][y];
             virtueTable[x - 1][y] = virtueTable[x][y];
             virtueTable[x][y] = 0;
@@ -696,7 +688,7 @@ float Logic::blueMin(int x, int y, int depth, float alpha, float beta)
     if (x > 0 && y > 0) //鏈夊乏涓婃柟
     {
         //遍历三个方向寻求value()最大值
-        //qDebug()<<"BlueqMin "<<depth<<":3";
+        //qDebug()<<"Bluemin "<<depth<<":3";
         //蓝棋走左上--------------------------------------------------------
         a2 = virtueTable[x - 1][y - 1];
         virtueTable[x - 1][y - 1] = virtueTable[x][y];
@@ -714,7 +706,7 @@ float Logic::blueMin(int x, int y, int depth, float alpha, float beta)
         virtueTable[x][y] = virtueTable[x - 1][y - 1];
         virtueTable[x - 1][y - 1] = a2;
         //Alpha鍓灊
-        beta = qMin(beta, val);
+        beta = min(beta, val);
         if (beta <= alpha)
             return beta;
 
@@ -741,7 +733,7 @@ float Logic::blueMin(int x, int y, int depth, float alpha, float beta)
         virtueTable[x][y] = virtueTable[x - 1][y];
         virtueTable[x - 1][y] = a2;
         //Alpha剪枝
-        beta = qMin(beta, val);
+        beta = min(beta, val);
         if (beta <= alpha)
             return beta;
 
@@ -767,13 +759,13 @@ float Logic::blueMin(int x, int y, int depth, float alpha, float beta)
         virtueTable[x][y] = virtueTable[x][y - 1];
         virtueTable[x][y - 1] = a2;
         //Alpha鍓灊
-        beta = qMin(beta, val);
+        beta = min(beta, val);
         if (beta <= alpha)
             return beta;
     }
     else if (x == 0)
     {
-        //qDebug()<<"BlueqMin "<<depth<<":1";
+        //qDebug()<<"Bluemin "<<depth<<":1";
         //钃濇璧颁笂鏂-------------------------------------------------------
         a2 = virtueTable[x][y - 1];
         virtueTable[x][y - 1] = virtueTable[x][y];
@@ -793,7 +785,7 @@ float Logic::blueMin(int x, int y, int depth, float alpha, float beta)
     }
     else if (y == 0)
     {
-        //qDebug()<<"BlueqMin "<<depth<<":1";
+        //qDebug()<<"Bluemin "<<depth<<":1";
         //蓝棋走上方--------------------------------------------------------
         a2 = virtueTable[x - 1][y];
         virtueTable[x - 1][y] = virtueTable[x][y];
@@ -861,7 +853,7 @@ float Logic::redMax(int x, int y, int depth, float alpha, float beta)
             virtueTable[x + 1][y + 1] = a;
             /******撤出模拟状态*******/
             //Beta剪枝
-            alpha = qMax(alpha, val);
+            alpha = max(alpha, val);
             if (beta <= alpha)
                 return alpha;
 
@@ -881,7 +873,7 @@ float Logic::redMax(int x, int y, int depth, float alpha, float beta)
             }
             virtueTable[x + 1][y] = a;
             //Beta剪枝
-            alpha = qMax(alpha, val);
+            alpha = max(alpha, val);
             if (beta <= alpha)
                 return alpha;
             /*****************右***************/
@@ -899,7 +891,7 @@ float Logic::redMax(int x, int y, int depth, float alpha, float beta)
             }
             virtueTable[x][y + 1] = a;
             //Beta剪枝
-            alpha = qMax(alpha, val);
+            alpha = max(alpha, val);
             if (beta <= alpha)
                 return alpha;
             /****************下***************/
@@ -958,7 +950,7 @@ float Logic::redMax(int x, int y, int depth, float alpha, float beta)
         virtueTable[x][y] = virtueTable[x + 1][y + 1];
         virtueTable[x + 1][y + 1] = a;
         //Beta鍓灊
-        alpha = qMax(alpha, val);
+        alpha = max(alpha, val);
         if (beta <= alpha)
             return alpha;
 
@@ -985,7 +977,7 @@ float Logic::redMax(int x, int y, int depth, float alpha, float beta)
         virtueTable[x][y] = virtueTable[x + 1][y];
         virtueTable[x + 1][y] = a;
         //Beta鍓灊
-        alpha = qMax(alpha, val);
+        alpha = max(alpha, val);
         if (beta <= alpha)
             return alpha;
 
@@ -1011,7 +1003,7 @@ float Logic::redMax(int x, int y, int depth, float alpha, float beta)
         virtueTable[x][y] = virtueTable[x][y + 1];
         virtueTable[x][y + 1] = a;
         //Beta鍓灊
-        alpha = qMax(alpha, val);
+        alpha = max(alpha, val);
         if (beta <= alpha)
             return alpha;
     }
@@ -1069,7 +1061,7 @@ float Logic::value()
 
     blueReady(); //得到了蓝红双方的价值以及蓝方的个体威胁值
     for (int i = 0; i < SIZE; i++){
-        if (qAbs(blueProbability[i]-0.00f) > 0.005) //棋子存在
+        if (abs(blueProbability[i]-0.00f) > 0.005) //棋子存在
         {
             bluedistance += blueProbability[i] * blueValue[i]; //我方进攻值
             blueThreaten+= blueProbability[i] * bluethreaten[i];
@@ -1081,7 +1073,7 @@ float Logic::value()
 
     redReady();
     for (int i = 0; i < SIZE; i++){
-        if (qAbs(redProbability[i]-0.00f) > 0.005){ //妫嬪瓙瀛樺湪
+        if (abs(redProbability[i]-0.00f) > 0.005){ //妫嬪瓙瀛樺湪
             reddistance += redProbability[i] * redValue[i]; //绾㈡柟杩涙敾鍊
             redThreaten += redProbability[i] * redthreaten[i];
         }
@@ -1098,7 +1090,7 @@ float Logic::value()
 
 void Logic::blueReady()
 {
-    QVector<int> bluedistancerate(SIZE,0);
+    vector<int> bluedistancerate(SIZE,0);
 
     for (int i = 0; i < LINE; i++){
         blueProbability[i] = 0;
@@ -1148,8 +1140,8 @@ void Logic::blueReady()
                         c = redValue[-virtueTable[i-1][j] - 1];
                     }
 
-                    temp = qMax(a,b);
-                    temp = qMax(temp, c);
+                    temp = max(a,b);
+                    temp = max(temp, c);
                     bluethreaten[virtueTable[i][j] - 1] = temp;
                 }
 
@@ -1218,7 +1210,7 @@ void Logic::blueReady()
 
 void Logic::redReady()
 {
-    QVector<int> reddistancerate(SIZE,0);
+    vector<int> reddistancerate(SIZE,0);
 
     for (int i = 0; i < LINE; i++){
         redProbability[i] = 0;
@@ -1265,8 +1257,8 @@ void Logic::redReady()
                     if (virtueTable[i + 1][j] > 0)
                         c = blueValue[virtueTable[i+1][j] - 1];
 
-                    temp = qMax(a,b);
-                    temp = qMax(temp, c);
+                    temp = max(a,b);
+                    temp = max(temp, c);
                     redthreaten[-virtueTable[i][j] - 1] = temp;
                 }
 
@@ -1337,14 +1329,14 @@ void Logic::redReady()
 
 
 
-QVector<QPoint> Logic::getPointToGo()
+vector<pair<int,int> > Logic::getPointToGo()
 {
     if(direction==1){
-        QVector<QPoint> returnData(2);
+        vector<pair<int,int> > returnData(2);
         for (int i=0;i<LINE;i++) {
             for (int j=0;j<LINE;j++) {
                 if(virtueTable[i][j]==random){
-                    returnData[0] = QPoint(i,j);
+                    returnData[0] = pair<int,int>(i,j);
                     returnData[1] = blueWhereToGo(i,j,depth,-infinity,infinity);
                     return returnData;
                 }
@@ -1376,14 +1368,14 @@ QVector<QPoint> Logic::getPointToGo()
         if (temp1 != 0 && temp2 == 7)
         {
             //澶囦唤妫嬬洏锛岀敤浜庢倲妫
-            returnData[0] = QPoint(k1,l1);
+            returnData[0] = pair<int,int>(k1,l1);
             returnData[1] = blueWhereToGo(k1,l1,depth,-infinity,infinity);
             return returnData;
         }
         else if (temp1 == 0 && temp2 != 7)
         {
             //澶囦唤妫嬬洏锛岀敤浜庢倲妫
-            returnData[0] = QPoint(k2,l2);
+            returnData[0] = pair<int,int>(k2,l2);
             returnData[1] = blueWhereToGo(k2,l2,depth,-infinity,infinity);
             return returnData;
         }
@@ -1393,29 +1385,29 @@ QVector<QPoint> Logic::getPointToGo()
             float value2 = blueMin(k2, l2, depth, -infinity, infinity);
             if (value1 > value2) //璇ヨ蛋k2,l2瀵瑰簲鐨勬瀛
             {
-                returnData[0] = QPoint(k2,l2);
+                returnData[0] = pair<int,int>(k2,l2);
                 returnData[1] = blueWhereToGo(k2,l2,depth,-infinity,infinity);
                 return returnData;
             }
             else
             {
                 //璧版
-                returnData[0] = QPoint(k1,l1);
+                returnData[0] = pair<int,int>(k1,l1);
                 returnData[1] = blueWhereToGo(k1,l1,depth,-infinity,infinity);
                 return returnData;
             }
         }
     }
     else if(direction==-1){
-        QVector<QPoint> returnData(2);
+        vector<pair<int,int> > returnData(2);
         for (int i=0;i<LINE;i++) {
             for (int j=0;j<LINE;j++) {
                 if(virtueTable[i][j]==random){
-                    returnData[0] = QPoint(4-j,4-i);
+                    returnData[0] = pair<int,int>(4-j,4-i);
                     returnData[1] = blueWhereToGo(i,j,depth,-infinity,infinity);
-                    int temp=4-returnData[1].x();
-                    returnData[1].setX(4-returnData[1].y());
-                    returnData[1].setY(temp);
+                    int temp=4-returnData[1].first;
+                    returnData[1].first=4-returnData[1].second;
+                    returnData[1].second = temp;
                     return returnData;
                 }
             }
@@ -1446,21 +1438,21 @@ QVector<QPoint> Logic::getPointToGo()
         if (temp1 != 0 && temp2 == 7)
         {
             //澶囦唤妫嬬洏锛岀敤浜庢倲妫
-            returnData[0] = QPoint(4-l1,4-k1);
+            returnData[0] = pair<int,int>(4-l1,4-k1);
             returnData[1] = blueWhereToGo(k1,l1,depth,-infinity,infinity);
-            int temp=4-returnData[1].x();
-            returnData[1].setX(4-returnData[1].y());
-            returnData[1].setY(temp);
+            int temp=4-returnData[1].first;
+            returnData[1].first = 4-returnData[1].second;
+            returnData[1].second=temp;
             return returnData;
         }
         else if (temp1 == 0 && temp2 != 7)
         {
             //澶囦唤妫嬬洏锛岀敤浜庢倲妫
-            returnData[0] = QPoint(4-l2,4-k2);
+            returnData[0] = pair<int,int>(4-l2,4-k2);
             returnData[1] = blueWhereToGo(k2,l2,depth,-infinity,infinity);
-            int temp=4-returnData[1].x();
-            returnData[1].setX(4-returnData[1].y());
-            returnData[1].setY(temp);
+            int temp=4-returnData[1].first;
+            returnData[1].first = 4-returnData[1].second;
+            returnData[1].second = temp;
             return returnData;
         }
         else
@@ -1469,21 +1461,21 @@ QVector<QPoint> Logic::getPointToGo()
             float value2 = blueMin(k2, l2, depth, -infinity, infinity);
             if (value1 > value2) //璇ヨ蛋k2,l2瀵瑰簲鐨勬瀛
             {
-                returnData[0] = QPoint(4-l2,4-k2);
+                returnData[0] = pair<int,int>(4-l2,4-k2);
                 returnData[1] = blueWhereToGo(k2,l2,depth,-infinity,infinity);
-                int temp=4-returnData[1].x();
-                returnData[1].setX(4-returnData[1].y());
-                returnData[1].setY(temp);
+                int temp=4-returnData[1].first;
+                returnData[1].first = 4-returnData[1].second;
+                returnData[1].second = temp;
                 return returnData;
             }
             else
             {
                 //璧版
-                returnData[0] = QPoint(4-l1,4-k1);
+                returnData[0] = pair<int,int>(4-l1,4-k1);
                 returnData[1] = blueWhereToGo(k1,l1,depth,-infinity,infinity);
-                int temp=4-returnData[1].x();
-                returnData[1].setX(4-returnData[1].y());
-                returnData[1].setY(temp);
+                int temp=4-returnData[1].first;
+                returnData[1].first = 4-returnData[1].second;
+                returnData[1].second = temp;
                 return returnData;
             }
         }
@@ -1493,7 +1485,7 @@ QVector<QPoint> Logic::getPointToGo()
 
 
 
-void Logic::setvirtueTable(const QVector<QVector<int> > &board)
+void Logic::setvirtueTable(const vector<vector<int> > &board)
 {
     if(direction==1){
         for (int i=0;i<LINE;i++) {
@@ -1530,42 +1522,37 @@ void Logic::setourColor(int ourColor){
 
 
 
+
 namespace py = boost::python;
-
-
 
 py::list get_move(py::list board, int point, int depth, int sente, int ourColor)
 {
-    std::cout << "poin"<<point << std::endl;
-    std::cout << "depth"<<depth << std::endl;
-    std::cout << "sente"<<sente << std::endl;
-    std::cout << "ourColor"<<ourColor << std::endl;
-
-    QVector<QVector<int> > board_;
+    vector<vector<int> > board_;
     for (int i = 0; i < 5; i++)
     {
         py::list row = py::extract<py::list>(board[i]);
-        QVector<int> row_;
+        vector<int> row_;
         for (int j = 0; j < 5; j++)
         {
             row_.push_back(py::extract<int>(row[j]));
-            std::cout << row_[j] << " ";
+
         }
-        std::cout << std::endl;
+
         board_.push_back(row_);
     }
     Logic logic;
-    logic.setvirtueTable(board_);
-    logic.setRand(point);
-    logic.setDepth(depth);
     logic.setSente(sente);
     logic.setourColor(ourColor);
-    QVector<QPoint> move = logic.getPointToGo();
+    logic.setDepth(depth);
+    logic.setRand(point);
+    logic.setvirtueTable(board_);
+    vector<pair<int,int> > move = logic.getPointToGo();
+
     py::list result;
-    result.append(move[0].x());
-    result.append(move[0].y());
-    result.append(move[1].x());
-    result.append(move[1].y());
+    result.append(move[0].first);
+    result.append(move[0].second);
+    result.append(move[1].first);
+    result.append(move[1].second);
     return result;
 }
 
@@ -1575,4 +1562,7 @@ BOOST_PYTHON_MODULE(logic)
     py::def("get_move", get_move);
 
 }
+
+
+
 

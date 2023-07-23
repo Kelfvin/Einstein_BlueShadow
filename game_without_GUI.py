@@ -1,7 +1,7 @@
 import random
 
 import numpy as np
-from logic.board import Board
+from board import Board
 from enums.chess import ChessColor
 import time
 from collections import deque

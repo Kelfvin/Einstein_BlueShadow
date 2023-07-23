@@ -3,7 +3,7 @@ import time
 import random
 import math
 import copy
-from logic.UCT.Board import *
+from Agents.UCT.Board import *
 from enums.chess import ChessColor
 import sys
 import threading
