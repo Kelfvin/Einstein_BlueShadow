@@ -248,6 +248,8 @@ class Board:
         board[1][1] = -chesses[4]
         board[2][0] = -chesses[5]
 
+        self.update_pieces()
+
         return board
 
     def setChess(self, position, value) -> bool:
