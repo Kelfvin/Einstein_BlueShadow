@@ -1,9 +1,8 @@
 #!/usr/bin/python
 
 from PySide6.QtWidgets import QMainWindow,QApplication,QMessageBox
-from PySide6.QtCore import Slot,QPoint,QEvent
+from PySide6.QtCore import Slot,QPoint
 from PySide6.QtGui import QPainter, QPen, QColor, QFont,Qt,QBrush,QMouseEvent
-from Agents.human.huamn import HumanPlayer
 from view.mainwindow_ui import Ui_MainWindow
 from board import Board
 from random import randint
@@ -23,7 +22,7 @@ class MainWindow(QMainWindow):
         # 界面控制参数
 
         self.board = Board()
-        '''保存棋局'''
+        '''保存整个游戏的数据'''
 
 
         self.mode = Mode.HUMAN_HUMAN
@@ -56,8 +55,6 @@ class MainWindow(QMainWindow):
         self.gridX = self.boardWidth/5
         self.gridY = self.boardWidth/5
 
-
-        # 策略模型的初始化
 
         # 初始化图形界面和信号槽的绑定
         self.initUI()
@@ -142,6 +139,9 @@ class MainWindow(QMainWindow):
             
             self.showMsg('比赛开始！')
 
+            # 保存棋子布局,用于后面的日志输出
+            self.board.save_initial_pos()
+
             self.ui.boardStatusBar.append("现在是" + self.board.getturnStr() + "出手")
 
             # ui 上一些按钮的禁用和启用
@@ -186,6 +186,7 @@ class MainWindow(QMainWindow):
 
                     # 偶数是蓝方先手，奇数是红方先手
                     firstPlayer = ChessColor.BLUE if i%2==0 else ChessColor.RED
+                    # 重新进行初始化，以便下一局
                     self.board = Board(firstPlayer)
                     self.setBlueAgent()
                     self.setRedAgent()
@@ -275,19 +276,29 @@ class MainWindow(QMainWindow):
 
 
     def do_move(self,move,show_msg=True):
+        '''移动棋子，通过move代码'''
         self.board.do_move(move)
         self.update()
 
         win = self.board.checkWin()
 
+        if win:
+            # 保存日志
+            # 就是查看一下日志是不是正确的，如果说一局在1分钟之内完成了，那么可能会覆盖，因为文件名可能是一样的
+            self.record_game()
+
 
         if show_msg:
             if win == None:
                 self.ui.boardStatusBar.append("现在该" + self.board.getturnStr() + "出手")
-            elif win == ChessColor.BLUE:
-                self.showMsg("蓝方赢了！")
+
             else:
-                self.showMsg("红方赢了")
+                if win == ChessColor.BLUE:
+                    self.showMsg("蓝方赢了！")
+                else:
+                    self.showMsg("红方赢了")
+
+
 
 
     @Slot()
@@ -459,6 +470,7 @@ class MainWindow(QMainWindow):
 
 
     def moveChess(self, fromPosition, toPosition):
+        '''移动棋子'''
 
         success = self.board.moveChess(fromPosition, toPosition)
 
@@ -467,21 +479,94 @@ class MainWindow(QMainWindow):
 
         # 如果成功移动棋子
         if success:
-            self.board.backupBoard()
             self.ui.backButton.setEnabled(True)
 
             win = self.board.checkWin()
             if win == None:
                 self.ui.boardStatusBar.append("现在该" + self.board.getturnStr() + "出手")
-            elif win == ChessColor.BLUE:
-                self.showMsg("蓝方赢了！")
             else:
-                self.showMsg("红方赢了")
+                # 保存日志
+                self.record_game()
+                if win == ChessColor.BLUE:
+                    self.showMsg("蓝方赢了！")
+                else:
+                    self.showMsg("红方赢了")
 
         else:
             self.showMsg("操作非法！")
 
         self.update()
+
+    def record_game(self):
+        file_path = 'game_record/'
+        place = '成都'
+        date = time.strftime("%Y.%m.%d %H:%M", time.localtime())
+        date_place = f'{date} {place}'
+        red_player = self.ui.red_team_name_text.toPlainText()
+        blue_player = self.ui.blue_team_name_text.toPlainText()
+        match_name = '2023 CCGC'
+
+        first_player = red_player if self.board.sente == ChessColor.RED else blue_player
+        second_player = blue_player if self.board.sente == ChessColor.RED else red_player
+        first_player_color = 'R' if self.board.sente == ChessColor.RED else 'B'
+        second_player_color = 'B' if self.board.sente == ChessColor.RED else 'R'
+
+        # 这里先写死，后面再改
+
+        # 12345 到 ABCDE 映射,写成字典
+        num_char_map = {    
+            0:'A',
+            1:'B',
+            2:'C',
+            3:'D',
+            4:'E'
+        }
+
+        if self.board.checkWin() == ChessColor.BLUE:
+            winner = '后手胜'
+
+        elif self.board.checkWin() == ChessColor.RED:
+            winner = '先手胜'
+
+        else:
+            winner = '平局'
+            # 测试bug的，实际上不可能出现
+
+        file_name = f'WTN-{first_player} vs {second_player}-{winner}-{date_place}-{match_name}.txt'
+        game_info = f'#[WTN][{first_player} {first_player_color}][{second_player} {second_player_color}][{winner}][{date_place}][{match_name}];'
+        with open(file_path+file_name,'w',encoding='GB2312') as f:
+            # 写入比赛的信息
+            f.write(game_info+'\n')
+            # 写入开局布局
+            # 写入红方
+            for x,y,index in self.board.red_initial_pos:
+                y = abs(5-1)
+                x = num_char_map[x]
+                chess_index = abs(index)
+                f.write(f'R:{x}{y}-{chess_index};')
+
+            f.write('\n')
+            # 写入蓝方
+            for x,y,index in self.board.blue_initial_pos:
+                y = abs(5-1)
+                x = num_char_map[x]
+                chess_index = abs(index)
+                f.write(f'B:{x}{y}-{chess_index};')
+            f.write('\n')
+
+            # 写入每一步的走法
+            for i,(move,point) in enumerate(zip(self.board.movements,self.board.points)):
+                x,y,dx,dy = self.board.move_to_location(move)
+                # 这里 x 和 y 还是用的最原始的，可以索引到棋子
+                chess_index = self.board.boardBackup[i][x][y]
+                sign = 'R' if chess_index < 0 else 'B'
+                chess_index = abs(chess_index)
+                dx = abs(5-dx)
+                dy = num_char_map[dy]
+
+                f.write(f'{i+1}:{point};({sign}:{chess_index},{dy}{dx})\n')
+            
+
 
     def showMsg(self, message):
         msg = QMessageBox()

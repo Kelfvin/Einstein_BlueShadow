@@ -16,14 +16,15 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QHBoxLayout, QLabel,
-    QMainWindow, QMenuBar, QPushButton, QSizePolicy,
-    QStatusBar, QTextEdit, QVBoxLayout, QWidget)
+    QMainWindow, QMenuBar, QPlainTextEdit, QPushButton,
+    QSizePolicy, QStatusBar, QTextEdit, QVBoxLayout,
+    QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(921, 708)
+        MainWindow.resize(955, 779)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayoutWidget = QWidget(self.centralwidget)
@@ -34,7 +35,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayoutWidget_2 = QWidget(self.centralwidget)
         self.verticalLayoutWidget_2.setObjectName(u"verticalLayoutWidget_2")
-        self.verticalLayoutWidget_2.setGeometry(QRect(570, 0, 321, 451))
+        self.verticalLayoutWidget_2.setGeometry(QRect(560, 80, 321, 401))
         self.verticalLayout_2 = QVBoxLayout(self.verticalLayoutWidget_2)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -46,7 +47,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayoutWidget_3 = QWidget(self.centralwidget)
         self.verticalLayoutWidget_3.setObjectName(u"verticalLayoutWidget_3")
-        self.verticalLayoutWidget_3.setGeometry(QRect(763, 470, 131, 171))
+        self.verticalLayoutWidget_3.setGeometry(QRect(753, 500, 131, 171))
         self.verticalLayout_3 = QVBoxLayout(self.verticalLayoutWidget_3)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
@@ -72,7 +73,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayoutWidget_4 = QWidget(self.centralwidget)
         self.verticalLayoutWidget_4.setObjectName(u"verticalLayoutWidget_4")
-        self.verticalLayoutWidget_4.setGeometry(QRect(573, 470, 164, 171))
+        self.verticalLayoutWidget_4.setGeometry(QRect(563, 500, 164, 171))
         self.verticalLayout_4 = QVBoxLayout(self.verticalLayoutWidget_4)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -109,7 +110,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayoutWidget_5 = QWidget(self.centralwidget)
         self.horizontalLayoutWidget_5.setObjectName(u"horizontalLayoutWidget_5")
-        self.horizontalLayoutWidget_5.setGeometry(QRect(290, 470, 191, 61))
+        self.horizontalLayoutWidget_5.setGeometry(QRect(290, 460, 191, 61))
         self.horizontalLayout_5 = QHBoxLayout(self.horizontalLayoutWidget_5)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
@@ -179,10 +180,25 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addWidget(self.letAIDoButton)
 
+        self.red_team_name_text = QPlainTextEdit(self.centralwidget)
+        self.red_team_name_text.setObjectName(u"red_team_name_text")
+        self.red_team_name_text.setGeometry(QRect(560, 40, 131, 31))
+        self.vs_lable = QLabel(self.centralwidget)
+        self.vs_lable.setObjectName(u"vs_lable")
+        self.vs_lable.setGeometry(QRect(710, 50, 58, 16))
+        self.blue_team_name_text = QPlainTextEdit(self.centralwidget)
+        self.blue_team_name_text.setObjectName(u"blue_team_name_text")
+        self.blue_team_name_text.setGeometry(QRect(760, 40, 121, 31))
+        self.vs_lable_2 = QLabel(self.centralwidget)
+        self.vs_lable_2.setObjectName(u"vs_lable_2")
+        self.vs_lable_2.setGeometry(QRect(560, 20, 58, 16))
+        self.vs_lable_3 = QLabel(self.centralwidget)
+        self.vs_lable_3.setObjectName(u"vs_lable_3")
+        self.vs_lable_3.setGeometry(QRect(760, 20, 58, 16))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 921, 24))
+        self.menubar.setGeometry(QRect(0, 0, 955, 24))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -211,5 +227,10 @@ class Ui_MainWindow(object):
         self.blueStrategySelectLable.setText(QCoreApplication.translate("MainWindow", u"\u84dd\u65b9\u7b56\u7565", None))
         self.setDiceLable.setText(QCoreApplication.translate("MainWindow", u"\u6307\u5b9a\u9ab0\u5b50\u6570\u76ee", None))
         self.letAIDoButton.setText(QCoreApplication.translate("MainWindow", u"AI DO", None))
+        self.red_team_name_text.setPlainText(QCoreApplication.translate("MainWindow", u"player1", None))
+        self.vs_lable.setText(QCoreApplication.translate("MainWindow", u"vs", None))
+        self.blue_team_name_text.setPlainText(QCoreApplication.translate("MainWindow", u"player2", None))
+        self.vs_lable_2.setText(QCoreApplication.translate("MainWindow", u"\u7ea2\u65b9", None))
+        self.vs_lable_3.setText(QCoreApplication.translate("MainWindow", u"\u84dd\u65b9", None))
     # retranslateUi
 

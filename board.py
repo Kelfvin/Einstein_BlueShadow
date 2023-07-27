@@ -15,6 +15,10 @@ class Board:
         self.sente = start_player   # 先手
 
         self.movements = [] # 保存行棋的历史
+        self.points = [] # 保存点数的历史
+        self.blue_initial_pos = []
+        self.red_initial_pos = []
+        
 
 
         self.red_pieces = [-1, -2, -3, -4, -5, -6]
@@ -33,17 +37,42 @@ class Board:
                                  4130, 4131, 4140, 4231, 4232, 4241, 4332, 4333, 4342, 4433, 4434, 4443]
 
     
+    def update_pieces(self):
+        '''更新双方的棋子
+        主要是用在撤销的时候，为了能够重新扫描棋盘，还原棋子
+        所以在使用之前，要先确保棋盘是正确的'''
+        self.red_pieces = []
+        self.blue_pieces = []
+
+        for i in range(5):
+            for j in range(5):
+                if self.board[i][j] > 0:
+                    self.blue_pieces.append(self.board[i][j])
+                elif self.board[i][j] < 0:
+                    self.red_pieces.append(self.board[i][j])
+    
+
+
     def showBoard(self):
         '''打印棋盘'''
-        # for x in range(5):
-        #     for y in range(5):
-        #         print (self.board[x][y],end='\t')
-
-        #     print()
 
         # 打印棋盘，将numpy数组格式化输出，行变成列
         print(np.array(self.board).T)
 
+    def save_initial_pos(self):
+        '''保存开局的布局信息，用于后面输出日志'''
+        blue_initial_pos = []
+        red_initial_pos = []
+
+        for x in range(5):
+            for y in range(5):
+                if self.board[x][y] > 0:
+                    blue_initial_pos.append((x, y, self.board[x][y]))
+                elif self.board[x][y] < 0:
+                    red_initial_pos.append((x, y, self.board[x][y]))
+
+        self.blue_initial_pos = blue_initial_pos
+        self.red_initial_pos = red_initial_pos
 
     def get_avaiable_pieces(self):
         '''根据骰子的值，返回目前可以移动的棋子'''
@@ -143,6 +172,8 @@ class Board:
     def do_move(self, move):
         '''给定move(int)，认为传入的动作是正确的，不进行验证'''
         self.movements.append(move)
+        self.backupBoard()
+        self.points.append(self.dice)
         self.swapturn()
         bx, by, dx, dy = self.move_to_location(move)
         if self.board[dx][dy] < 0: self.red_pieces.remove(self.board[dx][dy])
@@ -150,9 +181,11 @@ class Board:
         self.board[dx][dy] = self.board[bx][by]
         self.board[bx][by] = 0
 
+    
 
     def get_current_state(self):
-        '''返回 4*5*5 的矩阵，每一层的信息：
+        '''用于神经网络网络的输入
+        返回 4*5*5 的矩阵，每一层的信息：
         0:棋局
         1:对手上一次的移动
         2:目前可以移动的棋子信息
@@ -276,9 +309,15 @@ class Board:
         if len(self.boardBackup) == 0:
             return False
 
+        # 取出上一次备份的棋盘
         self.board = self.boardBackup.pop()
+        self.points.pop()
+        self.movements.pop()
+        self.update_pieces()
+
         self.swapturn()
         return True
+
 
     def getChess(self, x:int, y:int)->int:
         '''返回棋盘上指定位置的值'''
@@ -341,7 +380,7 @@ class Board:
 
         return self.dice
 
-    
+
 
 
 if __name__ == '__main__':

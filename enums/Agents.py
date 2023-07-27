@@ -1,6 +1,6 @@
 from Agents.UCT.UCT import UCTPlayer
 from Agents.Net.pure_mcts import MCTSPlayer
-from Agents.Net.UCT_fast_version import UCT_fast_version_player
+from Agents.UCT_fast_version.UCT_fast_version import UCT_fast_version_player
 from Agents.human.huamn import HumanPlayer
 from Agents.alpha_beta_boost.alpha_beta import Alpha_beta_player
 

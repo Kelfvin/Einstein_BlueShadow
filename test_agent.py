@@ -4,7 +4,7 @@ import time
 from enums.chess import ChessColor
 from enums.Agents import Agents
 from board import Board
-from Logger import Logger
+from game_record import Logger
 
 class Game:
 
@@ -120,8 +120,6 @@ if __name__ == "__main__":
     player2Class = Agents[agent_names[player2_choice-1]]
 
     msg = input('输入备注信息：')
-
-    msg = f''
 
     filename = f'{filename}_{player1Class.__name__}_vs_{player2Class.__name__}_{msg}.txt'
 

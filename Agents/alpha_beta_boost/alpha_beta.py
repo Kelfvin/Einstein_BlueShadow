@@ -4,7 +4,7 @@ import Agents.alpha_beta_boost.logic as logic
 
 
 class Alpha_beta_player:
-    def __init__(self, color = ChessColor.BLUE, depth = 3):
+    def __init__(self, color = ChessColor.BLUE, depth = 4):
         super().__init__()
         self.color = color
         self.depth = depth
