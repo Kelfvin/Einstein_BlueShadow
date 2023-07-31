@@ -13,6 +13,7 @@ def rollout_policy_fn(board):
     action_probs = np.random.rand(len(moves))
     return zip(true_moves, action_probs)
 
+
 def policy_value_fn(board):
     """a function that takes in a state and outputs a list of (action, probability)
     tuples and a score for the state
@@ -21,6 +22,7 @@ def policy_value_fn(board):
     moves, true_moves = board.get_avaiable_moves()
     action_probs = np.ones(len(moves)) / len(moves)
     return zip(true_moves, action_probs), 0
+
 
 class TreeNode:
     """
@@ -51,7 +53,7 @@ class TreeNode:
         for action, prob in action_priors:
             self._children[point][action] = TreeNode(self, prob)
 
-    def select(self, board, c_puct,is_root=False):
+    def select(self, board, c_puct, is_root=False):
         """
         选择动作。
         通过 Max Q + U 选择动作。 UCT公式
@@ -66,7 +68,6 @@ class TreeNode:
             return True, None    # this node is the leaf
         return False, max(batch.items(),
                           key=lambda act_node: act_node[1].get_value(c_puct))  # 返回最大值的键值对
-
 
     def update(self, leaf_value):
         """
@@ -96,7 +97,8 @@ class TreeNode:
         c_puct：控制相对影响的数字
         值Q和先前概率P，对此节点的分数。
         """
-        self._u = c_puct * np.sqrt(np.log(self._parent._n_visits) / (1 + self._n_visits))
+        self._u = c_puct * \
+            np.sqrt(np.log(self._parent._n_visits) / (1 + self._n_visits))
         return self._Q + self._u
 
     def is_root(self):
@@ -108,7 +110,7 @@ class MCTS:
     An implementation of Monte Carlo Tree Search.
     """
 
-    def __init__(self,c_puct=1.414, time_playout=8):
+    def __init__(self, c_puct=1.414, time_playout=8):
         """
         c_puct: 一个在(0, 无穷大)范围内的数值，用于控制探索如何快速收敛到最大价值策略。较高的值意味着更依赖先前的策略。
         """
@@ -126,14 +128,14 @@ class MCTS:
         node = self._root
 
         # 根节点单独进行处理，因为已经知道骰子了
-        is_leaf, action_node = self._root.select(state, self._c_puct, is_root=True)
+        is_leaf, action_node = self._root.select(
+            state, self._c_puct, is_root=True)
 
         # 如果不是叶子节点，就要先走一步。
 
         # if not is_leaf:
         #     state.do_move(action_node[0])
         #     node = action_node[1]
-
 
         while (1):
             if is_leaf:
@@ -177,24 +179,19 @@ class MCTS:
         由于进来的时候，我就已经确定了骰子的数目，
         所以对于第一次的搜索要单独进行处理"""
 
-
-
-
         timeStart = time.time()
         stimulateCount = 0
         # 这里限定搜索的时间为15秒
-        while stimulateCount<50000 or time.time() - timeStart < self._time_playout:
-
+        while stimulateCount < 50000 or time.time() - timeStart < self._time_playout:
 
             state_copy = copy.deepcopy(state)
             self._playout(state_copy)
             stimulateCount += 1
 
         print("stimulateCount:", stimulateCount)
-        
+
         return max(self._root._children[state.dice].items(),
                    key=lambda act_node: act_node[1]._n_visits)[0]
-
 
     def update_with_move(self, point, last_move):
         """
@@ -215,6 +212,8 @@ class UCT_fast_version_player(object):
 
     def __init__(self, c_puct=1.414, time_playout=8):
         '''timp_playout:每次模拟的时间'''
+        self.c_puct = c_puct
+        self.time_playout = time_playout
         self.mcts = MCTS(c_puct, time_playout)
         self.name = "UCT_mutiprocess_Player"
 
@@ -225,6 +224,11 @@ class UCT_fast_version_player(object):
         self.mcts.update_with_move(-1, -1)
 
     def get_action(self, board):
+        # move = self.mcts.get_move(board)
+        # self.mcts.update_with_move(-1, -1)
+        # return move
+
+        # 测试不保存树的情况
+        self.mcts = MCTS(self.c_puct, self.time_playout)
         move = self.mcts.get_move(board)
-        self.mcts.update_with_move(-1, -1)
         return move

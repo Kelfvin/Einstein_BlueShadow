@@ -1,0 +1,12 @@
+blue(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>)  vs red(<class 'Agents.UCT.UCT.UCTPlayer'>)
+filename:2023-07-31_14-11-51_Alpha_beta_player_vs_UCTPlayer_self.depth = max(7, 4+(piece_num-10)).txt
+
+第1局
+first_player: ChessColor.BLUE
+[[-1 -2 -4  0  0]
+ [-6 -3  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  3  1]
+ [ 0  0  4  2  6]]
+point:6
+Alpha_beta_player start to stimulate

@@ -1,0 +1,1929 @@
+blue(<class 'Agents.UCT.UCT.UCTPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>)
+filename:2023-07-31_13-47-07_UCTPlayer_vs_Alpha_beta_player_depth=5 电量充足.txt
+
+第1局
+first_player: ChessColor.BLUE
+[[-4 -1 -5  0  0]
+ [-6 -3  0  0  0]
+ [-2  0  0  0  6]
+ [ 0  0  0  1  5]
+ [ 0  0  2  4  3]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000385999679565
+move:4231
+
+[[-4 -1 -5  0  0]
+ [-6 -3  0  6  0]
+ [-2  0  0  0  0]
+ [ 0  0  0  1  5]
+ [ 0  0  2  4  3]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:33.64913296699524
+move:11
+
+[[ 0 -1 -5  0  0]
+ [-6 -4  0  6  0]
+ [-2  0  0  0  0]
+ [ 0  0  0  1  5]
+ [ 0  0  2  4  3]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000181913375854
+move:4443
+
+[[ 0 -1 -5  0  0]
+ [-6 -4  0  6  0]
+ [-2  0  0  0  0]
+ [ 0  0  0  1  3]
+ [ 0  0  2  4  0]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:13.496192932128906
+move:102
+
+[[ 0 -1 -5  0  0]
+ [ 0 -4  0  6  0]
+ [-6  0  0  0  0]
+ [ 0  0  0  1  3]
+ [ 0  0  2  4  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000216960906982
+move:3322
+
+[[ 0 -1 -5  0  0]
+ [ 0 -4  0  6  0]
+ [-6  0  1  0  0]
+ [ 0  0  0  0  3]
+ [ 0  0  2  4  0]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:4.00370192527771
+move:1020
+
+[[ 0  0 -1  0  0]
+ [ 0 -4  0  6  0]
+ [-6  0  1  0  0]
+ [ 0  0  0  0  3]
+ [ 0  0  2  4  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000170230865479
+move:4332
+
+[[ 0  0 -1  0  0]
+ [ 0 -4  0  6  0]
+ [-6  0  1  3  0]
+ [ 0  0  0  0  0]
+ [ 0  0  2  4  0]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.2849278450012207
+move:1122
+
+[[ 0  0 -1  0  0]
+ [ 0  0  0  6  0]
+ [-6  0 -4  3  0]
+ [ 0  0  0  0  0]
+ [ 0  0  2  4  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000324010848999
+move:2423
+
+[[ 0  0 -1  0  0]
+ [ 0  0  0  6  0]
+ [-6  0 -4  3  0]
+ [ 0  0  2  0  0]
+ [ 0  0  0  4  0]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.5996870994567871
+move:2233
+
+[[ 0  0 -1  0  0]
+ [ 0  0  0  6  0]
+ [-6  0  0  3  0]
+ [ 0  0  2 -4  0]
+ [ 0  0  0  4  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000094890594482
+move:3433
+
+[[ 0  0 -1  0  0]
+ [ 0  0  0  6  0]
+ [-6  0  0  3  0]
+ [ 0  0  2  4  0]
+ [ 0  0  0  0  0]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.21626615524291992
+move:2031
+
+[[ 0  0  0  0  0]
+ [ 0  0  0 -1  0]
+ [-6  0  0  3  0]
+ [ 0  0  2  4  0]
+ [ 0  0  0  0  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000263929367065
+move:2312
+
+[[ 0  0  0  0  0]
+ [ 0  0  0 -1  0]
+ [-6  2  0  3  0]
+ [ 0  0  0  4  0]
+ [ 0  0  0  0  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.08803582191467285
+move:3142
+
+[[ 0  0  0  0  0]
+ [ 0  0  0  0  0]
+ [-6  2  0  3 -1]
+ [ 0  0  0  4  0]
+ [ 0  0  0  0  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000195026397705
+move:3332
+
+[[ 0  0  0  0  0]
+ [ 0  0  0  0  0]
+ [-6  2  0  4 -1]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.005842924118041992
+move:4243
+
+[[ 0  0  0  0  0]
+ [ 0  0  0  0  0]
+ [-6  2  0  4  0]
+ [ 0  0  0  0 -1]
+ [ 0  0  0  0  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000102043151855
+move:1201
+
+[[ 0  0  0  0  0]
+ [ 2  0  0  0  0]
+ [-6  0  0  4  0]
+ [ 0  0  0  0 -1]
+ [ 0  0  0  0  0]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:6.985664367675781e-05
+move:4344
+
+********************
+
+第1局结束，用时124.34983134269714秒
+blue(<class 'Agents.UCT.UCT.UCTPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 0:1
+
+第2局
+first_player: ChessColor.RED
+[[-2 -4 -6  0  0]
+ [-3 -1  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  2  6]
+ [ 0  0  4  3  1]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000149965286255
+move:4342
+
+[[-2 -4 -6  0  0]
+ [-3 -1  0  0  0]
+ [-5  0  0  0  6]
+ [ 0  0  0  2  0]
+ [ 0  0  4  3  1]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:31.43019199371338
+move:213
+
+[[-2 -4 -6  0  0]
+ [-3 -1  0  0  0]
+ [ 0  0  0  0  6]
+ [ 0 -5  0  2  0]
+ [ 0  0  4  3  1]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000283002853394
+move:2413
+
+[[-2 -4 -6  0  0]
+ [-3 -1  0  0  0]
+ [ 0  0  0  0  6]
+ [ 0  4  0  2  0]
+ [ 0  0  0  3  1]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:9.586183071136475
+move:10
+
+[[ 0 -2 -6  0  0]
+ [-3 -1  0  0  0]
+ [ 0  0  0  0  6]
+ [ 0  4  0  2  0]
+ [ 0  0  0  3  1]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000306367874146
+move:4434
+
+[[ 0 -2 -6  0  0]
+ [-3 -1  0  0  0]
+ [ 0  0  0  0  6]
+ [ 0  4  0  2  0]
+ [ 0  0  0  1  0]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:4.936661958694458
+move:2021
+
+[[ 0 -2  0  0  0]
+ [-3 -1 -6  0  0]
+ [ 0  0  0  0  6]
+ [ 0  4  0  2  0]
+ [ 0  0  0  1  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00026798248291
+move:3433
+
+[[ 0 -2  0  0  0]
+ [-3 -1 -6  0  0]
+ [ 0  0  0  0  6]
+ [ 0  4  0  1  0]
+ [ 0  0  0  0  0]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:1.6040918827056885
+move:2132
+
+[[ 0 -2  0  0  0]
+ [-3 -1  0  0  0]
+ [ 0  0  0 -6  6]
+ [ 0  4  0  1  0]
+ [ 0  0  0  0  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000233173370361
+move:4232
+
+[[ 0 -2  0  0  0]
+ [-3 -1  0  0  0]
+ [ 0  0  0  6  0]
+ [ 0  4  0  1  0]
+ [ 0  0  0  0  0]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.3584909439086914
+move:112
+
+[[ 0 -2  0  0  0]
+ [ 0 -1  0  0  0]
+ [ 0 -3  0  6  0]
+ [ 0  4  0  1  0]
+ [ 0  0  0  0  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000233888626099
+move:3332
+
+[[ 0 -2  0  0  0]
+ [ 0 -1  0  0  0]
+ [ 0 -3  0  1  0]
+ [ 0  4  0  0  0]
+ [ 0  0  0  0  0]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:6.318092346191406e-05
+move:1213
+
+[[ 0 -2  0  0  0]
+ [ 0 -1  0  0  0]
+ [ 0  0  0  1  0]
+ [ 0 -3  0  0  0]
+ [ 0  0  0  0  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000114917755127
+move:3231
+
+[[ 0 -2  0  0  0]
+ [ 0 -1  0  1  0]
+ [ 0  0  0  0  0]
+ [ 0 -3  0  0  0]
+ [ 0  0  0  0  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.0037810802459716797
+move:1324
+
+[[ 0 -2  0  0  0]
+ [ 0 -1  0  1  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -3  0  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000179052352905
+move:3130
+
+[[ 0 -2  0  1  0]
+ [ 0 -1  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -3  0  0]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.0005562305450439453
+move:1122
+
+[[ 0 -2  0  1  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -1  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -3  0  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00010871887207
+move:3020
+
+[[ 0 -2  1  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -1  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -3  0  0]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:6.413459777832031e-05
+move:2434
+
+[[ 0 -2  1  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -1  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0 -3  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000098943710327
+move:2010
+
+[[ 0  1  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -1  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0 -3  0]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:5.602836608886719e-05
+move:3444
+
+********************
+
+第2局结束，用时127.92546319961548秒
+blue(<class 'Agents.UCT.UCT.UCTPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 0:2
+
+第3局
+first_player: ChessColor.BLUE
+[[-2 -5 -4  0  0]
+ [-1 -3  0  0  0]
+ [-6  0  0  0  5]
+ [ 0  0  0  1  3]
+ [ 0  0  2  4  6]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000257015228271
+move:4443
+
+[[-2 -5 -4  0  0]
+ [-1 -3  0  0  0]
+ [-6  0  0  0  5]
+ [ 0  0  0  1  6]
+ [ 0  0  2  4  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.00022792816162109375
+move:1122
+
+[[-2 -5 -4  0  0]
+ [-1  0  0  0  0]
+ [-6  0 -3  0  5]
+ [ 0  0  0  1  6]
+ [ 0  0  2  4  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000303268432617
+move:2413
+
+[[-2 -5 -4  0  0]
+ [-1  0  0  0  0]
+ [-6  0 -3  0  5]
+ [ 0  2  0  1  6]
+ [ 0  0  0  4  0]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:26.86501121520996
+move:2021
+
+[[-2 -5  0  0  0]
+ [-1  0 -4  0  0]
+ [-6  0 -3  0  5]
+ [ 0  2  0  1  6]
+ [ 0  0  0  4  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000269889831543
+move:4333
+
+[[-2 -5  0  0  0]
+ [-1  0 -4  0  0]
+ [-6  0 -3  0  5]
+ [ 0  2  0  6  0]
+ [ 0  0  0  4  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:10.498799800872803
+move:1021
+
+[[-2  0  0  0  0]
+ [-1  0 -5  0  0]
+ [-6  0 -3  0  5]
+ [ 0  2  0  6  0]
+ [ 0  0  0  4  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00079894065857
+move:1312
+
+[[-2  0  0  0  0]
+ [-1  0 -5  0  0]
+ [-6  2 -3  0  5]
+ [ 0  0  0  6  0]
+ [ 0  0  0  4  0]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:4.37391471862793
+move:212
+
+[[-2  0  0  0  0]
+ [-1  0 -5  0  0]
+ [ 0 -6 -3  0  5]
+ [ 0  0  0  6  0]
+ [ 0  0  0  4  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000294923782349
+move:3433
+
+[[-2  0  0  0  0]
+ [-1  0 -5  0  0]
+ [ 0 -6 -3  0  5]
+ [ 0  0  0  4  0]
+ [ 0  0  0  0  0]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.41787195205688477
+move:1222
+
+[[-2  0  0  0  0]
+ [-1  0 -5  0  0]
+ [ 0  0 -6  0  5]
+ [ 0  0  0  4  0]
+ [ 0  0  0  0  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000166177749634
+move:3322
+
+[[-2  0  0  0  0]
+ [-1  0 -5  0  0]
+ [ 0  0  4  0  5]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.024633169174194336
+move:2122
+
+[[-2  0  0  0  0]
+ [-1  0  0  0  0]
+ [ 0  0 -5  0  5]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000155925750732
+move:4231
+
+[[-2  0  0  0  0]
+ [-1  0  0  5  0]
+ [ 0  0 -5  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.010337114334106445
+move:2233
+
+[[-2  0  0  0  0]
+ [-1  0  0  5  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0 -5  0]
+ [ 0  0  0  0  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00011920928955
+move:3120
+
+[[-2  0  5  0  0]
+ [-1  0  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0 -5  0]
+ [ 0  0  0  0  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.0002570152282714844
+move:3344
+
+********************
+
+第3局结束，用时106.19892001152039秒
+blue(<class 'Agents.UCT.UCT.UCTPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 0:3
+
+第4局
+first_player: ChessColor.RED
+[[-3 -6 -1  0  0]
+ [-4 -2  0  0  0]
+ [-5  0  0  0  3]
+ [ 0  0  0  1  6]
+ [ 0  0  5  4  2]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000113010406494
+move:4433
+
+[[-3 -6 -1  0  0]
+ [-4 -2  0  0  0]
+ [-5  0  0  0  3]
+ [ 0  0  0  2  6]
+ [ 0  0  5  4  0]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:36.544644832611084
+move:1122
+
+[[-3 -6 -1  0  0]
+ [-4  0  0  0  0]
+ [-5  0 -2  0  3]
+ [ 0  0  0  2  6]
+ [ 0  0  5  4  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000257015228271
+move:3433
+
+[[-3 -6 -1  0  0]
+ [-4  0  0  0  0]
+ [-5  0 -2  0  3]
+ [ 0  0  0  4  6]
+ [ 0  0  5  0  0]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:13.06349492073059
+move:102
+
+[[-3 -6 -1  0  0]
+ [ 0  0  0  0  0]
+ [-4  0 -2  0  3]
+ [ 0  0  0  4  6]
+ [ 0  0  5  0  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000264883041382
+move:2413
+
+[[-3 -6 -1  0  0]
+ [ 0  0  0  0  0]
+ [-4  0 -2  0  3]
+ [ 0  5  0  4  6]
+ [ 0  0  0  0  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:6.382201910018921
+move:1020
+
+[[-3  0 -6  0  0]
+ [ 0  0  0  0  0]
+ [-4  0 -2  0  3]
+ [ 0  5  0  4  6]
+ [ 0  0  0  0  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000091314315796
+move:1312
+
+[[-3  0 -6  0  0]
+ [ 0  0  0  0  0]
+ [-4  5 -2  0  3]
+ [ 0  0  0  4  6]
+ [ 0  0  0  0  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:2.0804789066314697
+move:1
+
+[[ 0  0 -6  0  0]
+ [-3  0  0  0  0]
+ [-4  5 -2  0  3]
+ [ 0  0  0  4  6]
+ [ 0  0  0  0  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000128746032715
+move:4231
+
+[[ 0  0 -6  0  0]
+ [-3  0  0  3  0]
+ [-4  5 -2  0  0]
+ [ 0  0  0  4  6]
+ [ 0  0  0  0  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:2.015699863433838
+move:212
+
+[[ 0  0 -6  0  0]
+ [-3  0  0  3  0]
+ [ 0 -4 -2  0  0]
+ [ 0  0  0  4  6]
+ [ 0  0  0  0  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000235080718994
+move:3121
+
+[[ 0  0 -6  0  0]
+ [-3  0  3  0  0]
+ [ 0 -4 -2  0  0]
+ [ 0  0  0  4  6]
+ [ 0  0  0  0  0]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.42843198776245117
+move:2021
+
+[[ 0  0  0  0  0]
+ [-3  0 -6  0  0]
+ [ 0 -4 -2  0  0]
+ [ 0  0  0  4  6]
+ [ 0  0  0  0  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000147104263306
+move:3322
+
+[[ 0  0  0  0  0]
+ [-3  0 -6  0  0]
+ [ 0 -4  4  0  0]
+ [ 0  0  0  0  6]
+ [ 0  0  0  0  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.04852008819580078
+move:112
+
+[[ 0  0  0  0  0]
+ [ 0  0 -6  0  0]
+ [ 0 -3  4  0  0]
+ [ 0  0  0  0  6]
+ [ 0  0  0  0  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000093936920166
+move:2211
+
+[[ 0  0  0  0  0]
+ [ 0  4 -6  0  0]
+ [ 0 -3  0  0  0]
+ [ 0  0  0  0  6]
+ [ 0  0  0  0  0]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.00821995735168457
+move:2122
+
+[[ 0  0  0  0  0]
+ [ 0  4  0  0  0]
+ [ 0 -3 -6  0  0]
+ [ 0  0  0  0  6]
+ [ 0  0  0  0  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000088930130005
+move:4333
+
+[[ 0  0  0  0  0]
+ [ 0  4  0  0  0]
+ [ 0 -3 -6  0  0]
+ [ 0  0  0  6  0]
+ [ 0  0  0  0  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.00431513786315918
+move:1222
+
+[[ 0  0  0  0  0]
+ [ 0  4  0  0  0]
+ [ 0  0 -3  0  0]
+ [ 0  0  0  6  0]
+ [ 0  0  0  0  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000073909759521
+move:1100
+
+********************
+
+第4局结束，用时140.58220887184143秒
+blue(<class 'Agents.UCT.UCT.UCTPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 1:3
+
+第5局
+first_player: ChessColor.BLUE
+[[-6 -2 -5  0  0]
+ [-4 -3  0  0  0]
+ [-1  0  0  0  2]
+ [ 0  0  0  4  6]
+ [ 0  0  5  3  1]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000450849533081
+move:3322
+
+[[-6 -2 -5  0  0]
+ [-4 -3  0  0  0]
+ [-1  0  4  0  2]
+ [ 0  0  0  0  6]
+ [ 0  0  5  3  1]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:64.84652495384216
+move:2021
+
+[[-6 -2  0  0  0]
+ [-4 -3 -5  0  0]
+ [-1  0  4  0  2]
+ [ 0  0  0  0  6]
+ [ 0  0  5  3  1]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00036096572876
+move:2211
+
+[[-6 -2  0  0  0]
+ [-4  4 -5  0  0]
+ [-1  0  0  0  2]
+ [ 0  0  0  0  6]
+ [ 0  0  5  3  1]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:27.41282296180725
+move:2132
+
+[[-6 -2  0  0  0]
+ [-4  4  0  0  0]
+ [-1  0  0 -5  2]
+ [ 0  0  0  0  6]
+ [ 0  0  5  3  1]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00017523765564
+move:4232
+
+[[-6 -2  0  0  0]
+ [-4  4  0  0  0]
+ [-1  0  0  2  0]
+ [ 0  0  0  0  6]
+ [ 0  0  5  3  1]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:10.305454730987549
+move:11
+
+[[ 0 -2  0  0  0]
+ [-4 -6  0  0  0]
+ [-1  0  0  2  0]
+ [ 0  0  0  0  6]
+ [ 0  0  5  3  1]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000387191772461
+move:3221
+
+[[ 0 -2  0  0  0]
+ [-4 -6  2  0  0]
+ [-1  0  0  0  0]
+ [ 0  0  0  0  6]
+ [ 0  0  5  3  1]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:5.792309045791626
+move:1021
+
+[[ 0  0  0  0  0]
+ [-4 -6 -2  0  0]
+ [-1  0  0  0  0]
+ [ 0  0  0  0  6]
+ [ 0  0  5  3  1]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000232934951782
+move:2413
+
+[[ 0  0  0  0  0]
+ [-4 -6 -2  0  0]
+ [-1  0  0  0  0]
+ [ 0  5  0  0  6]
+ [ 0  0  0  3  1]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.5948090553283691
+move:1122
+
+[[ 0  0  0  0  0]
+ [-4  0 -2  0  0]
+ [-1  0 -6  0  0]
+ [ 0  5  0  0  6]
+ [ 0  0  0  3  1]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000087022781372
+move:1312
+
+[[ 0  0  0  0  0]
+ [-4  0 -2  0  0]
+ [-1  5 -6  0  0]
+ [ 0  0  0  0  6]
+ [ 0  0  0  3  1]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:2.6069328784942627
+move:2233
+
+[[ 0  0  0  0  0]
+ [-4  0 -2  0  0]
+ [-1  5  0  0  0]
+ [ 0  0  0 -6  6]
+ [ 0  0  0  3  1]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000166893005371
+move:1201
+
+[[ 0  0  0  0  0]
+ [ 5  0 -2  0  0]
+ [-1  0  0  0  0]
+ [ 0  0  0 -6  6]
+ [ 0  0  0  3  1]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.09111285209655762
+move:3344
+
+********************
+
+第5局结束，用时167.6552038192749秒
+blue(<class 'Agents.UCT.UCT.UCTPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 1:4
+
+第6局
+first_player: ChessColor.RED
+[[-3 -6 -4  0  0]
+ [-5 -2  0  0  0]
+ [-1  0  0  0  3]
+ [ 0  0  0  6  2]
+ [ 0  0  5  4  1]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000261068344116
+move:4342
+
+[[-3 -6 -4  0  0]
+ [-5 -2  0  0  0]
+ [-1  0  0  0  2]
+ [ 0  0  0  6  0]
+ [ 0  0  5  4  1]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:33.231030225753784
+move:212
+
+[[-3 -6 -4  0  0]
+ [-5 -2  0  0  0]
+ [ 0 -1  0  0  2]
+ [ 0  0  0  6  0]
+ [ 0  0  5  4  1]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000243902206421
+move:3424
+
+[[-3 -6 -4  0  0]
+ [-5 -2  0  0  0]
+ [ 0 -1  0  0  2]
+ [ 0  0  0  6  0]
+ [ 0  0  4  0  1]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:11.314425945281982
+move:1112
+
+[[-3 -6 -4  0  0]
+ [-5  0  0  0  0]
+ [ 0 -2  0  0  2]
+ [ 0  0  0  6  0]
+ [ 0  0  4  0  1]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000111818313599
+move:2413
+
+[[-3 -6 -4  0  0]
+ [-5  0  0  0  0]
+ [ 0 -2  0  0  2]
+ [ 0  4  0  6  0]
+ [ 0  0  0  0  1]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:4.774627923965454
+move:10
+
+[[ 0 -3 -4  0  0]
+ [-5  0  0  0  0]
+ [ 0 -2  0  0  2]
+ [ 0  4  0  6  0]
+ [ 0  0  0  0  1]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000193119049072
+move:1302
+
+[[ 0 -3 -4  0  0]
+ [-5  0  0  0  0]
+ [ 4 -2  0  0  2]
+ [ 0  0  0  6  0]
+ [ 0  0  0  0  1]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:3.8993899822235107
+move:2021
+
+[[ 0 -3  0  0  0]
+ [-5  0 -4  0  0]
+ [ 4 -2  0  0  2]
+ [ 0  0  0  6  0]
+ [ 0  0  0  0  1]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00027585029602
+move:201
+
+[[ 0 -3  0  0  0]
+ [ 4  0 -4  0  0]
+ [ 0 -2  0  0  2]
+ [ 0  0  0  6  0]
+ [ 0  0  0  0  1]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.8792901039123535
+move:1223
+
+[[ 0 -3  0  0  0]
+ [ 4  0 -4  0  0]
+ [ 0  0  0  0  2]
+ [ 0  0 -2  6  0]
+ [ 0  0  0  0  1]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000117063522339
+move:100
+
+********************
+
+第6局结束，用时102.10188579559326秒
+blue(<class 'Agents.UCT.UCT.UCTPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 2:4
+
+第7局
+first_player: ChessColor.BLUE
+[[-3 -5 -1  0  0]
+ [-2 -4  0  0  0]
+ [-6  0  0  0  5]
+ [ 0  0  0  6  3]
+ [ 0  0  4  1  2]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000240325927734
+move:4433
+
+[[-3 -5 -1  0  0]
+ [-2 -4  0  0  0]
+ [-6  0  0  0  5]
+ [ 0  0  0  2  3]
+ [ 0  0  4  1  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:23.90610671043396
+move:11
+
+[[ 0 -5 -1  0  0]
+ [-2 -3  0  0  0]
+ [-6  0  0  0  5]
+ [ 0  0  0  2  3]
+ [ 0  0  4  1  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000227212905884
+move:2413
+
+[[ 0 -5 -1  0  0]
+ [-2 -3  0  0  0]
+ [-6  0  0  0  5]
+ [ 0  4  0  2  3]
+ [ 0  0  0  1  0]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:14.290380239486694
+move:1011
+
+[[ 0  0 -1  0  0]
+ [-2 -5  0  0  0]
+ [-6  0  0  0  5]
+ [ 0  4  0  2  3]
+ [ 0  0  0  1  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000115156173706
+move:3322
+
+[[ 0  0 -1  0  0]
+ [-2 -5  0  0  0]
+ [-6  0  2  0  5]
+ [ 0  4  0  0  3]
+ [ 0  0  0  1  0]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:6.060541868209839
+move:2021
+
+[[ 0  0  0  0  0]
+ [-2 -5 -1  0  0]
+ [-6  0  2  0  5]
+ [ 0  4  0  0  3]
+ [ 0  0  0  1  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000252962112427
+move:2211
+
+[[ 0  0  0  0  0]
+ [-2  2 -1  0  0]
+ [-6  0  0  0  5]
+ [ 0  4  0  0  3]
+ [ 0  0  0  1  0]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:2.514277219772339
+move:212
+
+[[ 0  0  0  0  0]
+ [-2  2 -1  0  0]
+ [ 0 -6  0  0  5]
+ [ 0  4  0  0  3]
+ [ 0  0  0  1  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00009298324585
+move:1302
+
+[[ 0  0  0  0  0]
+ [-2  2 -1  0  0]
+ [ 4 -6  0  0  5]
+ [ 0  0  0  0  3]
+ [ 0  0  0  1  0]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:1.3582000732421875
+move:111
+
+[[ 0  0  0  0  0]
+ [ 0 -2 -1  0  0]
+ [ 4 -6  0  0  5]
+ [ 0  0  0  0  3]
+ [ 0  0  0  1  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000324249267578
+move:201
+
+[[ 0  0  0  0  0]
+ [ 4 -2 -1  0  0]
+ [ 0 -6  0  0  5]
+ [ 0  0  0  0  3]
+ [ 0  0  0  1  0]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.638329029083252
+move:1222
+
+[[ 0  0  0  0  0]
+ [ 4 -2 -1  0  0]
+ [ 0  0 -6  0  5]
+ [ 0  0  0  0  3]
+ [ 0  0  0  1  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000071048736572
+move:4342
+
+[[ 0  0  0  0  0]
+ [ 4 -2 -1  0  0]
+ [ 0  0 -6  0  3]
+ [ 0  0  0  0  0]
+ [ 0  0  0  1  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.25052690505981445
+move:2233
+
+[[ 0  0  0  0  0]
+ [ 4 -2 -1  0  0]
+ [ 0  0  0  0  3]
+ [ 0  0  0 -6  0]
+ [ 0  0  0  1  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000105857849121
+move:100
+
+********************
+
+第7局结束，用时113.0234751701355秒
+blue(<class 'Agents.UCT.UCT.UCTPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 3:4
+
+第8局
+first_player: ChessColor.RED
+[[-6 -3 -1  0  0]
+ [-5 -4  0  0  0]
+ [-2  0  0  0  2]
+ [ 0  0  0  3  5]
+ [ 0  0  4  6  1]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000422239303589
+move:4231
+
+[[-6 -3 -1  0  0]
+ [-5 -4  0  2  0]
+ [-2  0  0  0  0]
+ [ 0  0  0  3  5]
+ [ 0  0  4  6  1]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:51.618748903274536
+move:212
+
+[[-6 -3 -1  0  0]
+ [-5 -4  0  2  0]
+ [ 0 -2  0  0  0]
+ [ 0  0  0  3  5]
+ [ 0  0  4  6  1]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00034499168396
+move:3322
+
+[[-6 -3 -1  0  0]
+ [-5 -4  0  2  0]
+ [ 0 -2  3  0  0]
+ [ 0  0  0  0  5]
+ [ 0  0  4  6  1]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:33.60951280593872
+move:1112
+
+[[-6 -3 -1  0  0]
+ [-5  0  0  2  0]
+ [ 0 -4  3  0  0]
+ [ 0  0  0  0  5]
+ [ 0  0  4  6  1]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000168800354004
+move:4443
+
+[[-6 -3 -1  0  0]
+ [-5  0  0  2  0]
+ [ 0 -4  3  0  0]
+ [ 0  0  0  0  1]
+ [ 0  0  4  6  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:12.369033098220825
+move:112
+
+[[-6 -3 -1  0  0]
+ [ 0  0  0  2  0]
+ [ 0 -5  3  0  0]
+ [ 0  0  0  0  1]
+ [ 0  0  4  6  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000119924545288
+move:2211
+
+[[-6 -3 -1  0  0]
+ [ 0  3  0  2  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  0  0  1]
+ [ 0  0  4  6  0]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:4.413174152374268
+move:1011
+
+[[-6  0 -1  0  0]
+ [ 0 -3  0  2  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  0  0  1]
+ [ 0  0  4  6  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000077247619629
+move:3424
+
+[[-6  0 -1  0  0]
+ [ 0 -3  0  2  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  0  0  1]
+ [ 0  0  6  0  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:1.098022699356079
+move:1223
+
+[[-6  0 -1  0  0]
+ [ 0 -3  0  2  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -5  0  1]
+ [ 0  0  6  0  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000311851501465
+move:2423
+
+[[-6  0 -1  0  0]
+ [ 0 -3  0  2  0]
+ [ 0  0  0  0  0]
+ [ 0  0  6  0  1]
+ [ 0  0  0  0  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.5187380313873291
+move:1122
+
+[[-6  0 -1  0  0]
+ [ 0  0  0  2  0]
+ [ 0  0 -3  0  0]
+ [ 0  0  6  0  1]
+ [ 0  0  0  0  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.0001380443573
+move:4333
+
+[[-6  0 -1  0  0]
+ [ 0  0  0  2  0]
+ [ 0  0 -3  0  0]
+ [ 0  0  6  1  0]
+ [ 0  0  0  0  0]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.23658490180969238
+move:11
+
+[[ 0  0 -1  0  0]
+ [ 0 -6  0  2  0]
+ [ 0  0 -3  0  0]
+ [ 0  0  6  1  0]
+ [ 0  0  0  0  0]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000258922576904
+move:3323
+
+[[ 0  0 -1  0  0]
+ [ 0 -6  0  2  0]
+ [ 0  0 -3  0  0]
+ [ 0  0  1  0  0]
+ [ 0  0  0  0  0]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.08294200897216797
+move:2233
+
+[[ 0  0 -1  0  0]
+ [ 0 -6  0  2  0]
+ [ 0  0  0  0  0]
+ [ 0  0  1 -3  0]
+ [ 0  0  0  0  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000141143798828
+move:3121
+
+[[ 0  0 -1  0  0]
+ [ 0 -6  2  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  1 -3  0]
+ [ 0  0  0  0  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.009039878845214844
+move:3344
+
+********************
+
+第8局结束，用时175.9621500968933秒
+blue(<class 'Agents.UCT.UCT.UCTPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 3:5
+
+第9局
+first_player: ChessColor.BLUE
+[[-4 -6 -2  0  0]
+ [-3 -1  0  0  0]
+ [-5  0  0  0  1]
+ [ 0  0  0  6  3]
+ [ 0  0  2  5  4]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000504732131958
+move:4342
+
+[[-4 -6 -2  0  0]
+ [-3 -1  0  0  0]
+ [-5  0  0  0  3]
+ [ 0  0  0  6  0]
+ [ 0  0  2  5  4]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:34.519888162612915
+move:213
+
+[[-4 -6 -2  0  0]
+ [-3 -1  0  0  0]
+ [ 0  0  0  0  3]
+ [ 0 -5  0  6  0]
+ [ 0  0  2  5  4]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000245094299316
+move:4433
+
+[[-4 -6 -2  0  0]
+ [-3 -1  0  0  0]
+ [ 0  0  0  0  3]
+ [ 0 -5  0  4  0]
+ [ 0  0  2  5  0]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:10.55283784866333
+move:1020
+
+[[-4  0 -6  0  0]
+ [-3 -1  0  0  0]
+ [ 0  0  0  0  3]
+ [ 0 -5  0  4  0]
+ [ 0  0  2  5  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000328063964844
+move:3424
+
+[[-4  0 -6  0  0]
+ [-3 -1  0  0  0]
+ [ 0  0  0  0  3]
+ [ 0 -5  0  4  0]
+ [ 0  0  5  0  0]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:5.91278076171875e-05
+move:1122
+
+[[-4  0 -6  0  0]
+ [-3  0  0  0  0]
+ [ 0  0 -1  0  3]
+ [ 0 -5  0  4  0]
+ [ 0  0  5  0  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000128746032715
+move:3322
+
+[[-4  0 -6  0  0]
+ [-3  0  0  0  0]
+ [ 0  0  4  0  3]
+ [ 0 -5  0  0  0]
+ [ 0  0  5  0  0]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:1.0286290645599365
+move:112
+
+[[-4  0 -6  0  0]
+ [ 0  0  0  0  0]
+ [ 0 -3  4  0  3]
+ [ 0 -5  0  0  0]
+ [ 0  0  5  0  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000209093093872
+move:2413
+
+[[-4  0 -6  0  0]
+ [ 0  0  0  0  0]
+ [ 0 -3  4  0  3]
+ [ 0  5  0  0  0]
+ [ 0  0  0  0  0]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.31722402572631836
+move:11
+
+[[ 0  0 -6  0  0]
+ [ 0 -4  0  0  0]
+ [ 0 -3  4  0  3]
+ [ 0  5  0  0  0]
+ [ 0  0  0  0  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00014591217041
+move:1302
+
+[[ 0  0 -6  0  0]
+ [ 0 -4  0  0  0]
+ [ 5 -3  4  0  3]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.19339776039123535
+move:1223
+
+[[ 0  0 -6  0  0]
+ [ 0 -4  0  0  0]
+ [ 5  0  4  0  3]
+ [ 0  0 -3  0  0]
+ [ 0  0  0  0  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000158071517944
+move:201
+
+[[ 0  0 -6  0  0]
+ [ 5 -4  0  0  0]
+ [ 0  0  4  0  3]
+ [ 0  0 -3  0  0]
+ [ 0  0  0  0  0]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.11770391464233398
+move:2334
+
+[[ 0  0 -6  0  0]
+ [ 5 -4  0  0  0]
+ [ 0  0  4  0  3]
+ [ 0  0  0  0  0]
+ [ 0  0  0 -3  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000118970870972
+move:4231
+
+[[ 0  0 -6  0  0]
+ [ 5 -4  0  3  0]
+ [ 0  0  4  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0 -3  0]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.033782005310058594
+move:2021
+
+[[ 0  0  0  0  0]
+ [ 5 -4 -6  3  0]
+ [ 0  0  4  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0 -3  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000076055526733
+move:2212
+
+[[ 0  0  0  0  0]
+ [ 5 -4 -6  3  0]
+ [ 0  4  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0 -3  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:5.7220458984375e-05
+move:3444
+
+********************
+
+第9局结束，用时118.76881194114685秒
+blue(<class 'Agents.UCT.UCT.UCTPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 3:6
+
+第10局
+first_player: ChessColor.RED
+[[-1 -3 -2  0  0]
+ [-4 -6  0  0  0]
+ [-5  0  0  0  1]
+ [ 0  0  0  2  4]
+ [ 0  0  5  6  3]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000131130218506
+move:3424
+
+[[-1 -3 -2  0  0]
+ [-4 -6  0  0  0]
+ [-5  0  0  0  1]
+ [ 0  0  0  2  4]
+ [ 0  0  6  0  3]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:22.940249919891357
+move:111
+
+[[-1 -3 -2  0  0]
+ [ 0 -4  0  0  0]
+ [-5  0  0  0  1]
+ [ 0  0  0  2  4]
+ [ 0  0  6  0  3]]
+point:1
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00037407875061
+move:4231
+
+[[-1 -3 -2  0  0]
+ [ 0 -4  0  1  0]
+ [-5  0  0  0  0]
+ [ 0  0  0  2  4]
+ [ 0  0  6  0  3]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:13.777878046035767
+move:2021
+
+[[-1 -3  0  0  0]
+ [ 0 -4 -2  1  0]
+ [-5  0  0  0  0]
+ [ 0  0  0  2  4]
+ [ 0  0  6  0  3]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000089883804321
+move:4333
+
+[[-1 -3  0  0  0]
+ [ 0 -4 -2  1  0]
+ [-5  0  0  0  0]
+ [ 0  0  0  4  0]
+ [ 0  0  6  0  3]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:5.107956886291504
+move:212
+
+[[-1 -3  0  0  0]
+ [ 0 -4 -2  1  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  0  4  0]
+ [ 0  0  6  0  3]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000094890594482
+move:4433
+
+[[-1 -3  0  0  0]
+ [ 0 -4 -2  1  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  0  3  0]
+ [ 0  0  6  0  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:1.8159418106079102
+move:1223
+
+[[-1 -3  0  0  0]
+ [ 0 -4 -2  1  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -5  3  0]
+ [ 0  0  6  0  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000195741653442
+move:2423
+
+[[-1 -3  0  0  0]
+ [ 0 -4 -2  1  0]
+ [ 0  0  0  0  0]
+ [ 0  0  6  3  0]
+ [ 0  0  0  0  0]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.48148107528686523
+move:10
+
+[[ 0 -1  0  0  0]
+ [ 0 -4 -2  1  0]
+ [ 0  0  0  0  0]
+ [ 0  0  6  3  0]
+ [ 0  0  0  0  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000156164169312
+move:3323
+
+[[ 0 -1  0  0  0]
+ [ 0 -4 -2  1  0]
+ [ 0  0  0  0  0]
+ [ 0  0  3  0  0]
+ [ 0  0  0  0  0]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.03456997871398926
+move:1011
+
+[[ 0  0  0  0  0]
+ [ 0 -1 -2  1  0]
+ [ 0  0  0  0  0]
+ [ 0  0  3  0  0]
+ [ 0  0  0  0  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000128030776978
+move:2312
+
+[[ 0  0  0  0  0]
+ [ 0 -1 -2  1  0]
+ [ 0  3  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.009545326232910156
+move:2122
+
+[[ 0  0  0  0  0]
+ [ 0 -1  0  1  0]
+ [ 0  3 -2  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000092029571533
+move:1201
+
+[[ 0  0  0  0  0]
+ [ 3 -1  0  1  0]
+ [ 0  0 -2  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.0036449432373046875
+move:2233
+
+[[ 0  0  0  0  0]
+ [ 3 -1  0  1  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0 -2  0]
+ [ 0  0  0  0  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00008773803711
+move:100
+
+********************
+
+第10局结束，用时116.17593216896057秒
+blue(<class 'Agents.UCT.UCT.UCTPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 4:6
+
+第11局
+first_player: ChessColor.BLUE
+[[-2 -5 -4  0  0]
+ [-1 -3  0  0  0]
+ [-6  0  0  0  3]
+ [ 0  0  0  6  2]
+ [ 0  0  4  1  5]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000228881835938
+move:4433
+
+[[-2 -5 -4  0  0]
+ [-1 -3  0  0  0]
+ [-6  0  0  0  3]
+ [ 0  0  0  5  2]
+ [ 0  0  4  1  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:6.103515625e-05
+move:1122
+
+[[-2 -5 -4  0  0]
+ [-1  0  0  0  0]
+ [-6  0 -3  0  3]
+ [ 0  0  0  5  2]
+ [ 0  0  4  1  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000193119049072
+move:3322
+
+[[-2 -5 -4  0  0]
+ [-1  0  0  0  0]
+ [-6  0  5  0  3]
+ [ 0  0  0  0  2]
+ [ 0  0  4  1  0]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:14.25301194190979
+move:10
+
+[[ 0 -2 -4  0  0]
+ [-1  0  0  0  0]
+ [-6  0  5  0  3]
+ [ 0  0  0  0  2]
+ [ 0  0  4  1  0]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000243902206421
+move:2211
+
+[[ 0 -2 -4  0  0]
+ [-1  5  0  0  0]
+ [-6  0  0  0  3]
+ [ 0  0  0  0  2]
+ [ 0  0  4  1  0]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:5.528220176696777
+move:111
+
+[[ 0 -2 -4  0  0]
+ [ 0 -1  0  0  0]
+ [-6  0  0  0  3]
+ [ 0  0  0  0  2]
+ [ 0  0  4  1  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.00014591217041
+move:2413
+
+[[ 0 -2 -4  0  0]
+ [ 0 -1  0  0  0]
+ [-6  0  0  0  3]
+ [ 0  4  0  0  2]
+ [ 0  0  0  1  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:4.416287899017334
+move:2031
+
+[[ 0 -2  0  0  0]
+ [ 0 -1  0 -4  0]
+ [-6  0  0  0  3]
+ [ 0  4  0  0  2]
+ [ 0  0  0  1  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000265121459961
+move:1302
+
+[[ 0 -2  0  0  0]
+ [ 0 -1  0 -4  0]
+ [ 4  0  0  0  3]
+ [ 0  0  0  0  2]
+ [ 0  0  0  1  0]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.7592480182647705
+move:3132
+
+[[ 0 -2  0  0  0]
+ [ 0 -1  0  0  0]
+ [ 4  0  0 -4  3]
+ [ 0  0  0  0  2]
+ [ 0  0  0  1  0]]
+point:2
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000210285186768
+move:4332
+
+[[ 0 -2  0  0  0]
+ [ 0 -1  0  0  0]
+ [ 4  0  0  2  3]
+ [ 0  0  0  0  0]
+ [ 0  0  0  1  0]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.24131011962890625
+move:1011
+
+[[ 0  0  0  0  0]
+ [ 0 -2  0  0  0]
+ [ 4  0  0  2  3]
+ [ 0  0  0  0  0]
+ [ 0  0  0  1  0]]
+point:3
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000164270401001
+move:4232
+
+[[ 0  0  0  0  0]
+ [ 0 -2  0  0  0]
+ [ 4  0  0  3  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  1  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:6.103515625e-05
+move:1122
+
+[[ 0  0  0  0  0]
+ [ 0  0  0  0  0]
+ [ 4  0 -2  3  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  1  0]]
+point:4
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000101089477539
+move:201
+
+[[ 0  0  0  0  0]
+ [ 4  0  0  0  0]
+ [ 0  0 -2  3  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  1  0]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.0006718635559082031
+move:2233
+
+[[ 0  0  0  0  0]
+ [ 4  0  0  0  0]
+ [ 0  0  0  3  0]
+ [ 0  0  0 -2  0]
+ [ 0  0  0  1  0]]
+point:6
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000072956085205
+move:100
+
+********************
+
+第11局结束，用时97.20366787910461秒
+blue(<class 'Agents.UCT.UCT.UCTPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 5:6
+
+第12局
+first_player: ChessColor.RED
+[[-5 -4 -2  0  0]
+ [-3 -6  0  0  0]
+ [-1  0  0  0  4]
+ [ 0  0  0  2  1]
+ [ 0  0  6  3  5]]
+point:5
+UCT start to stimulate
+UCT end to stimulate, time cost:8.000217914581299
+move:4434
+
+[[-5 -4 -2  0  0]
+ [-3 -6  0  0  0]
+ [-1  0  0  0  4]
+ [ 0  0  0  2  1]
+ [ 0  0  6  5  0]]
+point:1
+Alpha_beta_player start to stimulate

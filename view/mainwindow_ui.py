@@ -1,24 +1,25 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainwindow.ui'
+# Form generated from reading UI file 'mainwindow.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.1
+# Created by: Qt User Interface Compiler version 6.5.1
 ##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
+# WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
+                            QMetaObject, QObject, QPoint, QRect,
+                            QSize, QTime, QUrl, Qt)
 from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
+                           QFont, QFontDatabase, QGradient, QIcon,
+                           QImage, QKeySequence, QLinearGradient, QPainter,
+                           QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QHBoxLayout, QLabel,
-    QMainWindow, QMenuBar, QPlainTextEdit, QPushButton,
-    QSizePolicy, QStatusBar, QTextEdit, QVBoxLayout,
-    QWidget)
+                               QMainWindow, QMenuBar, QPlainTextEdit, QPushButton,
+                               QSizePolicy, QStatusBar, QTextEdit, QVBoxLayout,
+                               QWidget)
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -90,7 +91,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3.addWidget(self.gameModeSelectCombBox)
 
-
         self.verticalLayout_4.addLayout(self.horizontalLayout_3)
 
         self.horizontalLayout_2 = QHBoxLayout()
@@ -105,11 +105,11 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.setSenteComboBox)
 
-
         self.verticalLayout_4.addLayout(self.horizontalLayout_2)
 
         self.horizontalLayoutWidget_5 = QWidget(self.centralwidget)
-        self.horizontalLayoutWidget_5.setObjectName(u"horizontalLayoutWidget_5")
+        self.horizontalLayoutWidget_5.setObjectName(
+            u"horizontalLayoutWidget_5")
         self.horizontalLayoutWidget_5.setGeometry(QRect(290, 460, 191, 61))
         self.horizontalLayout_5 = QHBoxLayout(self.horizontalLayoutWidget_5)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
@@ -138,10 +138,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7.addWidget(self.redStrategySelectLable)
 
         self.redStrategySelectCombBox = QComboBox(self.verticalLayoutWidget_5)
-        self.redStrategySelectCombBox.setObjectName(u"redStrategySelectCombBox")
+        self.redStrategySelectCombBox.setObjectName(
+            u"redStrategySelectCombBox")
 
         self.horizontalLayout_7.addWidget(self.redStrategySelectCombBox)
-
 
         self.verticalLayout_5.addLayout(self.horizontalLayout_7)
 
@@ -153,10 +153,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.addWidget(self.blueStrategySelectLable)
 
         self.blueStrategySelectCombBox = QComboBox(self.verticalLayoutWidget_5)
-        self.blueStrategySelectCombBox.setObjectName(u"blueStrategySelectCombBox")
+        self.blueStrategySelectCombBox.setObjectName(
+            u"blueStrategySelectCombBox")
 
         self.horizontalLayout_6.addWidget(self.blueStrategySelectCombBox)
-
 
         self.verticalLayout_5.addLayout(self.horizontalLayout_6)
 
@@ -171,7 +171,6 @@ class Ui_MainWindow(object):
         self.setDiceComboBox.setObjectName(u"setDiceComboBox")
 
         self.horizontalLayout_4.addWidget(self.setDiceComboBox)
-
 
         self.verticalLayout_5.addLayout(self.horizontalLayout_4)
 
@@ -206,31 +205,51 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.letAIDoButton.clicked.connect(MainWindow.letAIDo)
-        self.gameModeSelectCombBox.currentIndexChanged.connect(MainWindow.handleGameModeChanged)
-        self.redStrategySelectCombBox.currentIndexChanged.connect(MainWindow.redStrategyChanged)
-        self.blueStrategySelectCombBox.currentIndexChanged.connect(MainWindow.blueStrategyChanged)
-        self.setDiceComboBox.currentIndexChanged.connect(MainWindow.onSetDiceComboBoxIndexChanged)
+        self.gameModeSelectCombBox.currentIndexChanged.connect(
+            MainWindow.handleGameModeChanged)
+        self.redStrategySelectCombBox.currentIndexChanged.connect(
+            MainWindow.redStrategyChanged)
+        self.blueStrategySelectCombBox.currentIndexChanged.connect(
+            MainWindow.blueStrategyChanged)
+        self.setDiceComboBox.currentIndexChanged.connect(
+            MainWindow.onSetDiceComboBoxIndexChanged)
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.startMatchButton.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u59cb\u6bd4\u8d5b", None))
-        self.diceButton.setText(QCoreApplication.translate("MainWindow", u"PC\u63b7\u9ab0\u5b50", None))
-        self.backButton.setText(QCoreApplication.translate("MainWindow", u"\u6094\u68cb", None))
-        self.replayMatchButton.setText(QCoreApplication.translate("MainWindow", u"\u91cd\u65b0\u5f00\u59cb", None))
-        self.modeSelectLable.setText(QCoreApplication.translate("MainWindow", u"\u6e38\u620f\u6a21\u5f0f", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u5148\u624b", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"\u641c\u7d22\u6df1\u5ea6", None))
-        self.redStrategySelectLable.setText(QCoreApplication.translate("MainWindow", u"\u7ea2\u65b9\u7b56\u7565", None))
-        self.blueStrategySelectLable.setText(QCoreApplication.translate("MainWindow", u"\u84dd\u65b9\u7b56\u7565", None))
-        self.setDiceLable.setText(QCoreApplication.translate("MainWindow", u"\u6307\u5b9a\u9ab0\u5b50\u6570\u76ee", None))
-        self.letAIDoButton.setText(QCoreApplication.translate("MainWindow", u"AI DO", None))
-        self.red_team_name_text.setPlainText(QCoreApplication.translate("MainWindow", u"player1", None))
-        self.vs_lable.setText(QCoreApplication.translate("MainWindow", u"vs", None))
-        self.blue_team_name_text.setPlainText(QCoreApplication.translate("MainWindow", u"player2", None))
-        self.vs_lable_2.setText(QCoreApplication.translate("MainWindow", u"\u7ea2\u65b9", None))
-        self.vs_lable_3.setText(QCoreApplication.translate("MainWindow", u"\u84dd\u65b9", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate(
+            "MainWindow", u"MainWindow", None))
+        self.startMatchButton.setText(QCoreApplication.translate(
+            "MainWindow", u"\u5f00\u59cb\u6bd4\u8d5b", None))
+        self.diceButton.setText(QCoreApplication.translate(
+            "MainWindow", u"PC\u63b7\u9ab0\u5b50", None))
+        self.backButton.setText(QCoreApplication.translate(
+            "MainWindow", u"\u6094\u68cb", None))
+        self.replayMatchButton.setText(QCoreApplication.translate(
+            "MainWindow", u"\u91cd\u65b0\u5f00\u59cb", None))
+        self.modeSelectLable.setText(QCoreApplication.translate(
+            "MainWindow", u"\u6e38\u620f\u6a21\u5f0f", None))
+        self.label_3.setText(QCoreApplication.translate(
+            "MainWindow", u"\u5148\u624b", None))
+        self.label.setText(QCoreApplication.translate(
+            "MainWindow", u"\u641c\u7d22\u6df1\u5ea6", None))
+        self.redStrategySelectLable.setText(QCoreApplication.translate(
+            "MainWindow", u"\u7ea2\u65b9\u7b56\u7565", None))
+        self.blueStrategySelectLable.setText(QCoreApplication.translate(
+            "MainWindow", u"\u84dd\u65b9\u7b56\u7565", None))
+        self.setDiceLable.setText(QCoreApplication.translate(
+            "MainWindow", u"\u6307\u5b9a\u9ab0\u5b50\u6570\u76ee", None))
+        self.letAIDoButton.setText(
+            QCoreApplication.translate("MainWindow", u"AI DO", None))
+        self.red_team_name_text.setPlainText(
+            QCoreApplication.translate("MainWindow", u"player1", None))
+        self.vs_lable.setText(
+            QCoreApplication.translate("MainWindow", u"vs", None))
+        self.blue_team_name_text.setPlainText(
+            QCoreApplication.translate("MainWindow", u"player2", None))
+        self.vs_lable_2.setText(QCoreApplication.translate(
+            "MainWindow", u"\u7ea2\u65b9", None))
+        self.vs_lable_3.setText(QCoreApplication.translate(
+            "MainWindow", u"\u84dd\u65b9", None))
     # retranslateUi
-
