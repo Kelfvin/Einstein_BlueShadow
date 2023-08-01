@@ -87,10 +87,10 @@
    <widget class="QWidget" name="verticalLayoutWidget_4">
     <property name="geometry">
      <rect>
-      <x>563</x>
+      <x>560</x>
       <y>500</y>
-      <width>164</width>
-      <height>171</height>
+      <width>181</width>
+      <height>195</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -108,6 +108,52 @@
        </item>
        <item>
         <widget class="QComboBox" name="gameModeSelectCombBox"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_8">
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>红方手动布局</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="red_pos_lineEdit"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>蓝方手动布局</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="blue_pos_lineEdit"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_9">
+       <item>
+        <widget class="QPushButton" name="blue_best_place_pushButton">
+         <property name="text">
+          <string>蓝方PC布局</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="red_best_place_pushButton">
+         <property name="text">
+          <string>红方PC布局</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -313,8 +359,8 @@
    <slot>handleGameModeChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>732</x>
-     <y>550</y>
+     <x>729</x>
+     <y>549</y>
     </hint>
     <hint type="destinationlabel">
      <x>647</x>
@@ -370,6 +416,70 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>red_pos_lineEdit</sender>
+   <signal>returnPressed()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>place_red_pos()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>671</x>
+     <y>582</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>550</x>
+     <y>572</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>blue_pos_lineEdit</sender>
+   <signal>returnPressed()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>place_blue_pos()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>701</x>
+     <y>622</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>500</x>
+     <y>642</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>blue_best_place_pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>blue_best_place()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>617</x>
+     <y>662</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>535</x>
+     <y>671</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>red_best_place_pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>red_best_place()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>690</x>
+     <y>658</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>769</x>
+     <y>698</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>letAIDo()</slot>
@@ -377,5 +487,9 @@
   <slot>redStrategyChanged(int)</slot>
   <slot>blueStrategyChanged(int)</slot>
   <slot>onSetDiceComboBoxIndexChanged(int)</slot>
+  <slot>place_red_pos()</slot>
+  <slot>place_blue_pos()</slot>
+  <slot>blue_best_place()</slot>
+  <slot>red_best_place()</slot>
  </slots>
 </ui>

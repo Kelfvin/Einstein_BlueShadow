@@ -185,6 +185,51 @@ class MainWindow(QMainWindow):
             msgBox.setText("布局非法，请检查！")
             msgBox.exec()
 
+    @Slot()
+    def place_red_pos(self):
+        '''从文本框中获取输入进行布局'''
+        # 获取输入的棋子序列
+        pieces_text = self.ui.red_pos_lineEdit.text()
+        # 输入的是一串数字字符，如：123456
+        # 从红方的角落，从上往下，一排一排的放
+        if len(pieces_text) == 6:
+            pieces_list = []
+            for chess in pieces_text:
+                pieces_list.append(int(chess))
+
+            self.board.place_red_pos(pieces_list)
+
+        self.update()
+
+    @Slot()
+    def place_blue_pos(self):
+        '''从文本框中获取输入进行布局'''
+        # 获取输入的棋子序列
+        pieces_text = self.ui.blue_pos_lineEdit.text()
+        # 输入的是一串数字字符，如：123456
+        # 从蓝方的角落，从下往上，一排一排的放
+
+        if len(pieces_text) == 6:
+            pieces_list = []
+            for chess in pieces_text:
+                pieces_list.append(int(chess))
+
+            self.board.place_blue_pos(pieces_list)
+
+        self.update()
+
+    @Slot()
+    def red_best_place(self):
+        '''红方最佳布局'''
+        self.board.red_best_place()
+        self.update()
+
+    @Slot()
+    def blue_best_place(self):
+        '''蓝方最佳布局'''
+        self.board.blue_best_place()
+        self.update()
+
     @Slot(int)
     def handleGameModeChanged(self, int):
         for mode in Mode:
@@ -283,6 +328,7 @@ class MainWindow(QMainWindow):
         self.ui.backButton.setEnabled(False)
         self.ui.setSenteComboBox.setEnabled(True)
         self.ui.gameModeSelectCombBox.setEnabled(True)
+        self.ui.boardStatusBar.clear()
         self.board = Board()
         self.update()
 

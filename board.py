@@ -34,6 +34,47 @@ class Board:
                                  3130, 3221, 3222, 3231, 3322, 3323, 3332, 3423, 3424, 3433, 4030,
                                  4130, 4131, 4140, 4231, 4232, 4241, 4332, 4333, 4342, 4433, 4434, 4443]
 
+        # 红蓝双方棋子初始放置的合法位置
+        self.red_legal_place_pos = [
+            (0, 0), (1, 0), (2, 0),
+            (0, 1), (1, 1),
+            (0, 2)
+        ]
+
+        self.blue_legal_place_pos = [
+            (4, 2),
+            (3, 3), (4, 3),
+            (2, 4), (3, 4), (4, 4)
+        ]
+
+    def place_blue_pos(self, pieces_list: list):
+        '''放置蓝方棋子
+        piece_list:棋子序列:list
+        '''
+        if len(pieces_list) == 6:
+            for pos, piece in zip(self.blue_legal_place_pos, pieces_list):
+                self.setChess(pos, piece)
+                self.blue_pieces = pieces_list
+
+    def place_red_pos(self, pieces_list: list):
+        '''放置红方棋子
+        piece_list:棋子序列:list
+        '''
+        if len(pieces_list) == 6:
+            for pos, piece in zip(self.red_legal_place_pos, pieces_list):
+                self.setChess(pos, -piece)
+                self.red_pieces = pieces_list
+
+    def red_best_place(self):
+        '''红方最佳放置棋子'''
+        best_pieces_list = [1, 6, 3, 2, 4, 5]
+        self.place_red_pos(best_pieces_list)
+
+    def blue_best_place(self):
+        '''蓝方最佳放置棋子'''
+        best_pieces_list = [5, 4, 2, 3, 6, 1]
+        self.place_blue_pos(best_pieces_list)
+
     def update_pieces(self):
         '''更新双方的棋子
         主要是用在撤销的时候，为了能够重新扫描棋盘，还原棋子
@@ -255,7 +296,7 @@ class Board:
         '''放置棋子
         Args:
             position (tuple or list): 表示位置的元组或列表，例如 (row, column) 或 [row, column]
-            value: 要放置的棋子的值,between [1,6]
+            value: 要放置的棋子的值,between [-6,6]
         Returns:
             bool: 表示是否成功放置棋子的布尔值
         '''
