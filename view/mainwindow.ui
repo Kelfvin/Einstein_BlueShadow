@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>955</width>
-    <height>779</height>
+    <width>985</width>
+    <height>745</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,10 +28,10 @@
    <widget class="QWidget" name="verticalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>80</y>
-      <width>321</width>
-      <height>401</height>
+      <x>540</x>
+      <y>0</y>
+      <width>401</width>
+      <height>411</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -44,282 +44,359 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_3">
+   <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>753</x>
-      <y>500</y>
-      <width>131</width>
-      <height>171</height>
+      <x>280</x>
+      <y>440</y>
+      <width>231</width>
+      <height>221</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout_3">
-     <item>
-      <widget class="QPushButton" name="startMatchButton">
-       <property name="text">
-        <string>开始比赛</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="diceButton">
-       <property name="text">
-        <string>PC掷骰子</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="backButton">
-       <property name="text">
-        <string>悔棋</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="replayMatchButton">
-       <property name="text">
-        <string>重新开始</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <property name="title">
+     <string>AI 相关</string>
+    </property>
+    <widget class="QWidget" name="verticalLayoutWidget_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>201</width>
+       <height>171</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_7">
+        <item>
+         <widget class="QLabel" name="redStrategySelectLable">
+          <property name="text">
+           <string>红方策略</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="redStrategySelectCombBox"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="QLabel" name="blueStrategySelectLable">
+          <property name="text">
+           <string>蓝方策略</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="blueStrategySelectCombBox"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="setDiceLable">
+          <property name="text">
+           <string>指定骰子数目</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="setDiceComboBox"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="letAIDoButton">
+        <property name="text">
+         <string>AI DO</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_4">
+   <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>500</y>
-      <width>181</width>
-      <height>195</height>
+      <x>10</x>
+      <y>440</y>
+      <width>251</width>
+      <height>251</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout_4">
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
-       <item>
-        <widget class="QLabel" name="modeSelectLable">
-         <property name="text">
-          <string>游戏模式</string>
-         </property>
-         <property name="margin">
-          <number>0</number>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QComboBox" name="gameModeSelectCombBox"/>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_8">
-       <item>
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>红方手动布局</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="red_pos_lineEdit"/>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string>蓝方手动布局</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="blue_pos_lineEdit"/>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_9">
-       <item>
-        <widget class="QPushButton" name="blue_best_place_pushButton">
-         <property name="text">
-          <string>蓝方PC布局</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="red_best_place_pushButton">
-         <property name="text">
-          <string>红方PC布局</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <item>
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>先手</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QComboBox" name="setSenteComboBox"/>
-       </item>
-      </layout>
-     </item>
-    </layout>
+    <property name="title">
+     <string>开局设置</string>
+    </property>
+    <widget class="QWidget" name="verticalLayoutWidget_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>231</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="modeSelectLable">
+          <property name="text">
+           <string>游戏模式</string>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="gameModeSelectCombBox"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_8">
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>红方手动布局</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="red_pos_lineEdit"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>蓝方手动布局</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="blue_pos_lineEdit"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_9">
+        <item>
+         <widget class="QPushButton" name="blue_best_place_pushButton">
+          <property name="text">
+           <string>蓝方PC布局</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="red_best_place_pushButton">
+          <property name="text">
+           <string>红方PC布局</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>先手</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="setSenteComboBox"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
    </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget_5">
+   <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>460</y>
-      <width>191</width>
-      <height>61</height>
+      <x>530</x>
+      <y>450</y>
+      <width>151</width>
+      <height>221</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_5">
-     <item>
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>搜索深度</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QComboBox" name="searchDeepCombBox"/>
-     </item>
-    </layout>
+    <property name="title">
+     <string>按钮区</string>
+    </property>
+    <widget class="QWidget" name="verticalLayoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>131</width>
+       <height>171</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QPushButton" name="startMatchButton">
+        <property name="text">
+         <string>开始比赛</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="diceButton">
+        <property name="text">
+         <string>PC掷骰子</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="backButton">
+        <property name="text">
+         <string>悔棋</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="record_button">
+        <property name="text">
+         <string>保存棋谱</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="replayMatchButton">
+        <property name="text">
+         <string>重新开始</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_5">
+   <widget class="QGroupBox" name="groupBox_4">
     <property name="geometry">
      <rect>
-      <x>32</x>
-      <y>458</y>
-      <width>201</width>
-      <height>171</height>
+      <x>700</x>
+      <y>450</y>
+      <width>261</width>
+      <height>191</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout_5">
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_7">
-       <item>
-        <widget class="QLabel" name="redStrategySelectLable">
-         <property name="text">
-          <string>红方策略</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QComboBox" name="redStrategySelectCombBox"/>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_6">
-       <item>
-        <widget class="QLabel" name="blueStrategySelectLable">
-         <property name="text">
-          <string>蓝方策略</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QComboBox" name="blueStrategySelectCombBox"/>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_4">
-       <item>
-        <widget class="QLabel" name="setDiceLable">
-         <property name="text">
-          <string>指定骰子数目</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QComboBox" name="setDiceComboBox"/>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <widget class="QPushButton" name="letAIDoButton">
-       <property name="text">
-        <string>AI DO</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QPlainTextEdit" name="red_team_name_text">
-    <property name="geometry">
-     <rect>
-      <x>560</x>
-      <y>40</y>
-      <width>131</width>
-      <height>31</height>
-     </rect>
+    <property name="title">
+     <string>玩家信息</string>
     </property>
-    <property name="plainText">
-     <string>player1</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="vs_lable">
-    <property name="geometry">
-     <rect>
-      <x>710</x>
-      <y>50</y>
-      <width>58</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>vs</string>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="blue_team_name_text">
-    <property name="geometry">
-     <rect>
-      <x>760</x>
-      <y>40</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="plainText">
-     <string>player2</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="vs_lable_2">
-    <property name="geometry">
-     <rect>
-      <x>560</x>
-      <y>20</y>
-      <width>58</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>红方</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="vs_lable_3">
-    <property name="geometry">
-     <rect>
-      <x>760</x>
-      <y>20</y>
-      <width>58</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>蓝方</string>
-    </property>
+    <widget class="QWidget" name="horizontalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>231</width>
+       <height>82</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <widget class="QLabel" name="vs_lable_2">
+          <property name="text">
+           <string>红方</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="red_team_name_text"/>
+        </item>
+        <item>
+         <widget class="QLCDNumber" name="red_time_lcdNumber">
+          <property name="smallDecimalPoint">
+           <bool>false</bool>
+          </property>
+          <property name="digitCount">
+           <number>8</number>
+          </property>
+          <property name="segmentStyle">
+           <enum>QLCDNumber::Flat</enum>
+          </property>
+          <property name="value" stdset="0">
+           <double>0.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="vs_lable">
+        <property name="text">
+         <string>vs</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item>
+         <widget class="QLabel" name="vs_lable_3">
+          <property name="text">
+           <string>蓝方</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="blue_team_name_text"/>
+        </item>
+        <item>
+         <widget class="QLCDNumber" name="blue_time_lcdNumber">
+          <property name="segmentStyle">
+           <enum>QLCDNumber::Flat</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>130</y>
+       <width>161</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_11">
+      <item>
+       <widget class="QLabel" name="point_label">
+        <property name="text">
+         <string>骰子的点数</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLCDNumber" name="point_lcdNum">
+        <property name="font">
+         <font>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="smallDecimalPoint">
+         <bool>false</bool>
+        </property>
+        <property name="segmentStyle">
+         <enum>QLCDNumber::Flat</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -327,7 +404,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>955</width>
+     <width>985</width>
      <height>24</height>
     </rect>
    </property>
@@ -343,8 +420,8 @@
    <slot>letAIDo()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>181</x>
-     <y>637</y>
+     <x>459</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>308</x>
@@ -359,12 +436,12 @@
    <slot>handleGameModeChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>729</x>
-     <y>549</y>
+     <x>195</x>
+     <y>527</y>
     </hint>
     <hint type="destinationlabel">
-     <x>647</x>
-     <y>486</y>
+     <x>202</x>
+     <y>397</y>
     </hint>
    </hints>
   </connection>
@@ -375,12 +452,12 @@
    <slot>redStrategyChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>192</x>
-     <y>503</y>
+     <x>470</x>
+     <y>523</y>
     </hint>
     <hint type="destinationlabel">
-     <x>238</x>
-     <y>451</y>
+     <x>450</x>
+     <y>447</y>
     </hint>
    </hints>
   </connection>
@@ -391,8 +468,8 @@
    <slot>blueStrategyChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>167</x>
-     <y>553</y>
+     <x>445</x>
+     <y>573</y>
     </hint>
     <hint type="destinationlabel">
      <x>259</x>
@@ -407,8 +484,8 @@
    <slot>onSetDiceComboBoxIndexChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>213</x>
-     <y>593</y>
+     <x>491</x>
+     <y>613</y>
     </hint>
     <hint type="destinationlabel">
      <x>287</x>
@@ -423,8 +500,8 @@
    <slot>place_red_pos()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>671</x>
-     <y>582</y>
+     <x>131</x>
+     <y>560</y>
     </hint>
     <hint type="destinationlabel">
      <x>550</x>
@@ -439,8 +516,8 @@
    <slot>place_blue_pos()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>701</x>
-     <y>622</y>
+     <x>161</x>
+     <y>600</y>
     </hint>
     <hint type="destinationlabel">
      <x>500</x>
@@ -455,8 +532,8 @@
    <slot>blue_best_place()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>617</x>
-     <y>662</y>
+     <x>77</x>
+     <y>640</y>
     </hint>
     <hint type="destinationlabel">
      <x>535</x>
@@ -471,12 +548,28 @@
    <slot>red_best_place()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>690</x>
-     <y>658</y>
+     <x>225</x>
+     <y>649</y>
     </hint>
     <hint type="destinationlabel">
-     <x>769</x>
-     <y>698</y>
+     <x>305</x>
+     <y>715</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>record_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>record_game()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>645</x>
+     <y>629</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>428</x>
+     <y>374</y>
     </hint>
    </hints>
   </connection>
@@ -491,5 +584,6 @@
   <slot>place_blue_pos()</slot>
   <slot>blue_best_place()</slot>
   <slot>red_best_place()</slot>
+  <slot>record_game()</slot>
  </slots>
 </ui>

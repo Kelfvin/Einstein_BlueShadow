@@ -10,8 +10,7 @@ class Board:
         self.initBoard()
         self.dice = dice  # 骰子的数
         self.boardBackup = []  # 用于备份棋盘
-        self.ourColor = ChessColor.BLUE  # 我方队伍的颜色
-        self.turn = ChessColor.BLUE  # 目前轮到
+        self.turn = start_player  # 目前轮到
         self.sente = start_player   # 先手
 
         self.movements = []  # 保存行棋的历史
@@ -47,6 +46,14 @@ class Board:
             (2, 4), (3, 4), (4, 4)
         ]
 
+        self.num_char_map = {
+            0: 'A',
+            1: 'B',
+            2: 'C',
+            3: 'D',
+            4: 'E'
+        }
+
     def place_blue_pos(self, pieces_list: list):
         '''放置蓝方棋子
         piece_list:棋子序列:list
@@ -63,7 +70,7 @@ class Board:
         if len(pieces_list) == 6:
             for pos, piece in zip(self.red_legal_place_pos, pieces_list):
                 self.setChess(pos, -piece)
-                self.red_pieces = pieces_list
+                self.red_pieces = [-i for i in pieces_list]
 
     def red_best_place(self):
         '''红方最佳放置棋子'''
@@ -419,6 +426,75 @@ class Board:
             # print("Point is", self.point)
 
         return self.dice
+
+    def last_move_info(self):
+        '''返回上一次移动的信息,返回的是标准棋谱的信息'''
+        # 写入每一步的走法
+
+        num_char_map = {
+            0: 'A',
+            1: 'B',
+            2: 'C',
+            3: 'D',
+            4: 'E'
+        }
+        i = len(self.movements) - 1
+        x, y, dx, dy = self.move_to_location(self.movements[i])
+        # 这里 x 和 y 还是用的最原始的，可以索引到棋子
+        chess_index = self.boardBackup[i][x][y]
+        sign = 'R' if chess_index < 0 else 'B'
+        chess_index = abs(chess_index)
+        dy = abs(5-dy)
+        dx = num_char_map[dx]
+
+        for i, (move, point) in enumerate(zip(self.movements, self.points)):
+            x, y, dx, dy = self.move_to_location(move)
+            # 这里 x 和 y 还是用的最原始的，可以索引到棋子
+            print((self.boardBackup[i].T))
+            chess_index = self.boardBackup[i][x][y]
+            sign = 'R' if chess_index < 0 else 'B'
+            chess_index = abs(chess_index)
+            dy = abs(5-dy)
+            dx = num_char_map[dx]
+
+        info = f'{i+1}:{point};({sign}{chess_index},{dx}{dy})'
+        return info
+
+    def initial_pos_info(self) -> str:
+        '''返回初始位置信息，返回标准棋谱的字符串'''
+        info = ''
+        info += 'R:'
+        for x, y, index in self.red_initial_pos:
+            y = abs(5-y)
+            x = self.num_char_map[x]
+            chess_index = abs(index)
+            info += f'{x}{y}-{chess_index};'
+
+        info += '\n'
+        # 写入蓝方
+        info += 'B:'
+        for x, y, index in self.blue_initial_pos:
+            y = abs(5-y)
+            x = self.num_char_map[x]
+            chess_index = abs(index)
+            info += f'{x}{y}-{chess_index};'
+
+        return info
+
+    def get_movements_info(self):
+        '''返回所有的行棋记录信息'''
+        info = ''
+        for i, (move, point) in enumerate(zip(self.movements, self.points)):
+            x, y, dx, dy = self.move_to_location(move)
+            # 这里 x 和 y 还是用的最原始的，可以索引到棋子
+            chess_index = self.boardBackup[i][x][y]
+            sign = 'R' if chess_index < 0 else 'B'
+            chess_index = abs(chess_index)
+            dy = abs(5-dy)
+            dx = self.num_char_map[dx]
+            info += f'{i+1}:{point};({sign}{chess_index},{dx}{dy})\n'
+
+        return info
 
 
 if __name__ == '__main__':

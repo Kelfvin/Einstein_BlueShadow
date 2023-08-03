@@ -25,6 +25,7 @@ class Game:
 
     def setBlueAgent(self):
         agent = self.blueStrategy()
+        # agent = self.blueStrategy(play_num=20000)
         agent.set_color(ChessColor.BLUE)
         self.players[ChessColor.BLUE] = agent
 
@@ -45,6 +46,11 @@ class Game:
             # 偶数是蓝方先手，奇数是红方先手
             firstPlayer = ChessColor.BLUE if i % 2 == 0 else ChessColor.RED
             self.board = Board(firstPlayer)
+
+            # 双方均设置为最优布局进行测试,避免出现一方布局不好的情况
+            self.board.blue_best_place()
+            self.board.red_best_place()
+
             self.setBlueAgent()
             self.setRedAgent()
 

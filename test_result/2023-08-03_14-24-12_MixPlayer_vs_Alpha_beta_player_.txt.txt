@@ -1,0 +1,2005 @@
+blue(<class 'Agents.Mix.mix_player.MixPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>)
+filename:2023-08-03_14-24-12_MixPlayer_vs_Alpha_beta_player_.txt
+
+第1局
+first_player: ChessColor.BLUE
+[[-1 -6 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  3  6  1]]
+point:5
+Mix start to stimulate
+Mix end to stimulate, time cost:2.7015380859375
+move:4231
+
+[[-1 -6 -3  0  0]
+ [-2 -4  0  5  0]
+ [-5  0  0  0  0]
+ [ 0  0  0  4  2]
+ [ 0  0  3  6  1]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.001043081283569336
+move:1122
+
+[[-1 -6 -3  0  0]
+ [-2  0  0  5  0]
+ [-5  0 -4  0  0]
+ [ 0  0  0  4  2]
+ [ 0  0  3  6  1]]
+point:3
+Mix start to stimulate
+Mix end to stimulate, time cost:1.7715721130371094
+move:2423
+
+[[-1 -6 -3  0  0]
+ [-2  0  0  5  0]
+ [-5  0 -4  0  0]
+ [ 0  0  3  4  2]
+ [ 0  0  0  6  1]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:3.6212918758392334
+move:102
+
+[[-1 -6 -3  0  0]
+ [ 0  0  0  5  0]
+ [-2  0 -4  0  0]
+ [ 0  0  3  4  2]
+ [ 0  0  0  6  1]]
+point:1
+Mix start to stimulate
+Mix end to stimulate, time cost:1.3748149871826172
+move:4443
+
+[[-1 -6 -3  0  0]
+ [ 0  0  0  5  0]
+ [-2  0 -4  0  0]
+ [ 0  0  3  4  1]
+ [ 0  0  0  6  0]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:1.1621859073638916
+move:2233
+
+[[-1 -6 -3  0  0]
+ [ 0  0  0  5  0]
+ [-2  0  0  0  0]
+ [ 0  0  3 -4  1]
+ [ 0  0  0  6  0]]
+point:6
+Mix start to stimulate
+Mix end to stimulate, time cost:1.3531880378723145
+move:3433
+
+[[-1 -6 -3  0  0]
+ [ 0  0  0  5  0]
+ [-2  0  0  0  0]
+ [ 0  0  3  6  1]
+ [ 0  0  0  0  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.588454008102417
+move:1021
+
+[[-1  0 -3  0  0]
+ [ 0  0 -6  5  0]
+ [-2  0  0  0  0]
+ [ 0  0  3  6  1]
+ [ 0  0  0  0  0]]
+point:4
+Mix start to stimulate
+Mix end to stimulate, time cost:1.4144909381866455
+move:2322
+
+[[-1  0 -3  0  0]
+ [ 0  0 -6  5  0]
+ [-2  0  3  0  0]
+ [ 0  0  0  6  1]
+ [ 0  0  0  0  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.19627594947814941
+move:2021
+
+[[-1  0  0  0  0]
+ [ 0  0 -3  5  0]
+ [-2  0  3  0  0]
+ [ 0  0  0  6  1]
+ [ 0  0  0  0  0]]
+point:2
+Mix start to stimulate
+Mix end to stimulate, time cost:0.8525419235229492
+move:2211
+
+[[-1  0  0  0  0]
+ [ 0  3 -3  5  0]
+ [-2  0  0  0  0]
+ [ 0  0  0  6  1]
+ [ 0  0  0  0  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.09269905090332031
+move:2122
+
+[[-1  0  0  0  0]
+ [ 0  3  0  5  0]
+ [-2  0 -3  0  0]
+ [ 0  0  0  6  1]
+ [ 0  0  0  0  0]]
+point:4
+Mix start to stimulate
+Mix end to stimulate, time cost:0.4715549945831299
+move:1100
+
+********************
+
+第1局结束，用时15.604308843612671秒
+blue(<class 'Agents.Mix.mix_player.MixPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 1:0
+
+第2局
+first_player: ChessColor.RED
+[[-1 -6 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  3  6  1]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:4.034064769744873
+move:10
+
+[[ 0 -1 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  3  6  1]]
+point:6
+Mix start to stimulate
+Mix end to stimulate, time cost:1.8004579544067383
+move:3424
+
+[[ 0 -1 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  6  0  1]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:1.8375179767608643
+move:102
+
+[[ 0 -1 -3  0  0]
+ [ 0 -4  0  0  0]
+ [-2  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  6  0  1]]
+point:3
+Mix start to stimulate
+Mix end to stimulate, time cost:1.8505699634552002
+move:4333
+
+[[ 0 -1 -3  0  0]
+ [ 0 -4  0  0  0]
+ [-2  0  0  0  5]
+ [ 0  0  0  2  0]
+ [ 0  0  6  0  1]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.5458648204803467
+move:2021
+
+[[ 0 -1  0  0  0]
+ [ 0 -4 -3  0  0]
+ [-2  0  0  0  5]
+ [ 0  0  0  2  0]
+ [ 0  0  6  0  1]]
+point:6
+Mix start to stimulate
+Mix end to stimulate, time cost:1.052509069442749
+move:2413
+
+[[ 0 -1  0  0  0]
+ [ 0 -4 -3  0  0]
+ [-2  0  0  0  5]
+ [ 0  6  0  2  0]
+ [ 0  0  0  0  1]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.40599584579467773
+move:2132
+
+[[ 0 -1  0  0  0]
+ [ 0 -4  0  0  0]
+ [-2  0  0 -3  5]
+ [ 0  6  0  2  0]
+ [ 0  0  0  0  1]]
+point:5
+Mix start to stimulate
+Mix end to stimulate, time cost:0.8225440979003906
+move:4232
+
+[[ 0 -1  0  0  0]
+ [ 0 -4  0  0  0]
+ [-2  0  0  5  0]
+ [ 0  6  0  2  0]
+ [ 0  0  0  0  1]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.17451024055480957
+move:213
+
+[[ 0 -1  0  0  0]
+ [ 0 -4  0  0  0]
+ [ 0  0  0  5  0]
+ [ 0 -2  0  2  0]
+ [ 0  0  0  0  1]]
+point:5
+Mix start to stimulate
+Mix end to stimulate, time cost:0.5873901844024658
+move:3222
+
+[[ 0 -1  0  0  0]
+ [ 0 -4  0  0  0]
+ [ 0  0  5  0  0]
+ [ 0 -2  0  2  0]
+ [ 0  0  0  0  1]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:6.508827209472656e-05
+move:1122
+
+[[ 0 -1  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -4  0  0]
+ [ 0 -2  0  2  0]
+ [ 0  0  0  0  1]]
+point:3
+Mix start to stimulate
+Mix end to stimulate, time cost:0.3425631523132324
+move:3322
+
+[[ 0 -1  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  2  0  0]
+ [ 0 -2  0  0  0]
+ [ 0  0  0  0  1]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.009248971939086914
+move:1323
+
+[[ 0 -1  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  2  0  0]
+ [ 0  0 -2  0  0]
+ [ 0  0  0  0  1]]
+point:6
+Mix start to stimulate
+Mix end to stimulate, time cost:0.21757102012634277
+move:2211
+
+[[ 0 -1  0  0  0]
+ [ 0  2  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -2  0  0]
+ [ 0  0  0  0  1]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.0021371841430664062
+move:2334
+
+[[ 0 -1  0  0  0]
+ [ 0  2  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0 -2  1]]
+point:4
+Mix start to stimulate
+Mix end to stimulate, time cost:0.05649089813232422
+move:1100
+
+********************
+
+第2局结束，用时13.742704153060913秒
+blue(<class 'Agents.Mix.mix_player.MixPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 2:0
+
+第3局
+first_player: ChessColor.BLUE
+[[-1 -6 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  3  6  1]]
+point:3
+Mix start to stimulate
+Mix end to stimulate, time cost:2.0546581745147705
+move:2423
+
+[[-1 -6 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  3  4  2]
+ [ 0  0  0  6  1]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:4.983184814453125
+move:2021
+
+[[-1 -6  0  0  0]
+ [-2 -4 -3  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  3  4  2]
+ [ 0  0  0  6  1]]
+point:3
+Mix start to stimulate
+Mix end to stimulate, time cost:1.8788120746612549
+move:2312
+
+[[-1 -6  0  0  0]
+ [-2 -4 -3  0  0]
+ [-5  3  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  0  6  1]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:6.318092346191406e-05
+move:1112
+
+[[-1 -6  0  0  0]
+ [-2  0 -3  0  0]
+ [-5 -4  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  0  6  1]]
+point:6
+Mix start to stimulate
+Mix end to stimulate, time cost:1.941162109375
+move:3433
+
+[[-1 -6  0  0  0]
+ [-2  0 -3  0  0]
+ [-5 -4  0  0  5]
+ [ 0  0  0  6  2]
+ [ 0  0  0  0  1]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.9346621036529541
+move:212
+
+[[-1 -6  0  0  0]
+ [-2  0 -3  0  0]
+ [ 0 -5  0  0  5]
+ [ 0  0  0  6  2]
+ [ 0  0  0  0  1]]
+point:3
+Mix start to stimulate
+Mix end to stimulate, time cost:1.8033888339996338
+move:4231
+
+[[-1 -6  0  0  0]
+ [-2  0 -3  5  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  0  6  2]
+ [ 0  0  0  0  1]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:6.67572021484375e-05
+move:2131
+
+[[-1 -6  0  0  0]
+ [-2  0  0 -3  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  0  6  2]
+ [ 0  0  0  0  1]]
+point:4
+Mix start to stimulate
+Mix end to stimulate, time cost:1.343364953994751
+move:4332
+
+[[-1 -6  0  0  0]
+ [-2  0  0 -3  0]
+ [ 0 -5  0  2  0]
+ [ 0  0  0  6  0]
+ [ 0  0  0  0  1]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.15847301483154297
+move:111
+
+[[-1 -6  0  0  0]
+ [ 0 -2  0 -3  0]
+ [ 0 -5  0  2  0]
+ [ 0  0  0  6  0]
+ [ 0  0  0  0  1]]
+point:3
+Mix start to stimulate
+Mix end to stimulate, time cost:1.1764671802520752
+move:3221
+
+[[-1 -6  0  0  0]
+ [ 0 -2  2 -3  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  0  6  0]
+ [ 0  0  0  0  1]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.08404803276062012
+move:10
+
+[[ 0 -1  0  0  0]
+ [ 0 -2  2 -3  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  0  6  0]
+ [ 0  0  0  0  1]]
+point:4
+Mix start to stimulate
+Mix end to stimulate, time cost:0.7419040203094482
+move:2110
+
+[[ 0  2  0  0  0]
+ [ 0 -2  0 -3  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  0  6  0]
+ [ 0  0  0  0  1]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.00014591217041015625
+move:1122
+
+[[ 0  2  0  0  0]
+ [ 0  0  0 -3  0]
+ [ 0 -5 -2  0  0]
+ [ 0  0  0  6  0]
+ [ 0  0  0  0  1]]
+point:6
+Mix start to stimulate
+Mix end to stimulate, time cost:0.3636908531188965
+move:3322
+
+[[ 0  2  0  0  0]
+ [ 0  0  0 -3  0]
+ [ 0 -5  6  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  1]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.005357027053833008
+move:1222
+
+[[ 0  2  0  0  0]
+ [ 0  0  0 -3  0]
+ [ 0  0 -5  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  1]]
+point:2
+Mix start to stimulate
+Mix end to stimulate, time cost:0.018687963485717773
+move:1000
+
+********************
+
+第3局结束，用时17.491496086120605秒
+blue(<class 'Agents.Mix.mix_player.MixPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 3:0
+
+第4局
+first_player: ChessColor.RED
+[[-1 -6 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  3  6  1]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:4.574032783508301
+move:1011
+
+[[-1  0 -3  0  0]
+ [-2 -6  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  3  6  1]]
+point:2
+Mix start to stimulate
+Mix end to stimulate, time cost:1.7975428104400635
+move:4333
+
+[[-1  0 -3  0  0]
+ [-2 -6  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  2  0]
+ [ 0  0  3  6  1]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:2.2911930084228516
+move:2021
+
+[[-1  0  0  0  0]
+ [-2 -6 -3  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  2  0]
+ [ 0  0  3  6  1]]
+point:3
+Mix start to stimulate
+Mix end to stimulate, time cost:1.5969531536102295
+move:2423
+
+[[-1  0  0  0  0]
+ [-2 -6 -3  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  3  2  0]
+ [ 0  0  0  6  1]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:1.4112820625305176
+move:1
+
+[[ 0  0  0  0  0]
+ [-1 -6 -3  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  3  2  0]
+ [ 0  0  0  6  1]]
+point:4
+Mix start to stimulate
+Mix end to stimulate, time cost:1.6762418746948242
+move:4232
+
+[[ 0  0  0  0  0]
+ [-1 -6 -3  0  0]
+ [-5  0  0  5  0]
+ [ 0  0  3  2  0]
+ [ 0  0  0  6  1]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.8906850814819336
+move:2132
+
+[[ 0  0  0  0  0]
+ [-1 -6  0  0  0]
+ [-5  0  0 -3  0]
+ [ 0  0  3  2  0]
+ [ 0  0  0  6  1]]
+point:2
+Mix start to stimulate
+Mix end to stimulate, time cost:0.9643681049346924
+move:3332
+
+[[ 0  0  0  0  0]
+ [-1 -6  0  0  0]
+ [-5  0  0  2  0]
+ [ 0  0  3  0  0]
+ [ 0  0  0  6  1]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.18440914154052734
+move:111
+
+[[ 0  0  0  0  0]
+ [ 0 -1  0  0  0]
+ [-5  0  0  2  0]
+ [ 0  0  3  0  0]
+ [ 0  0  0  6  1]]
+point:1
+Mix start to stimulate
+Mix end to stimulate, time cost:0.6874759197235107
+move:4434
+
+[[ 0  0  0  0  0]
+ [ 0 -1  0  0  0]
+ [-5  0  0  2  0]
+ [ 0  0  3  0  0]
+ [ 0  0  0  1  0]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.027904987335205078
+move:212
+
+[[ 0  0  0  0  0]
+ [ 0 -1  0  0  0]
+ [ 0 -5  0  2  0]
+ [ 0  0  3  0  0]
+ [ 0  0  0  1  0]]
+point:5
+Mix start to stimulate
+Mix end to stimulate, time cost:0.3851451873779297
+move:2312
+
+[[ 0  0  0  0  0]
+ [ 0 -1  0  0  0]
+ [ 0  3  0  2  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  1  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:6.318092346191406e-05
+move:1112
+
+[[ 0  0  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0 -1  0  2  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  1  0]]
+point:6
+Mix start to stimulate
+Mix end to stimulate, time cost:0.23457098007202148
+move:3221
+
+[[ 0  0  0  0  0]
+ [ 0  0  2  0  0]
+ [ 0 -1  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  1  0]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.0012497901916503906
+move:1222
+
+[[ 0  0  0  0  0]
+ [ 0  0  2  0  0]
+ [ 0  0 -1  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  1  0]]
+point:2
+Mix start to stimulate
+Mix end to stimulate, time cost:0.13477611541748047
+move:2111
+
+[[ 0  0  0  0  0]
+ [ 0  2  0  0  0]
+ [ 0  0 -1  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  1  0]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.00041484832763671875
+move:2233
+
+[[ 0  0  0  0  0]
+ [ 0  2  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0 -1  0]
+ [ 0  0  0  1  0]]
+point:2
+Mix start to stimulate
+Mix end to stimulate, time cost:0.07303500175476074
+move:1100
+
+********************
+
+第4局结束，用时16.934669256210327秒
+blue(<class 'Agents.Mix.mix_player.MixPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 4:0
+
+第5局
+first_player: ChessColor.BLUE
+[[-1 -6 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  3  6  1]]
+point:3
+Mix start to stimulate
+Mix end to stimulate, time cost:2.074317216873169
+move:2423
+
+[[-1 -6 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  3  4  2]
+ [ 0  0  0  6  1]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:4.125523090362549
+move:1011
+
+[[-1  0 -3  0  0]
+ [-2 -6  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  3  4  2]
+ [ 0  0  0  6  1]]
+point:1
+Mix start to stimulate
+Mix end to stimulate, time cost:1.6724858283996582
+move:4443
+
+[[-1  0 -3  0  0]
+ [-2 -6  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  3  4  1]
+ [ 0  0  0  6  0]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:5.91278076171875e-05
+move:1122
+
+[[-1  0 -3  0  0]
+ [-2  0  0  0  0]
+ [-5  0 -6  0  5]
+ [ 0  0  3  4  1]
+ [ 0  0  0  6  0]]
+point:2
+Mix start to stimulate
+Mix end to stimulate, time cost:1.7962768077850342
+move:2322
+
+[[-1  0 -3  0  0]
+ [-2  0  0  0  0]
+ [-5  0  3  0  5]
+ [ 0  0  0  4  1]
+ [ 0  0  0  6  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:1.300929069519043
+move:2021
+
+[[-1  0  0  0  0]
+ [-2  0 -3  0  0]
+ [-5  0  3  0  5]
+ [ 0  0  0  4  1]
+ [ 0  0  0  6  0]]
+point:4
+Mix start to stimulate
+Mix end to stimulate, time cost:1.2923288345336914
+move:3322
+
+[[-1  0  0  0  0]
+ [-2  0 -3  0  0]
+ [-5  0  4  0  5]
+ [ 0  0  0  0  1]
+ [ 0  0  0  6  0]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.5963268280029297
+move:111
+
+[[-1  0  0  0  0]
+ [ 0 -2 -3  0  0]
+ [-5  0  4  0  5]
+ [ 0  0  0  0  1]
+ [ 0  0  0  6  0]]
+point:3
+Mix start to stimulate
+Mix end to stimulate, time cost:1.4186348915100098
+move:2211
+
+[[-1  0  0  0  0]
+ [ 0  4 -3  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  0  1]
+ [ 0  0  0  6  0]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.20682811737060547
+move:11
+
+[[ 0  0  0  0  0]
+ [ 0 -1 -3  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  0  1]
+ [ 0  0  0  6  0]]
+point:5
+Mix start to stimulate
+Mix end to stimulate, time cost:0.9523508548736572
+move:4231
+
+[[ 0  0  0  0  0]
+ [ 0 -1 -3  5  0]
+ [-5  0  0  0  0]
+ [ 0  0  0  0  1]
+ [ 0  0  0  6  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:6.318092346191406e-05
+move:2131
+
+[[ 0  0  0  0  0]
+ [ 0 -1  0 -3  0]
+ [-5  0  0  0  0]
+ [ 0  0  0  0  1]
+ [ 0  0  0  6  0]]
+point:6
+Mix start to stimulate
+Mix end to stimulate, time cost:0.7887699604034424
+move:3433
+
+[[ 0  0  0  0  0]
+ [ 0 -1  0 -3  0]
+ [-5  0  0  0  0]
+ [ 0  0  0  6  1]
+ [ 0  0  0  0  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.013411998748779297
+move:212
+
+[[ 0  0  0  0  0]
+ [ 0 -1  0 -3  0]
+ [ 0 -5  0  0  0]
+ [ 0  0  0  6  1]
+ [ 0  0  0  0  0]]
+point:3
+Mix start to stimulate
+Mix end to stimulate, time cost:0.6215040683746338
+move:4332
+
+[[ 0  0  0  0  0]
+ [ 0 -1  0 -3  0]
+ [ 0 -5  0  1  0]
+ [ 0  0  0  6  0]
+ [ 0  0  0  0  0]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:6.318092346191406e-05
+move:1122
+
+[[ 0  0  0  0  0]
+ [ 0  0  0 -3  0]
+ [ 0 -5 -1  1  0]
+ [ 0  0  0  6  0]
+ [ 0  0  0  0  0]]
+point:5
+Mix start to stimulate
+Mix end to stimulate, time cost:0.43436694145202637
+move:3322
+
+[[ 0  0  0  0  0]
+ [ 0  0  0 -3  0]
+ [ 0 -5  6  1  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.002335071563720703
+move:3142
+
+[[ 0  0  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0 -5  6  1 -3]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:6
+Mix start to stimulate
+Mix end to stimulate, time cost:0.2408280372619629
+move:2211
+
+[[ 0  0  0  0  0]
+ [ 0  6  0  0  0]
+ [ 0 -5  0  1 -3]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.0034041404724121094
+move:1222
+
+[[ 0  0  0  0  0]
+ [ 0  6  0  0  0]
+ [ 0  0 -5  1 -3]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:4
+Mix start to stimulate
+Mix end to stimulate, time cost:0.24976515769958496
+move:1100
+
+********************
+
+第5局结束，用时17.794229984283447秒
+blue(<class 'Agents.Mix.mix_player.MixPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 5:0
+
+第6局
+first_player: ChessColor.RED
+[[-1 -6 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  3  6  1]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:4.576864004135132
+move:102
+
+[[-1 -6 -3  0  0]
+ [ 0 -4  0  0  0]
+ [-2  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  3  6  1]]
+point:6
+Mix start to stimulate
+Mix end to stimulate, time cost:1.7655353546142578
+move:3424
+
+[[-1 -6 -3  0  0]
+ [ 0 -4  0  0  0]
+ [-2  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  6  0  1]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:1.5000379085540771
+move:1011
+
+[[-1  0 -3  0  0]
+ [ 0 -6  0  0  0]
+ [-2  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  6  0  1]]
+point:6
+Mix start to stimulate
+Mix end to stimulate, time cost:1.47121000289917
+move:2423
+
+[[-1  0 -3  0  0]
+ [ 0 -6  0  0  0]
+ [-2  0  0  0  5]
+ [ 0  0  6  4  2]
+ [ 0  0  0  0  1]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:1.0035581588745117
+move:213
+
+[[-1  0 -3  0  0]
+ [ 0 -6  0  0  0]
+ [ 0  0  0  0  5]
+ [ 0 -2  6  4  2]
+ [ 0  0  0  0  1]]
+point:5
+Mix start to stimulate
+Mix end to stimulate, time cost:1.3128728866577148
+move:4232
+
+[[-1  0 -3  0  0]
+ [ 0 -6  0  0  0]
+ [ 0  0  0  5  0]
+ [ 0 -2  6  4  2]
+ [ 0  0  0  0  1]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.6782381534576416
+move:10
+
+[[ 0 -1 -3  0  0]
+ [ 0 -6  0  0  0]
+ [ 0  0  0  5  0]
+ [ 0 -2  6  4  2]
+ [ 0  0  0  0  1]]
+point:5
+Mix start to stimulate
+Mix end to stimulate, time cost:1.1352510452270508
+move:3222
+
+[[ 0 -1 -3  0  0]
+ [ 0 -6  0  0  0]
+ [ 0  0  5  0  0]
+ [ 0 -2  6  4  2]
+ [ 0  0  0  0  1]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.4461238384246826
+move:1011
+
+[[ 0  0 -3  0  0]
+ [ 0 -1  0  0  0]
+ [ 0  0  5  0  0]
+ [ 0 -2  6  4  2]
+ [ 0  0  0  0  1]]
+point:1
+Mix start to stimulate
+Mix end to stimulate, time cost:0.7353348731994629
+move:4433
+
+[[ 0  0 -3  0  0]
+ [ 0 -1  0  0  0]
+ [ 0  0  5  0  0]
+ [ 0 -2  6  1  2]
+ [ 0  0  0  0  0]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.18989109992980957
+move:2031
+
+[[ 0  0  0  0  0]
+ [ 0 -1  0 -3  0]
+ [ 0  0  5  0  0]
+ [ 0 -2  6  1  2]
+ [ 0  0  0  0  0]]
+point:5
+Mix start to stimulate
+Mix end to stimulate, time cost:0.5132541656494141
+move:2211
+
+[[ 0  0  0  0  0]
+ [ 0  5  0 -3  0]
+ [ 0  0  0  0  0]
+ [ 0 -2  6  1  2]
+ [ 0  0  0  0  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.0355839729309082
+move:3142
+
+[[ 0  0  0  0  0]
+ [ 0  5  0  0  0]
+ [ 0  0  0  0 -3]
+ [ 0 -2  6  1  2]
+ [ 0  0  0  0  0]]
+point:6
+Mix start to stimulate
+Mix end to stimulate, time cost:0.2051088809967041
+move:2322
+
+[[ 0  0  0  0  0]
+ [ 0  5  0  0  0]
+ [ 0  0  6  0 -3]
+ [ 0 -2  0  1  2]
+ [ 0  0  0  0  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:6.580352783203125e-05
+move:4243
+
+[[ 0  0  0  0  0]
+ [ 0  5  0  0  0]
+ [ 0  0  6  0  0]
+ [ 0 -2  0  1 -3]
+ [ 0  0  0  0  0]]
+point:4
+Mix start to stimulate
+Mix end to stimulate, time cost:0.13347673416137695
+move:1100
+
+********************
+
+第6局结束，用时15.705786228179932秒
+blue(<class 'Agents.Mix.mix_player.MixPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 6:0
+
+第7局
+first_player: ChessColor.BLUE
+[[-1 -6 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  3  6  1]]
+point:2
+Mix start to stimulate
+Mix end to stimulate, time cost:2.018328905105591
+move:4333
+
+[[-1 -6 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  2  0]
+ [ 0  0  3  6  1]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:2.0846807956695557
+move:10
+
+[[ 0 -1 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  2  0]
+ [ 0  0  3  6  1]]
+point:2
+Mix start to stimulate
+Mix end to stimulate, time cost:1.635869026184082
+move:3322
+
+[[ 0 -1 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  2  0  5]
+ [ 0  0  0  0  0]
+ [ 0  0  3  6  1]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:2.1334011554718018
+move:212
+
+[[ 0 -1 -3  0  0]
+ [-2 -4  0  0  0]
+ [ 0 -5  2  0  5]
+ [ 0  0  0  0  0]
+ [ 0  0  3  6  1]]
+point:1
+Mix start to stimulate
+Mix end to stimulate, time cost:1.4014089107513428
+move:4443
+
+[[ 0 -1 -3  0  0]
+ [-2 -4  0  0  0]
+ [ 0 -5  2  0  5]
+ [ 0  0  0  0  1]
+ [ 0  0  3  6  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:1.9305830001831055
+move:2021
+
+[[ 0 -1  0  0  0]
+ [-2 -4 -3  0  0]
+ [ 0 -5  2  0  5]
+ [ 0  0  0  0  1]
+ [ 0  0  3  6  0]]
+point:5
+Mix start to stimulate
+Mix end to stimulate, time cost:1.2945868968963623
+move:4232
+
+[[ 0 -1  0  0  0]
+ [-2 -4 -3  0  0]
+ [ 0 -5  2  5  0]
+ [ 0  0  0  0  1]
+ [ 0  0  3  6  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:6.127357482910156e-05
+move:1222
+
+[[ 0 -1  0  0  0]
+ [-2 -4 -3  0  0]
+ [ 0  0 -5  5  0]
+ [ 0  0  0  0  1]
+ [ 0  0  3  6  0]]
+point:2
+Mix start to stimulate
+Mix end to stimulate, time cost:1.336595058441162
+move:2413
+
+[[ 0 -1  0  0  0]
+ [-2 -4 -3  0  0]
+ [ 0  0 -5  5  0]
+ [ 0  3  0  0  1]
+ [ 0  0  0  6  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:6.29425048828125e-05
+move:2132
+
+[[ 0 -1  0  0  0]
+ [-2 -4  0  0  0]
+ [ 0  0 -5 -3  0]
+ [ 0  3  0  0  1]
+ [ 0  0  0  6  0]]
+point:6
+Mix start to stimulate
+Mix end to stimulate, time cost:0.6576108932495117
+move:3433
+
+[[ 0 -1  0  0  0]
+ [-2 -4  0  0  0]
+ [ 0  0 -5 -3  0]
+ [ 0  3  0  6  1]
+ [ 0  0  0  0  0]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.19629192352294922
+move:1011
+
+[[ 0  0  0  0  0]
+ [-2 -1  0  0  0]
+ [ 0  0 -5 -3  0]
+ [ 0  3  0  6  1]
+ [ 0  0  0  0  0]]
+point:5
+Mix start to stimulate
+Mix end to stimulate, time cost:0.6476340293884277
+move:1302
+
+[[ 0  0  0  0  0]
+ [-2 -1  0  0  0]
+ [ 3  0 -5 -3  0]
+ [ 0  0  0  6  1]
+ [ 0  0  0  0  0]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.043519020080566406
+move:3243
+
+[[ 0  0  0  0  0]
+ [-2 -1  0  0  0]
+ [ 3  0 -5  0  0]
+ [ 0  0  0  6 -3]
+ [ 0  0  0  0  0]]
+point:2
+Mix start to stimulate
+Mix end to stimulate, time cost:0.09096407890319824
+move:201
+
+[[ 0  0  0  0  0]
+ [ 3 -1  0  0  0]
+ [ 0  0 -5  0  0]
+ [ 0  0  0  6 -3]
+ [ 0  0  0  0  0]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.001318216323852539
+move:4344
+
+********************
+
+第7局结束，用时15.475871086120605秒
+blue(<class 'Agents.Mix.mix_player.MixPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 6:1
+
+第8局
+first_player: ChessColor.RED
+[[-1 -6 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  3  6  1]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:4.577179908752441
+move:102
+
+[[-1 -6 -3  0  0]
+ [ 0 -4  0  0  0]
+ [-2  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  3  6  1]]
+point:6
+Mix start to stimulate
+Mix end to stimulate, time cost:1.801358938217163
+move:3424
+
+[[-1 -6 -3  0  0]
+ [ 0 -4  0  0  0]
+ [-2  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  6  0  1]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:1.4875810146331787
+move:1011
+
+[[-1  0 -3  0  0]
+ [ 0 -6  0  0  0]
+ [-2  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  6  0  1]]
+point:4
+Mix start to stimulate
+Mix end to stimulate, time cost:1.4883921146392822
+move:3332
+
+[[-1  0 -3  0  0]
+ [ 0 -6  0  0  0]
+ [-2  0  0  4  5]
+ [ 0  0  0  0  2]
+ [ 0  0  6  0  1]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:1.1142051219940186
+move:10
+
+[[ 0 -1 -3  0  0]
+ [ 0 -6  0  0  0]
+ [-2  0  0  4  5]
+ [ 0  0  0  0  2]
+ [ 0  0  6  0  1]]
+point:2
+Mix start to stimulate
+Mix end to stimulate, time cost:1.2937519550323486
+move:4342
+
+[[ 0 -1 -3  0  0]
+ [ 0 -6  0  0  0]
+ [-2  0  0  4  2]
+ [ 0  0  0  0  0]
+ [ 0  0  6  0  1]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.7630610466003418
+move:1122
+
+[[ 0 -1 -3  0  0]
+ [ 0  0  0  0  0]
+ [-2  0 -6  4  2]
+ [ 0  0  0  0  0]
+ [ 0  0  6  0  1]]
+point:6
+Mix start to stimulate
+Mix end to stimulate, time cost:0.893312931060791
+move:2423
+
+[[ 0 -1 -3  0  0]
+ [ 0  0  0  0  0]
+ [-2  0 -6  4  2]
+ [ 0  0  6  0  0]
+ [ 0  0  0  0  1]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.46267175674438477
+move:2233
+
+[[ 0 -1 -3  0  0]
+ [ 0  0  0  0  0]
+ [-2  0  0  4  2]
+ [ 0  0  6 -6  0]
+ [ 0  0  0  0  1]]
+point:4
+Mix start to stimulate
+Mix end to stimulate, time cost:0.4050159454345703
+move:3222
+
+[[ 0 -1 -3  0  0]
+ [ 0  0  0  0  0]
+ [-2  0  4  0  2]
+ [ 0  0  6 -6  0]
+ [ 0  0  0  0  1]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.04907083511352539
+move:3344
+
+********************
+
+第8局结束，用时14.33771800994873秒
+blue(<class 'Agents.Mix.mix_player.MixPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 6:2
+
+第9局
+first_player: ChessColor.BLUE
+[[-1 -6 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  3  6  1]]
+point:4
+Mix start to stimulate
+Mix end to stimulate, time cost:2.137176036834717
+move:3322
+
+[[-1 -6 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  4  0  5]
+ [ 0  0  0  0  2]
+ [ 0  0  3  6  1]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:4.362595081329346
+move:102
+
+[[-1 -6 -3  0  0]
+ [ 0 -4  0  0  0]
+ [-2  0  4  0  5]
+ [ 0  0  0  0  2]
+ [ 0  0  3  6  1]]
+point:4
+Mix start to stimulate
+Mix end to stimulate, time cost:1.810715913772583
+move:2212
+
+[[-1 -6 -3  0  0]
+ [ 0 -4  0  0  0]
+ [-2  4  0  0  5]
+ [ 0  0  0  0  2]
+ [ 0  0  3  6  1]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:2.652092695236206
+move:10
+
+[[ 0 -1 -3  0  0]
+ [ 0 -4  0  0  0]
+ [-2  4  0  0  5]
+ [ 0  0  0  0  2]
+ [ 0  0  3  6  1]]
+point:1
+Mix start to stimulate
+Mix end to stimulate, time cost:1.2537870407104492
+move:4443
+
+[[ 0 -1 -3  0  0]
+ [ 0 -4  0  0  0]
+ [-2  4  0  0  5]
+ [ 0  0  0  0  1]
+ [ 0  0  3  6  0]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.9666659832000732
+move:1020
+
+[[ 0  0 -1  0  0]
+ [ 0 -4  0  0  0]
+ [-2  4  0  0  5]
+ [ 0  0  0  0  1]
+ [ 0  0  3  6  0]]
+point:6
+Mix start to stimulate
+Mix end to stimulate, time cost:0.9316110610961914
+move:3424
+
+[[ 0  0 -1  0  0]
+ [ 0 -4  0  0  0]
+ [-2  4  0  0  5]
+ [ 0  0  0  0  1]
+ [ 0  0  6  0  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.32660508155822754
+move:212
+
+[[ 0  0 -1  0  0]
+ [ 0 -4  0  0  0]
+ [ 0 -2  0  0  5]
+ [ 0  0  0  0  1]
+ [ 0  0  6  0  0]]
+point:2
+Mix start to stimulate
+Mix end to stimulate, time cost:1.1336493492126465
+move:4232
+
+[[ 0  0 -1  0  0]
+ [ 0 -4  0  0  0]
+ [ 0 -2  0  5  0]
+ [ 0  0  0  0  1]
+ [ 0  0  6  0  0]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.10810613632202148
+move:1223
+
+[[ 0  0 -1  0  0]
+ [ 0 -4  0  0  0]
+ [ 0  0  0  5  0]
+ [ 0  0 -2  0  1]
+ [ 0  0  6  0  0]]
+point:5
+Mix start to stimulate
+Mix end to stimulate, time cost:0.644355058670044
+move:3221
+
+[[ 0  0 -1  0  0]
+ [ 0 -4  5  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -2  0  1]
+ [ 0  0  6  0  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.07627010345458984
+move:2334
+
+[[ 0  0 -1  0  0]
+ [ 0 -4  5  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  1]
+ [ 0  0  6 -2  0]]
+point:2
+Mix start to stimulate
+Mix end to stimulate, time cost:0.39121198654174805
+move:2110
+
+[[ 0  5 -1  0  0]
+ [ 0 -4  0  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  1]
+ [ 0  0  6 -2  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:5.793571472167969e-05
+move:1122
+
+[[ 0  5 -1  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -4  0  0]
+ [ 0  0  0  0  1]
+ [ 0  0  6 -2  0]]
+point:4
+Mix start to stimulate
+Mix end to stimulate, time cost:0.19484186172485352
+move:1000
+
+********************
+
+第9局结束，用时16.992501974105835秒
+blue(<class 'Agents.Mix.mix_player.MixPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 7:2
+
+第10局
+first_player: ChessColor.RED
+[[-1 -6 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  3  6  1]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:4.593981027603149
+move:102
+
+[[-1 -6 -3  0  0]
+ [ 0 -4  0  0  0]
+ [-2  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  3  6  1]]
+point:2
+Mix start to stimulate
+Mix end to stimulate, time cost:1.817795991897583
+move:4342
+
+[[-1 -6 -3  0  0]
+ [ 0 -4  0  0  0]
+ [-2  0  0  0  2]
+ [ 0  0  0  4  0]
+ [ 0  0  3  6  1]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:1.4496068954467773
+move:1011
+
+[[-1  0 -3  0  0]
+ [ 0 -6  0  0  0]
+ [-2  0  0  0  2]
+ [ 0  0  0  4  0]
+ [ 0  0  3  6  1]]
+point:2
+Mix start to stimulate
+Mix end to stimulate, time cost:1.4631102085113525
+move:4231
+
+[[-1  0 -3  0  0]
+ [ 0 -6  0  2  0]
+ [-2  0  0  0  0]
+ [ 0  0  0  4  0]
+ [ 0  0  3  6  1]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:1.3324589729309082
+move:1122
+
+[[-1  0 -3  0  0]
+ [ 0  0  0  2  0]
+ [-2  0 -6  0  0]
+ [ 0  0  0  4  0]
+ [ 0  0  3  6  1]]
+point:1
+Mix start to stimulate
+Mix end to stimulate, time cost:1.1801888942718506
+move:4443
+
+[[-1  0 -3  0  0]
+ [ 0  0  0  2  0]
+ [-2  0 -6  0  0]
+ [ 0  0  0  4  1]
+ [ 0  0  3  6  0]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.8512828350067139
+move:2233
+
+[[-1  0 -3  0  0]
+ [ 0  0  0  2  0]
+ [-2  0  0  0  0]
+ [ 0  0  0 -6  1]
+ [ 0  0  3  6  0]]
+point:4
+Mix start to stimulate
+Mix end to stimulate, time cost:1.1046688556671143
+move:3433
+
+[[-1  0 -3  0  0]
+ [ 0  0  0  2  0]
+ [-2  0  0  0  0]
+ [ 0  0  0  6  1]
+ [ 0  0  3  0  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.2818121910095215
+move:2021
+
+[[-1  0  0  0  0]
+ [ 0  0 -3  2  0]
+ [-2  0  0  0  0]
+ [ 0  0  0  6  1]
+ [ 0  0  3  0  0]]
+point:3
+Mix start to stimulate
+Mix end to stimulate, time cost:0.8586790561676025
+move:2413
+
+[[-1  0  0  0  0]
+ [ 0  0 -3  2  0]
+ [-2  0  0  0  0]
+ [ 0  3  0  6  1]
+ [ 0  0  0  0  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.18930721282958984
+move:2132
+
+[[-1  0  0  0  0]
+ [ 0  0  0  2  0]
+ [-2  0  0 -3  0]
+ [ 0  3  0  6  1]
+ [ 0  0  0  0  0]]
+point:4
+Mix start to stimulate
+Mix end to stimulate, time cost:0.732820987701416
+move:3332
+
+[[-1  0  0  0  0]
+ [ 0  0  0  2  0]
+ [-2  0  0  6  0]
+ [ 0  3  0  0  1]
+ [ 0  0  0  0  0]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.13243484497070312
+move:10
+
+[[ 0 -1  0  0  0]
+ [ 0  0  0  2  0]
+ [-2  0  0  6  0]
+ [ 0  3  0  0  1]
+ [ 0  0  0  0  0]]
+point:1
+Mix start to stimulate
+Mix end to stimulate, time cost:0.5580620765686035
+move:4332
+
+[[ 0 -1  0  0  0]
+ [ 0  0  0  2  0]
+ [-2  0  0  1  0]
+ [ 0  3  0  0  0]
+ [ 0  0  0  0  0]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.030437707901000977
+move:212
+
+[[ 0 -1  0  0  0]
+ [ 0  0  0  2  0]
+ [ 0 -2  0  1  0]
+ [ 0  3  0  0  0]
+ [ 0  0  0  0  0]]
+point:3
+Mix start to stimulate
+Mix end to stimulate, time cost:0.29393672943115234
+move:1312
+
+[[ 0 -1  0  0  0]
+ [ 0  0  0  2  0]
+ [ 0  3  0  1  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.004792928695678711
+move:1021
+
+[[ 0  0  0  0  0]
+ [ 0  0 -1  2  0]
+ [ 0  3  0  1  0]
+ [ 0  0  0  0  0]
+ [ 0  0  0  0  0]]
+point:2
+Mix start to stimulate
+Mix end to stimulate, time cost:0.20548391342163086
+move:3121
+
+********************
+
+第10局结束，用时17.084998846054077秒
+blue(<class 'Agents.Mix.mix_player.MixPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 8:2
+
+第11局
+first_player: ChessColor.BLUE
+[[-1 -6 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  3  6  1]]
+point:2
+Mix start to stimulate
+Mix end to stimulate, time cost:2.075360059738159
+move:4333
+
+[[-1 -6 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  2  0]
+ [ 0  0  3  6  1]]
+point:4
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:6.198883056640625e-05
+move:1122
+
+[[-1 -6 -3  0  0]
+ [-2  0  0  0  0]
+ [-5  0 -4  0  5]
+ [ 0  0  0  2  0]
+ [ 0  0  3  6  1]]
+point:1
+Mix start to stimulate
+Mix end to stimulate, time cost:1.8010551929473877
+move:4434
+
+[[-1 -6 -3  0  0]
+ [-2  0  0  0  0]
+ [-5  0 -4  0  5]
+ [ 0  0  0  2  0]
+ [ 0  0  3  1  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:1.3781728744506836
+move:212
+
+[[-1 -6 -3  0  0]
+ [-2  0  0  0  0]
+ [ 0 -5 -4  0  5]
+ [ 0  0  0  2  0]
+ [ 0  0  3  1  0]]
+point:1
+Mix start to stimulate
+Mix end to stimulate, time cost:1.2467010021209717
+move:3424
+
+[[-1 -6 -3  0  0]
+ [-2  0  0  0  0]
+ [ 0 -5 -4  0  5]
+ [ 0  0  0  2  0]
+ [ 0  0  1  0  0]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.3975238800048828
+move:111
+
+[[-1 -6 -3  0  0]
+ [ 0 -2  0  0  0]
+ [ 0 -5 -4  0  5]
+ [ 0  0  0  2  0]
+ [ 0  0  1  0  0]]
+point:4
+Mix start to stimulate
+Mix end to stimulate, time cost:1.4869906902313232
+move:4232
+
+[[-1 -6 -3  0  0]
+ [ 0 -2  0  0  0]
+ [ 0 -5 -4  5  0]
+ [ 0  0  0  2  0]
+ [ 0  0  1  0  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.31011104583740234
+move:1223
+
+[[-1 -6 -3  0  0]
+ [ 0 -2  0  0  0]
+ [ 0  0 -4  5  0]
+ [ 0  0 -5  2  0]
+ [ 0  0  1  0  0]]
+point:6
+Mix start to stimulate
+Mix end to stimulate, time cost:0.7609798908233643
+move:3221
+
+[[-1 -6 -3  0  0]
+ [ 0 -2  5  0  0]
+ [ 0  0 -4  0  0]
+ [ 0  0 -5  2  0]
+ [ 0  0  1  0  0]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:5.817413330078125e-05
+move:1121
+
+[[-1 -6 -3  0  0]
+ [ 0  0 -2  0  0]
+ [ 0  0 -4  0  0]
+ [ 0  0 -5  2  0]
+ [ 0  0  1  0  0]]
+point:5
+Mix start to stimulate
+Mix end to stimulate, time cost:0.6941568851470947
+move:3322
+
+[[-1 -6 -3  0  0]
+ [ 0  0 -2  0  0]
+ [ 0  0  2  0  0]
+ [ 0  0 -5  0  0]
+ [ 0  0  1  0  0]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.04509091377258301
+move:10
+
+[[ 0 -1 -3  0  0]
+ [ 0  0 -2  0  0]
+ [ 0  0  2  0  0]
+ [ 0  0 -5  0  0]
+ [ 0  0  1  0  0]]
+point:3
+Mix start to stimulate
+Mix end to stimulate, time cost:0.34182310104370117
+move:2211
+
+[[ 0 -1 -3  0  0]
+ [ 0  2 -2  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -5  0  0]
+ [ 0  0  1  0  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.011024951934814453
+move:2021
+
+[[ 0 -1  0  0  0]
+ [ 0  2 -3  0  0]
+ [ 0  0  0  0  0]
+ [ 0  0 -5  0  0]
+ [ 0  0  1  0  0]]
+point:4
+Mix start to stimulate
+Mix end to stimulate, time cost:0.14620375633239746
+move:1100
+
+********************
+
+第11局结束，用时10.697978019714355秒
+blue(<class 'Agents.Mix.mix_player.MixPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 9:2
+
+第12局
+first_player: ChessColor.RED
+[[-1 -6 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  3  6  1]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:4.573929071426392
+move:102
+
+[[-1 -6 -3  0  0]
+ [ 0 -4  0  0  0]
+ [-2  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  3  6  1]]
+point:1
+Mix start to stimulate
+Mix end to stimulate, time cost:1.8409769535064697
+move:4443
+
+[[-1 -6 -3  0  0]
+ [ 0 -4  0  0  0]
+ [-2  0  0  0  5]
+ [ 0  0  0  4  1]
+ [ 0  0  3  6  0]]
+point:2
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:2.2755770683288574
+move:212
+
+[[-1 -6 -3  0  0]
+ [ 0 -4  0  0  0]
+ [ 0 -2  0  0  5]
+ [ 0  0  0  4  1]
+ [ 0  0  3  6  0]]
+point:1
+Mix start to stimulate
+Mix end to stimulate, time cost:1.5660889148712158
+move:4342
+
+[[-1 -6 -3  0  0]
+ [ 0 -4  0  0  0]
+ [ 0 -2  0  0  1]
+ [ 0  0  0  4  0]
+ [ 0  0  3  6  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.8447690010070801
+move:2021
+
+[[-1 -6  0  0  0]
+ [ 0 -4 -3  0  0]
+ [ 0 -2  0  0  1]
+ [ 0  0  0  4  0]
+ [ 0  0  3  6  0]]
+point:3
+Mix start to stimulate
+Mix end to stimulate, time cost:1.4022250175476074
+move:2413
+
+[[-1 -6  0  0  0]
+ [ 0 -4 -3  0  0]
+ [ 0 -2  0  0  1]
+ [ 0  3  0  4  0]
+ [ 0  0  0  6  0]]
+point:5
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.6775739192962646
+move:1021
+
+[[-1  0  0  0  0]
+ [ 0 -4 -6  0  0]
+ [ 0 -2  0  0  1]
+ [ 0  3  0  4  0]
+ [ 0  0  0  6  0]]
+point:2
+Mix start to stimulate
+Mix end to stimulate, time cost:1.3956549167633057
+move:1302
+
+[[-1  0  0  0  0]
+ [ 0 -4 -6  0  0]
+ [ 3 -2  0  0  1]
+ [ 0  0  0  4  0]
+ [ 0  0  0  6  0]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.32411885261535645
+move:11
+
+[[ 0  0  0  0  0]
+ [ 0 -1 -6  0  0]
+ [ 3 -2  0  0  1]
+ [ 0  0  0  4  0]
+ [ 0  0  0  6  0]]
+point:6
+Mix start to stimulate
+Mix end to stimulate, time cost:0.7108657360076904
+move:3433
+
+[[ 0  0  0  0  0]
+ [ 0 -1 -6  0  0]
+ [ 3 -2  0  0  1]
+ [ 0  0  0  6  0]
+ [ 0  0  0  0  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.0855100154876709
+move:2122
+
+[[ 0  0  0  0  0]
+ [ 0 -1  0  0  0]
+ [ 3 -2 -6  0  1]
+ [ 0  0  0  6  0]
+ [ 0  0  0  0  0]]
+point:5
+Mix start to stimulate
+Mix end to stimulate, time cost:0.4085221290588379
+move:201
+
+[[ 0  0  0  0  0]
+ [ 3 -1  0  0  0]
+ [ 0 -2 -6  0  1]
+ [ 0  0  0  6  0]
+ [ 0  0  0  0  0]]
+point:6
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:0.023837804794311523
+move:2233
+
+[[ 0  0  0  0  0]
+ [ 3 -1  0  0  0]
+ [ 0 -2  0  0  1]
+ [ 0  0  0 -6  0]
+ [ 0  0  0  0  0]]
+point:4
+Mix start to stimulate
+Mix end to stimulate, time cost:0.017541170120239258
+move:100
+
+********************
+
+第12局结束，用时16.14982295036316秒
+blue(<class 'Agents.Mix.mix_player.MixPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>) --- 10:2
+
+第13局
+first_player: ChessColor.BLUE
+[[-1 -6 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  3  6  1]]
+point:4
+Mix start to stimulate
+Mix end to stimulate, time cost:2.2389068603515625
+move:3322
+
+[[-1 -6 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  4  0  5]
+ [ 0  0  0  0  2]
+ [ 0  0  3  6  1]]
+point:6

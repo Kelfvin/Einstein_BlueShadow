@@ -1,0 +1,45 @@
+blue(<class 'Agents.Mix.mix_player.MixPlayer'>)  vs red(<class 'Agents.alpha_beta_boost.alpha_beta.Alpha_beta_player'>)
+filename:2023-08-02_10-33-49_MixPlayer_vs_Alpha_beta_player_10w 均设置为最优布局.txt
+
+第1局
+first_player: ChessColor.BLUE
+[[-1 -6 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  4  2]
+ [ 0  0  3  6  1]]
+point:1
+Mix start to stimulate
+Mix end to stimulate, time cost:15.458203792572021
+move:4443
+
+[[-1 -6 -3  0  0]
+ [-2 -4  0  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  4  1]
+ [ 0  0  3  6  0]]
+point:3
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:4.577392816543579
+move:2021
+
+[[-1 -6  0  0  0]
+ [-2 -4 -3  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  0  4  1]
+ [ 0  0  3  6  0]]
+point:3
+Mix start to stimulate
+Mix end to stimulate, time cost:11.673436164855957
+move:2423
+
+[[-1 -6  0  0  0]
+ [-2 -4 -3  0  0]
+ [-5  0  0  0  5]
+ [ 0  0  3  4  1]
+ [ 0  0  0  6  0]]
+point:1
+Alpha_beta_player start to stimulate
+Alpha_beta_player end to stimulate, time cost:2.730273962020874
+move:10
+
