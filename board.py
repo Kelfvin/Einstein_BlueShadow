@@ -1,12 +1,14 @@
 import copy
 import random
+
 import numpy as np
+
 from enums.chess import ChessColor
 
 
 class Board:
-    def __init__(self, start_player=ChessColor.BLUE, dice=1) -> None:
-        '''默认起手为蓝方'''
+    def __init__(self, start_player: ChessColor = ChessColor.BLUE, dice: int = 1) -> None:
+        """默认起手为蓝方"""
         self.initBoard()
         self.dice = dice  # 骰子的数
         self.boardBackup = []  # 用于备份棋盘
@@ -47,45 +49,45 @@ class Board:
         ]
 
         self.num_char_map = {
-            0: 'A',
-            1: 'B',
-            2: 'C',
-            3: 'D',
-            4: 'E'
+            0: "A",
+            1: "B",
+            2: "C",
+            3: "D",
+            4: "E"
         }
 
-    def place_blue_pos(self, pieces_list: list):
-        '''放置蓝方棋子
+    def place_blue_pos(self, pieces_list: list) -> None:
+        """放置蓝方棋子
         piece_list:棋子序列:list
-        '''
+        """
         if len(pieces_list) == 6:
-            for pos, piece in zip(self.blue_legal_place_pos, pieces_list):
+            for pos, piece in zip(self.blue_legal_place_pos, pieces_list, strict=True):
                 self.setChess(pos, piece)
                 self.blue_pieces = pieces_list
 
-    def place_red_pos(self, pieces_list: list):
-        '''放置红方棋子
+    def place_red_pos(self, pieces_list: list) -> None:
+        """放置红方棋子
         piece_list:棋子序列:list
-        '''
+        """
         if len(pieces_list) == 6:
-            for pos, piece in zip(self.red_legal_place_pos, pieces_list):
+            for pos, piece in zip(self.red_legal_place_pos, pieces_list, strict=True):
                 self.setChess(pos, -piece)
                 self.red_pieces = [-i for i in pieces_list]
 
-    def red_best_place(self):
-        '''红方最佳放置棋子'''
+    def red_best_place(self) -> None:
+        """红方最佳放置棋子"""
         best_pieces_list = [1, 6, 3, 2, 4, 5]
         self.place_red_pos(best_pieces_list)
 
-    def blue_best_place(self):
-        '''蓝方最佳放置棋子'''
+    def blue_best_place(self) -> None:
+        """蓝方最佳放置棋子"""
         best_pieces_list = [5, 4, 2, 3, 6, 1]
         self.place_blue_pos(best_pieces_list)
 
-    def update_pieces(self):
-        '''更新双方的棋子
+    def update_pieces(self) -> None:
+        """更新双方的棋子
         主要是用在撤销的时候，为了能够重新扫描棋盘，还原棋子
-        所以在使用之前，要先确保棋盘是正确的'''
+        所以在使用之前，要先确保棋盘是正确的"""
         self.red_pieces = []
         self.blue_pieces = []
 
@@ -96,14 +98,14 @@ class Board:
                 elif self.board[i][j] < 0:
                     self.red_pieces.append(self.board[i][j])
 
-    def showBoard(self):
-        '''打印棋盘'''
+    def showBoard(self) -> None:
+        """打印棋盘"""
 
         # 打印棋盘，将numpy数组格式化输出，行变成列
         print(np.array(self.board).T)
 
-    def save_initial_pos(self):
-        '''保存开局的布局信息，用于后面输出日志'''
+    def save_initial_pos(self) -> None:
+        """保存开局的布局信息，用于后面输出日志"""
         blue_initial_pos = []
         red_initial_pos = []
 
@@ -117,44 +119,46 @@ class Board:
         self.blue_initial_pos = blue_initial_pos
         self.red_initial_pos = red_initial_pos
 
-    def get_avaiable_pieces(self):
-        '''根据骰子的值，返回目前可以移动的棋子'''
+    def get_avaiable_pieces(self) -> list | None:
+        """根据骰子的值，返回目前可以移动的棋子"""
         if self.turn == ChessColor.BLUE:
             # 有这个棋子就直接加入
             if self.dice in self.blue_pieces:
                 return [self.dice]
-            else:
-                collections = []
-                # 没有这个棋子就加入离骰子数最近的两个棋子
-                for chess in range(self.dice - 1, 0, -1):
-                    if chess in self.blue_pieces:
-                        collections.append(chess)
-                        break
-                for chess in range(self.dice + 1, 7):
-                    if chess in self.blue_pieces:
-                        collections.append(chess)
-                        break
-                return collections
 
-        elif self.turn == ChessColor.RED:
+            collections = []
+            # 没有这个棋子就加入离骰子数最近的两个棋子
+
+            for chess in range(self.dice - 1, 0, -1):
+                if chess in self.blue_pieces:
+                    collections.append(chess)
+                    break
+            for chess in range(self.dice + 1, 7):
+                if chess in self.blue_pieces:
+                    collections.append(chess)
+                    break
+            return collections
+
+        if self.turn == ChessColor.RED:
             if -self.dice in self.red_pieces:
                 return [-self.dice]
-            else:
-                collections = []
-                for chess in range(-self.dice + 1, 0):
-                    if chess in self.red_pieces:
-                        collections.append(chess)
-                        break
-                for chess in range(-self.dice - 1, -7, -1):
-                    if chess in self.red_pieces:
-                        collections.append(chess)
-                        break
-                return collections
 
-    def get_avaiable_moves(self):
-        '''根据投的骰子，得出可以进行的操作
+            collections = []
+            for chess in range(-self.dice + 1, 0):
+                if chess in self.red_pieces:
+                    collections.append(chess)
+                    break
+            for chess in range(-self.dice - 1, -7, -1):
+                if chess in self.red_pieces:
+                    collections.append(chess)
+                    break
+            return collections
+        return None
+
+    def get_avaiable_moves(self) -> (list, list):
+        """根据投的骰子，得出可以进行的操作
         moves:可进行的操作的id，也就是在list中的下标
-        true_moves:实际上的action'''
+        true_moves:实际上的action"""
         pieces = self.get_avaiable_pieces()
         moves = []
         true_moves = []
@@ -202,21 +206,21 @@ class Board:
                         continue
         return moves, true_moves
 
-    def move_to_location(self, move):
-        '''操作映射到位置'''
+    def move_to_location(self, move: int) -> (int, int, int, int):
+        """操作映射到位置"""
         beginx = move // 1000
         beginy = (move - beginx * 1000) // 100
         destx = (move - beginx * 1000 - beginy * 100) // 10
         desty = (move - beginx * 1000 - beginy * 100 - destx * 10)
         return beginx, beginy, destx, desty
 
-    def location_to_move(self, location):
-        '''将操作映射为成数字'''
+    def location_to_move(self, location: tuple) -> int:
+        """将操作映射为成数字"""
         bx, by, dx, dy = location
         return bx * 1000 + by * 100 + dx * 10 + dy
 
-    def do_move(self, move):
-        '''给定move(int)，认为传入的动作是正确的，不进行验证'''
+    def do_move(self, move: int) -> None:
+        """给定move(int)，认为传入的动作是正确的，不进行验证"""
         # 进行备份
         self.movements.append(move)
         self.backupBoard()
@@ -230,14 +234,14 @@ class Board:
         self.board[dx][dy] = self.board[bx][by]
         self.board[bx][by] = 0
 
-    def get_current_state(self):
-        '''用于神经网络网络的输入
+    def get_current_state(self) -> np.array:
+        """用于神经网络网络的输入
         返回 4*5*5 的矩阵，每一层的信息：
         0:棋局
         1:对手上一次的移动
         2:目前可以移动的棋子信息
         3:current turn,1 blue, -1 red
-        注意：调用前先获取骰子数目'''
+        注意：调用前先获取骰子数目"""
         state = np.zeros((4, 5, 5))
         state[0] = self.board
 
@@ -262,8 +266,8 @@ class Board:
 
         return state
 
-    def initBoard(self, start_player=ChessColor.BLUE):
-        '''初始化默认棋盘，每次棋子的布局都是随机的，后期再来进行布局'''
+    def initBoard(self, start_player: ChessColor = ChessColor.BLUE) -> np.array:
+        """初始化默认棋盘，每次棋子的布局都是随机的，后期再来进行布局"""
 
         self.start_player = start_player
 
@@ -299,14 +303,14 @@ class Board:
 
         return board
 
-    def setChess(self, position, value) -> bool:
-        '''放置棋子
+    def setChess(self, position: tuple, value: int) -> bool:
+        """放置棋子
         Args:
             position (tuple or list): 表示位置的元组或列表，例如 (row, column) 或 [row, column]
             value: 要放置的棋子的值,between [-6,6]
         Returns:
             bool: 表示是否成功放置棋子的布尔值
-        '''
+        """
         x, y = position
         if x < 0 or x > 4 or y < 0 or y > 4:
             return False
@@ -314,10 +318,10 @@ class Board:
         self.board[x][y] = value
         return True
 
-    def moveChess(self, from_position, end_position):
-        '''移动棋子从起始位置到指定的位置,通过坐标移动，主要是给前端使用的
+    def moveChess(self, from_position: tuple, end_position: tuple) -> bool:
+        """移动棋子从起始位置到指定的位置,通过坐标移动，主要是给前端使用的
             如果成功移动，返回True，错误返回False
-            只要是移动，最后都是经过do_move的'''
+            只要是移动，最后都是经过do_move的"""
         from_x, from_y = from_position
         end_x, end_y = end_position
 
@@ -330,32 +334,29 @@ class Board:
 
         return True
 
-    def swapturn(self):
-        '''交换行棋方'''
+    def swapturn(self) -> None:
+        """交换行棋方"""
         self.turn = ChessColor.RED if self.turn == ChessColor.BLUE else ChessColor.BLUE
 
-    def checkBoardSet(self):
-        '''开局的时候，检查10个棋子是否正确安放
+    def checkBoardSet(self) -> bool:
+        """开局的时候，检查10个棋子是否正确安放
         一开始就限制了安放棋子只能在指定的位置（在ui上限定），所以这里直接扫描整个棋盘
-        '''
+        """
         chessSet = set()
         for row in self.board:
             for e in row:
                 chessSet.add(e)
 
         # 如果12个棋子全部摆放完毕
-        if len(chessSet) == 13:
-            return True
-        else:
-            return False
+        return len(chessSet) == 13
 
-    def backupBoard(self):
-        '''备份当前棋局到备份列表中'''
+    def backupBoard(self) -> None:
+        """备份当前棋局到备份列表中"""
         # 这里需要使用深拷贝，否则会出现引用问题
         self.boardBackup.append(copy.deepcopy(self.board))
 
-    def undo(self):
-        '''悔棋'''
+    def undo(self) -> bool:
+        """悔棋"""
         if len(self.boardBackup) == 0:
             return False
 
@@ -369,12 +370,12 @@ class Board:
         return True
 
     def getChess(self, x: int, y: int) -> int:
-        '''返回棋盘上指定位置的值'''
+        """返回棋盘上指定位置的值"""
         return self.board[x][y]
 
-    def checkWin(self):
-        '''查看是否已经有一方获胜
-            Return: BLUE表示蓝方获胜, RED 表示红方获胜，None表示还没有人获胜'''
+    def checkWin(self) -> ChessColor | None:
+        """查看是否已经有一方获胜
+            Return: BLUE表示蓝方获胜, RED 表示红方获胜，None表示还没有人获胜"""
 
         if self.board[0][0] > 0 or np.all(self.board >= 0):
             return ChessColor.BLUE
@@ -384,8 +385,8 @@ class Board:
 
         return None
 
-    def getChessSign(self, x, y):
-        '''返回棋子的符号，蓝方返回1，红方返回1,空白返回1'''
+    def getChessSign(self, x: int, y: int) -> int:
+        """返回棋子的符号，蓝方返回1，红方返回1,空白返回1"""
         chessNumber = self.board[x][y]
         if chessNumber == 0:
             return 0
@@ -393,32 +394,31 @@ class Board:
         if chessNumber > 1:
             return 1
 
-        else:
-            return -1
+        return -1
 
-    def getturn(self):
+    def getturn(self) -> ChessColor:
         return self.turn
 
-    def getturnStr(self):
-        return '蓝方' if self.turn == ChessColor.BLUE else '红方'
+    def getturnStr(self) -> str:
+        return "蓝方" if self.turn == ChessColor.BLUE else "红方"
 
-    def setDice(self, diceNum):
+    def setDice(self, diceNum: int) -> None:
         self.dice = diceNum
 
-    def getDice(self):
+    def getDice(self) -> int:
         return self.dice
 
-    def setturn(self, color: ChessColor):
+    def setturn(self, color: ChessColor) -> None:
         self.turn = color
 
-    def setSente(self, color: ChessColor):
+    def setSente(self, color: ChessColor) -> None:
         self.sente = color
 
     def getSente(self) -> ChessColor:
         return self.sente
 
-    def get_point(self, point=None):
-        '''获取点数，如果没有指定点数，则随机生成点数'''
+    def get_point(self, point: int = None) -> int:
+        """获取点数，如果没有指定点数，则随机生成点数"""
         if point:
             self.dice = point
         else:
@@ -427,77 +427,76 @@ class Board:
 
         return self.dice
 
-    def last_move_info(self):
-        '''返回上一次移动的信息,返回的是标准棋谱的信息'''
+    def last_move_info(self) -> str:
+        """返回上一次移动的信息,返回的是标准棋谱的信息"""
         # 写入每一步的走法
 
         num_char_map = {
-            0: 'A',
-            1: 'B',
-            2: 'C',
-            3: 'D',
-            4: 'E'
+            0: "A",
+            1: "B",
+            2: "C",
+            3: "D",
+            4: "E"
         }
         i = len(self.movements) - 1
         x, y, dx, dy = self.move_to_location(self.movements[i])
         # 这里 x 和 y 还是用的最原始的，可以索引到棋子
         chess_index = self.boardBackup[i][x][y]
-        sign = 'R' if chess_index < 0 else 'B'
+        sign = "R" if chess_index < 0 else "B"
         chess_index = abs(chess_index)
         dy = abs(5-dy)
         dx = num_char_map[dx]
 
-        for i, (move, point) in enumerate(zip(self.movements, self.points)):
+        for i, (move, point) in enumerate(zip(self.movements, self.points, strict=True)):
             x, y, dx, dy = self.move_to_location(move)
             # 这里 x 和 y 还是用的最原始的，可以索引到棋子
             print((self.boardBackup[i].T))
             chess_index = self.boardBackup[i][x][y]
-            sign = 'R' if chess_index < 0 else 'B'
+            sign = "R" if chess_index < 0 else "B"
             chess_index = abs(chess_index)
             dy = abs(5-dy)
             dx = num_char_map[dx]
 
-        info = f'{i+1}:{point};({sign}{chess_index},{dx}{dy})'
-        return info
+        return f"{i+1}:{point};({sign}{chess_index},{dx}{dy})"
 
     def initial_pos_info(self) -> str:
-        '''返回初始位置信息，返回标准棋谱的字符串'''
-        info = ''
-        info += 'R:'
+        """返回初始位置信息，返回标准棋谱的字符串"""
+        info = ""
+        info += "R:"
         for x, y, index in self.red_initial_pos:
             y = abs(5-y)
             x = self.num_char_map[x]
             chess_index = abs(index)
-            info += f'{x}{y}-{chess_index};'
+            info += f"{x}{y}-{chess_index};"
 
-        info += '\n'
+        info += "\n"
         # 写入蓝方
-        info += 'B:'
+        info += "B:"
         for x, y, index in self.blue_initial_pos:
             y = abs(5-y)
             x = self.num_char_map[x]
             chess_index = abs(index)
-            info += f'{x}{y}-{chess_index};'
+            info += f"{x}{y}-{chess_index};"
 
         return info
 
-    def get_movements_info(self):
-        '''返回所有的行棋记录信息'''
-        info = ''
-        for i, (move, point) in enumerate(zip(self.movements, self.points)):
+    def get_movements_info(self) -> str:
+        """返回所有的行棋记录信息"""
+        info = ""
+        for i, (move, point) in enumerate(zip(self.movements, self.points, strict=True)):
             x, y, dx, dy = self.move_to_location(move)
             # 这里 x 和 y 还是用的最原始的，可以索引到棋子
             chess_index = self.boardBackup[i][x][y]
-            sign = 'R' if chess_index < 0 else 'B'
+            sign = "R" if chess_index < 0 else "B"
             chess_index = abs(chess_index)
             dy = abs(5-dy)
             dx = self.num_char_map[dx]
-            info += f'{i+1}:{point};({sign}{chess_index},{dx}{dy})\n'
+            info += f"{i+1}:{point};({sign}{chess_index},{dx}{dy})\n"
 
         return info
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     board = Board()
     board.red_pieces = [1, 2, 4]
     board.dice = 3

@@ -1,17 +1,19 @@
+import queue
 import random
+import threading
+import time
 
 import numpy as np
+
 from board import Board
 from enums.chess import ChessColor
-import time
-from collections import deque
-import queue,threading
+
 
 class Game:
     def __init__(self):
         self.board = Board()
         self.q = queue.Queue()
-    
+
     def show(self):
         # terminal
         print('     0  1  2  3  4  Y')
@@ -22,7 +24,7 @@ class Game:
             print()
         print('  X')
 
-    def start_play(self, player1, player2, player1_color:ChessColor, player2_color:ChessColor, start_player, is_show = 1):
+    def start_play(self, player1, player2, player1_color: ChessColor, player2_color: ChessColor, start_player, is_show=1):
         '''
         # default show for human
         # this function for the human-alphazero and alphazero-puremcts
@@ -34,20 +36,20 @@ class Game:
         player1.set_color(player1_color)
         player2.set_color(player2_color)
         players = {player1_color: player1, player2_color: player2}
-        if is_show == 1: 
+        if is_show == 1:
             self.show()
         while True:
             # if self.board.turn == 1: print('-------------------\nRed player play ...')
             # else: print('-------------------\nBlue player play ...')
             player_in_turn = players[self.board.turn]
-            
+
             # IF NOT THE ALPHAZERO, MULTITHREADING TO SIMULATION
             if player_in_turn.name == "human":
                 # the human or the pure mcts play turn
                 alphaplayer = players[2 if player_in_turn.color == 1 else 1]
                 self.q.put(True)
-                self.cheating = threading.Thread(target = alphaplayer.mcts.cheating_move, \
-                        args = (self.q, self.board,))
+                self.cheating = threading.Thread(target=alphaplayer.mcts.cheating_move,
+                                                 args=(self.q, self.board,))
                 self.cheating.start()
                 # print('Start simulation ... ')
             else:
@@ -61,33 +63,37 @@ class Game:
                     pass
 
             # get_action must call the get_point function
-            move = player_in_turn.get_action(self.board)    # the move is the integar
+            move = player_in_turn.get_action(
+                self.board)    # the move is the integar
 
             # alphazero collect oppo's movement
             if player_in_turn.name == "human":
                 # the human or the pure mcts play turn
                 alphazero_player = players[1] if player_in_turn.color == 2 else players[2]
-                if alphazero_player.name != 'alphazero': 
+                if alphazero_player.name != 'alphazero':
                     # both of the player are not alphazero
                     pass
-                else: alphazero_player.oppo_go_down_tree(self.board.point, move)
+                else:
+                    alphazero_player.oppo_go_down_tree(self.board.point, move)
 
             self.board.do_move(move)
 
-            if is_show: 
+            if is_show:
                 self.show()
             end, winner = self.board.if_win()
             if end:
-                self.write_log(players[start_player].name, players[1 if start_player == 2 else 2].name,\
-                        players[winner].name)
-                if is_show: print('red win' if winner == 1 else 'blue win')
+                self.write_log(players[start_player].name, players[1 if start_player == 2 else 2].name,
+                               players[winner].name)
+                if is_show:
+                    print('red win' if winner == 1 else 'blue win')
                 self.q.put(False)
                 self.cheating.join()
                 return winner
-        
+
     def write_log(self, first_name, second_name, winner):
         # this function when the start_play end and write the log according to the new rule of the game
-        filename = './chess_log/WTN-' + first_name + '-' + second_name + '-' + winner + '-' + '-'.join(time.asctime().split()) + '-' + '2018CCGC'
+        filename = './chess_log/WTN-' + first_name + '-' + second_name + '-' + \
+            winner + '-' + '-'.join(time.asctime().split()) + '-' + '2018CCGC'
         with open(filename, 'w') as f:
             f.write('#[][place][][date][];\n')
             f.write('R:')
@@ -104,24 +110,28 @@ class Game:
             for move, point in zip(self.board.movements, self.board.points):
                 x, y, dx, dy = self.board.move_to_location(move)
                 x, y, dx, dy = 5 - x, chr(65 + y), 5 - dx, chr(65 + dy)
-                f.write(str(i) + ':' + str(point) + ';(' + y + str(x) + ',' + dy + str(dx) + ')\n')
+                f.write(str(i) + ':' + str(point) +
+                        ';(' + y + str(x) + ',' + dy + str(dx) + ')\n')
                 i += 1
 
-    def start_self_play(self, player, is_show = 0, temp = 1e-3):
+    def start_self_play(self, player, is_show=0, temp=1e-3):
         '''return: winner, zip(states, mcts_probs, winner_z)'''
         # play with itself (AIPlayer), default not show
-        first_player = random.choice(list(ChessColor))  # random get the first player
-        self.board.initBoard(first_player)    
+        # random get the first player
+        first_player = random.choice(list(ChessColor))
+        self.board.initBoard(first_player)
         states, mcts_probs, current_players = [], [], []
         while True:
-            move, move_probs = player.get_action(self.board, temp = temp, return_prob = 1)
+            move, move_probs = player.get_action(
+                self.board, temp=temp, return_prob=1)
             # store the data
             states.append(self.board.get_current_state())
             mcts_probs.append(move_probs)
             current_players.append(self.board.turn)
 
             self.board.do_move(move)
-            if is_show: self.show()
+            if is_show:
+                self.show()
             winner = self.board.checkWin()
             if winner:
                 # game end, collect the data for training
@@ -131,5 +141,6 @@ class Game:
                 winner_z[np.array(current_players) == winner] = 1.0
                 winner_z[np.array(current_players) != winner] = -1.0
                 player.reset_player()    # reset the MCTS Tree
-                if is_show: print('red win' if winner == ChessColor.RED else 'blue win')
+                if is_show:
+                    print('red win' if winner == ChessColor.RED else 'blue win')
                 return winner, zip(states, mcts_probs, winner_z)

@@ -42,8 +42,6 @@ class Net(nn.Module):
         num_res_blocks:残差块的个数'''
         super().__init__()
         # 全局特征
-        # self.global_conv = nn.Conv2D(in_channels=9, out_channels=512, kernel_size=(10, 9))
-        # self.global_bn = nn.BatchNorm2D(512)
         # 初始化特征
         self.conv_block = nn.Conv2d(4, num_channels, kernel_size=3, padding=1)
         self.conv_block_bn = nn.BatchNorm2d(256)
